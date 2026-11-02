@@ -1,0 +1,405 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.12.0/bin/node",
+      "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/playwright.config.ts",
+    "rootDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "snapshotDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://localhost:3107",
+          "browserName": "chromium",
+          "channel": "chromium",
+          "headless": true,
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node dist/server/index.js",
+      "url": "http://localhost:3107/api/health",
+      "reuseExistingServer": false,
+      "timeout": 30000,
+      "env": {
+        "HOST_SECRET": "browser-test-secret-not-for-deployment-1234",
+        "PUBLIC_ORIGIN": "http://localhost:3107",
+        "HOST": "127.0.0.1",
+        "PORT": "3107",
+        "DATA_DIR": "[TEMPORARY_SYNTHETIC_TEST_DIRECTORY]",
+        "TWITCH_CLIENT_ID": "",
+        "TWITCH_CLIENT_SECRET": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "connectivity.spec.ts",
+      "file": "connectivity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mobile shows a local room outage and recovers committed state after socket reconnect",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 13972,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.server-status')\nExpected substring: \u001b[32m\"\u001b[7mdis\u001b[27mconnected\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mRoom \u001b[27mconnected\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.server-status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.server-status')\u001b[22m\n\u001b[2m    6 \u00d7 locator resolved to <span class=\"server-status \">\u2026</span>\u001b[22m\n\u001b[2m      - unexpected value \"Room reconnecting\"\u001b[22m\n\u001b[2m    17 \u00d7 locator resolved to <span class=\"server-status online\">\u2026</span>\u001b[22m\n\u001b[2m       - unexpected value \"Room connected\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.server-status')\nExpected substring: \u001b[32m\"\u001b[7mdis\u001b[27mconnected\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mRoom \u001b[27mconnected\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.server-status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.server-status')\u001b[22m\n\u001b[2m    6 \u00d7 locator resolved to <span class=\"server-status \">\u2026</span>\u001b[22m\n\u001b[2m      - unexpected value \"Room reconnecting\"\u001b[22m\n\u001b[2m    17 \u00d7 locator resolved to <span class=\"server-status online\">\u2026</span>\u001b[22m\n\u001b[2m       - unexpected value \"Room connected\"\u001b[22m\n\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/connectivity.spec.ts:16:48",
+                    "location": {
+                      "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/connectivity.spec.ts",
+                      "column": 48,
+                      "line": 16
+                    },
+                    "snippet": "  14 |   current.close({code:1012,reason:'Local connectivity regression'});\n  15 |   await expect(page.locator('.server-status')).toBeVisible();\n> 16 |   await expect(page.locator('.server-status')).toContainText('disconnected');\n     |                                                ^\n  17 |   await expect(page.getByRole('button',{name:'Move right'})).toBeDisabled();\n  18 |   expect((await act({type:'move',direction:'right'})).ok()).toBe(true);\n  19 |   await expect.poll(()=>connections).toBeGreaterThan(1);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/connectivity.spec.ts",
+                        "column": 48,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.server-status')\nExpected substring: \u001b[32m\"\u001b[7mdis\u001b[27mconnected\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mRoom \u001b[27mconnected\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.server-status') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.server-status')\u001b[22m\n\u001b[2m    6 \u00d7 locator resolved to <span class=\"server-status \">\u2026</span>\u001b[22m\n\u001b[2m      - unexpected value \"Room reconnecting\"\u001b[22m\n\u001b[2m    17 \u00d7 locator resolved to <span class=\"server-status online\">\u2026</span>\u001b[22m\n\u001b[2m       - unexpected value \"Room connected\"\u001b[22m\n\n\n  14 |   current.close({code:1012,reason:'Local connectivity regression'});\n  15 |   await expect(page.locator('.server-status')).toBeVisible();\n> 16 |   await expect(page.locator('.server-status')).toContainText('disconnected');\n     |                                                ^\n  17 |   await expect(page.getByRole('button',{name:'Move right'})).toBeDisabled();\n  18 |   expect((await act({type:'move',direction:'right'})).ok()).toBe(true);\n  19 |   await expect.poll(()=>connections).toBeGreaterThan(1);\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/connectivity.spec.ts:16:48"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T07:35:35.193Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/connectivity-mobile-shows--14593-tate-after-socket-reconnect/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/connectivity-mobile-shows--14593-tate-after-socket-reconnect/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/connectivity.spec.ts",
+                    "column": 48,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a8002dae86002832b555-a449aa1c5df3661d8e10",
+          "file": "connectivity.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "journey.spec.ts",
+      "file": "journey.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real browser: rejected lockout, proposal, ballot, merge and replay remain correct during updates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19530,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T07:35:56.207Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-63bccf584dbbb0f02239",
+          "file": "journey.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "keyboard is scoped to board, mobile fits, and reduced motion uses manual witness steps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4937,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T07:36:17.453Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-790eab8e7f7cdf180025",
+          "file": "journey.spec.ts",
+          "line": 81,
+          "column": 1
+        },
+        {
+          "title": "overlay stays read-only, follows chamber changes and recovers latest snapshot after reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17404,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T07:36:22.446Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-b024a28a41484206baf9",
+          "file": "journey.spec.ts",
+          "line": 107,
+          "column": 1
+        },
+        {
+          "title": "empty audiences, pause, cancel, login errors and keyboard focus expose usable states",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3345,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T07:36:39.930Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-0c71ff634d339f2c87f9",
+          "file": "journey.spec.ts",
+          "line": 141,
+          "column": 1
+        },
+        {
+          "title": "presentation fixture: all eight ballot choices fit OBS at 1080p and 720p",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2461,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-28T07:36:43.320Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-b4abff01fcebeeda8d73",
+          "file": "journey.spec.ts",
+          "line": 161,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-28T07:35:27.347Z",
+    "duration": 78717.39700000001,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "environmentRedaction": "Inherited process environment omitted; explicit synthetic fixture values retained. Test results and timestamps unchanged.",
+  "releaseSanitization": [
+    {
+      "at": "2026-11-02T06:49:01.472348+00:00",
+      "reason": "Historical browser reports must not retain inherited process environment. Only explicit non-secret synthetic test configuration remains. Test results/timings/outcomes were not altered.",
+      "changes": [
+        {
+          "jsonPath": "config.webServer.env",
+          "removedKeys": [],
+          "redactedTemporaryPaths": [
+            "DATA_DIR"
+          ],
+          "retainedNonsecretTestKeys": [
+            "DATA_DIR",
+            "HOST",
+            "HOST_SECRET",
+            "PORT",
+            "PUBLIC_ORIGIN",
+            "TWITCH_CLIENT_ID",
+            "TWITCH_CLIENT_SECRET"
+          ]
+        }
+      ],
+      "matchedValuesPrinted": false
+    }
+  ]
+}

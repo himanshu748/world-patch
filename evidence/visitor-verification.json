@@ -1,0 +1,98 @@
+{
+  "at": "2026-10-30T08:31:33.173994+00:00",
+  "status": "PASS_LOCAL",
+  "scope": "No-login visitor entry into the existing homepage demo",
+  "changes": [
+    "Hero and final primary actions now say Play the demo and focus the actual playable board",
+    "Host a chamber stays available and opens the protected controller",
+    "Returning to an active demo preserves moves and player position",
+    "Availability copy explains demo and hosting access; mobile host arrow corrected"
+  ],
+  "fullBrowserRun": {
+    "report": "evidence/visitor-browser-tests.json",
+    "startTime": "2026-10-30T08:26:20.509Z",
+    "duration": 46015.943,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "finalLandingRun": {
+    "report": "evidence/visitor-landing-final-tests.json",
+    "startTime": "2026-10-30T08:27:35.344Z",
+    "duration": 10330.538,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "productionBuild": "PASS",
+  "freshVisitorChecks": [
+    "Desktop keyboard Enter and mobile pointer activation start local play without login",
+    "Board receives focus and is fully in the viewport",
+    "One real move works after entry",
+    "Bottom CTA returns to the current attempt without resetting position or count",
+    "Host a chamber opens /play and presents host authentication",
+    "No POST requests, room game/revision changes or browser errors during the visitor journey",
+    "Reduced motion and no horizontal overflow"
+  ],
+  "viewports": {
+    "visitorJourney": [
+      [
+        1440,
+        900
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "otherRetainedLandingChecks": [
+      [
+        1280,
+        720
+      ],
+      [
+        320,
+        844
+      ]
+    ]
+  },
+  "manualInspection": "Final desktop/mobile screenshot inspection; in-app keyboard entry focused the board with a solid 3px visible focus outline.",
+  "testedSource": "evidence/visitor-tested-source.json",
+  "protectedSourceUnchanged": [
+    "package-lock.json",
+    "package.json",
+    "src/server/app.ts",
+    "src/server/index.ts",
+    "src/server/replay.ts",
+    "src/server/room.ts",
+    "src/server/storage.ts",
+    "src/server/twitch.ts",
+    "src/shared/chambers.ts",
+    "src/shared/commands.ts",
+    "src/shared/engine.ts",
+    "src/shared/protocol.ts"
+  ],
+  "unitBaseline": {
+    "report": "evidence/landing-play-unit-final.json",
+    "passed": 112,
+    "failed": 0,
+    "rerunThisContinuation": false,
+    "qualification": "Prior current-project unit result retained; all 12 server/shared/dependency files match the previous verified source archive. This continuation changed only landing UI and its browser tests."
+  },
+  "localPreview": "http://localhost:3119/",
+  "previewHTTP": {
+    "/": 200,
+    "/play": 200,
+    "/overlay": 200
+  },
+  "noNewDependencies": true,
+  "providerScope": "This preview remains an isolated local simulation. These checks add no live chat, reconnect or OBS evidence.",
+  "deployed": false,
+  "published": false,
+  "commitPush": "None performed",
+  "outboundMessages": "None sent"
+}

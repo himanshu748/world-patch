@@ -1,0 +1,59 @@
+1
+00:00:00,000 --> 00:00:02,000
+Chat rewrites the rules. You find the exit.
+One account for functional testing · waiting trimmed · original footage at normal speed · no narration
+
+2
+00:00:02,000 --> 00:00:08,000
+Gravity down leaves no escape.
+The deterministic search exhausts the reachable states. The world stays unchanged.
+
+3
+00:00:08,000 --> 00:00:10,000
+A viewer proposes closing wall group A.
+The command is received from Twitch. It is parsed as a bounded, typed rule change.
+
+4
+00:00:10,000 --> 00:00:18,000
+A valid escape route earns a place on the ballot.
+Player controls, verification and replay share the same pure state transition.
+
+5
+00:00:18,000 --> 00:00:21,500
+The ballot arrives through Twitch.
+Waiting is trimmed; the recorded proposal, vote and result remain in chronological order.
+
+6
+00:00:21,500 --> 00:00:33,000
+The winning patch merges with a fairness receipt.
+58 explored states · a replay-verified 24-step escape witness · no arbitrary chat code
+
+7
+00:00:33,000 --> 00:00:46,000
+Escape the world chat just changed.
+These are actual UI moves in the live Twitch session, recorded at normal speed.
+
+8
+00:00:46,000 --> 00:00:50,000
+Reveal the witness after the attempt.
+The hidden route becomes available for inspection and deterministic replay.
+
+9
+00:00:50,000 --> 00:01:06,000
+Watch a valid solution through the patched world.
+The replay demonstrates a real escape path. This footage comes from the live Twitch-origin session.
+
+10
+00:01:06,000 --> 00:01:16,000
+Built with Codex. Preserved with provenance.
+An offline evidence viewer shows a genuine main-session source-writing record; it is not the native Codex UI.
+
+11
+00:01:16,000 --> 00:01:26,000
+One transition for the player, solver and replay.
+Current shared-engine excerpts are distinguished from the recorded main-chat source-writing action.
+
+12
+00:01:26,000 --> 00:01:36,000
+114 unit checks. 22 browser journeys. Real results.
+Local verification is explicitly separate from the actual Twitch delivery demonstrated in the preceding footage.

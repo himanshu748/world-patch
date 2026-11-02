@@ -1,0 +1,7 @@
+  while (cursor < nodes.length) {
+    if (explored >= maxNodes || now() - started >= maxMs) return { status: 'incomplete', witness: [], explored };
+    const parent = cursor++;
+    const node = nodes[parent]!;
+    explored++;
+    for (const action of DIRECTIONS) {
+      const state = transition(chamber, node.state, action);

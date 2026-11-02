@@ -1,0 +1,232 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.12.0/bin/node",
+      "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/node_modules/.bin/playwright",
+      "test",
+      "tests/browser/product.spec.ts",
+      "--grep",
+      "startup:",
+      "--timeout=45000",
+      "--output=/Users/himanshujha/Documents/Codex/2026-10-29/world-patch-open-design-refinement/work/bootstrap-before-results"
+    ],
+    "configFile": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/playwright.config.ts",
+    "rootDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/himanshujha/Documents/Codex/2026-10-29/world-patch-open-design-refinement/work/bootstrap-before-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/himanshujha/Documents/Codex/2026-10-29/world-patch-open-design-refinement/work/bootstrap-before-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "snapshotDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://localhost:3118",
+          "browserName": "chromium",
+          "channel": "chromium",
+          "headless": true,
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/product-bootstrap-before-fix.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node dist/server/index.js",
+      "url": "http://localhost:3118/api/health",
+      "reuseExistingServer": false,
+      "timeout": 30000,
+      "env": {
+        "HOST_SECRET": "browser-test-secret-not-for-deployment-1234",
+        "PUBLIC_ORIGIN": "http://localhost:3118",
+        "HOST": "127.0.0.1",
+        "PORT": "3118",
+        "DATA_DIR": "[TEMPORARY_SYNTHETIC_TEST_DIRECTORY]",
+        "TWITCH_CLIENT_ID": "",
+        "TWITCH_CLIENT_SECRET": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "product.spec.ts",
+      "file": "product.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "startup: delayed bootstrap never replaces a newer streamed chamber",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 36480,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Crosswire', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: 'Crosswire', exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Crosswire', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Crosswire', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: 'Crosswire', exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Crosswire', exact: true })\u001b[22m\n\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/product.spec.ts:143:73",
+                    "location": {
+                      "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/product.spec.ts",
+                      "column": 73,
+                      "line": 143
+                    },
+                    "snippet": "  141 |   // Host config arrives through the same bootstrap completion, after the old state.\n  142 |   await expect(page.getByRole('button',{name:'Lock controls'})).toBeVisible();\n> 143 |   await expect(page.getByRole('heading',{name:'Crosswire',exact:true})).toBeVisible();\n      |                                                                         ^\n  144 |   expect((await snapshot(page)).chamber.id).toBe('crosswire');\n  145 | });\n  146 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/product.spec.ts",
+                        "column": 73,
+                        "line": 143
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Crosswire', exact: true })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: 'Crosswire', exact: true }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Crosswire', exact: true })\u001b[22m\n\n\n  141 |   // Host config arrives through the same bootstrap completion, after the old state.\n  142 |   await expect(page.getByRole('button',{name:'Lock controls'})).toBeVisible();\n> 143 |   await expect(page.getByRole('heading',{name:'Crosswire',exact:true})).toBeVisible();\n      |                                                                         ^\n  144 |   expect((await snapshot(page)).chamber.id).toBe('crosswire');\n  145 | });\n  146 |\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/product.spec.ts:143:73"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-30T09:50:40.718Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-29/world-patch-open-design-refinement/work/bootstrap-before-results/product-startup-delayed-bo-a6923-es-a-newer-streamed-chamber/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-29/world-patch-open-design-refinement/work/bootstrap-before-results/product-startup-delayed-bo-a6923-es-a-newer-streamed-chamber/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/product.spec.ts",
+                    "column": 73,
+                    "line": 143
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2fa8ab87beca8e7f39ce-c72f67e207ceba63dc71",
+          "file": "product.spec.ts",
+          "line": 129,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-30T09:50:24.627Z",
+    "duration": 65268.275,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "environmentRedaction": "Inherited process environment omitted; explicit synthetic fixture values retained. Test results and timestamps unchanged.",
+  "releaseSanitization": [
+    {
+      "at": "2026-11-02T06:49:01.472348+00:00",
+      "reason": "Historical browser reports must not retain inherited process environment. Only explicit non-secret synthetic test configuration remains. Test results/timings/outcomes were not altered.",
+      "changes": [
+        {
+          "jsonPath": "config.webServer.env",
+          "removedKeys": [],
+          "redactedTemporaryPaths": [
+            "DATA_DIR"
+          ],
+          "retainedNonsecretTestKeys": [
+            "DATA_DIR",
+            "HOST",
+            "HOST_SECRET",
+            "PORT",
+            "PUBLIC_ORIGIN",
+            "TWITCH_CLIENT_ID",
+            "TWITCH_CLIENT_SECRET"
+          ]
+        }
+      ],
+      "matchedValuesPrinted": false
+    }
+  ]
+}

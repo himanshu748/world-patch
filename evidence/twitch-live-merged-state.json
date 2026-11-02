@@ -1,0 +1,208 @@
+{
+  "at": "2026-10-30T08:20:48.137676+00:00",
+  "proofMode": "Actual Twitch chat via real EventSub; no injected provider or simulation",
+  "state": {
+    "schemaVersion": 1,
+    "engineVersion": "world-patch/1.0.0",
+    "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+    "origin": "twitch",
+    "revision": 11,
+    "gameRevision": 1,
+    "chamber": {
+      "id": "vector-foundry",
+      "version": 1,
+      "name": "Vector Foundry",
+      "description": "Find the key. Learn the drift. Chat can close the direct crossing.",
+      "width": 11,
+      "height": 9,
+      "tiles": [
+        "###########",
+        "#S..#....K#",
+        "#.#~#.##..#",
+        "#.#.A.#...#",
+        "#.AAA.#.#.#",
+        "#...#...#.#",
+        "#.~~~.##..#",
+        "#....B...E#",
+        "###########"
+      ],
+      "start": {
+        "x": 1,
+        "y": 1
+      },
+      "exit": {
+        "x": 9,
+        "y": 7
+      },
+      "key": {
+        "x": 9,
+        "y": 1
+      },
+      "portals": [],
+      "wallGroups": {
+        "A": [
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          }
+        ],
+        "B": [
+          {
+            "x": 5,
+            "y": 7
+          }
+        ]
+      },
+      "initialRules": {
+        "gravity": "off",
+        "portals": "normal",
+        "ice": false,
+        "walls": {
+          "A": false,
+          "B": false
+        }
+      }
+    },
+    "game": {
+      "chamberId": "vector-foundry",
+      "x": 1,
+      "y": 1,
+      "hasKey": false,
+      "rules": {
+        "gravity": "off",
+        "portals": "normal",
+        "ice": false,
+        "walls": {
+          "A": true,
+          "B": false
+        }
+      },
+      "escaped": false
+    },
+    "checkpoint": {
+      "chamberId": "vector-foundry",
+      "x": 1,
+      "y": 1,
+      "hasKey": false,
+      "rules": {
+        "gravity": "off",
+        "portals": "normal",
+        "ice": false,
+        "walls": {
+          "A": true,
+          "B": false
+        }
+      },
+      "escaped": false
+    },
+    "phase": "play",
+    "round": 3,
+    "deadline": null,
+    "remainingMs": null,
+    "candidates": [],
+    "receipt": {
+      "id": "4789819d-b8b5-4345-bd3c-cbd210e96914",
+      "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+      "engineVersion": "world-patch/1.0.0",
+      "chamberVersion": 1,
+      "round": 3,
+      "revision": 1,
+      "origin": "twitch",
+      "patch": {
+        "kind": "walls",
+        "group": "A",
+        "closed": true
+      },
+      "beforeDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+      "afterDigest": "b1eea15f597a8cc9a23923e5cffefbc480ae9ee190c07bbbc902d7b61ae03088",
+      "explored": 58,
+      "pathLength": 24,
+      "tally": [
+        {
+          "candidateId": 1,
+          "key": "walls:A:closed",
+          "votes": 1
+        }
+      ],
+      "tieBreak": "votes-descending-then-canonical-key-code-point-ascending",
+      "digest": "e57f1293fe98d8a81c3b9f12488c9326509f6b52ab0813f1fe2db0aa727d47d5"
+    },
+    "history": [
+      {
+        "at": 1793344257437,
+        "kind": "session-start",
+        "message": "New session. Previous evidence remains archived."
+      },
+      {
+        "at": 1793347139389,
+        "kind": "round-open",
+        "message": "World frozen. Propose a law."
+      },
+      {
+        "at": 1793347164572,
+        "kind": "cancel",
+        "message": "No audience decision. The world stays unchanged."
+      },
+      {
+        "at": 1793347642413,
+        "kind": "round-open",
+        "message": "World frozen. Propose a law."
+      },
+      {
+        "at": 1793347667477,
+        "kind": "cancel",
+        "message": "No audience decision. The world stays unchanged."
+      },
+      {
+        "at": 1793348409691,
+        "kind": "round-open",
+        "message": "World frozen. Propose a law."
+      },
+      {
+        "at": 1793348410424,
+        "kind": "rejection",
+        "message": "No escape under these rules. Patch rejected."
+      },
+      {
+        "at": 1793348418344,
+        "kind": "proposal",
+        "message": "Close wall group A verified and added."
+      },
+      {
+        "at": 1793348418476,
+        "kind": "voting-open",
+        "message": "Vote now. One ballot per viewer."
+      },
+      {
+        "at": 1793348424929,
+        "kind": "vote",
+        "message": "Audience ballot recorded."
+      },
+      {
+        "at": 1793348436696,
+        "kind": "merge",
+        "message": "Close wall group A merged. Escape witness verified."
+      }
+    ],
+    "lastRejection": null,
+    "twitch": {
+      "state": "ready",
+      "received": 3,
+      "channel": "himanshujh",
+      "lastEventAt": 1793348424929
+    },
+    "serverTime": 1793348448137
+  }
+}

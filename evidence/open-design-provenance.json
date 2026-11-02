@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "projectId": "world-patch-orbital-refinement",
+  "mode": "Local Codex",
+  "firstAttempt": {
+    "runId": "228c7a83-b2c2-48ff-9182-f497cd20c141",
+    "productionRunId": "8bc88dd0-d0cd-4f35-96f4-74b3bd9e98ed",
+    "workflowId": "9f2c2695-76f9-46d6-870e-44e7e50e6de0",
+    "requestId": "ab3f38b7-9ec1-41cf-a1a9-4caa6682a5b4",
+    "status": "failed",
+    "error": "Run interrupted because the daemon restarted.",
+    "artifactCount": 0
+  },
+  "laterBrief": {
+    "workflowId": "fcd15938-c365-4480-964e-1b6df13944e1",
+    "briefState": "skipped",
+    "status": "No start_run dispatched; existing recovery found active"
+  },
+  "recoveryObserved": {
+    "runId": "c51bead7-1602-400f-8ad2-940ff91cb43f",
+    "status": "canceled",
+    "workflowId": "e3ac8bef-fbaf-4eea-b0f4-4ad1a930a2a5",
+    "requestId": "d90df638-48fb-4be3-bba7-ec31a8a1617e",
+    "source": "Existing active recovery discovered through project inventory and read directly; no duplicate start dispatched by this continuation",
+    "studioUrl": "http://127.0.0.1:58947/projects/world-patch-orbital-refinement/conversations/d404876f-61af-4ba2-bdb4-365fe7566fed",
+    "productionRunId": "cb1f95aa-8938-4044-9bce-a90216d016bd"
+  },
+  "scope": "Frontend design brief only; no credentials, private environment, database, or real chat identities supplied",
+  "sourceOfRecovery": "Main build chat independently continued the landing refinement. This secondary chat did not dispatch that recovery.",
+  "chamberIntegration": "Recovered generated source in evidence/open-design-chamber; see open-design-chamber-provenance.json. First workflow remains failed, not successful terminal delivery."
+}

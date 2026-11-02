@@ -1,0 +1,65 @@
+{
+  "project": "WORLD//PATCH",
+  "mainSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "viewerKind": "Local evidence viewer, not a recording of the native Codex interface",
+  "recordedBuild": {
+    "sourceFile": "src/server/app.ts",
+    "recordedSourceLines": [
+      68,
+      76
+    ],
+    "tool": "functions.exec \u2192 tools.apply_patch",
+    "callId": "call_8a269bc0bd72434280f046ddaccba24f",
+    "at": "2026-10-28T03:28:38.143Z",
+    "recordLine": 315,
+    "recordInputSHA256": "c91b2af75c59a3b4079d1ebf6997d264890a1ee62cae8c946027b346d493b4e5",
+    "excerptSHA256": "ff8396d11b32811b33c443e774786ab722f0642a3426c71059235ccef525c8f7",
+    "excerpt": "  const twitch=createTwitch(config.twitch,{\n    onChat(event){\n      try { room.ingest({origin:'twitch',actorId:pseudonym('twitch',event.userId),eventId:event.eventId,messageId:event.messageId,text:event.text,receivedAt:event.receivedAt}); }\n      catch { room.sourceUnavailable('Chat ingestion failed; open a new round after recovery.'); }\n      broadcast();\n    },\n    onStatus(){broadcast();},\n    onGap(reason){room.sourceUnavailable(reason);broadcast();},\n  });\n",
+    "completionAt": "2026-10-28T03:28:40.434Z",
+    "completionLine": 319,
+    "completionSummary": "Script completed",
+    "completionRecordSHA256": "e5448ada07a383b508db2b086678c6cff7c996c030bd187944a1c55cd62fe782",
+    "qualification": "Exact excerpt from the initial recorded source-writing call. Later hardening remains in the current project. This record is not claimed to be the creation of engine.ts."
+  },
+  "currentEngine": {
+    "sourceFile": "src/shared/engine.ts",
+    "sha256": "c246b954ff4b13f739f7fd0939ceff1bc6a61ee8fd49c9a5d6336f6905324a59",
+    "engineVersion": "world-patch/1.0.0",
+    "transition": "export function transition(chamber: Chamber, state: GameState, direction: Direction): GameState {\n  return transitionDetailed(chamber, state, direction).state;\n}",
+    "solver": "  while (cursor < nodes.length) {\n    if (explored >= maxNodes || now() - started >= maxMs) return { status: 'incomplete', witness: [], explored };\n    const parent = cursor++;\n    const node = nodes[parent]!;\n    explored++;\n    for (const action of DIRECTIONS) {\n      const state = transition(chamber, node.state, action);\n",
+    "replayWitness": "export function replayWitness(chamber: Chamber, initial: GameState, witness: readonly Direction[]): GameState {\n  assertState(chamber, initial);\n  return witness.reduce((state, direction) => transition(chamber, state, direction), cloneState(initial));\n}",
+    "qualification": "Current-source excerpts; not presented as historical main-chat edit records. Solver excerpt is partial."
+  },
+  "executedVerification": {
+    "recordedAt": "2026-11-02T06:54:17Z",
+    "unitPassed": 114,
+    "unitFailed": 0,
+    "browserPassed": 22,
+    "browserFailed": 0,
+    "browserSkipped": 0,
+    "browserFlaky": 0,
+    "browserSeconds": 78.67,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "productionBuild": "PASS",
+    "sourceDigest": "093c3c4a81678498c8017a18e3752341c998d9367d1b5adb59923d406d519547",
+    "fingerprintedFiles": 45,
+    "sourceDrift": [],
+    "fingerprintMethod": "SHA-256 of sorted compact JSON project-file manifest from release-final-checks.json, excluding node_modules; current files compared with report hashes at viewer refresh.",
+    "reports": [
+      {
+        "path": "evidence/release-final-checks.json",
+        "sha256": "327303da663273f774f340d0a0a74e95a1462ad0c64f7ad14218d0d83b11dbd5"
+      },
+      {
+        "path": "evidence/release-final-unit.json",
+        "sha256": "7dbc7ce5cb9396fe2edd99d5f31b7df69c51e9183f3f1567f072ac71921d6473"
+      },
+      {
+        "path": "evidence/release-final-browser.json",
+        "sha256": "b58f1e091e065dd60f2a60f16188f006417d94b46d422a5e374f6e173567a842"
+      }
+    ],
+    "qualification": "Local engine/server/provider-fixture tests and production-browser journeys. Twitch was disabled in this suite; it is not live Twitch, OBS, broadcast or public-delivery proof."
+  }
+}

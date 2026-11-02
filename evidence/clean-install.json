@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-28T07:35:25.755Z",
+  "node": "v22.14.0",
+  "npm": "11.20.0",
+  "isolatedDirectory": "work/cold-install",
+  "commands": [
+    "npm ci --no-fund",
+    "native better-sqlite3 in-memory query",
+    "npm run build",
+    "npm run smoke:production"
+  ],
+  "status": "PASS",
+  "lockfile": "world-patch",
+  "scope": "Fresh dependency directory; local build and restart; no hosted deployment"
+}

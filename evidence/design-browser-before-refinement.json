@@ -1,0 +1,559 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.12.0/bin/node",
+      "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/node_modules/.bin/playwright",
+      "test",
+      "--grep-invert",
+      "presentation fixture"
+    ],
+    "configFile": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/playwright.config.ts",
+    "rootDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "snapshotDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://localhost:3107",
+          "browserName": "chromium",
+          "channel": "chromium",
+          "headless": true,
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node dist/server/index.js",
+      "url": "http://localhost:3107/api/health",
+      "reuseExistingServer": false,
+      "timeout": 30000,
+      "env": {
+        "HOST_SECRET": "browser-test-secret-not-for-deployment-1234",
+        "PUBLIC_ORIGIN": "http://localhost:3107",
+        "HOST": "127.0.0.1",
+        "PORT": "3107",
+        "DATA_DIR": "[TEMPORARY_SYNTHETIC_TEST_DIRECTORY]",
+        "TWITCH_CLIENT_ID": "",
+        "TWITCH_CLIENT_SECRET": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "connectivity.spec.ts",
+      "file": "connectivity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mobile shows a local room outage and recovers committed state after socket reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34356,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:51:06.273Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a8002dae86002832b555-a449aa1c5df3661d8e10",
+          "file": "connectivity.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "journey.spec.ts",
+      "file": "journey.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "real browser: rejected lockout, proposal, ballot, merge and replay remain correct during updates",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 50298,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:51:49.671Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/journey-real-browser-rejec-0688b-main-correct-during-updates/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/journey-real-browser-rejec-0688b-main-correct-during-updates/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-63bccf584dbbb0f02239",
+          "file": "journey.spec.ts",
+          "line": 47,
+          "column": 1
+        },
+        {
+          "title": "keyboard is scoped to board, mobile fits, and reduced motion uses manual witness steps",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 42021,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:53:29.525Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-790eab8e7f7cdf180025",
+          "file": "journey.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "overlay stays read-only, follows chamber changes and recovers latest snapshot after reload",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 51786,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/journey.spec.ts",
+                        "column": 60,
+                        "line": 155
+                      },
+                      "message": "Error: locator.click: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Open patch round' })\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"primary\">\u2026</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\n\n  153 |   await expect(overlay.getByRole('heading',{name:'Crosswire',exact:true})).toBeVisible();\n  154 |   await overlay.reload();await expect(overlay.getByRole('heading',{name:'Crosswire',exact:true})).toBeVisible();\n> 155 |   await page.getByRole('button',{name:'Open patch round'}).click();\n      |                                                            ^\n  156 |   await command(page,'portal-maker','!patch portals crossed');\n  157 |   await page.getByRole('button',{name:'Close proposals \u2192 vote'}).click();await command(page,'portal-voter','!vote 1');\n  158 |   await overlay.screenshot({path:resolve(artifacts,'obs-overlay-1080p.png')});\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/journey.spec.ts:155:60"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:54:32.441Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/journey-overlay-stays-read-3a1b3-atest-snapshot-after-reload/test-failed-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/journey-overlay-stays-read-3a1b3-atest-snapshot-after-reload/test-failed-2.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/journey-overlay-stays-read-3a1b3-atest-snapshot-after-reload/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-b024a28a41484206baf9",
+          "file": "journey.spec.ts",
+          "line": 142,
+          "column": 1
+        },
+        {
+          "title": "empty audiences, pause, cancel, login errors and keyboard focus expose usable states",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19209,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:56:18.259Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-0c71ff634d339f2c87f9",
+          "file": "journey.spec.ts",
+          "line": 178,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "landing.spec.ts",
+      "file": "landing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "landing: actual local law verification, rejection, witness steps, reset and controller entry",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 19251,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lp-hero-actions .lp-button')\nExpected: in viewport\nReceived: viewport ratio 0.009314903989434242\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" locator('.lp-hero-actions .lp-button') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lp-hero-actions .lp-button')\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <a href=\"/play\" class=\"lp-button lp-button-primary\">\u2026</a>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0.009314903989434242\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lp-hero-actions .lp-button')\nExpected: in viewport\nReceived: viewport ratio 0.009314903989434242\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" locator('.lp-hero-actions .lp-button') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lp-hero-actions .lp-button')\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <a href=\"/play\" class=\"lp-button lp-button-primary\">\u2026</a>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0.009314903989434242\"\u001b[22m\n\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts:16:63",
+                    "location": {
+                      "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts",
+                      "column": 63,
+                      "line": 16
+                    },
+                    "snippet": "  14 |   for(const viewport of [{width:1440,height:900},{width:1280,height:720}]){\n  15 |     await page.setViewportSize(viewport);\n> 16 |     await expect(page.locator('.lp-hero-actions .lp-button')).toBeInViewport({ratio:1});\n     |                                                               ^\n  17 |     await expect(page.getByRole('button',{name:'Close wall A'})).toBeInViewport({ratio:1});\n  18 |     await expect(page.getByRole('button',{name:'Pull gravity down'})).toBeInViewport({ratio:1});\n  19 |   }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts",
+                        "column": 63,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.lp-hero-actions .lp-button')\nExpected: in viewport\nReceived: viewport ratio 0.009314903989434242\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" locator('.lp-hero-actions .lp-button') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.lp-hero-actions .lp-button')\u001b[22m\n\u001b[2m    19 \u00d7 locator resolved to <a href=\"/play\" class=\"lp-button lp-button-primary\">\u2026</a>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0.009314903989434242\"\u001b[22m\n\n\n  14 |   for(const viewport of [{width:1440,height:900},{width:1280,height:720}]){\n  15 |     await page.setViewportSize(viewport);\n> 16 |     await expect(page.locator('.lp-hero-actions .lp-button')).toBeInViewport({ratio:1});\n     |                                                               ^\n  17 |     await expect(page.getByRole('button',{name:'Close wall A'})).toBeInViewport({ratio:1});\n  18 |     await expect(page.getByRole('button',{name:'Pull gravity down'})).toBeInViewport({ratio:1});\n  19 |   }\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts:16:63"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:56:45.601Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/landing-landing-actual-loc-1f837--reset-and-controller-entry/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/landing-landing-actual-loc-1f837--reset-and-controller-entry/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts",
+                    "column": 63,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4e5b49d369fd48ca0656-73c42f122f4f62a2efbe",
+          "file": "landing.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "landing: keyboard path, mobile fit, law disclosure and reduced-motion sandbox",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 98745,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts",
+                        "column": 75,
+                        "line": 57
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('region', { name: 'Try to break the world.' })\nExpected: focused\nError: Test timeout of 45000ms exceeded.\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('region', { name: 'Try to break the world.' }) with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('region', { name: 'Try to break the world.' })\u001b[22m\n\u001b[2m  - Test timeout of 45000ms exceeded.\u001b[22m\n\n\n  55 |   await expect(page.getByRole('link',{name:'Skip to the interactive sandbox'})).toBeFocused();\n  56 |   await page.keyboard.press('Enter');\n> 57 |   await expect(page.getByRole('region',{name:'Try to break the world.'})).toBeFocused();\n     |                                                                           ^\n  58 |   await page.keyboard.press('Tab');\n  59 |   await expect(page.getByRole('button',{name:'Close wall A'})).toBeFocused();\n  60 |   await page.keyboard.press('Enter');\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts:57:75"
+                    },
+                    {
+                      "message": "\u001b[31mTearing down \"context\" exceeded the test timeout of 45000ms.\u001b[39m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:57:18.089Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/landing-landing-keyboard-p-cabdd--and-reduced-motion-sandbox/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4e5b49d369fd48ca0656-0380e8afaa8450a31158",
+          "file": "landing.spec.ts",
+          "line": 50,
+          "column": 1
+        },
+        {
+          "title": "landing: OAuth result URLs retain controller entry and clear the result query",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T13:00:16.372Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4e5b49d369fd48ca0656-f5fd3c40d37726238e35",
+          "file": "landing.spec.ts",
+          "line": 83,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T12:50:56.659Z",
+    "duration": 635192.753,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  },
+  "environmentRedaction": "Inherited process environment omitted; explicit synthetic fixture values retained. Test results and timestamps unchanged.",
+  "releaseSanitization": [
+    {
+      "at": "2026-11-02T06:49:01.472348+00:00",
+      "reason": "Historical browser reports must not retain inherited process environment. Only explicit non-secret synthetic test configuration remains. Test results/timings/outcomes were not altered.",
+      "changes": [
+        {
+          "jsonPath": "config.webServer.env",
+          "removedKeys": [],
+          "redactedTemporaryPaths": [
+            "DATA_DIR"
+          ],
+          "retainedNonsecretTestKeys": [
+            "DATA_DIR",
+            "HOST",
+            "HOST_SECRET",
+            "PORT",
+            "PUBLIC_ORIGIN",
+            "TWITCH_CLIENT_ID",
+            "TWITCH_CLIENT_SECRET"
+          ]
+        }
+      ],
+      "matchedValuesPrinted": false
+    }
+  ]
+}

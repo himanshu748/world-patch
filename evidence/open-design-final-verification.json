@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-30T06:34:06.631876+00:00",
+  "status": "PASS_LOCAL",
+  "scope": "Generated landing stylesheet integration and controller focus repair in the existing product",
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "productionBuild": "PASS",
+  "browserReport": "evidence/design-browser-oct30-final.json",
+  "browser": {
+    "startTime": "2026-10-30T06:30:38.274Z",
+    "duration": 58641.006,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "beforeRepair": {
+    "report": "evidence/design-browser-oct30-before-focus-fix.json",
+    "passed": 8,
+    "failed": 1,
+    "failure": "Round action focus restoration could run before the pending controls were enabled."
+  },
+  "repair": "Restore round-control focus after the React commit; preserve a field the user focused while the response was pending. Regression holds the real HTTP response while WebSocket state arrives.",
+  "protectedSourceUnchanged": [
+    {
+      "path": "src/server/app.ts",
+      "sha256": "e4c058056ead5ee04a03661ee499f5a7de7c80d362b747fab7cd65e5beb2276b",
+      "bytes": 13174
+    },
+    {
+      "path": "src/server/index.ts",
+      "sha256": "a0c76b58395d276ef5a50d68eb2ea0160f65a56da2ef1f279b9c196ce4e96131",
+      "bytes": 1045
+    },
+    {
+      "path": "src/server/replay.ts",
+      "sha256": "2c7e881f6aafdb934a8e5660cb3e7b135b5591e6fd683f8441de109b4545fe69",
+      "bytes": 7468
+    },
+    {
+      "path": "src/server/room.ts",
+      "sha256": "17e1bef972581a86ef3432f6f4a494f7b47b53325620c8bb71683cbd74914e9a",
+      "bytes": 25985
+    },
+    {
+      "path": "src/server/storage.ts",
+      "sha256": "59a896539c28388ef88e6d0ea32e4525009140468e80412613d308f5c50bc77f",
+      "bytes": 3965
+    },
+    {
+      "path": "src/server/twitch.ts",
+      "sha256": "6406c062288a588cca0611a27a1ad2a768ebea349b012030e5408c24c89637a8",
+      "bytes": 23876
+    },
+    {
+      "path": "src/shared/chambers.ts",
+      "sha256": "441e24ecaec82dd21f82a5e4ace10a06dc0a07a29d328c83f621d30d13fd5634",
+      "bytes": 2817
+    },
+    {
+      "path": "src/shared/commands.ts",
+      "sha256": "5f7a584ecc2e78386a2ec67b8ffcc89faa621df3dafd8863a4b581a69440b00c",
+      "bytes": 2097
+    },
+    {
+      "path": "src/shared/engine.ts",
+      "sha256": "c246b954ff4b13f739f7fd0939ceff1bc6a61ee8fd49c9a5d6336f6905324a59",
+      "bytes": 12140
+    },
+    {
+      "path": "src/shared/protocol.ts",
+      "sha256": "69ae4a76a430655efcc0d46da76aa9dcaf08a8021354126e9efa7014aa1540fc",
+      "bytes": 3342
+    }
+  ],
+  "protectedComparisonManifestDigest": "cef9f3d7e7b42e1b0f4f5ffb3d1d47907d0b49dd1f6237db02ca0a01590cc593",
+  "unitTests": "Prior 110/110 report retained in evidence/design-unit-tests.json. Not rerun for frontend-only changes; shared/server hashes verified unchanged.",
+  "viewports": {
+    "desktop": [
+      [
+        1440,
+        900
+      ],
+      [
+        1280,
+        720
+      ]
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "journeys": [
+    "Shared-engine accepted wall law retains a replay-checked 24-move route",
+    "Rejected gravity law leaves checkpoint, position and checked route unchanged",
+    "Manual stepping reaches keyed exit; reset restores original 18-move route",
+    "Sandbox leaves real room game/revision unchanged",
+    "Desktop first-view CTA and law controls, mobile overflow and 44px targets",
+    "Keyboard skip, phase focus, user-chosen input focus and reduced-motion stepping",
+    "Controller, read-only overlay, local reconnect and local OAuth-result routing",
+    "Eight-choice 1080p/720p layout fixture remains explicitly synthetic"
+  ],
+  "generationProvenance": "evidence/open-design-final-provenance.json",
+  "renderInspection": [
+    "Desktop hero screenshot inspected",
+    "Current in-app mobile preview inspected; accepted/rejected/reset exercised"
+  ],
+  "studioWebAvailability": "Exact returned Studio URL timed out on final browser opening and local HTTP check; design tool and artifact retrieval succeeded. Saved originals remain available.",
+  "localPreview": "http://localhost:3119/",
+  "liveTwitch": "BLOCKED_NO_ACCOUNT",
+  "deployed": false,
+  "published": false,
+  "commitPush": "None performed"
+}

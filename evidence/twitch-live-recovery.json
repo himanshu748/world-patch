@@ -1,0 +1,103 @@
+{
+  "at": "2026-10-30T16:08:30.911Z",
+  "status": "PASS_ACTUAL_COLD_RECONNECT",
+  "method": "Controlled 35-second SIGSTOP/SIGCONT of only the verified owned project Node listener; real Twitch adapter, native WebSocket and HTTPS subscription transport, no injected provider events",
+  "pauseMs": 35000,
+  "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "observer": "Independent read-only local WebSocket client",
+  "before": {
+    "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+    "phase": "revealed",
+    "receiptDigest": "e57f1293fe98d8a81c3b9f12488c9326509f6b52ab0813f1fe2db0aa727d47d5",
+    "twitch": {
+      "state": "ready",
+      "received": 0,
+      "channel": "himanshujh"
+    },
+    "tcpTupleDigests": [
+      "16677ecfd9ea2fb57e88da728c617f120decb12e8d4db48ea4a04a8529e5a462"
+    ],
+    "gameComparisonDigest": "405585e109d7ef9c93e4f754d225d01307a338c954534f40a127bff8ea1ca5fd"
+  },
+  "timeline": [
+    {
+      "at": "2026-10-30T16:07:53.956Z",
+      "elapsedMs": 14,
+      "twitch": {
+        "state": "ready",
+        "received": 0,
+        "channel": "himanshujh"
+      },
+      "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+      "phase": "revealed",
+      "gameComparisonDigest": "405585e109d7ef9c93e4f754d225d01307a338c954534f40a127bff8ea1ca5fd"
+    },
+    {
+      "at": "2026-10-30T16:08:28.966Z",
+      "elapsedMs": 35023,
+      "twitch": {
+        "state": "ready",
+        "received": 0,
+        "channel": "himanshujh"
+      },
+      "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+      "phase": "revealed",
+      "gameComparisonDigest": "405585e109d7ef9c93e4f754d225d01307a338c954534f40a127bff8ea1ca5fd"
+    },
+    {
+      "at": "2026-10-30T16:08:28.967Z",
+      "elapsedMs": 35024,
+      "twitch": {
+        "state": "reconnecting",
+        "received": 0,
+        "reason": "keepalive_timeout",
+        "channel": "himanshujh"
+      },
+      "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+      "phase": "revealed",
+      "gameComparisonDigest": "405585e109d7ef9c93e4f754d225d01307a338c954534f40a127bff8ea1ca5fd"
+    },
+    {
+      "at": "2026-10-30T16:08:30.857Z",
+      "elapsedMs": 36914,
+      "twitch": {
+        "state": "ready",
+        "received": 0,
+        "channel": "himanshujh"
+      },
+      "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+      "phase": "revealed",
+      "gameComparisonDigest": "405585e109d7ef9c93e4f754d225d01307a338c954534f40a127bff8ea1ca5fd"
+    }
+  ],
+  "after": {
+    "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+    "phase": "revealed",
+    "receiptDigest": "e57f1293fe98d8a81c3b9f12488c9326509f6b52ab0813f1fe2db0aa727d47d5",
+    "twitch": {
+      "state": "ready",
+      "received": 0,
+      "channel": "himanshujh"
+    },
+    "tcpTupleDigests": [
+      "c0a4e40c614c3cb4d414ce942b8c4cc7f5d4bdf7386bbedfa759da84d8720fd4",
+      "6516d5506caa33bb36d8f119ef5f186e0b3dc674a5c80ce080edadf58918378b"
+    ],
+    "gameComparisonDigest": "405585e109d7ef9c93e4f754d225d01307a338c954534f40a127bff8ea1ca5fd"
+  },
+  "checks": {
+    "realReconnectingStatusObserved": true,
+    "realReadyAfterReconnect": true,
+    "tcpTupleChanged": true,
+    "gameSessionReceiptPhasePreserved": true
+  },
+  "limitations": [
+    "Controlled local process stall, not an observed provider outage",
+    "Does not exercise a provider-requested migration URL",
+    "Revealed session: no active election cancellation claim",
+    "No additional chat messages or broadcast were sent"
+  ],
+  "comparisonHash": "SHA-256 of JSON.stringify(publicSnapshot.game), used only for exact before/after comparison; this is not the engine canonical gameDigest.",
+  "transportEvidence": "SHA-256 connection-tuple digests preserve change comparison without retaining local/remote IP addresses. Ready is emitted only after the real adapter validates a successful202 chat subscription; no raw HTTPS response/token trace was saved.",
+  "review": "Independent QA confirmed this proves controlled cold recovery only; hashes replaced raw network tuples and comparison hashes are explicitly qualified."
+}

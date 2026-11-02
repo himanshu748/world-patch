@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-30T06:04:29.609590+00:00",
+  "mode": "Local Codex",
+  "projectId": "world-patch-orbital-refinement",
+  "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "runId": "b4150033-be3d-441f-9992-5df876a7a9b4",
+  "pluginWorkflowId": "6e11d92e-dea5-4c8e-ab17-ea60cae73866",
+  "terminalStatus": "canceled",
+  "deliverableValid": false,
+  "recovery": "Bounded get_artifact bundle recovered landing.html and landing-refinement.css after cancellation; no successful generation delivery claimed.",
+  "integration": {
+    "runtimeStyle": "src/client/landing-refinement.css",
+    "styleSha256": "0df5d49b6f82dbc16a2d426d7f79bb80538f4aa9f733438790ac2584b4a25f6a",
+    "previewFixture": "evidence/open-design-landing/landing.html",
+    "previewSha256": "f540906a3507555928e5739e98ed1dcbba9d86219757ce47b8db8322ee11be6d",
+    "previewShippedInRuntime": false
+  },
+  "limits": "LANDING-INTEGRATION.md was not produced. The recovered preview is illustrative; actual runtime retains shared engine, solver and Phaser."
+}

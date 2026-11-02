@@ -1,0 +1,255 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.12.0/bin/node",
+      "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/node_modules/.bin/playwright",
+      "test",
+      "--grep",
+      "landing:"
+    ],
+    "configFile": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/playwright.config.ts",
+    "rootDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "snapshotDir": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://localhost:3107",
+          "browserName": "chromium",
+          "channel": "chromium",
+          "headless": true,
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node dist/server/index.js",
+      "url": "http://localhost:3107/api/health",
+      "reuseExistingServer": false,
+      "timeout": 30000,
+      "env": {
+        "HOST_SECRET": "browser-test-secret-not-for-deployment-1234",
+        "PUBLIC_ORIGIN": "http://localhost:3107",
+        "HOST": "127.0.0.1",
+        "PORT": "3107",
+        "DATA_DIR": "[TEMPORARY_SYNTHETIC_TEST_DIRECTORY]",
+        "TWITCH_CLIENT_ID": "",
+        "TWITCH_CLIENT_SECRET": ""
+      }
+    }
+  },
+  "suites": [
+    {
+      "title": "landing.spec.ts",
+      "file": "landing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "landing: actual local law verification, rejection, witness steps, reset and controller entry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:36:56.428Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4e5b49d369fd48ca0656-73c42f122f4f62a2efbe",
+          "file": "landing.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "landing: keyboard path, mobile fit, law disclosure and reduced-motion sandbox",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 47059,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 45000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts",
+                        "column": 48,
+                        "line": 65
+                      },
+                      "message": "Error: locator.click: Test timeout of 45000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Portals', { exact: true })\u001b[22m\n\n\n  63 |     const box=await button.boundingBox();expect(box!.height).toBeGreaterThanOrEqual(44);\n  64 |   }\n> 65 |   await page.getByText('Portals',{exact:true}).click();\n     |                                                ^\n  66 |   await expect(page.getByText('Rewire four endpoints.',{exact:false})).toBeVisible();\n  67 |   expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);\n  68 |   await page.screenshot({path:resolve(screenshots,'marketing-landing-mobile.png'),fullPage:true});\n    at /Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/tests/browser/landing.spec.ts:65:48"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-29T12:37:08.614Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/landing-landing-keyboard-p-cabdd--and-reduced-motion-sandbox/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/himanshujha/Documents/Codex/2026-10-28/world-patch-codex-twitchcon-hackathon-you/outputs/world-patch/test-results/landing-landing-keyboard-p-cabdd--and-reduced-motion-sandbox/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "4e5b49d369fd48ca0656-0380e8afaa8450a31158",
+          "file": "landing.spec.ts",
+          "line": 43,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-29T12:36:51.094Z",
+    "duration": 65987.102,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "environmentRedaction": "Inherited process environment omitted; explicit synthetic fixture values retained. Test results and timestamps unchanged.",
+  "releaseSanitization": [
+    {
+      "at": "2026-11-02T06:49:01.472348+00:00",
+      "reason": "Historical browser reports must not retain inherited process environment. Only explicit non-secret synthetic test configuration remains. Test results/timings/outcomes were not altered.",
+      "changes": [
+        {
+          "jsonPath": "config.webServer.env",
+          "removedKeys": [],
+          "redactedTemporaryPaths": [
+            "DATA_DIR"
+          ],
+          "retainedNonsecretTestKeys": [
+            "DATA_DIR",
+            "HOST",
+            "HOST_SECRET",
+            "PORT",
+            "PUBLIC_ORIGIN",
+            "TWITCH_CLIENT_ID",
+            "TWITCH_CLIENT_SECRET"
+          ]
+        }
+      ],
+      "matchedValuesPrinted": false
+    }
+  ]
+}

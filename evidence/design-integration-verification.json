@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-29",
+  "status": "PASS_LOCAL",
+  "checks": {
+    "design-browser-tests.json": {
+      "startTime": "2026-10-29T13:12:10.840Z",
+      "duration": 91939.14099999999,
+      "expected": 9,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "design-landing-final-tests.json": {
+      "startTime": "2026-10-29T13:20:21.522Z",
+      "duration": 11739.557,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "design-layout-final-tests.json": {
+      "startTime": "2026-10-29T13:18:08.328Z",
+      "duration": 5008.5070000000005,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "unit": {
+      "numTotalTests": 110,
+      "numPassedTests": 110,
+      "numFailedTests": 0,
+      "success": true
+    }
+  },
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "productionBuild": "PASS",
+  "noNewDependencies": true,
+  "localPreview": "http://localhost:3119",
+  "publicLanding": "/",
+  "controller": "/play",
+  "spectator": "/overlay",
+  "initialGenerationStatus": "FAILED after local service restart; generated chamber files recovered and styling integrated",
+  "generationEvidence": "evidence/open-design-chamber-provenance.json",
+  "unverified": [
+    "Live Twitch OAuth/chat/reconnect",
+    "Actual OBS/livestream",
+    "Public hosting/repository/video",
+    "Eligibility and Devpost submission",
+    "Human usability and entertainment",
+    "Production/audience-scale performance"
+  ]
+}

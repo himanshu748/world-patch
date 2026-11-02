@@ -1,0 +1,146 @@
+/* WORLD//PATCH — portable landing enhancement.
+   Load AFTER landing.css. Move .lp-law-choices immediately before
+   .lp-chamber-window in JSX. Keep all engine handlers and Board props. */
+.landing-page {
+  --lp-bg: #090c12; --lp-panel: #111722; --lp-raised: #1a2330;
+  --lp-line: #334050; --lp-ink: #f3f0e7; --lp-muted: #aab4c4;
+  --lp-amber: #ffc857; --lp-cyan: #76e4f7; --lp-violet: #bc9cff;
+  --lp-green: #b2f199; --lp-error: #ff8f89;
+  --lp-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --lp-fast: 120ms; --lp-state: 220ms; --lp-ease: cubic-bezier(.2,0,0,1);
+  max-width: 1600px; padding-inline: clamp(20px, 4vw, 56px);
+  background: var(--lp-bg); color: var(--lp-ink); font-family: var(--lp-sans);
+}
+.landing-page *, .landing-page *::before, .landing-page *::after { box-sizing: border-box; }
+.landing-page :is(a,button,summary):focus-visible, .landing-page #sandbox:focus-visible {
+  outline: 3px solid var(--lp-amber); outline-offset: 4px;
+}
+.landing-page :is(button,summary,.lp-button,.lp-text-action) { min-height: 44px; }
+.landing-page .lp-header { height: 72px; gap: 24px; border-color: var(--lp-line); }
+.landing-page .lp-wordmark { font-family: var(--mono); }
+.landing-page .lp-header nav { gap: 24px; font-size: 14px; }
+.landing-page .lp-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+  align-items: start; gap: clamp(32px, 4vw, 64px); padding: 32px 0 64px;
+}
+.landing-page .lp-hero-copy { min-width: 0; padding-top: 8px; }
+.landing-page .lp-hero-copy > .lp-kicker { font-size: 12px; letter-spacing: .06em; color: var(--lp-muted); }
+.landing-page .lp-hero h1 {
+  font-family: var(--lp-sans); font-size: clamp(52px, 4.8vw, 72px);
+  line-height: 1.02; font-weight: 600; letter-spacing: -.065em; margin: 20px 0 24px;
+}
+.landing-page .lp-hero h1 em { color: var(--lp-amber); font-style: normal; }
+.landing-page .lp-introduction { max-width: 40ch; font-size: 16px; line-height: 1.65; color: var(--lp-muted); }
+.landing-page .lp-hero-actions { margin-top: 24px; gap: 16px 24px; align-items: center; }
+.landing-page .lp-button { min-height: 48px; padding: 12px 20px; gap: 24px; font-size: 15px; border-radius: 5px; }
+.landing-page .lp-button-primary { color: var(--lp-bg) !important; background: var(--lp-amber); }
+.landing-page .lp-text-action { font-size: 14px; color: var(--lp-ink) !important; }
+.landing-page .lp-availability { max-width: 44ch; margin-top: 12px; font-size: 13px; line-height: 1.6; color: var(--lp-muted); }
+.landing-page .lp-hero-footnote { margin-top: 32px; gap: 16px; }
+.landing-page .lp-hero-footnote p { color: var(--lp-muted); font-size: 14px; }
+.landing-page .lp-sandbox { background: var(--lp-panel); border-color: var(--lp-line); border-radius: 6px; box-shadow: 8px 8px 0 -7px var(--lp-bg), 8px 8px 0 -6px var(--lp-line); scroll-margin-top: 16px; }
+.landing-page .lp-sandbox-top { padding: 12px 16px; font: 12px/1.4 var(--mono); letter-spacing: .04em; border-color: var(--lp-line); }
+.landing-page .lp-sandbox-index { color: var(--lp-muted); }
+.landing-page .lp-sandbox-heading { padding: 16px; align-items: center; }
+.landing-page .lp-sandbox-heading .lp-kicker { font-size: 11px; line-height: 1.5; color: var(--lp-muted); }
+.landing-page .lp-sandbox-heading h2 { margin-top: 4px; font-size: 24px; line-height: 1.2; font-weight: 550; }
+.landing-page .lp-law-choices { padding: 0 16px; gap: 8px; margin: 0 0 12px; }
+.landing-page .lp-law-choice { min-width: 0; padding: 12px; gap: 8px; border: 1px solid var(--lp-line); border-radius: 5px; background: var(--lp-raised); color: var(--lp-ink); transition: transform var(--lp-fast) var(--lp-ease); }
+.landing-page .lp-law-choice > span { font-size: 15px; line-height: 1.4; padding-right: 16px; }
+.landing-page .lp-law-choice code { font-size: 11px; line-height: 1.5; color: var(--lp-muted); overflow-wrap: anywhere; white-space: normal; }
+.landing-page .lp-law-choice > svg { width: 16px; height: 16px; top: 14px; right: 12px; color: var(--lp-amber); }
+.landing-page .lp-law-choice:disabled { opacity: .65; cursor: not-allowed; }
+.landing-page .lp-chamber-window { margin-inline: 16px; border-color: var(--lp-line); }
+.landing-page .lp-window-meta, .landing-page .lp-window-status { padding: 8px 12px; font: 11px/1.4 var(--mono); color: var(--lp-muted); flex-wrap: wrap; border-color: var(--lp-line); }
+.landing-page .lp-window-status > span:last-child { font-size: 11px; color: var(--lp-muted); }
+.landing-page .lp-sandbox-board { width: 100%; max-width: 400px; margin-inline: auto; padding: 0; }
+/* Board/Scale Manager retains its intrinsic ratio and canvas resolution. */
+.landing-page .lp-sandbox .phaser-mount { max-height: none; min-width: 0; }
+.landing-page .lp-sandbox-laws { padding: 12px 16px; gap: 8px; font: 11px/1.5 var(--mono); color: var(--lp-muted); border-color: var(--lp-line); }
+.landing-page .lp-sandbox-laws > span { gap: 8px; }
+.landing-page .lp-sandbox-laws strong { font: 500 13px/1.5 var(--mono); color: var(--lp-ink); }
+.landing-page .lp-sandbox-verdict { padding: 16px; min-height: 88px; gap: 12px; }
+.landing-page .lp-sandbox-verdict strong { font-size: 15px; line-height: 1.5; }
+.landing-page .lp-sandbox-verdict p { font-size: 13px; line-height: 1.6; color: var(--lp-muted); }
+.landing-page .lp-verdict-accepted strong, .landing-page .lp-verdict-accepted .lp-verdict-icon { color: var(--lp-green); }
+.landing-page .lp-verdict-rejected strong, .landing-page .lp-verdict-rejected .lp-verdict-icon, .landing-page .lp-verdict-incomplete strong { color: var(--lp-error); }
+.landing-page .lp-witness-row { padding: 12px 16px; gap: 12px; flex-wrap: wrap; border-color: var(--lp-line); }
+.landing-page .lp-witness-label { font: 11px/1.5 var(--mono); color: var(--lp-muted); }
+.landing-page .lp-sandbox-counter { font-size: 22px; color: var(--lp-cyan); }
+.landing-page .lp-sandbox-counter > span { font-size: 12px; color: var(--lp-muted); }
+.landing-page .lp-witness-actions { gap: 8px; flex-wrap: wrap; }
+.landing-page .lp-witness-actions button { min-height: 44px; padding: 8px 12px; font-size: 12px; }
+.landing-page .lp-witness-actions .lp-reset { min-width: 44px; font-size: 22px; }
+.landing-page .lp-sandbox-disclosure { padding: 12px 16px; font-size: 12px; line-height: 1.65; color: var(--lp-muted); border-color: var(--lp-line); }
+.landing-page .lp-loop, .landing-page .lp-chambers { padding-block: 48px; }
+.landing-page .lp-section-heading h2, .landing-page .lp-laws-section h2 { font-size: clamp(30px, 3vw, 44px); }
+.landing-page .lp-section-heading > .lp-kicker { margin-bottom: 16px; }
+.landing-page .lp-section-heading > p:last-child, .landing-page .lp-loop-steps p, .landing-page .lp-chamber-cards p, .landing-page .lp-laws-section > div:first-child > p:last-child, .landing-page .lp-law-details details > p { font-size: 15px; line-height: 1.7; color: var(--lp-muted); }
+.landing-page .lp-loop-steps { margin-top: 32px; }
+.landing-page .lp-chamber-cards { margin-top: 32px; }
+.landing-page .lp-law-details details > code { font-size: 12px; }
+.landing-page .lp-final-cta > p:not(.lp-kicker) { font-size: 13px; color: var(--lp-muted); }
+.landing-page .lp-spectator-link { font-size: 13px; }
+.landing-page .lp-nav-cta svg, .landing-page .lp-button svg, .landing-page .lp-law-choice > svg { transition: transform var(--lp-fast) var(--lp-ease); }
+.landing-page .lp-state-cue { animation: lp-refinement-state var(--lp-state) var(--lp-ease) both; }
+@keyframes lp-refinement-state { from { opacity: .35; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@media (hover: hover) {
+  .landing-page .lp-law-choice:hover:not(:disabled) { background: #243040; border-color: var(--lp-amber); color: var(--lp-ink); }
+  .landing-page .lp-button-primary:hover { background: #ffda8b; color: var(--lp-bg) !important; }
+}
+@media (min-width: 851px) and (max-height: 800px) {
+  .landing-page .lp-header { height: 64px; }
+  .landing-page .lp-hero { padding-top: 24px; gap: 40px; }
+  .landing-page .lp-hero h1 { font-size: clamp(52px, 4.4vw, 64px); margin-block: 16px 20px; }
+  .landing-page .lp-hero-footnote { margin-top: 24px; }
+  .landing-page .lp-sandbox-top { padding-block: 8px; }
+  .landing-page .lp-sandbox-heading { padding-block: 12px; }
+  .landing-page .lp-sandbox-heading h2 { font-size: 22px; }
+  .landing-page .lp-law-choice { padding-block: 8px; gap: 4px; }
+  .landing-page .lp-sandbox-board { max-width: 320px; }
+  .landing-page .lp-window-meta, .landing-page .lp-window-status { padding-block: 4px; }
+  .landing-page .lp-sandbox-laws { padding-block: 8px; }
+}
+@media (max-width: 850px) {
+  .landing-page .lp-header { height: auto; min-height: 72px; gap: 16px; }
+  .landing-page .lp-hero { grid-template-columns: minmax(0,1fr); gap: 32px; padding-top: 24px; }
+  .landing-page .lp-hero-copy { display: block; padding-top: 0; }
+  .landing-page .lp-hero h1 { font-size: clamp(48px, 8vw, 64px); margin: 16px 0 24px; }
+  .landing-page .lp-introduction { margin-top: 0; max-width: 50ch; }
+  .landing-page .lp-hero-actions { margin-top: 24px; gap: 16px; }
+  .landing-page .lp-availability { font-size: 13px; }
+  .landing-page .lp-sandbox { max-width: 620px; }
+  .landing-page .lp-hero-footnote { display: flex; }
+  .landing-page .lp-header nav > a:not(.lp-nav-cta) { display: none; }
+}
+@media (max-width: 600px) {
+  .landing-page { padding-inline: 20px; }
+  .landing-page .lp-header .lp-nav-cta { font-size: 12px; min-height: 44px; padding: 8px 10px; gap: 8px; }
+  .landing-page .lp-wordmark { font-size: 18px; }
+  .landing-page .lp-hero h1 { font-size: clamp(44px, 12vw, 62px); line-height: 1.04; }
+  .landing-page .lp-hero-copy > .lp-kicker { font-size: 11px; }
+  .landing-page .lp-introduction { font-size: 16px; }
+  .landing-page .lp-hero-footnote { margin-top: 24px; }
+  .landing-page .lp-sandbox-top { font-size: 10px; }
+  .landing-page .lp-sandbox-heading .lp-kicker { font-size: 10px; }
+  .landing-page .lp-sandbox-heading h2 { font-size: 22px; }
+  .landing-page .lp-law-choices { padding-inline: 12px; }
+  .landing-page .lp-law-choice { padding: 10px; }
+  .landing-page .lp-law-choice > span { font-size: 14px; padding-right: 0; }
+  .landing-page .lp-law-choice code { font-size: 11px; }
+  .landing-page .lp-law-choice > svg { display: none; }
+  .landing-page .lp-chamber-window { margin-inline: 12px; }
+  .landing-page .lp-sandbox-laws > span { display: block; }
+  .landing-page .lp-sandbox-laws strong { display: block; margin-top: 4px; }
+  .landing-page .lp-loop-steps h3 { font-size: 22px; }
+  .landing-page .lp-chamber-cards > article { grid-template-columns: 1fr; }
+  .landing-page .lp-mini-map { grid-column: 1; grid-row: auto; max-width: 240px; margin-block: 24px; }
+  .landing-page .lp-chamber-cards h3 { margin-top: 0; }
+  .landing-page .lp-chamber-cards p { font-size: 15px; max-width: none; }
+  .landing-page .lp-final-cta h2 { font-size: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-page *, .landing-page *::before, .landing-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .landing-page .lp-button:hover svg, .landing-page .lp-nav-cta:hover svg, .landing-page .lp-law-choice:hover:not(:disabled) > svg, .landing-page button:active:not(:disabled) { transform: none; }
+}

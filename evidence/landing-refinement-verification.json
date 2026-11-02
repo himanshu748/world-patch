@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-30T06:04:29.609590+00:00",
+  "status": "PASS_LOCAL",
+  "scope": "Interactive marketing landing and retained controller/overlay; no external provider proof",
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "productionBuild": "PASS",
+  "browserFullRun": {
+    "command": "npm run test:browser",
+    "passed": 9,
+    "failed": 0,
+    "exitCode": 0,
+    "durationSeconds": 57.4,
+    "evidenceKind": "Recorded from executed command output in main Codex session, command session 41971"
+  },
+  "browserAfterFinalCopyEdit": {
+    "command": "npm run build && npm run test:browser -- tests/browser/landing.spec.ts",
+    "report": "evidence/landing-refinement-final-tests.json",
+    "passed": 3,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "unitEngineServer": "Prior 110-test passing report retained in evidence/design-unit-tests.json; protected source hashes unchanged",
+  "protectedSourceUnchanged": [
+    "src/server/app.ts",
+    "src/server/index.ts",
+    "src/server/replay.ts",
+    "src/server/room.ts",
+    "src/server/storage.ts",
+    "src/server/twitch.ts",
+    "src/shared/chambers.ts",
+    "src/shared/commands.ts",
+    "src/shared/engine.ts",
+    "src/shared/protocol.ts"
+  ],
+  "desktop": [
+    [
+      1440,
+      900
+    ],
+    [
+      1280,
+      720
+    ]
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "checks": [
+    "CTA and both law controls fully inside initial desktop viewport",
+    "Close wall A keeps verified 24-move witness",
+    "Gravity down rejected without checkpoint/player mutation",
+    "Witness steps collect key and reach exit; reset restores 18-move original",
+    "Sandbox leaves server room state/revision unchanged",
+    "Keyboard skip/Tab/Enter and reduced motion",
+    "44px sandbox targets and no mobile horizontal overflow",
+    "Landing-to-play and read-only overlay navigation",
+    "Local OAuth-result routes clear query and enter controller"
+  ],
+  "generation": "Canceled Local Codex run; recovered generated stylesheet integrated and verified, not successful canonical delivery",
+  "liveTwitch": "BLOCKED_NO_ACCOUNT",
+  "deployed": false,
+  "published": false
+}

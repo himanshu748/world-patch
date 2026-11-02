@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-29",
+  "mode": "Local Codex",
+  "humanAuthorized": {
+    "openOfficialDownloadPage": true,
+    "createContinuationChat": true,
+    "skipRepeatedDesignQuestions": true
+  },
+  "nativeApplication": {
+    "path": "/Applications/Open Design.app",
+    "version": "0.26.1",
+    "signatureVerified": true,
+    "localMcpRegistrationEnabled": true
+  },
+  "parentChat": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "continuationChat": "01a18793-aea0-7e61-8d5c-530e18fdcc4b",
+  "parentToolSnapshot": "Open Design tools unavailable after native setup; fresh chat required by skill",
+  "generationStatus": "Not invoked by parent; continuation owns attributed workflow",
+  "pluginWorkflowId": null,
+  "runId": null,
+  "cloudOrByokUseAuthorized": false,
+  "mainBuildSessionPreserved": true
+}

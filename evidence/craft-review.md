@@ -1,0 +1,5 @@
+# Focused landing craft review
+
+A read-only reviewer inspected Landing.tsx, landing-play.css, the unchanged Board movement/lifecycle interface and landing browser tests. The review found no material correctness, accessibility or state-isolation issue in that scope. It confirmed that reset/chamber/mode transitions clear movement hints, that same-chamber entry preserves attempts, and that Board validates animation start/result through canonical states and cancels tweens on repaint.
+
+The residual recommendation was to interrupt portal/ice movement with restart, reset, mode changes or chamber switching, then inspect the rendered pawn and single-canvas lifecycle after superseded animation time had elapsed. That recommendation was implemented in the final browser regression and passed. Parent verification also added accepted-law focus continuation during play, exercised in all three chambers and in the native browser. This is a scoped source review plus executed local tests, not a security audit, human usability study or live-provider proof.

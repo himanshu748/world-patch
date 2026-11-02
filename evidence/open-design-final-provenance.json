@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-30",
+  "mode": "Local Codex",
+  "projectId": "world-patch-orbital-refinement",
+  "pluginWorkflowId": "c85393a5-b16f-4b1a-b518-7b8fe9442fe9",
+  "requestId": "1ae814ec-2e09-407e-b2ad-5526f331965d",
+  "runId": "a29f4d1f-b8f3-4439-9e04-7dab306ccb99",
+  "studioUrl": "http://127.0.0.1:49160/projects/world-patch-orbital-refinement/conversations/d404876f-61af-4ba2-bdb4-365fe7566fed",
+  "status": "succeeded",
+  "brief": "Previously approved direction; repeated questions skipped, locale en; dedicated existing project.",
+  "scope": "Only the four listed frontend/design files were supplied for read context; no environment, database, cookies, credentials or real chat identities.",
+  "requestedArtifacts": [
+    "landing-final.html",
+    "landing-final.css",
+    "LANDING-FINAL-INTEGRATION.md"
+  ],
+  "terminalDelivery": "Three requested files retrieved from a complete artifact bundle; generated stylesheet integrated into the real React landing. Browser validation recorded separately.",
+  "artifactOriginStatus": "matched",
+  "artifactBundleTruncated": false,
+  "artifactBundleSkippedFiles": 0,
+  "syntaxValidation": {
+    "status": "pass",
+    "checkedFiles": [
+      "landing-final.html"
+    ],
+    "diagnostics": []
+  },
+  "canonicalFlags": {
+    "topLevelDeliverableValid": false,
+    "topLevelDeliverableValidation": "entry_not_touched",
+    "topLevelDeliverableEntryFile": "index.html",
+    "strategyTaskDeliverableValid": true,
+    "strategyTaskOutcome": "completed",
+    "strategyTaskTerminal": true
+  },
+  "flagQualification": "Top-level validation names the older index.html entry; strategy settlement marks the requested landing-final.html delivery complete. These conflicting flags are preserved rather than treating all delivery validation as successful.",
+  "runtimeIntegration": {
+    "stylesheet": "src/client/landing-final.css",
+    "imports": [
+      "landing.css",
+      "landing-final.css"
+    ],
+    "supersededStylesheetRetained": "src/client/landing-refinement.css",
+    "handlersAndBoardProps": "Unchanged",
+    "previewJavaScriptImported": false,
+    "previewGeometryImported": false
+  },
+  "artifacts": [
+    {
+      "path": "evidence/open-design-final/landing-final.html",
+      "bytes": 45709,
+      "sha256": "ce4c7431fae694945872ce00628a9d0ba23502f01d7ab109a91aaf066ee15022"
+    },
+    {
+      "path": "evidence/open-design-final/landing-final.css",
+      "bytes": 12105,
+      "sha256": "98006a9899dc5c1d39a713f64da08cc9c23b39b32205a431ccbdc68258181877"
+    },
+    {
+      "path": "evidence/open-design-final/LANDING-FINAL-INTEGRATION.md",
+      "bytes": 5159,
+      "sha256": "ed0431bc4f374d5334c63f5194286772e901d1957804354a5946ca3ce4fa8b81"
+    }
+  ],
+  "sourceStylesheet": {
+    "path": "src/client/landing-final.css",
+    "sha256": "3d4d7cc9584651b9324f5ad805dfb4df0c41b38b0682331b469a81b85c1b9df6",
+    "adaptation": "Generated CSS unchanged except an additional trailing newline; supersedes the earlier imported enhancement."
+  },
+  "earlierChamberBundleComparison": {
+    "preview.js": "Matches previously recovered local file after stripping trailing whitespace",
+    "index.html": "Matches previously recovered local file after stripping trailing whitespace",
+    "refinement.css": "Matches previously recovered local file after stripping trailing whitespace",
+    "preview.css": "Matches previously recovered local file after stripping trailing whitespace"
+  },
+  "studioWebAvailability": "Exact returned Studio URL timed out on final browser opening and local HTTP check; design tool and artifact retrieval succeeded. Saved originals remain available.",
+  "integrationVerification": "evidence/open-design-final-verification.json"
+}

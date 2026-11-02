@@ -1,0 +1,4 @@
+export function replayWitness(chamber: Chamber, initial: GameState, witness: readonly Direction[]): GameState {
+  assertState(chamber, initial);
+  return witness.reduce((state, direction) => transition(chamber, state, direction), cloneState(initial));
+}

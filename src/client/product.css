@@ -1,0 +1,67 @@
+/* Host workflow refinements; the read-only overlay retains its broadcast grid. */
+.app-shell .host-access {
+  margin-bottom: 20px; border: 1px solid var(--line); border-top: 2px solid var(--amber);
+  border-radius: 6px; background: var(--surface); padding: 20px 24px;
+}
+.app-shell .host-access .host-login { padding: 0; border: 0; background: none; }
+.app-shell .host-access h2 { margin: 8px 0; font-size: 26px; }
+.app-shell .host-access p { max-width: 48ch; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.app-shell .host-access a { display: inline-flex; align-items: center; min-height: 44px; gap: 12px; margin-top: 4px; color: var(--amber); font-size: 14px; }
+.app-shell .host-access a .icon { width: 17px; height: 17px; }
+.app-shell .host-access form { min-width: 0; }
+.app-shell .host-access .input-action { align-items: stretch; }
+.app-shell .host-access input { min-width: 0; min-height: 46px; }
+.app-shell .host-access button { min-height: 46px; }
+.app-shell .host-actions { flex-wrap: wrap; align-items: center; gap: 16px; }
+.app-shell .host-actions .host-copy { flex: 1 1 210px; min-width: 0; }
+.app-shell .host-actions .host-copy .eyebrow { font-size: 11px; line-height: 1.5; }
+.app-shell .host-actions .host-copy > span { display: block; max-width: 46ch; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.app-shell .host-actions .action-cluster { flex: 2 1 450px; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.app-shell .host-actions button { min-height: 44px; font-size: 13px; }
+.app-shell .host-chamber-picker { flex: 0 1 320px; min-width: 0; }
+.app-shell .host-chamber-picker > label { display: block; font: 12px/1.5 var(--mono); color: var(--muted); margin-bottom: 6px; }
+.app-shell .host-chamber-picker > div { display: flex; gap: 8px; }
+.app-shell .host-chamber-picker select { flex: 1; min-width: 0; width: auto; min-height: 44px; padding: 9px 12px; font-size: 14px; }
+.app-shell .host-chamber-picker button { padding-inline: 14px; }
+.app-shell .host-chamber-picker p { margin-top: 6px; max-width: 44ch; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.app-shell .phase-jump { display: inline-flex; gap: 10px; align-items: center; min-height: 44px; font-size: 13px; color: var(--amber); }
+.app-shell .phase-jump .icon { width: 16px; height: 16px; }
+.app-shell:not(.overlay) .phaser-mount { max-height: clamp(320px, calc(100svh - 470px), 600px); }
+.app-shell .phase-description code { color: var(--amber); font-size: 13px; white-space: nowrap; }
+.app-shell .room-outage { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; padding: 14px 18px; border: 1px solid #ffc85777; border-radius: 5px; background: #ffc85708; }
+.app-shell .room-outage strong { color: var(--amber); font-size: 15px; }
+.app-shell .room-outage p { margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.app-shell .room-outage button { min-height: 44px; flex: 0 0 auto; }
+.app-shell .escape-label button { min-height: 44px; gap: 12px; margin-top: 10px; color: var(--green); border: 1px solid #b2f19988; background: #101b15; padding: 10px 16px; }
+.app-shell .escape-label button .icon { width: 17px; height: 17px; margin: 0; }
+.app-shell .session-source, .app-shell .session-warning { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.app-shell .session-source strong { color: var(--bone, #f3f0e7); }
+.app-shell .session-warning { margin-top: 8px; }
+.app-shell .session-switch { margin-top: 14px; }
+.app-shell #simulation-panel { scroll-margin-top: 20px; }
+.app-shell #simulation-panel:focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+.app-shell .simulation-panel > p { font-size: 14px; line-height: 1.7; }
+.app-shell .simulation-feedback { margin-top: 12px; padding: 10px 12px; border-left: 2px solid var(--amber); background: var(--raised); color: #f3f0e7; font-size: 14px; line-height: 1.6; }
+.app-shell .notice { position: static; left: auto; right: auto; bottom: auto; transform: none; width: auto; max-width: none; margin: 0 0 16px; box-shadow: none; backdrop-filter: none; font-size: 14px; }
+.app-shell .preset-row { flex-wrap: wrap; }
+.app-shell .preset-row button { min-height: 44px; font-size: 13px; }
+.app-shell .control-section { margin-top: 24px; }
+.app-shell.overlay .replay-card { padding: 16px; }
+.app-shell.overlay .replay-card .receipt-symbol { display: none; }
+@media (max-width: 900px) {
+  .app-shell .primary-control-row .host-actions > div:first-child { display: block; }
+  .app-shell .host-actions .host-copy { flex: 1 1 100%; }
+  .app-shell .host-chamber-picker { flex: 1 1 280px; }
+  .app-shell .host-actions .action-cluster { flex-basis: 100%; justify-content: flex-start; }
+}
+@media (max-width: 600px) {
+  .app-shell .host-access { padding: 16px; }
+  .app-shell .host-access .host-login { display: block; }
+  .app-shell .host-access form { margin-top: 12px; }
+  .app-shell .host-access .input-action { flex-wrap: wrap; }
+  .app-shell .host-access .input-action input { flex: 1 1 150px; }
+  .app-shell .host-access .input-action button { flex: 1 1 130px; justify-content: center; }
+  .app-shell .host-actions .action-cluster button { flex: 1 1 auto; justify-content: center; }
+  .app-shell .room-outage { align-items: flex-start; flex-direction: column; }
+  .app-shell .replay-card { padding: 16px; }
+}

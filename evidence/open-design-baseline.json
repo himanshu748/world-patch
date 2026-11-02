@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-29",
+  "status": "FAIL",
+  "command": "npm run test:browser -- --grep 'presentation fixture' --reporter=list",
+  "scope": "Pre-integration baseline against strengthened presentation checks, real local production frontend, synthetic ballot layout only",
+  "finding": "Eight-choice broadcast mode hides .receipt-stats; the surviving escape length is absent. The new visibility assertion failed at 1080p.",
+  "previousBaseline": "The prior six-journey suite passed; this is a newly added acceptance check, not evidence that its earlier assertions failed.",
+  "preservedCopy": "Secondary design chat work/baseline contains pre-integration source and prior screenshots/reports."
+}

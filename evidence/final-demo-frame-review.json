@@ -1,0 +1,61 @@
+{
+  "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION",
+  "checkedAt": "2026-11-02T07:42:58.661351+00:00",
+  "method": "Codex inspected each listed decoded image via view_image.",
+  "output": "world-patch-final-demo-v2.mp4",
+  "outputSHA256": "8dddb680bf4b501854251c38cf973b21096560fbce423fb9dc304094061ee65d",
+  "reviewedFrames": [
+    {
+      "file": "final-frame-0-4.jpg",
+      "sha256": "c626349a55d5eaed8d8725dd9004cc8c6662bf1ea623ee69daf1a7e1eb94e672",
+      "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION"
+    },
+    {
+      "file": "final-frame-1-13.jpg",
+      "sha256": "680bc1d2f201add840e5b787fb93d59f2aef21654cc16ed439ed93af758f2222",
+      "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION"
+    },
+    {
+      "file": "final-frame-2-25.jpg",
+      "sha256": "100d40b7fab68c0920c4ce5cbb23907a33919b69b85ca7c01f4675ff312bc2b0",
+      "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION"
+    },
+    {
+      "file": "final-frame-3-39.jpg",
+      "sha256": "e23a796a9c001ed8f23987eb4c4bba8dc615d345df96b77fe8ad65d7e5227507",
+      "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION"
+    },
+    {
+      "file": "final-frame-4-55.jpg",
+      "sha256": "7e67971fd39df29e9b4e58a5356a94ff331e7be97eff0bdca7606efb78e1b6dd",
+      "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION"
+    },
+    {
+      "file": "final-frame-5-70.jpg",
+      "sha256": "b1ca38a4f0b2de16c48302b56f71d1a242ad89aabc7500a857929ff59f14b65a",
+      "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION"
+    },
+    {
+      "file": "final-frame-6-93.jpg",
+      "sha256": "f3d807febf6f96e7c7c2831037dc42a183e6ddd96118101d9d92f29ce85793bd",
+      "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION"
+    },
+    {
+      "file": "final-frame-shared-rules-81.jpg",
+      "sha256": "64174275734b4c966e4df919406abb659726e6ed9b9557950a5afb51e5aeba71",
+      "status": "PASS_SELECTED_DECODED_FRAME_VISUAL_INSPECTION"
+    }
+  ],
+  "sourceFramesReviewed": 9,
+  "findings": [
+    "Complete source picture retained, correctly oriented and uniformly scaled.",
+    "Readable captions, no clipping, no caption over the source UI.",
+    "Actual Twitch command history and connected status visible.",
+    "Wall group closes; fairness receipt shows 58 states and 24 steps.",
+    "Player moves and witness replay are visible.",
+    "All three Codex evidence panels match their caption labels.",
+    "Main Codex session ID and non-native-interface qualification remain visible."
+  ],
+  "fullRealtimePlayback": "UNVERIFIED by this child; parent can review the actual MP4.",
+  "publication": "NOT_PERFORMED"
+}

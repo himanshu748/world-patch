@@ -1,0 +1,45 @@
+/* Motion explains an authoritative state change; it never gates an action. */
+:root {
+  --motion-quick: 120ms;
+  --motion-state: 220ms;
+  --motion-merge: 650ms;
+}
+
+.phase-copy { display: inline-block; animation: phase-arrive var(--motion-state) var(--ease) both; }
+.laws-strip > div { min-width: 0; position: relative; }
+.laws-strip .portal-pairs { font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 13px; }
+.law-change { animation: law-focus var(--motion-merge) var(--ease) both; }
+.law-change::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -7px; height: 2px;
+  background: var(--amber); transform-origin: left;
+  animation: law-underline var(--motion-state) var(--ease) both;
+}
+.merge-confirmation { max-width: 230px; min-width: 0; }
+.merge-confirmation > span { color: var(--green); }
+.merge-confirmation > span::before { content: '✓ '; }
+.merge-confirmation strong {
+  color: var(--amber); max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+  animation: proof-arrive var(--motion-state) var(--ease) 100ms both;
+}
+.merge-flash::after {
+  content: ''; position: absolute; inset: 0; border: 2px solid var(--amber);
+  pointer-events: none; animation: merge-seam var(--motion-merge) var(--ease) both;
+}
+.escape-label { animation: escape-arrive 350ms var(--ease) both; }
+.replay-card { animation: phase-arrive var(--motion-state) var(--ease) both; }
+
+@keyframes phase-arrive { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes proof-arrive { from { opacity: 0; transform: translateX(-4px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes law-focus { 0% { transform: translateY(2px); background: #ffc85700; } 35% { background: #ffc85714; } 100% { transform: translateY(0); background: #ffc85700; } }
+@keyframes law-underline { from { transform: scaleX(.15); opacity: .2; } to { transform: scaleX(1); opacity: 1; } }
+@keyframes merge-seam { 0% { opacity: 0; transform: scale(.998); } 25% { opacity: .65; transform: scale(1); } 100% { opacity: 0; transform: scale(1); } }
+@keyframes escape-arrive { from { opacity: 0; transform: translate(-50%, calc(-50% + 8px)) scale(.98); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+
+@media (min-width: 1700px) { .overlay .laws-strip .portal-pairs { font-size: 16px; } }
+@media (max-width: 600px) { .merge-confirmation { max-width: 145px; } .merge-confirmation strong { font-size: 10px; } .laws-strip .portal-pairs { font-size: 12px; } }
+@media (prefers-reduced-motion: reduce) {
+  .phase-copy, .law-change, .law-change::after, .merge-confirmation strong,
+  .merge-flash::after, .escape-label, .replay-card { animation: none !important; }
+  .law-change { background: #ffc8570d; }
+  .merge-flash::after { opacity: 0; }
+}

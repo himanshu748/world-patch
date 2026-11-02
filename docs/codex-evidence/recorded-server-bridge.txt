@@ -1,0 +1,9 @@
+  const twitch=createTwitch(config.twitch,{
+    onChat(event){
+      try { room.ingest({origin:'twitch',actorId:pseudonym('twitch',event.userId),eventId:event.eventId,messageId:event.messageId,text:event.text,receivedAt:event.receivedAt}); }
+      catch { room.sourceUnavailable('Chat ingestion failed; open a new round after recovery.'); }
+      broadcast();
+    },
+    onStatus(){broadcast();},
+    onGap(reason){room.sourceUnavailable(reason);broadcast();},
+  });

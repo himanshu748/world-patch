@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-30T08:58:03.292175+00:00",
+  "status": "PASS_LOCAL",
+  "scope": "Complete local marketing demo experience and interaction craft",
+  "changes": [
+    "All three chamber cards launch their actual authored map in the existing Phaser sandbox",
+    "Chamber-specific gate, portal and ice examples are checked with the shared solver and replay",
+    "Four visible law values remain tied to actual checkpoint rules",
+    "Manual completion shows actual move count and offers the next chamber or protected host controls",
+    "Manual/witness movement uses the unchanged Board frame animation; reduced motion stays immediate",
+    "New checkpoint acceptance returns focus to the board during play; reset and same-chamber entry preserve their intended contracts",
+    "Shorter hero copy states the audience/player story directly"
+  ],
+  "fullBrowserRun": {
+    "report": "evidence/craft-browser-tests.json",
+    "startTime": "2026-10-30T08:49:05.110Z",
+    "duration": 91644.069,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "finalLandingRun": {
+    "report": "evidence/craft-landing-final-tests.json",
+    "startTime": "2026-10-30T08:53:18.477Z",
+    "duration": 79434.451,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "unit": {
+    "report": "evidence/craft-unit-tests.json",
+    "numTotalTests": 112,
+    "numPassedTests": 112,
+    "numFailedTests": 0,
+    "success": true
+  },
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "productionBuild": "PASS",
+  "testedSource": "evidence/craft-tested-source.json",
+  "protectedSourceUnchanged": [
+    "package-lock.json",
+    "package.json",
+    "src/server/app.ts",
+    "src/server/index.ts",
+    "src/server/replay.ts",
+    "src/server/room.ts",
+    "src/server/storage.ts",
+    "src/server/twitch.ts",
+    "src/shared/chambers.ts",
+    "src/shared/commands.ts",
+    "src/shared/engine.ts",
+    "src/shared/protocol.ts"
+  ],
+  "verifiedPatchRoutes": {
+    "Vector Foundry": {
+      "law": "Close wall A",
+      "moves": 24
+    },
+    "Crosswire": {
+      "law": "Cross portal pairs",
+      "moves": 14
+    },
+    "Thin Ice": {
+      "law": "Make ice slippery",
+      "moves": 11
+    }
+  },
+  "browserEvidence": [
+    "Each chamber selection draws one actual canvas and has the correct active card/header",
+    "Completed patched routes collect the key, reach the exit and put the rendered amber pawn at the engine exit",
+    "Completion next action advances through all three chambers and clears prior attempt state",
+    "Same-chamber reentry preserves progress; restart retains law; full reset keeps the selected chamber and restores its initial laws",
+    "Old portal/slide animation callbacks do not resurrect previous positions after chamber switch, restart, mode change or full reset",
+    "320px/390px controls fit without horizontal overflow and have at least 44px touch targets",
+    "Reduced motion suppresses completion animation and supports immediate manual input",
+    "Exact server game/revision equality confirms the demo remains isolated from the room"
+  ],
+  "independentReview": "Read-only state/movement/focus review found no material source issue; its animation-interruption coverage recommendation was implemented and passed. See evidence/craft-review.md.",
+  "renderInspection": "Desktop chamber-selection capture and mobile completion capture inspected; native in-app Crosswire selection and accepted-portal focus continuation exercised.",
+  "localPreview": "http://localhost:3119/",
+  "noNewDependencies": true,
+  "generation": "No new generation commissioned. Existing generated landing-final.css is preserved; functional refinements are authored in Landing.tsx and landing-play.css.",
+  "limits": [
+    "Human usability, entertainment value and audience-scale performance are not established by automated checks",
+    "These local UI checks do not advance live-provider, OBS or public-release evidence"
+  ],
+  "deployedByThisContinuation": false,
+  "publishedByThisContinuation": false,
+  "commitPush": "None performed",
+  "outboundMessages": "None sent"
+}

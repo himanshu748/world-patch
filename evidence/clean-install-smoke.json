@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "at": "2026-10-28T07:33:43.847Z",
+  "node": "v26.12.0",
+  "platform": "darwin",
+  "engineVersion": "world-patch/1.0.0",
+  "scope": "Local production Node process and persistent SQLite directory; no external deployment or Twitch",
+  "checks": [
+    {
+      "name": "Built frontend served by production entry point",
+      "status": "PASS"
+    },
+    {
+      "name": "Production host login",
+      "status": "PASS"
+    },
+    {
+      "name": "Real HTTP action persists player movement",
+      "status": "PASS"
+    },
+    {
+      "name": "Election begins before process restart",
+      "status": "PASS"
+    },
+    {
+      "name": "Production restart preserves committed game",
+      "status": "PASS"
+    },
+    {
+      "name": "Production restart cancels interrupted election",
+      "status": "PASS"
+    },
+    {
+      "name": "Restart invalidates old host authority",
+      "status": "PASS"
+    }
+  ]
+}

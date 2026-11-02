@@ -1,0 +1,69 @@
+/* Design-review shell and authored illustration ONLY. Do not integrate this file. */
+* { box-sizing: border-box; }
+html { background: var(--wp-canvas); color-scheme: dark; }
+body { margin: 0; min-width: 0; background: var(--wp-canvas); color: var(--wp-fg); font-family: var(--wp-sans); }
+.preview-toolbar { min-height: 52px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding: 4px 32px; border-bottom: 1px solid var(--wp-border); background: #141a22; font: 12px/1.4 var(--wp-mono); }
+.preview-identity { display: flex; align-items: center; gap: 8px; margin-right: auto; color: var(--wp-amber); letter-spacing: .06em; }
+.preview-identity::before { content: ""; width: 7px; height: 7px; background: var(--wp-amber); }
+.preview-mode { display: flex; gap: 4px; padding: 2px; border: 1px solid var(--wp-border); border-radius: 6px; }
+.preview-toolbar button { min-height: 36px; padding: 4px 12px; border: 1px solid transparent; border-radius: 4px; color: var(--wp-muted); background: transparent; font: inherit; cursor: pointer; }
+.preview-toolbar button[aria-pressed="true"] { background: var(--wp-fg); color: var(--wp-canvas); }
+.preview-select, .preview-motion { display: flex; align-items: center; gap: 8px; }
+.preview-select select { min-height: 40px; max-width: 100%; border: 1px solid var(--wp-border); border-radius: 4px; padding: 4px 24px 4px 8px; background: var(--wp-canvas); color: var(--wp-fg); font: inherit; }
+.preview-motion { min-height: 44px; color: var(--wp-muted); cursor: pointer; }
+.preview-motion input { width: 16px; height: 16px; accent-color: var(--wp-amber); }
+.preview-toolbar :where(button,input,select):focus-visible { outline: 2px solid var(--wp-ice); outline-offset: 3px; }
+.preview-app.overlay { --wp-review-space: 52px; }
+.preview-app .fixture-label { color: var(--wp-amber); font-family: var(--wp-mono); letter-spacing: .02em; }
+.preview-app .fixture-board { width: 100%; height: auto; display: block; aspect-ratio: 960 / 576; }
+.preview-app .phaser-mount { display: grid; align-items: center; min-height: 0; }
+.preview-app.overlay .fixture-board { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.fixture-board .grid-line { stroke: #202a37; stroke-width: 1; }
+.fixture-board .grid-major { stroke: #334050; stroke-width: 1; }
+.fixture-board .fixture-wall { fill: #1a2330; stroke: #46556a; stroke-width: 1; }
+.fixture-board .wall-edge { stroke: #718097; stroke-width: 2; }
+.fixture-board .fixture-caption { fill: #aab4c4; font: 12px var(--wp-mono); }
+.fixture-board .portal-number { fill: #bc9cff; font: 600 16px var(--wp-mono); text-anchor: middle; }
+.fixture-board .portal-ring { fill: #181626; stroke: #bc9cff; stroke-width: 2; }
+.fixture-board .portal-core { fill: #bc9cff; }
+.fixture-board .board-coordinate { fill: #8090a5; font: 10px var(--wp-mono); }
+.fixture-board .fixture-player { fill: #ffc857; stroke: #ffdf9a; stroke-width: 2; }
+.fixture-board .fixture-path { fill: none; stroke: #76e4f7; stroke-width: 2; stroke-dasharray: 6 8; opacity: .7; }
+.fixture-board .witness-marker { fill: #090c12; stroke: #76e4f7; stroke-width: 3; }
+.fixture-board .witness-center { fill: #76e4f7; }
+.preview-app .candidate-pick { display: block; width: 100%; min-height: 28px; border: 0; padding: 0; background: transparent; border-radius: 2px; color: inherit; text-align: left; font-weight: inherit; line-height: inherit; }
+.preview-app .vote-button { min-height: 28px; border: 0; padding: 0 4px; background: transparent; color: var(--wp-amber); border-radius: 2px; font: inherit; }
+.preview-app .candidate-pick:hover:not(:disabled), .preview-app .vote-button:hover:not(:disabled) { background: transparent; color: var(--wp-amber); }
+.preview-app .fixture-input { min-height: 24px; color: var(--wp-muted); font: 12px/1.5 var(--wp-mono); }
+.preview-app .proposal-form { margin-top: 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.preview-app .proposal-form label { grid-column: 1 / -1; font-size: 14px; color: var(--wp-muted); }
+.preview-app .proposal-form select { width: 100%; min-width: 0; min-height: 44px; padding: 8px; border: 1px solid var(--wp-border); border-radius: 6px; background: var(--wp-panel); color: var(--wp-fg); font: 14px var(--wp-sans); }
+.preview-app .proposal-status { margin-top: 8px; color: var(--wp-muted); font-size: 14px; }
+.preview-app .step-counter { display: flex; justify-content: space-between; gap: 8px; color: var(--wp-muted); font: 12px/1.5 var(--wp-mono); }
+.preview-app .fixture-note { margin-top: 12px; color: var(--wp-muted); font-size: 14px; }
+.preview-app .review-connection { color: var(--wp-amber); }
+.preview-app .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (min-width: 1024px) and (max-height: 800px) {
+  .preview-app.overlay .chat-cheatsheet { margin-top: 4px; }
+  .preview-app.overlay .board-position { font-size: 11px; }
+}
+@media (max-width: 900px) {
+  .preview-toolbar { padding-inline: 16px; gap: 8px 16px; }
+  .preview-identity { flex: 1 1 100%; padding-block: 4px; }
+  .preview-app.overlay .fixture-board { height: auto; }
+}
+@media (max-width: 480px) {
+  .preview-toolbar { display: grid; grid-template-columns: 1fr; padding-block: 8px; }
+  .preview-mode { width: 100%; gap: 8px; }
+  .preview-toolbar button { min-height: 44px; flex: 1; }
+  .preview-select { justify-content: space-between; }
+  .preview-select select { min-height: 44px; flex: 1; }
+  .preview-motion { min-height: 36px; }
+  .preview-app .candidate-pick, .preview-app .vote-button { min-height: 44px; }
+  .preview-app .proposal-form { grid-template-columns: minmax(0, 1fr); }
+  .preview-app .board-position { font-size: 10px; }
+}
+@media (hover: hover) {
+  .preview-toolbar button:hover:not([aria-pressed="true"]) { color: var(--wp-fg); background: var(--wp-raised); }
+}
+

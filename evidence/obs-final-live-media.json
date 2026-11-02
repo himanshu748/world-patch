@@ -1,0 +1,147 @@
+{
+  "allDecodedAudioDigitallySilent": true,
+  "analyzedAt": "2026-11-02T07:04:04Z",
+  "analyzer": "Apple AVFoundation; full audio-track PCM decode, compressed video sample enumeration and exact-time decoded PNG frames",
+  "audio": [
+    {
+      "channels": 2,
+      "classification": "DIGITAL_SILENCE",
+      "codec": "aac ",
+      "decodedDurationSeconds": 169.214,
+      "decodedFrames": 8122272,
+      "decodedPCMFormat": "interleaved float32 little-endian",
+      "digitalSilence": true,
+      "fullTrackReadCompleted": true,
+      "invalidSampleValues": 0,
+      "nonzeroSampleValues": 0,
+      "peakAmplitude": 0,
+      "peakDBFS": null,
+      "rmsAmplitude": 0,
+      "rmsDBFS": null,
+      "sampleRate": 48000,
+      "sampleValues": 16244544,
+      "trackDurationSeconds": 169.214,
+      "trackIndex": 0,
+      "zeroDBFSConvention": "JSON null means negative infinity for an exact zero amplitude"
+    }
+  ],
+  "audioAbsence": false,
+  "audioTracks": 1,
+  "codec": "avc1",
+  "displayHeight": 1080,
+  "displayWidth": 1920,
+  "durationSeconds": 169.266,
+  "frames": [
+    {
+      "actualSeconds": 1,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-final-live-media-frame-0.png",
+      "requestedSeconds": 1,
+      "sha256": "b0b3d1f84704601782103a4ac4b9a28bf3cb0e0747f960c06becdea9459c1c56",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 84.6,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-final-live-media-frame-1.png",
+      "requestedSeconds": 84.633,
+      "sha256": "860c198f92498fc6b09637e2948646bcbd23402fa6c1f8547aede374b16f381c",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 168.23333333333332,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-final-live-media-frame-2.png",
+      "requestedSeconds": 168.266,
+      "sha256": "d57682a745365341be54dbaaeed49ac18190a27d863531e3efd97ec4d0ea5bdd",
+      "width": 1920
+    }
+  ],
+  "height": 1080,
+  "limitations": [
+    "Nominal/encoded frame rate is not a measurement of unique rendered frames or capture/encode lag.",
+    "Selected decoded frames do not constitute a full human video review or proof of continuous live chat/Codex footage.",
+    "Audio classification covers all decoded samples in each retained audio track; it does not attest to any other unrecorded source."
+  ],
+  "nominalFrameRate": 30,
+  "schemaVersion": 1,
+  "sourceBytes": 11084802,
+  "sourceFile": "obs-final-live.mov",
+  "sourceSHA256": "b01ab8852d91e1ed499c912e94828c8fe560c5abc5ca303796e32c5a4459c099",
+  "videoSamples": {
+    "compressedSamplePayloadBytes": 6834506,
+    "compressedSamplePayloadSHA256": "bc052b85981c851d1cd0b58050bb044248203a587a52bf1f45fbc9f367d49ced",
+    "encodedSampleCount": 5077,
+    "firstPresentationSeconds": 0,
+    "lastPresentationSeconds": 169.2,
+    "maxPresentationIntervalSeconds": 0.03333333333335986,
+    "medianPresentationIntervalSeconds": 0.03333333333333144,
+    "method": "Compressed sample enumeration; selected PNG frames are separately decoded. Encoded cadence does not establish unique rendered frames or remove OBS lag failures.",
+    "minPresentationIntervalSeconds": 0.03333333333333144,
+    "readCompleted": true,
+    "sampleCadenceFPS": 30.000000000000004,
+    "timestampCount": 5077
+  },
+  "videoTrackDurationSeconds": 169.266,
+  "width": 1920,
+  "deterministicReplayBinding": {
+    "evidence": "evidence/twitch-final-live-replay.json",
+    "sessionId": "d4f06036-ef59-4f11-b9d5-c823783f7155",
+    "origin": "twitch",
+    "ok": true,
+    "eventCount": 36,
+    "mergeCount": 1,
+    "finalGame": {
+      "chamberId": "vector-foundry",
+      "x": 9,
+      "y": 7,
+      "hasKey": true,
+      "rules": {
+        "gravity": "off",
+        "portals": "normal",
+        "ice": false,
+        "walls": {
+          "A": true,
+          "B": false
+        }
+      },
+      "escaped": true
+    },
+    "checkpoint": {
+      "chamberId": "vector-foundry",
+      "x": 1,
+      "y": 1,
+      "hasKey": false,
+      "rules": {
+        "gravity": "off",
+        "portals": "normal",
+        "ice": false,
+        "walls": {
+          "A": true,
+          "B": false
+        }
+      },
+      "escaped": false
+    },
+    "digest": "16021dde27207f927e6017deb2e0ebf416a3e25c6d6e2fab9dfcbceb85f48f17"
+  },
+  "captureAssessment": {
+    "status": "PASS_CAPTURED_CORRECTED_TWITCH_GAME_FLOW_FINAL_VIDEO_ASSEMBLY_PENDING",
+    "notFinalSubmissionVideo": true,
+    "actualOBSLog": {
+      "recordingStart": "2026-11-02 12:28:23.268 Asia/Kolkata",
+      "recordingStop": "2026-11-02 12:31:12.762 Asia/Kolkata",
+      "framesOutput": 5079,
+      "framesDrawn": 5085,
+      "encodingFramesSkipped": 2,
+      "encodingFrameAccountingTotal": 5086,
+      "encodingLagPercentExact": 0.039323633503735744,
+      "encodingLagPercentRoundedByOBS": 0,
+      "renderingLag": "not separately reported"
+    },
+    "qualityScope": "Selected decoded frames inspected, low measured encoding loss and full retained-track PCM silence verified. No zero-render-lag or full human visual review claim.",
+    "audioAssessment": "AAC track present, all decoded PCM values exactly zero; no audio listening/transcription.",
+    "videoAssembly": "Raw game/chat clip169.266s leaves10.734s under180; trim actual preparation/idle intervals to fit meaningful Codex footage in final assembly.",
+    "sourcePolicy": "Raw copy stays under work/recordings/obs-final-live.mov; no raw video/audio staged or uploaded."
+  }
+}

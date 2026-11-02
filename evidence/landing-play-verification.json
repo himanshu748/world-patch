@@ -1,0 +1,201 @@
+{
+  "at": "2026-10-30T08:19:38.160605+00:00",
+  "status": "PASS_LOCAL",
+  "scope": "Playable marketing sandbox in the existing WORLD//PATCH landing",
+  "implemented": [
+    "Keyboard and touch movement using the shared transitionDetailed implementation",
+    "Separate play and checked-route modes, each starting from the checked checkpoint",
+    "Blocked-move, key and exit feedback with no autoplay",
+    "Restart preserves the applied law; full reset restores the original sandbox",
+    "Rejected laws preserve the attempt; accepted laws restart from their checked position",
+    "Live text map, scoped keyboard input, visible focus and 44px touch controls"
+  ],
+  "checks": {
+    "landing-play-browser-tests.json": {
+      "startTime": "2026-10-30T08:07:31.571Z",
+      "duration": 43407.087,
+      "expected": 11,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "landing-play-final-tests.json": {
+      "startTime": "2026-10-30T08:09:25.837Z",
+      "duration": 11041.521,
+      "expected": 5,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "landing-play-capture-tests.json": {
+      "startTime": "2026-10-30T08:10:58.090Z",
+      "duration": 7300.764,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "unit": {
+    "numTotalTests": 112,
+    "numPassedTests": 112,
+    "numFailedTests": 0,
+    "success": true
+  },
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "productionBuild": "PASS",
+  "viewports": {
+    "desktop": [
+      [
+        1440,
+        900
+      ],
+      [
+        1280,
+        720
+      ]
+    ],
+    "mobile": [
+      [
+        390,
+        844
+      ],
+      [
+        320,
+        844
+      ]
+    ]
+  },
+  "manualInspection": "Current in-app mobile render and touch movement inspected; standalone sandbox captures inspected separately.",
+  "roomIsolation": "Actual room game and revision equality before/after the full manual escape and mode switches",
+  "noNewDependencies": true,
+  "runtimeDifferencesFromPreviousChatArchive": [
+    "src/server/room.ts",
+    "src/server/twitch.ts",
+    "src/shared/protocol.ts",
+    "src/client/Landing.tsx",
+    "src/client/landing-play.css"
+  ],
+  "ownership": "This continuation edited Landing.tsx, added landing-play.css, extended landing browser tests and updated docs/evidence. Existing shared-project provider-ID validation and test changes were preserved; the fresh 112-test report covers the current source.",
+  "runtimeSourceHashes": [
+    {
+      "path": "src/client/App.tsx",
+      "sha256": "8117e97440db39f2939573cda54450e417ad40ebe38590beae2917f2c7c9c833"
+    },
+    {
+      "path": "src/client/Board.tsx",
+      "sha256": "2f49af9f22fb737b70840e2508b2271de968fced409b78967cb3066cf9ecc5ce"
+    },
+    {
+      "path": "src/client/Landing.tsx",
+      "sha256": "684456b18544cd69552665b63cc56c7f2e8e0ba4c2ac0752111197c0440aea53"
+    },
+    {
+      "path": "src/client/api.ts",
+      "sha256": "2d60ca6bc8ef632c17b44de96f9f116e210296e8de1a843c071e7695cee314cf"
+    },
+    {
+      "path": "src/client/landing-final.css",
+      "sha256": "3d4d7cc9584651b9324f5ad805dfb4df0c41b38b0682331b469a81b85c1b9df6"
+    },
+    {
+      "path": "src/client/landing-play.css",
+      "sha256": "b89406a8fa97cdc0b5f3b5b094f3eecdc1d263cadb3f720e463f11ab946f8a91"
+    },
+    {
+      "path": "src/client/landing-refinement.css",
+      "sha256": "0df5d49b6f82dbc16a2d426d7f79bb80538f4aa9f733438790ac2584b4a25f6a"
+    },
+    {
+      "path": "src/client/landing.css",
+      "sha256": "42532855491cbf38acca7eb6d6c63444655e455cc6dc1a6c221d8b452df3e925"
+    },
+    {
+      "path": "src/client/main.tsx",
+      "sha256": "db4104cd2bf861c4401fe17d7bb815f7ca3335ef0d22e430ab6c12c27148c0f8"
+    },
+    {
+      "path": "src/client/motion.css",
+      "sha256": "03f67fd3907572ed1b926b08bd17f2066563600a9ad016cfe6ac9ba69d76075f"
+    },
+    {
+      "path": "src/client/refinement.css",
+      "sha256": "a5f2f34edccf8fdc2ee7c727c8d160e1d933a74d9e87cfd4b2efc1bc9fc25bb4"
+    },
+    {
+      "path": "src/client/styles.css",
+      "sha256": "69e7ffabc8e18fa40565c55ecc824856d2df6760b7ed18b49c10e774f80a823b"
+    },
+    {
+      "path": "src/server/app.ts",
+      "sha256": "e4c058056ead5ee04a03661ee499f5a7de7c80d362b747fab7cd65e5beb2276b"
+    },
+    {
+      "path": "src/server/index.ts",
+      "sha256": "a0c76b58395d276ef5a50d68eb2ea0160f65a56da2ef1f279b9c196ce4e96131"
+    },
+    {
+      "path": "src/server/replay.ts",
+      "sha256": "2c7e881f6aafdb934a8e5660cb3e7b135b5591e6fd683f8441de109b4545fe69"
+    },
+    {
+      "path": "src/server/room.ts",
+      "sha256": "cdcee9c2f3095f7313003e3a8cb907fd76ff37eec4cab440b1d48ddb91cf126a"
+    },
+    {
+      "path": "src/server/storage.ts",
+      "sha256": "59a896539c28388ef88e6d0ea32e4525009140468e80412613d308f5c50bc77f"
+    },
+    {
+      "path": "src/server/twitch.ts",
+      "sha256": "fbb71c44bb5036896dae12ef0d1054260cd3aebfbb301e184ad3ee3c943a3bd1"
+    },
+    {
+      "path": "src/shared/chambers.ts",
+      "sha256": "441e24ecaec82dd21f82a5e4ace10a06dc0a07a29d328c83f621d30d13fd5634"
+    },
+    {
+      "path": "src/shared/commands.ts",
+      "sha256": "5f7a584ecc2e78386a2ec67b8ffcc89faa621df3dafd8863a4b581a69440b00c"
+    },
+    {
+      "path": "src/shared/engine.ts",
+      "sha256": "c246b954ff4b13f739f7fd0939ceff1bc6a61ee8fd49c9a5d6336f6905324a59"
+    },
+    {
+      "path": "src/shared/protocol.ts",
+      "sha256": "aca9c8774864ca92a4e23f26d1c74edd1f9823f54097d2b91db405be7674d890"
+    }
+  ],
+  "generation": "No new design generation commissioned for these functional controls. Existing generated landing-final.css remains unchanged; landing-play.css is a separate authored enhancement.",
+  "localPreview": "http://localhost:3119/",
+  "liveTwitch": "UNVERIFIED; provider fixtures are not live evidence",
+  "actualOBS": "UNVERIFIED",
+  "deployed": false,
+  "published": false,
+  "commitPush": "None performed",
+  "finalBrowser": {
+    "report": "evidence/landing-play-browser-final.json",
+    "startTime": "2026-10-30T08:16:23.518Z",
+    "duration": 45687.985,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "finalUnit": {
+    "report": "evidence/landing-play-unit-final.json",
+    "numTotalTests": 112,
+    "numPassedTests": 112,
+    "numFailedTests": 0,
+    "success": true
+  },
+  "testedSource": {
+    "report": "evidence/landing-play-tested-source.json",
+    "files": 41,
+    "digest": "70c112f6f800c6bbb3b87247c26582fb07db84600b470bda84d507df3a979e25",
+    "drift": []
+  },
+  "localPreviewRefresh": "Owned preview restarted with the verified production build and the same isolated simulation storage; /, /play and /overlay each returned HTTP 200."
+}

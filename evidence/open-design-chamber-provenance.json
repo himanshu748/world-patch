@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-29",
+  "mode": "Local Codex",
+  "projectId": "world-patch-orbital-refinement",
+  "firstRunId": "228c7a83-b2c2-48ff-9182-f497cd20c141",
+  "productionRunId": "8bc88dd0-d0cd-4f35-96f4-74b3bd9e98ed",
+  "pluginWorkflowId": "9f2c2695-76f9-46d6-870e-44e7e50e6de0",
+  "requestId": "ab3f38b7-9ec1-41cf-a1a9-4caa6682a5b4",
+  "terminalStatus": "failed",
+  "terminalReason": "Run interrupted because the daemon restarted.",
+  "recoveredFiles": [
+    {
+      "name": "index.html",
+      "sha256": "6801bd6646cc4fa891a764d7c5749b93572b8ea1b9f7858ab4a1aa8c8b54e38f",
+      "bytes": 20867
+    },
+    {
+      "name": "preview.css",
+      "sha256": "ea72ea603992fa12060bf3defbe137313c6cce3591931850d8bc6c7d366d846a",
+      "bytes": 5904
+    },
+    {
+      "name": "preview.js",
+      "sha256": "439a84976156674fdd2f718f42618860912b46bb2a4d2e17b5a2ac8f445afadd",
+      "bytes": 22485
+    },
+    {
+      "name": "refinement.css",
+      "sha256": "fff21caf2bbb348d9cb56751b8a42aab94ae2fb1df7e78c5b617811c0cf6f10d",
+      "bytes": 26459
+    }
+  ],
+  "bundleTruncated": false,
+  "sourceRetrieval": "get_artifact(project=world-patch-orbital-refinement, entry=index.html, include=all) after service restart",
+  "integration": "src/client/refinement.css adapts generated layout, phase rail, laws and complete dense ballot styling. Preview scripts, illustrative rules and fabricated witness are excluded from the runtime. Existing Board.tsx and motion.css retained.",
+  "limits": "Files were recovered, but the first workflow did not settle as successful delivery. The main build chat is independently continuing the added landing design generation. No claim of a successful terminal generation from these recovered files.",
+  "mainCodexSession": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "credentials": "No private environment, cookies, credentials, database or real chat identities provided to generation.",
+  "studioHistoryUrl": "http://127.0.0.1:50008/projects/world-patch-orbital-refinement/conversations/d404876f-61af-4ba2-bdb4-365fe7566fed",
+  "linkLifetime": "Current local daemon session; refresh get_run after restart."
+}

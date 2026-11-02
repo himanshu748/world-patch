@@ -1,0 +1,351 @@
+{
+  "captions": [
+    {
+      "detail": "One account for functional testing \u00b7 waiting trimmed \u00b7 original footage at normal speed \u00b7 no narration",
+      "endSeconds": 2,
+      "eyebrow": "WORLD//PATCH \u00b7 REAL TWITCH DEMONSTRATION",
+      "startSeconds": 0,
+      "title": "Chat rewrites the rules. You find the exit."
+    },
+    {
+      "detail": "The deterministic search exhausts the reachable states. The world stays unchanged.",
+      "endSeconds": 8,
+      "eyebrow": "01 / PROPOSE \u00b7 REJECT AN IMPOSSIBLE WORLD",
+      "startSeconds": 2,
+      "title": "Gravity down leaves no escape."
+    },
+    {
+      "detail": "The command is received from Twitch. It is parsed as a bounded, typed rule change.",
+      "endSeconds": 10,
+      "eyebrow": "02 / PROPOSE \u00b7 REAL EVENTSUB CHAT",
+      "startSeconds": 8,
+      "title": "A viewer proposes closing wall group A."
+    },
+    {
+      "detail": "Player controls, verification and replay share the same pure state transition.",
+      "endSeconds": 18,
+      "eyebrow": "02 / VERIFY \u00b7 ACCEPT ONLY WITH A WITNESS",
+      "startSeconds": 10,
+      "title": "A valid escape route earns a place on the ballot."
+    },
+    {
+      "detail": "Waiting is trimmed; the recorded proposal, vote and result remain in chronological order.",
+      "endSeconds": 21.5,
+      "eyebrow": "03 / VOTE \u00b7 AN AUDIENCE DECISION",
+      "startSeconds": 18,
+      "title": "The ballot arrives through Twitch."
+    },
+    {
+      "detail": "58 explored states \u00b7 a replay-verified 24-step escape witness \u00b7 no arbitrary chat code",
+      "endSeconds": 33,
+      "eyebrow": "03 / MERGE \u00b7 REVALIDATE THE FROZEN WORLD",
+      "startSeconds": 21.5,
+      "title": "The winning patch merges with a fairness receipt."
+    },
+    {
+      "detail": "These are actual UI moves in the live Twitch session, recorded at normal speed.",
+      "endSeconds": 46,
+      "eyebrow": "04 / PLAY \u00b7 THE CHALLENGE STILL BELONGS TO THE PLAYER",
+      "startSeconds": 33,
+      "title": "Escape the world chat just changed."
+    },
+    {
+      "detail": "The hidden route becomes available for inspection and deterministic replay.",
+      "endSeconds": 50,
+      "eyebrow": "04 / REVEAL \u00b7 END THE ATTEMPT",
+      "startSeconds": 46,
+      "title": "Reveal the witness after the attempt."
+    },
+    {
+      "detail": "The replay demonstrates a real escape path. This footage comes from the live Twitch-origin session.",
+      "endSeconds": 66,
+      "eyebrow": "04 / REPLAY \u00b7 SHOW THE EVIDENCE",
+      "startSeconds": 50,
+      "title": "Watch a valid solution through the patched world."
+    },
+    {
+      "detail": "An offline evidence viewer shows a genuine main-session source-writing record; it is not the native Codex UI.",
+      "endSeconds": 76,
+      "eyebrow": "05 / BUILD \u00b7 ACTUAL CODEX DEVELOPMENT EVIDENCE",
+      "startSeconds": 66,
+      "title": "Built with Codex. Preserved with provenance."
+    },
+    {
+      "detail": "Current shared-engine excerpts are distinguished from the recorded main-chat source-writing action.",
+      "endSeconds": 86,
+      "eyebrow": "05 / SHARED RULES \u00b7 CURRENT SOURCE",
+      "startSeconds": 76,
+      "title": "One transition for the player, solver and replay."
+    },
+    {
+      "detail": "Local verification is explicitly separate from the actual Twitch delivery demonstrated in the preceding footage.",
+      "endSeconds": 96,
+      "eyebrow": "05 / VERIFY \u00b7 EXECUTED LOCAL CHECKS",
+      "startSeconds": 86,
+      "title": "114 unit checks. 22 browser journeys. Real results."
+    }
+  ],
+  "codexSourceFrameQA": [
+    {
+      "actualSeconds": 7,
+      "file": "source-codex-0-7.jpg",
+      "height": 1080,
+      "requestedSeconds": 7,
+      "sha256": "2938a8bf03db3ade114398c8aed8e2f5a11f9a416a6897860b199e4a4609897a",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 37,
+      "file": "source-codex-1-37.jpg",
+      "height": 1080,
+      "requestedSeconds": 37,
+      "sha256": "e739139c991c6d249ca8f21c54fcd39873fabf4143cf419fed51736aa5675548",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 60,
+      "file": "source-codex-2-60.jpg",
+      "height": 1080,
+      "requestedSeconds": 60,
+      "sha256": "c3d40a0d7e4972e8dfe140a765eeb3c6d0f0c0c6b76f1d1b35eed19d30748468",
+      "width": 1920
+    }
+  ],
+  "editPolicy": "Chronological hard cuts; source time passes at 1x speed; complete 16:9 source picture preserved above a caption strip; video-only, no narration, no generated UI or tool output.",
+  "limitations": [
+    "Source encoded/nominal FPS does not establish capture smoothness.",
+    "Frame QA needs visual review; source-event timestamps and live receipts remain separate evidence.",
+    "Codex section is an OBS recording of a truthful offline evidence viewer, not the native Codex application.",
+    "Selected decoded output frames were visually inspected by Codex; full real-time playback by this child remains UNVERIFIED."
+  ],
+  "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "monotonicPresentationTimestamps": true,
+  "output": {
+    "audioTrackCount": 0,
+    "bytes": 14383845,
+    "codec": "avc1",
+    "displayHeight": 1080,
+    "displayWidth": 1920,
+    "durationSeconds": 96,
+    "file": "world-patch-final-demo-v2.mp4",
+    "nominalFrameRate": 30,
+    "sha256": "8dddb680bf4b501854251c38cf973b21096560fbce423fb9dc304094061ee65d"
+  },
+  "outputFrameQA": [
+    {
+      "actualSeconds": 4,
+      "file": "final-frame-0-4.jpg",
+      "height": 1080,
+      "requestedSeconds": 4,
+      "sha256": "c626349a55d5eaed8d8725dd9004cc8c6662bf1ea623ee69daf1a7e1eb94e672",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 13,
+      "file": "final-frame-1-13.jpg",
+      "height": 1080,
+      "requestedSeconds": 13,
+      "sha256": "680bc1d2f201add840e5b787fb93d59f2aef21654cc16ed439ed93af758f2222",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 25,
+      "file": "final-frame-2-25.jpg",
+      "height": 1080,
+      "requestedSeconds": 25,
+      "sha256": "100d40b7fab68c0920c4ce5cbb23907a33919b69b85ca7c01f4675ff312bc2b0",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 39,
+      "file": "final-frame-3-39.jpg",
+      "height": 1080,
+      "requestedSeconds": 39,
+      "sha256": "e23a796a9c001ed8f23987eb4c4bba8dc615d345df96b77fe8ad65d7e5227507",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 55,
+      "file": "final-frame-4-55.jpg",
+      "height": 1080,
+      "requestedSeconds": 55,
+      "sha256": "7e67971fd39df29e9b4e58a5356a94ff331e7be97eff0bdca7606efb78e1b6dd",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 70,
+      "file": "final-frame-5-70.jpg",
+      "height": 1080,
+      "requestedSeconds": 70,
+      "sha256": "b1ca38a4f0b2de16c48302b56f71d1a242ad89aabc7500a857929ff59f14b65a",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 93,
+      "file": "final-frame-6-93.jpg",
+      "height": 1080,
+      "requestedSeconds": 93,
+      "sha256": "f3d807febf6f96e7c7c2831037dc42a183e6ddd96118101d9d92f29ce85793bd",
+      "width": 1920
+    },
+    {
+      "file": "final-frame-shared-rules-81.jpg",
+      "requestedSeconds": 81,
+      "timestampEvidence": "Decoded exact-time request with zero before/after tolerance; visually inspected.",
+      "sha256": "64174275734b4c966e4df919406abb659726e6ed9b9557950a5afb51e5aeba71"
+    }
+  ],
+  "plannedDurationSeconds": 96,
+  "preparedAt": "2026-11-02T07:26:35Z",
+  "renderedFrames": 2880,
+  "schemaVersion": 1,
+  "segments": [
+    {
+      "durationSeconds": 8,
+      "outputStartSeconds": 0,
+      "source": "real-twitch",
+      "sourceEndSeconds": 8,
+      "sourceStartSeconds": 0,
+      "speed": 1
+    },
+    {
+      "durationSeconds": 10,
+      "outputStartSeconds": 8,
+      "source": "real-twitch",
+      "sourceEndSeconds": 26,
+      "sourceStartSeconds": 16,
+      "speed": 1
+    },
+    {
+      "durationSeconds": 15,
+      "outputStartSeconds": 18,
+      "source": "real-twitch",
+      "sourceEndSeconds": 84,
+      "sourceStartSeconds": 69,
+      "speed": 1
+    },
+    {
+      "durationSeconds": 33,
+      "outputStartSeconds": 33,
+      "source": "real-twitch",
+      "sourceEndSeconds": 137,
+      "sourceStartSeconds": 104,
+      "speed": 1
+    },
+    {
+      "durationSeconds": 10,
+      "outputStartSeconds": 66,
+      "source": "codex-evidence-viewer",
+      "sourceEndSeconds": 12,
+      "sourceStartSeconds": 2,
+      "speed": 1
+    },
+    {
+      "durationSeconds": 10,
+      "outputStartSeconds": 76,
+      "source": "codex-evidence-viewer",
+      "sourceEndSeconds": 42,
+      "sourceStartSeconds": 32,
+      "speed": 1
+    },
+    {
+      "durationSeconds": 10,
+      "outputStartSeconds": 86,
+      "source": "codex-evidence-viewer",
+      "sourceEndSeconds": 65,
+      "sourceStartSeconds": 55,
+      "speed": 1
+    }
+  ],
+  "sourceFrameQA": [
+    {
+      "actualSeconds": 4,
+      "file": "source-live-0-4.jpg",
+      "height": 1080,
+      "requestedSeconds": 4,
+      "sha256": "321ea674a2f1b50d77c0d4bd821630253bcf4df868cd17c24452534a776f23ba",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 20,
+      "file": "source-live-1-20.jpg",
+      "height": 1080,
+      "requestedSeconds": 20,
+      "sha256": "c2cc1dbc60aee538d2dc0aca3a83e31614c8830d3fbd98ababb5e1e7b27966f0",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 73.5,
+      "file": "source-live-2-73.jpg",
+      "height": 1080,
+      "requestedSeconds": 73.5,
+      "sha256": "5451369fdccbb8a55119dfae18be35bc34ad4d061fdfae842125eb465ae3b9c4",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 108,
+      "file": "source-live-3-108.jpg",
+      "height": 1080,
+      "requestedSeconds": 108,
+      "sha256": "99f3efa2a5b51e9b844220dd60f7e895c5ef1c12aeaa3a0bd305eae2b85ef3a3",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 120,
+      "file": "source-live-4-120.jpg",
+      "height": 1080,
+      "requestedSeconds": 120,
+      "sha256": "365e0bed51715497435489aa9bf51658a9c422c130569372c5fe763b1efeb581",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 134,
+      "file": "source-live-5-134.jpg",
+      "height": 1080,
+      "requestedSeconds": 134,
+      "sha256": "91c8e577c88894f4407e85ee49f4eec708b78e7cb4ce67b7ccdfc59c18e68e1d",
+      "width": 1920
+    }
+  ],
+  "sourceInputs": {
+    "codex-evidence-viewer": {
+      "audioTrackCount": 1,
+      "bytes": 4896397,
+      "codec": "avc1",
+      "displayHeight": 1080,
+      "displayWidth": 1920,
+      "durationSeconds": 78.633,
+      "file": "2026-11-02 12-35-20.mov",
+      "nominalFrameRate": 30,
+      "sha256": "4e8eb8a13ac4b1387768829e0ef6898d0a958bf473f0c4f7fc522ea4035053af"
+    },
+    "real-twitch": {
+      "audioTrackCount": 1,
+      "bytes": 11084802,
+      "codec": "avc1",
+      "displayHeight": 1080,
+      "displayWidth": 1920,
+      "durationSeconds": 169.266,
+      "file": "2026-11-02 12-28-22.mov",
+      "nominalFrameRate": 30,
+      "sha256": "b01ab8852d91e1ed499c912e94828c8fe560c5abc5ca303796e32c5a4459c099"
+    }
+  },
+  "status": "PASS_EXPORT_METADATA_SAMPLE_SCAN_AND_SELECTED_FRAME_REVIEW",
+  "target": {
+    "audioTracks": 0,
+    "averageBitrate": 5000000,
+    "codec": "H.264",
+    "fps": 30,
+    "height": 1080,
+    "width": 1920
+  },
+  "verificationReport": "video-verification.json",
+  "frameReview": "frame-review.json",
+  "failedAttempt": {
+    "file": "world-patch-final-demo.mp4",
+    "status": "FAILED_PARTIAL_DISK_FULL_PRESERVED_DO_NOT_USE",
+    "bytes": 4665125,
+    "sha256": "abdcbc6634e954e14121d5dd3bec1841a499b23541b17dcb430c69414f5781b1"
+  }
+}

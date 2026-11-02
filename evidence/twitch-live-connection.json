@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-30T07:16:56.465861+00:00",
+  "status": "LIVE_CHAT_GAME_REPLAY_VERIFIED",
+  "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "application": {
+    "name": "WORLD PATCH 2026 himanshujh",
+    "category": "Game Integration",
+    "type": "Confidential",
+    "callback": "http://localhost:3000/auth/twitch/callback",
+    "registeredInRealTwitchConsole": true
+  },
+  "authentication": {
+    "flow": "authorization_code",
+    "scopes": [
+      "user:read:chat"
+    ],
+    "userConsentObserved": true,
+    "successfulCallbackObserved": true,
+    "initialCallback": "Temporary browser state was rejected; a fresh controller authorization succeeded without weakening validation."
+  },
+  "twitch": {
+    "state": "ready",
+    "received": 0,
+    "channel": "himanshujh"
+  },
+  "sessionOrigin": "twitch",
+  "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+  "proofMode": "Actual Twitch OAuth and EventSub over the real network, not injected fixtures or simulation",
+  "secrets": {
+    "storedOnlyInPrivateEnv": true,
+    "envMode": "0600",
+    "absentFromPublicApi": true,
+    "absentFromFrontendBuild": true,
+    "absentFromSourceArchive": true
+  },
+  "chatTest": {
+    "status": "PASS",
+    "messagesSentByAgent": 5,
+    "successfulRoundCommands": [
+      "!patch gravity down",
+      "!patch walls A closed",
+      "!vote 1"
+    ],
+    "evidence": "twitch-live-validation.json"
+  },
+  "remaining": [
+    "Actual provider reconnect evidence",
+    "Actual OBS/livestream and continuous demo capture showing Codex",
+    "Authorized judge-accessible demo/repository and publicly viewable YouTube video",
+    "Entrant eligibility/terms and authorized Devpost submission"
+  ],
+  "lastValidatedAt": "2026-10-30T08:33:10.668008+00:00"
+}

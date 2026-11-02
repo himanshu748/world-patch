@@ -1,0 +1,97 @@
+{
+  "allDecodedAudioDigitallySilent": false,
+  "analyzedAt": "2026-11-02T06:26:55Z",
+  "analyzer": "Apple AVFoundation; full audio-track PCM decode, compressed video sample enumeration and exact-time decoded PNG frames",
+  "audio": [
+    {
+      "channels": 2,
+      "classification": "NONZERO_AUDIO_REQUIRES_REVIEW",
+      "codec": "aac ",
+      "decodedDurationSeconds": 44.67,
+      "decodedFrames": 2144160,
+      "decodedPCMFormat": "interleaved float32 little-endian",
+      "digitalSilence": false,
+      "fullTrackReadCompleted": true,
+      "invalidSampleValues": 0,
+      "nonzeroSampleValues": 4288320,
+      "peakAmplitude": 0.28961652517318726,
+      "peakDBFS": -10.763533228864233,
+      "rmsAmplitude": 0.02191992360716164,
+      "rmsDBFS": -33.18321927478071,
+      "sampleRate": 48000,
+      "sampleValues": 4288320,
+      "trackDurationSeconds": 44.67,
+      "trackIndex": 0,
+      "zeroDBFSConvention": "JSON null means negative infinity for an exact zero amplitude"
+    }
+  ],
+  "audioAbsence": false,
+  "audioTracks": 1,
+  "codec": "avc1",
+  "displayHeight": 1080,
+  "displayWidth": 1920,
+  "durationSeconds": 44.683,
+  "frames": [
+    {
+      "actualSeconds": 1,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-smoke-media-frame-0.png",
+      "requestedSeconds": 1,
+      "sha256": "5ceeacfae46cc9857d2db5af72e7cf9764e68423ebb78f70c19517b6b32650ab",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 22.333333333333332,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-smoke-media-frame-1.png",
+      "requestedSeconds": 22.3415,
+      "sha256": "c85781dddd622634d7692e0f8e1312eb168a9d3ad844290e1b9d660614648daf",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 43.666666666666664,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-smoke-media-frame-2.png",
+      "requestedSeconds": 43.683,
+      "sha256": "2299ab0e5323395c738f5baf4d774c0c515b05cf8f972b9c5c0e5d4c756957c6",
+      "width": 1920
+    }
+  ],
+  "height": 1080,
+  "limitations": [
+    "Nominal/encoded frame rate is not a measurement of unique rendered frames or capture/encode lag.",
+    "Selected decoded frames do not constitute a full human video review or proof of continuous live chat/Codex footage.",
+    "Audio classification covers all decoded samples in each retained audio track; it does not attest to any other unrecorded source."
+  ],
+  "nominalFrameRate": 60,
+  "schemaVersion": 1,
+  "sourceBytes": 3432456,
+  "sourceFile": "obs-twitch-witness-smoke.mov",
+  "sourceSHA256": "efd0c75a0849831cebf9e0fc041380756fd9bb9cc95f91484f6b804b89c2de96",
+  "videoSamples": {
+    "compressedSamplePayloadBytes": 2281033,
+    "compressedSamplePayloadSHA256": "a0cc63ff7e986d2447193f2e1f43d9820e8cd39a102317a068fc32e3a20baa2c",
+    "encodedSampleCount": 2681,
+    "firstPresentationSeconds": 0,
+    "lastPresentationSeconds": 44.666666666666664,
+    "maxPresentationIntervalSeconds": 0.016666666666672825,
+    "medianPresentationIntervalSeconds": 0.01666666666666572,
+    "method": "Compressed sample enumeration; selected PNG frames are separately decoded. Encoded cadence does not establish unique rendered frames or remove OBS lag failures.",
+    "minPresentationIntervalSeconds": 0.01666666666666572,
+    "readCompleted": true,
+    "sampleCadenceFPS": 60,
+    "timestampCount": 2681
+  },
+  "videoTrackDurationSeconds": 44.683,
+  "width": 1920,
+  "captureAssessment": {
+    "status": "SMOKE_TEST_ONLY_KNOWN_LAG_FAILURE",
+    "notFinalDemo": true,
+    "reportedOBSRenderingLagPercent": 8.5,
+    "reportedOBSEncodingLagPercent": 2.0,
+    "lagEvidenceSource": "Parent-provided OBS log results; this analyzer does not infer render/encode lag from nominal frame rate.",
+    "audioSharingStatus": "NONZERO_AUDIO_DO_NOT_SHARE_RAW_CLIP",
+    "audioContentAccess": "No audio listened to, transcribed or written to an audio artifact; numeric PCM metrics only.",
+    "originalPrivateFile": "work/recordings/obs-twitch-witness-smoke.mov"
+  }
+}

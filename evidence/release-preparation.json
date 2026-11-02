@@ -1,0 +1,482 @@
+{
+  "at": "2026-11-02T07:50:15.141875+00:00",
+  "status": "FROZEN_CURRENT_SOURCE_LOCAL_RELEASE_CANDIDATE_AWAITING_MAIN_FINAL_AUDIT_AND_PUBLICATION_APPROVAL",
+  "sourceDigest": "33ac3f5e5ebf62d0f3094a63fc8f06f933951b366c0c3346782819bca71b3065",
+  "scope": "Isolated sanitized release source plus selected evidence; no private environment/data/rawrecordings/rawrollout. No final video/publication claim.",
+  "sourceFolders": [
+    "docs",
+    "evidence",
+    "public",
+    "scripts",
+    "src",
+    "tests"
+  ],
+  "rootAllowlist": [
+    ".dockerignore",
+    ".env.example",
+    ".gitignore",
+    "AGENTS.md",
+    "ARCHITECTURE.md",
+    "CHECKLIST.md",
+    "DESIGN.md",
+    "Dockerfile",
+    "PLAN.md",
+    "PRD.md",
+    "README.md",
+    "THIRD_PARTY.md",
+    "VERIFICATION.md",
+    "eslint.config.js",
+    "index.html",
+    "package-lock.json",
+    "package.json",
+    "playwright.config.ts",
+    "tsconfig.json",
+    "tsconfig.server.json",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
+  "excludedDirectories": [
+    ".git",
+    "__pycache__",
+    "coverage",
+    "data",
+    "dist",
+    "node_modules",
+    "playwright-report",
+    "test-results",
+    "work"
+  ],
+  "excludedExtensions": [
+    ".aac",
+    ".aif",
+    ".aiff",
+    ".avi",
+    ".caf",
+    ".db",
+    ".dmg",
+    ".flac",
+    ".flv",
+    ".log",
+    ".m2ts",
+    ".m4a",
+    ".m4v",
+    ".mkv",
+    ".mov",
+    ".mp3",
+    ".mp4",
+    ".ogg",
+    ".opus",
+    ".pcm",
+    ".pkg",
+    ".pyc",
+    ".sqlite",
+    ".sqlite3",
+    ".wav",
+    ".webm",
+    ".zip"
+  ],
+  "explicitExcludedFiles": [
+    {
+      "path": "evidence/twitch-recovery-replay-cli-output.txt",
+      "reason": "raw console transcript"
+    },
+    {
+      "path": "evidence/twitch-live-replay-cli-output.txt",
+      "reason": "raw console transcript"
+    },
+    {
+      "path": "evidence/replay-cli-output.txt",
+      "reason": "raw console transcript"
+    }
+  ],
+  "sourceFilesCopied": 264,
+  "sourceFilesMatchOriginal": true,
+  "currentLocalProof": "evidence/release-final-checks.json",
+  "currentLiveProof": "evidence/twitch-final-live-replay.json",
+  "currentCaptureProof": "evidence/obs-final-live-media.json",
+  "offlineCodexViewer": "docs/codex-evidence/index.html",
+  "rawRecordingsIncluded": false,
+  "rawCodexRolloutIncluded": false,
+  "privateEnvironmentRead": false,
+  "publicActions": false,
+  "commitAllowed": false,
+  "remotesAllowed": false,
+  "inheritedEnvironmentSanitization": {
+    "at": "2026-11-02T06:49:01.472348+00:00",
+    "status": "SANITIZED_KNOWN_INHERITED_ENVIRONMENT",
+    "reports": [
+      {
+        "file": "evidence/browser-connectivity-first-run.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/browser-core-pass.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/browser-first-run.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/browser-second-run.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/browser-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/craft-browser-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/craft-landing-final-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/current-demo-browser.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/current-demo-checks.json",
+        "envObjectsSanitized": 2,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 2,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/design-browser-before-refinement.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/design-browser-first-run.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/design-browser-oct30-before-focus-fix.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/design-browser-oct30-final.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/design-browser-oct30.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/design-browser-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/design-landing-final-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/design-layout-final-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/landing-first-run.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/landing-play-browser-final.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/landing-play-browser-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/landing-play-capture-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/landing-play-final-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/landing-refinement-final-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/opaque-id-browser-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/product-action-isolated.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/product-bootstrap-before-fix.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/product-browser-final.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/product-browser-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/product-config-before-fix.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/product-ordering-before-fix.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/product-verified-browser-before-fixture-fix.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/product-verified-browser.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 76,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": [
+          "DEEPGRAM_API_KEY",
+          "HF_TOKEN"
+        ]
+      },
+      {
+        "file": "evidence/release-nov2-browser.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/twitch-live-browser-before-final-landing.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/twitch-live-final-browser-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/visitor-browser-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      },
+      {
+        "file": "evidence/visitor-landing-final-tests.json",
+        "envObjectsSanitized": 1,
+        "inheritedKeysRemoved": 0,
+        "temporaryPathsRedacted": 1,
+        "credentialKeyNamesRemoved": []
+      }
+    ],
+    "reason": "A historical browser report retained a credential-shaped inherited HF_TOKEN. Values were not printed. All nonallowlisted webServer environment entries were removed, while actual test outcomes were retained.",
+    "publicationEvidence": "No commit, remote or public release exists in the local preparation; no external disclosure is inferred from local presence alone."
+  },
+  "previousActualSecretAudit": "MainPASSon230files;mustrefreshagainstfinalexpandedcandidate",
+  "remaining": [
+    "Finalexpandedcandidate actual-secret/binary audit",
+    "Authorized repository and YouTube publication",
+    "Logged-out judgeaccess/video visibility;entrant/submission approvals"
+  ],
+  "skillScan": {
+    "at": "2026-11-02T07:50:15.141875+00:00",
+    "tool": "secret-scan/scan.sh",
+    "scope": "Full266finalstagedfileblobs;nohistory",
+    "exitCode": 1,
+    "findingCount": 10,
+    "actualCredentialsFoundByKnownPatternsAfterSanitization": 0,
+    "omittedFiles": 53,
+    "omissionReason": "Binaryscreenshots excluded by scanner;requires separate visual/actual-secret review",
+    "limitations": [
+      "Knownformats only",
+      "No Git history",
+      "No arbitrary untracked files",
+      "Binary omissions prevent clean exhaustive verdict"
+    ],
+    "classification": [
+      {
+        "paths": [
+          "evidence/current-demo-checks.json"
+        ],
+        "count": 2,
+        "reason": "Historical synthetic local host fixture configuration, copied into executed report"
+      },
+      {
+        "paths": [
+          "playwright.config.ts",
+          "tests/browser/fixtures.ts",
+          "tests/browser/journey.spec.ts",
+          "tests/browser/product.spec.ts"
+        ],
+        "count": 4,
+        "reason": "Synthetic local-only browser host fixture"
+      },
+      {
+        "paths": [
+          "tests/http.test.ts"
+        ],
+        "count": 2,
+        "reason": "Synthetic local HTTP integration host fixture"
+      },
+      {
+        "paths": [
+          "tests/twitch.test.ts"
+        ],
+        "count": 2,
+        "reason": "Injected-provider unit-test credential fixture"
+      }
+    ],
+    "finalScanPending": false
+  },
+  "fileCount": 266,
+  "inventoryByFolder": {
+    "[root]": 22,
+    "evidence": 186,
+    "tests": 11,
+    "docs": 20,
+    "scripts": 2,
+    "src": 25
+  },
+  "offlineViewerVerification": {
+    "artifactHashes": "PASS",
+    "javascriptSyntax": "PASS",
+    "scriptBehavior": {
+      "textContentRendering": "PASS",
+      "clickTabs": "PASS",
+      "arrowKeyboard": "PASS",
+      "numberKeyboard": "PASS",
+      "modifiedShortcutIgnored": "PASS"
+    },
+    "copiedSourceArtifactsMatch": true
+  },
+  "candidateVerification": {
+    "manifestAllHashesMatch": true,
+    "copiedFilesMatchOriginal": true,
+    "forbiddenPathsAbsent": true,
+    "gitCommits": 0,
+    "gitRemotes": 0,
+    "cachedDiffCheck": {
+      "status": "EXISTING_GENERATED_BLANK_EOF_ONLY",
+      "locations": [
+        "evidence/open-design-chamber/index.html:239",
+        "evidence/open-design-chamber/preview.css:69",
+        "evidence/open-design-chamber/preview.js:371",
+        "evidence/open-design-chamber/refinement.css:311",
+        "evidence/open-design-final/landing-final.html:264",
+        "src/client/landing-final.css:167"
+      ],
+      "reason": "Preserve exact generated evidence/runtime hashes; no whitespace edits introduced in owned changes"
+    },
+    "coreSourceTestConfigHashesMatched": 46,
+    "currentRoomBudgetMs": 250,
+    "unitChecks": 114,
+    "browserJourneys": 22,
+    "publicStoryIncluded": "docs/DEVPOST-PUBLIC.md"
+  },
+  "finalVideoProof": [
+    "evidence/final-demo-video-verification.json",
+    "evidence/final-demo-capture-manifest.json",
+    "evidence/final-demo-frame-review.json",
+    "evidence/final-demo-browser-playback.json"
+  ],
+  "finalVideoMediaIncluded": false
+}

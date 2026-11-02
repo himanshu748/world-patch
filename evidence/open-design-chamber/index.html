@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="An authored WORLD//PATCH frontend design preview. Local fixture only; no game engine, Twitch connection, or server verification.">
+  <title>WORLD//PATCH — Orbital refinement</title>
+  <style>
+    /* OD-LAYOUT-PRIMITIVES v1 — structure only */
+    @layer od-layout {
+      [hidden]:not([hidden="until-found" i]) { display: none !important; }
+      dialog:not([open]) { display: none !important; }
+      :where(.od-stack,.od-row,.od-row-top,.od-cluster,.od-grid,.od-field,.od-stat,.od-cell,.od-tile) > :where(*) { min-width: 0; }
+      .od-stack { display: flex; flex-direction: column; gap: var(--od-gap, 8px); }
+      .od-row { display: flex; align-items: center; gap: var(--od-gap, 8px); }
+      .od-row-top { display: flex; align-items: flex-start; gap: var(--od-gap, 8px); }
+      .od-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--od-gap, 8px); }
+      .od-fill { flex: 1 1 0; min-width: 0; }
+      .od-fixed { flex: none; }
+      .od-grid { display: grid; gap: var(--od-gap, 12px); grid-template-columns: repeat(var(--od-cols, 3), minmax(0, 1fr)); }
+      .od-stat,.od-field,.od-cell { display: grid; gap: var(--od-gap, 2px); }
+      :where(.od-stat,.od-field,.od-cell) > :where(*) { display: block; }
+      .od-tile { display: grid; grid-template-rows: auto 1fr; }
+      :where(.od-tile) > :where(*) { display: block; }
+      .od-media { display: block; width: 100%; height: auto; aspect-ratio: var(--od-ratio, auto); }
+      .od-media-cover { object-fit: cover; }
+      .od-icon { display: inline-block; inline-size: var(--od-icon-size, 1em); block-size: var(--od-icon-size, 1em); flex: none; }
+      .od-truncate { display: block; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+      .od-clamp-2,.od-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+      .od-clamp-2 { -webkit-line-clamp: 2; }
+      .od-clamp-3 { -webkit-line-clamp: 3; }
+      .od-lines-2 { min-height: calc(2 * 1.4em); }
+      .od-nowrap { white-space: nowrap; }
+      .od-keep { word-break: keep-all; overflow-wrap: anywhere; }
+      .od-screen { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; }
+      .od-scroll { overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
+      .od-rail { display: flex; gap: var(--od-gap, 8px); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; padding-inline: var(--od-rail-pad, 16px); scroll-padding-inline: var(--od-rail-pad, 16px); }
+      .od-rail::-webkit-scrollbar { display: none; }
+      :where(.od-rail) > :where(*) { flex: none; scroll-snap-align: start; }
+      :where(.od-rail) > :where(:last-child) { margin-inline-end: var(--od-rail-pad, 16px); }
+      .od-spacer { flex: none; visibility: hidden; pointer-events: none; }
+      .od-touch { min-width: 44px; min-height: 44px; }
+    }
+    :root [hidden]:where(:not([hidden="until-found" i])) { display: none; }
+    /* /OD-LAYOUT-PRIMITIVES v1 */
+  </style>
+  <link rel="stylesheet" href="refinement.css">
+  <link rel="stylesheet" href="preview.css">
+  <script defer src="preview.js"></script>
+</head>
+<body>
+  <aside class="preview-toolbar" aria-label="Design demonstration controls">
+    <strong class="preview-identity">DESIGN PREVIEW</strong>
+    <div class="preview-mode" role="group" aria-label="Preview surface">
+      <button type="button" data-view="controller" aria-pressed="true">Controller</button>
+      <button type="button" data-view="broadcast" aria-pressed="false">Broadcast</button>
+    </div>
+    <label class="preview-select" for="scene-select">Scene
+      <select id="scene-select">
+        <option value="play">Play</option>
+        <option value="proposing">Propose</option>
+        <option value="voting" selected>8-choice vote</option>
+        <option value="merge">Merge</option>
+        <option value="revealed">Reveal</option>
+        <option value="paused">Paused</option>
+      </select>
+    </label>
+    <label class="preview-motion"><input id="reduce-motion" type="checkbox"> Reduce motion</label>
+  </aside>
+
+  <div class="app-shell preview-app phase-voting dense-ballot" id="app">
+    <header class="site-header">
+      <div class="wordmark" aria-label="WORLD PATCH">WORLD<span class="wordmark-slash">//</span>PATCH</div>
+      <div class="header-status">
+        <span class="mode-badge" id="mode-badge">SIMULATION · CONTROLLER</span>
+        <span class="server-status"><span class="status-dot" aria-hidden="true"></span>Server not connected</span>
+        <span class="header-twitch">Source: local fixture</span>
+        <a class="overlay-link" href="?view=broadcast" id="overlay-link">Broadcast view <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="od-field">
+          <span class="eyebrow">A chamber. A rule. A way out.</span>
+          <h1 id="intro-title">Chat changes the rules. You find the exit.</h1>
+        </div>
+        <p class="promise">The server must find an escape from the frozen checkpoint before a law can merge.</p>
+      </section>
+
+      <div class="primary-control-row" aria-label="Simulated host phase actions">
+        <span class="control-context">HOST CONTROLS / SIMULATION</span>
+        <button class="primary-action" id="host-next" type="button">Merge selected law <span aria-hidden="true">↗</span></button>
+        <button id="host-pause" type="button">Pause</button>
+      </div>
+
+      <div class="game-layout">
+        <section class="world-panel" aria-labelledby="chamber-title">
+          <div class="world-heading">
+            <div class="chamber-title">
+              <span class="chamber-number" aria-label="Chamber 4">04</span>
+              <div class="od-field"><span class="eyebrow">Orbital test chamber</span><h2 id="chamber-title">A change in direction.</h2></div>
+            </div>
+            <span class="chamber-coordinate">SECTOR 04<br>16 × 09 GRID</span>
+          </div>
+
+          <figure class="board-frame" aria-labelledby="fixture-caption">
+            <span class="merge-flash" id="merge-flash" hidden aria-hidden="true"></span>
+            <div class="board-topline">
+              <span class="checkpoint-readout" id="checkpoint-readout">CHECKPOINT C-014 · FROZEN FIXTURE</span>
+              <span class="merge-confirmation" id="merge-confirmation" hidden></span>
+              <span class="board-position">KEY: NO · PLAYER 02,07</span>
+            </div>
+            <div class="play-region">
+              <div class="phaser-mount" id="board-input" tabindex="0" role="group" aria-label="Static chamber illustration. Arrow keys demonstrate input feedback only. This is not Phaser.">
+                <svg class="fixture-board" xmlns="http://www.w3.org/2000/svg" width="960" height="576" viewBox="0 0 960 576" role="img" aria-labelledby="board-title board-description">
+                  <title id="board-title">Authored orbital chamber design fixture</title>
+                  <desc id="board-description">A static 16 by 9 grid with an amber player at column 2 row 7, a key, four numbered violet portals, cyan ice, walls, and a green exit. Geometry and the optional witness trace are illustrative, not a playable or verified level.</desc>
+                  <defs>
+                    <pattern id="grid" x="32" y="32" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M56 0H0V56" fill="none" class="grid-line"/></pattern>
+                    <pattern id="ice-hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3 12 9 0M9 12 21 0" stroke="#76e4f7" stroke-width="1" opacity=".25"/></pattern>
+                    <pattern id="wall-hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8 8 0" stroke="#334050" stroke-width="1"/></pattern>
+                  </defs>
+                  <rect width="960" height="576" fill="#090c12"/>
+                  <rect x="32" y="32" width="896" height="504" fill="url(#grid)" stroke="#334050"/>
+                  <path d="M32 20V8H60M900 8H928V20M32 548V560H60M900 560H928V548" fill="none" stroke="#718097"/>
+                  <path d="M480 32V536M32 284H928" class="grid-major" stroke-dasharray="2 8"/>
+                  <g class="board-coordinate" text-anchor="middle"><text x="60" y="22">00</text><text x="284" y="22">04</text><text x="508" y="22">08</text><text x="732" y="22">12</text><text x="900" y="22">15</text></g>
+                  <g class="board-coordinate"><text x="8" y="64">00</text><text x="8" y="288">04</text><text x="8" y="512">08</text><text x="448" y="558">DESIGN GRID</text></g>
+
+                  <g aria-hidden="true">
+                    <rect class="fixture-wall" x="32" y="480" width="896" height="56"/>
+                    <rect x="32" y="500" width="896" height="36" fill="url(#wall-hatch)"/>
+                    <path class="wall-edge" d="M32 480H928"/>
+                    <rect class="fixture-wall" x="88" y="368" width="224" height="56"/>
+                    <path class="wall-edge" d="M88 368H312"/>
+                    <rect x="88" y="400" width="224" height="24" fill="url(#wall-hatch)"/>
+                    <rect class="fixture-wall" x="368" y="256" width="280" height="56"/>
+                    <path class="wall-edge" d="M368 256H648"/>
+                    <rect x="368" y="288" width="280" height="24" fill="url(#wall-hatch)"/>
+                    <rect class="fixture-wall" x="648" y="144" width="224" height="56"/>
+                    <path class="wall-edge" d="M648 144H872"/>
+                    <rect x="648" y="176" width="224" height="24" fill="url(#wall-hatch)"/>
+                    <rect class="fixture-wall" x="536" y="312" width="56" height="112"/>
+                    <path class="wall-edge" d="M536 312H592"/>
+                    <rect class="fixture-wall" x="200" y="144" width="56" height="112"/>
+                    <path class="wall-edge" d="M200 144H256"/>
+                  </g>
+
+                  <g id="ice-fixture" aria-hidden="true"><rect x="312" y="480" width="224" height="16" fill="#18333d"/><rect x="312" y="480" width="224" height="16" fill="url(#ice-hatch)"/><path d="M312 480H536" stroke="#76e4f7" stroke-width="3"/></g>
+                  <g aria-hidden="true"><rect x="760" y="88" width="56" height="56" rx="4" fill="#192a23" stroke="#b2f199"/><path d="M776 126V104H800V126M772 126H804M782 115H794M790 111L794 115 790 119" fill="none" stroke="#b2f199" stroke-width="2"/><text x="788" y="74" fill="#b2f199" font-size="12" font-family="ui-monospace,monospace" text-anchor="middle">EXIT</text></g>
+
+                  <g aria-hidden="true">
+                    <ellipse class="portal-ring" cx="396" cy="450" rx="16" ry="26"/><ellipse cx="396" cy="450" rx="7" ry="18" fill="#292039"/><circle class="portal-core" cx="396" cy="450" r="3"/><text class="portal-number" x="396" y="411">0</text>
+                    <ellipse class="portal-ring" cx="676" cy="226" rx="16" ry="26"/><ellipse cx="676" cy="226" rx="7" ry="18" fill="#292039"/><circle class="portal-core" cx="676" cy="226" r="3"/><text class="portal-number" x="676" y="187">1</text>
+                    <ellipse class="portal-ring" cx="284" cy="170" rx="16" ry="26"/><ellipse cx="284" cy="170" rx="7" ry="18" fill="#292039"/><circle class="portal-core" cx="284" cy="170" r="3"/><text class="portal-number" x="284" y="131">2</text>
+                    <ellipse class="portal-ring" cx="844" cy="394" rx="16" ry="26"/><ellipse cx="844" cy="394" rx="7" ry="18" fill="#292039"/><circle class="portal-core" cx="844" cy="394" r="3"/><text class="portal-number" x="844" y="355">3</text>
+                  </g>
+
+                  <g id="witness-drawing" hidden aria-hidden="true">
+                    <polyline class="fixture-path" id="witness-path" points="172,452"/>
+                    <g id="witness-marker" transform="translate(172 452)"><circle class="witness-marker" r="22"/><circle class="witness-center" r="4"/></g>
+                  </g>
+
+                  <g id="fixture-player" aria-hidden="true"><rect class="fixture-player" x="156" y="436" width="32" height="32" rx="4"/><path d="M166 446H178M172 440V452" stroke="#473614" stroke-width="2"/><text x="172" y="420" fill="#ffc857" font-size="12" font-family="ui-monospace,monospace" text-anchor="middle">YOU</text></g>
+                  <g aria-hidden="true"><path d="M340 440 352 452 340 464 328 452Z" fill="#3b3018" stroke="#ffc857"/><circle cx="340" cy="449" r="3" fill="none" stroke="#ffc857"/><path d="M340 452V458H344" stroke="#ffc857" fill="none"/></g>
+
+                  <g transform="translate(84 88)" aria-hidden="true"><path d="M0 0V64M-6 56 0 64 6 56" stroke="#ffc857" stroke-width="2" fill="none" id="gravity-arrow"/><text x="16" y="8" class="fixture-caption">GRAVITY</text><text x="16" y="28" fill="#ffc857" font-size="14" font-family="ui-monospace,monospace" id="gravity-label">DOWN</text></g>
+                  <text x="672" y="520" class="fixture-caption">ORBITAL / TEST ENVIRONMENT</text>
+                </svg>
+              </div>
+            </div>
+            <figcaption class="board-legend" id="fixture-caption">
+              <strong class="fixture-label">DESIGN FIXTURE · NOT PHASER</strong>
+              <span class="legend-items"><span class="legend-item"><span class="legend-mark legend-player" aria-hidden="true"></span>Player</span><span class="legend-item"><span class="legend-mark legend-portal" aria-hidden="true"></span>Portal</span><span class="legend-item"><span class="legend-mark legend-exit" aria-hidden="true"></span>Exit</span></span>
+            </figcaption>
+          </figure>
+
+          <div class="laws-strip" aria-label="Active fixture laws">
+            <div data-law="gravity"><span class="law-label">01 / Gravity</span><strong class="law-value" id="law-gravity">↓ Down</strong></div>
+            <div data-law="ice"><span class="law-label">02 / Ice</span><strong class="law-value" id="law-ice">On</strong></div>
+            <div data-law="portals"><span class="law-label">03 / Portal pairs</span><strong class="law-value" id="law-portals"><span class="portal-pair">0↔1</span> / <span class="portal-pair">2↔3</span></strong></div>
+            <div data-law="walls"><span class="law-label">04 / Walls</span><strong class="law-value" id="law-walls">Solid</strong></div>
+          </div>
+
+          <div class="play-dock">
+            <div class="od-field"><span class="keyboard-help"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> Focus board to try input feedback</span><span class="fixture-input" id="fixture-input" role="status">Illustration stays fixed. Gameplay belongs to Phaser.</span></div>
+            <div class="dpad" role="group" aria-label="Demonstrate directional input"><button type="button" data-direction="left" aria-label="Demonstrate left input">←</button><button type="button" data-direction="up" aria-label="Demonstrate up input">↑</button><button type="button" data-direction="down" aria-label="Demonstrate down input">↓</button><button type="button" data-direction="right" aria-label="Demonstrate right input">→</button></div>
+          </div>
+        </section>
+
+        <aside class="patch-desk" aria-labelledby="phase-title">
+          <div class="phase-heading">
+            <div class="phase-copy" id="phase-copy"><h2 id="phase-title">Choose the next law.</h2></div>
+            <div class="countdown" aria-label="Illustrative countdown, not running"><strong id="countdown-value">00:30</strong><span id="countdown-note">HELD</span></div>
+          </div>
+          <ol class="phase-track" aria-label="Round phases"><li data-phase-step="proposing"><span>01</span> PROPOSE</li><li data-phase-step="voting" aria-current="step"><span>02</span> VOTE</li><li data-phase-step="escape"><span>03</span> ESCAPE</li></ol>
+          <p class="phase-description" id="phase-description">8 bounded choices. Votes here are simulated.</p>
+          <div class="ballot-heading" id="ballot-heading"><span id="ballot-total">08 / BOUNDED CHOICES</span><span id="vote-total">0 SIMULATED VOTES</span></div>
+          <div class="candidates" id="candidates" aria-label="Illustrative law proposals"></div>
+
+          <div class="empty-state" id="empty-state" hidden><span class="empty-index" aria-hidden="true">[ — ]</span><h3 id="empty-title">The next law starts with chat.</h3><p id="empty-copy">No fixture proposals yet. Add an example to inspect the proposal state.</p></div>
+          <div class="proposal-form" id="proposal-form" hidden><label for="proposal-select">Illustrative bounded law</label><select id="proposal-select"></select><button type="button" id="add-proposal">Add example</button></div>
+          <p class="proposal-status" id="proposal-status" role="status" hidden></p>
+
+          <section class="law-focus" id="law-focus" aria-labelledby="law-focus-title" hidden><span class="eyebrow" id="law-focus-kicker">Selected change / fixture</span><h3 id="law-focus-title">Gravity <span class="law-before">down</span> <span aria-hidden="true">→</span> <span class="law-after">left</span></h3><p id="law-focus-copy">Only this law changes. The player stays at the frozen checkpoint.</p></section>
+
+          <section class="replay-card" id="replay-card" aria-labelledby="replay-title" hidden>
+            <span class="eyebrow">Illustrative witness</span><h3 id="replay-title">The way out stays visible.</h3>
+            <p>This authored sequence demonstrates proof presentation. It is not a server-verified escape.</p>
+            <div class="witness-sequence" id="witness-sequence" aria-label="Illustrative witness frames"></div>
+            <div class="step-counter"><span id="step-counter">FRAME 00 / 09</span><span>MANUAL START</span></div>
+            <div class="replay-controls" aria-label="Design witness playback"><button type="button" id="replay-play">Play example</button><button type="button" id="replay-back">Back</button><button type="button" id="replay-step">Step</button><button type="button" id="replay-reset">Reset</button></div>
+            <span class="escape-label" id="escape-label">Example ready · no proof loaded</span>
+          </section>
+
+          <div class="chat-cheatsheet" id="chat-cheatsheet"><span>Vote command</span><code>!vote &lt;number&gt;</code></div>
+          <section class="fairness-receipt" aria-label="Witness source and receipt">
+            <div class="receipt-title"><strong id="receipt-title">Witness source</strong><span class="receipt-status" id="receipt-status">FIXTURE ONLY</span></div>
+            <p class="receipt-source" id="receipt-source">C-014 · authored example · no server proof</p>
+          </section>
+        </aside>
+      </div>
+
+      <details class="control-section" id="session-section"><summary>Local simulation setup <span class="subtle">No Twitch connection</span></summary><div class="session-controls"><p>Preview controls modify only local display data. Directional input does not move the illustration. Reset returns the fixture to its initial laws and clears simulated votes.</p><button type="button" id="reset-fixture">Reset fixture</button></div></details>
+
+      <section class="evidence-strip" aria-label="Latest event and detailed evidence">
+        <div class="latest-event"><span class="eyebrow">Latest event</span><span id="latest-event">Fixture loaded. Waiting for a simulated vote.</span></div>
+        <details class="evidence-details" id="evidence-details"><summary>Receipt &amp; history</summary><dl class="receipt-data"><dt>Source</dt><dd>Locally authored design fixture; not a game server</dd><dt>Connection</dt><dd>No server or Twitch connection</dd><dt>Receipt</dt><dd id="receipt-id">No merge receipt</dd><dt>Checkpoint</dt><dd>C-014 (illustrative label)</dd><dt>Exact change</dt><dd id="receipt-change">No merged law</dd><dt>Witness</dt><dd id="receipt-witness">No authoritative witness loaded. The example trace is unrelated to game solvability.</dd><dt>Player</dt><dd>Illustration anchored at 02,07; never moved by a merge</dd></dl><h3 class="eyebrow">Local preview history</h3><ol class="event-history" id="event-history"><li>Fixture loaded</li></ol></details>
+      </section>
+    </main>
+    <footer><span>WORLD//PATCH · ORBITAL REFINEMENT</span><span>SIMULATION / DESIGN PREVIEW · NO LIVE DATA</span></footer>
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" id="announcement"></p>
+    <noscript><p class="fixture-note">Enable JavaScript to use the local scene controls and populate the illustrative ballot. The chamber above is a static design fixture.</p></noscript>
+  </div>
+</body>
+</html>
+

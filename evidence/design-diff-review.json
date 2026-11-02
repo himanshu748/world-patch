@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-29",
+  "changedSourceFiles": [
+    "src/client/App.tsx",
+    "src/client/Landing.tsx",
+    "src/client/landing.css",
+    "src/client/main.tsx",
+    "src/client/refinement.css",
+    "src/server/app.ts"
+  ],
+  "engineRoundStorageTwitch": "Byte-identical to preserved baseline",
+  "serverChange": "Added /play static entry only",
+  "frontendContracts": "Actual Phaser renderer and shared engine retained; receipt lifecycle and replay memoization retained; focus restoration is local and conditional on removed trigger; landing never mutates room",
+  "runtimeExcluded": "Open Design preview.js/preview.css/illustrative rule values and witness",
+  "dependencies": "No package or lockfile changes",
+  "scope": "Focused diff and ignore-rule inspection; not a fresh security audit"
+}

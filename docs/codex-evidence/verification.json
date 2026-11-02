@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-02T06:57:26.444145+00:00",
+  "status": "PASS_STATIC_AND_SCRIPT_CHECKS",
+  "originalMainRecordLocated": true,
+  "mainSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "recordedCallId": "call_8a269bc0bd72434280f046ddaccba24f",
+  "recordedAt": "2026-10-28T03:28:38.143Z",
+  "unitPassed": 114,
+  "browserPassed": 22,
+  "htmlChecks": {
+    "threeSemanticTabsAndPanels": true,
+    "inlineEvidenceMatchesJSON": true,
+    "noExternalReferences": true,
+    "noTimersOrNetworkInScript": true,
+    "noInnerHTML": true,
+    "sourceExcerptHashMatches": true,
+    "artifactHashesMatch": true
+  },
+  "javascriptSyntax": "PASS",
+  "scriptBehavior": {
+    "textContentRendering": "PASS",
+    "clickTabs": "PASS",
+    "arrowKeyboard": "PASS",
+    "numberKeyboard": "PASS",
+    "modifiedShortcutIgnored": "PASS"
+  },
+  "browserRender": "UNVERIFIED by this child; parent owns actual CUA/OBS inspection",
+  "claimedNativeCodexUI": false
+}

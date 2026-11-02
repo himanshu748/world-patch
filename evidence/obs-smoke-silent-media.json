@@ -1,0 +1,88 @@
+{
+  "allDecodedAudioDigitallySilent": false,
+  "analyzedAt": "2026-11-02T06:26:59Z",
+  "analyzer": "Apple AVFoundation; full audio-track PCM decode, compressed video sample enumeration and exact-time decoded PNG frames",
+  "audio": [],
+  "audioAbsence": true,
+  "audioTracks": 0,
+  "codec": "avc1",
+  "displayHeight": 1080,
+  "displayWidth": 1920,
+  "durationSeconds": 44.68333333333333,
+  "frames": [
+    {
+      "actualSeconds": 1,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-smoke-silent-media-frame-0.png",
+      "requestedSeconds": 1,
+      "sha256": "5ceeacfae46cc9857d2db5af72e7cf9764e68423ebb78f70c19517b6b32650ab",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 22.333333333333332,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-smoke-silent-media-frame-1.png",
+      "requestedSeconds": 22.341666666666665,
+      "sha256": "c85781dddd622634d7692e0f8e1312eb168a9d3ad844290e1b9d660614648daf",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 43.666666666666664,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-smoke-silent-media-frame-2.png",
+      "requestedSeconds": 43.68333333333333,
+      "sha256": "2299ab0e5323395c738f5baf4d774c0c515b05cf8f972b9c5c0e5d4c756957c6",
+      "width": 1920
+    }
+  ],
+  "height": 1080,
+  "limitations": [
+    "Nominal/encoded frame rate is not a measurement of unique rendered frames or capture/encode lag.",
+    "Selected decoded frames do not constitute a full human video review or proof of continuous live chat/Codex footage.",
+    "Audio classification covers all decoded samples in each retained audio track; it does not attest to any other unrecorded source."
+  ],
+  "nominalFrameRate": 60,
+  "schemaVersion": 1,
+  "sourceBytes": 2314395,
+  "sourceFile": "obs-twitch-witness-smoke-silent.mov",
+  "sourceSHA256": "b479e5eabe6c17c09c220f9519e7c81be4fc66a86b55e1ab501683fc4055e0ef",
+  "videoSamples": {
+    "compressedSamplePayloadBytes": 2281033,
+    "compressedSamplePayloadSHA256": "a0cc63ff7e986d2447193f2e1f43d9820e8cd39a102317a068fc32e3a20baa2c",
+    "encodedSampleCount": 2681,
+    "firstPresentationSeconds": 0,
+    "lastPresentationSeconds": 44.666666666666664,
+    "maxPresentationIntervalSeconds": 0.016666666666672825,
+    "medianPresentationIntervalSeconds": 0.01666666666666572,
+    "method": "Compressed sample enumeration; selected PNG frames are separately decoded. Encoded cadence does not establish unique rendered frames or remove OBS lag failures.",
+    "minPresentationIntervalSeconds": 0.01666666666666572,
+    "readCompleted": true,
+    "sampleCadenceFPS": 60,
+    "timestampCount": 2681
+  },
+  "videoTrackDurationSeconds": 44.68333333333333,
+  "width": 1920,
+  "passthroughVerification": {
+    "at": "2026-11-02T06:30:29.144487+00:00",
+    "status": "PASS_VIDEO_ONLY_PASSTHROUGH_WITH_CONTAINER_DURATION_ROUNDING",
+    "sourceMediaReport": "evidence/obs-smoke-media.json",
+    "sourceSHA256": "efd0c75a0849831cebf9e0fc041380756fd9bb9cc95f91484f6b804b89c2de96",
+    "sourceAudioTracks": 1,
+    "outputAudioTracks": 0,
+    "compressedVideoPayloadIdentical": true,
+    "encodedSampleCountIdentical": true,
+    "firstAndLastPresentationTimesIdentical": true,
+    "sampledDecodedFrameSHA256Identical": true,
+    "sourceDurationSeconds": 44.683,
+    "copyDurationSeconds": 44.68333333333333,
+    "containerDurationDeltaSeconds": 0.000333333333330188,
+    "durationQualification": "Passthrough MOV export normalized the container end by0.333ms, less than one60fps frame; compressed video payloads, sample count, frame presentation endpoints and sampled decoded images are unchanged.",
+    "lossyReencodePerformed": false
+  },
+  "captureAssessment": {
+    "status": "FALLBACK_GAME_FOOTAGE_ONLY_NOT_FINAL_DEMO",
+    "audioSharingStatus": "NO_AUDIO_TRACKS",
+    "qualityQualification": "Removal of audio does not repair the source recording's known8.5percent rendering/2percent encoding lag or add chat/Codex footage.",
+    "privateFile": "work/recordings/obs-twitch-witness-smoke-silent.mov"
+  }
+}

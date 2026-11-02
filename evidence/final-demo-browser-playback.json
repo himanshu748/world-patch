@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-11-02T07:46:57.995Z",
+  "method": "CUA observed native HTML video autoplay on loopback; no timeline mutation or scripted seek",
+  "file": "world-patch-final-demo-v2.mp4",
+  "sha256": "8dddb680bf4b501854251c38cf973b21096560fbce423fb9dc304094061ee65d",
+  "initialObservation": {
+    "currentTime": 21.4453,
+    "duration": 96,
+    "ended": false,
+    "paused": false,
+    "readyState": 4,
+    "error": null
+  },
+  "finalObservation": {
+    "currentTime": 96,
+    "duration": 96,
+    "ended": true,
+    "paused": true,
+    "readyState": 4,
+    "error": null
+  },
+  "status": "PASS_FULL_DURATION_BROWSER_PLAYBACK",
+  "scope": "Browser decoded and reached the end of local video. Selected source/output frames reviewed separately; not a YouTube upload or public playback check."
+}

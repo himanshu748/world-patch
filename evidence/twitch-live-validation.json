@@ -1,0 +1,131 @@
+{
+  "at": "2026-10-30T08:33:10.668008+00:00",
+  "status": "PASS_LIVE_CHAT_GAME_REPLAY",
+  "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "proofMode": "Actual Twitch OAuth and EventSub chat; real controller, Fastify, SQLite and WebSocket flow. No injected provider or simulation.",
+  "channel": "himanshujh",
+  "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+  "round": 3,
+  "origin": "twitch",
+  "publicMessages": {
+    "totalPostedByAgent": 5,
+    "earlierFailedAttempts": 2,
+    "successfulRetryMessages": [
+      "!patch gravity down",
+      "!patch walls A closed",
+      "!vote 1"
+    ],
+    "authorization": "User explicitly approved the original three messages, then explicitly approved two repeated proposals plus the original vote after the provider-ID fix."
+  },
+  "results": {
+    "gravityDown": "NO_ESCAPE; game unchanged",
+    "wallAClosed": "Accepted candidate 1; 58 states searched; 24-input witness replayed before acceptance",
+    "vote": "One ballot for candidate 1",
+    "merge": "Wall group A closed, revision 1; one recorded vote",
+    "player": "24 operator-automated clicks on real movement controls using a locally computed shared-engine route; key collected and exit reached before Reveal",
+    "witness": "Hidden before reveal; after reveal UI playback reached EXIT REACHED at 24/24; actual game unchanged by ghost playback",
+    "export": "Downloaded using actual Export replay evidence button; CLI and standalone verifier recomputed 36 events, one merge and escaped final state",
+    "spectator": "Actual /overlay showed Twitch ready, wall A closed, revision 1 and its independent ghost reached 24/24 EXIT REACHED; browser inspection only, not OBS capture"
+  },
+  "receipt": {
+    "id": "4789819d-b8b5-4345-bd3c-cbd210e96914",
+    "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+    "engineVersion": "world-patch/1.0.0",
+    "chamberVersion": 1,
+    "round": 3,
+    "revision": 1,
+    "origin": "twitch",
+    "patch": {
+      "kind": "walls",
+      "group": "A",
+      "closed": true
+    },
+    "beforeDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+    "afterDigest": "b1eea15f597a8cc9a23923e5cffefbc480ae9ee190c07bbbc902d7b61ae03088",
+    "explored": 58,
+    "pathLength": 24,
+    "tally": [
+      {
+        "candidateId": 1,
+        "key": "walls:A:closed",
+        "votes": 1
+      }
+    ],
+    "tieBreak": "votes-descending-then-canonical-key-code-point-ascending",
+    "digest": "e57f1293fe98d8a81c3b9f12488c9326509f6b52ab0813f1fe2db0aa727d47d5"
+  },
+  "eventKinds": {
+    "session-start": 1,
+    "round-open": 3,
+    "cancel": 2,
+    "rejection": 1,
+    "proposal": 1,
+    "voting-open": 1,
+    "vote": 1,
+    "merge": 1,
+    "move": 24,
+    "reveal": 1
+  },
+  "failuresAndRepairs": {
+    "firstTwoMessages": "Reached real EventSub, but room rejected opaque provider notification IDs as INVALID_INPUT. No patch/ballot was invented. Earlier empty rounds remain canceled in the real log.",
+    "rootCause": "Actual 44-character provider notification IDs contain punctuation rejected by the internal-ID regex. Independent review also identified a separate 128/256 length-bound mismatch, repaired before the live retry.",
+    "fix": "Share MAX_PROVIDER_ID_LENGTH=256 between adapter and room; preserve opaque provider IDs exactly in separate dedupe namespaces; retain strict actor/session IDs.",
+    "testHistory": [
+      "opaque-id-regression-before.json: targeted bridge test reproduced INVALID_INPUT instead of NO_ESCAPE",
+      "opaque-id-boundary-before.json: two long-ID regressions failed on the old 128 limit",
+      "opaque-id-regression-after.json: 112 passed after the final shared 256 limit"
+    ],
+    "uiAutomation": "An initial ballot wait used plural ballots while UI correctly showed 1 ballot; visible inspection confirmed the vote and host merged it. Witness wait exceeded the browser tool short selector budget; later visible inspection confirmed 24/24 EXIT REACHED without resending commands."
+  },
+  "verification": {
+    "unit": {
+      "numTotalTests": 112,
+      "numPassedTests": 112,
+      "numFailedTests": 0,
+      "success": true
+    },
+    "browser": {
+      "startTime": "2026-10-30T08:31:51.287Z",
+      "duration": 62490.757000000005,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "productionBuild": "PASS",
+    "independentSecurityReview": "No remaining findings; read-only scoped review in opaque-id-security-review.md",
+    "testedSource": {
+      "report": "twitch-live-tested-source.json",
+      "digest": "42d189919c648859d2781fb75403464eee407040806aa1c0379bb77e34d51f45",
+      "files": 41,
+      "currentDrift": []
+    },
+    "replayVerifier": "twitch-live-replay-verification.json"
+  },
+  "evidence": [
+    "twitch-live-replay.json",
+    "twitch-live-replay-cli-output.txt",
+    "twitch-live-merged-state.json",
+    "twitch-live-revealed-state.json",
+    "screenshots/twitch-live-chat.png",
+    "screenshots/twitch-live-merge.png",
+    "screenshots/twitch-live-escape.png",
+    "screenshots/twitch-live-witness.png",
+    "screenshots/twitch-live-spectator.png"
+  ],
+  "limits": [
+    "One-account operator test, not an audience playtest",
+    "No actual OBS/livestream capture",
+    "No observed provider-requested migration or actual connection-loss/retry proof",
+    "No public hosting/repository/video/submission",
+    "Replay hashes are integrity checks, not signatures or independent proof of Twitch attribution"
+  ],
+  "remainingReleaseGates": [
+    "Actual provider reconnect evidence",
+    "Actual OBS/livestream and continuous demo capture showing Codex",
+    "Authorized judge-accessible demo/repository and publicly viewable YouTube video",
+    "Entrant eligibility/terms and authorized Devpost submission"
+  ]
+}

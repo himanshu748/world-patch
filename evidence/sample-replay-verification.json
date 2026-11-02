@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "sessionId": "0b8db181-169c-4af5-a898-ce151aae4451",
+  "eventCount": 86,
+  "mergeCount": 1,
+  "finalGame": {
+    "chamberId": "vector-foundry",
+    "x": 1,
+    "y": 1,
+    "hasKey": false,
+    "rules": {
+      "gravity": "off",
+      "portals": "normal",
+      "ice": false,
+      "walls": {
+        "A": true,
+        "B": false
+      }
+    },
+    "escaped": false
+  },
+  "checkpoint": {
+    "chamberId": "vector-foundry",
+    "x": 1,
+    "y": 1,
+    "hasKey": false,
+    "rules": {
+      "gravity": "off",
+      "portals": "normal",
+      "ice": false,
+      "walls": {
+        "A": true,
+        "B": false
+      }
+    },
+    "escaped": false
+  },
+  "digest": "b1eea15f597a8cc9a23923e5cffefbc480ae9ee190c07bbbc902d7b61ae03088"
+}

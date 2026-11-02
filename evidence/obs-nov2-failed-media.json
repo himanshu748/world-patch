@@ -1,0 +1,101 @@
+{
+  "allDecodedAudioDigitallySilent": true,
+  "analyzedAt": "2026-11-02T06:54:49Z",
+  "analyzer": "Apple AVFoundation; full audio-track PCM decode, compressed video sample enumeration and exact-time decoded PNG frames",
+  "audio": [
+    {
+      "channels": 2,
+      "classification": "DIGITAL_SILENCE",
+      "codec": "aac ",
+      "decodedDurationSeconds": 100.841,
+      "decodedFrames": 4840368,
+      "decodedPCMFormat": "interleaved float32 little-endian",
+      "digitalSilence": true,
+      "fullTrackReadCompleted": true,
+      "invalidSampleValues": 0,
+      "nonzeroSampleValues": 0,
+      "peakAmplitude": 0,
+      "peakDBFS": null,
+      "rmsAmplitude": 0,
+      "rmsDBFS": null,
+      "sampleRate": 48000,
+      "sampleValues": 9680736,
+      "trackDurationSeconds": 100.841,
+      "trackIndex": 0,
+      "zeroDBFSConvention": "JSON null means negative infinity for an exact zero amplitude"
+    }
+  ],
+  "audioAbsence": false,
+  "audioTracks": 1,
+  "codec": "avc1",
+  "displayHeight": 1080,
+  "displayWidth": 1920,
+  "durationSeconds": 100.9,
+  "frames": [
+    {
+      "actualSeconds": 1,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-nov2-failed-media-frame-0.png",
+      "requestedSeconds": 1,
+      "sha256": "0d03bb72531f8c7d4402293a81b68de25413c175bdf84d87a0577f9be8b76247",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 50.43333333333333,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-nov2-failed-media-frame-1.png",
+      "requestedSeconds": 50.45,
+      "sha256": "65876f8fa642d34a2353fc752886df5f223fc9b1415be1e6e760d3b264038500",
+      "width": 1920
+    },
+    {
+      "actualSeconds": 99.9,
+      "height": 1080,
+      "path": "evidence/screenshots/obs-nov2-failed-media-frame-2.png",
+      "requestedSeconds": 99.9,
+      "sha256": "e1d03bba2be499b812fc25c832b551bce2d1c27e79278f308e36c15a31d2fde8",
+      "width": 1920
+    }
+  ],
+  "height": 1080,
+  "limitations": [
+    "Nominal/encoded frame rate is not a measurement of unique rendered frames or capture/encode lag.",
+    "Selected decoded frames do not constitute a full human video review or proof of continuous live chat/Codex footage.",
+    "Audio classification covers all decoded samples in each retained audio track; it does not attest to any other unrecorded source."
+  ],
+  "nominalFrameRate": 30,
+  "schemaVersion": 1,
+  "sourceBytes": 6451718,
+  "sourceFile": "obs-nov2-failed.mov",
+  "sourceSHA256": "cbe9e1522a40164f90858ad2dbd7d21e1e3d71b9014f5c7a1fdbc93298e3cf7c",
+  "videoSamples": {
+    "compressedSamplePayloadBytes": 3917203,
+    "compressedSamplePayloadSHA256": "f39a6e77bba7ea5a93c4ab50aecf0c6eaa3426d11306743cc82bbc5f351aa9ec",
+    "encodedSampleCount": 3026,
+    "firstPresentationSeconds": 0,
+    "lastPresentationSeconds": 100.83333333333333,
+    "maxPresentationIntervalSeconds": 0.03333333333334565,
+    "medianPresentationIntervalSeconds": 0.03333333333333144,
+    "method": "Compressed sample enumeration; selected PNG frames are separately decoded. Encoded cadence does not establish unique rendered frames or remove OBS lag failures.",
+    "minPresentationIntervalSeconds": 0.03333333333333144,
+    "readCompleted": true,
+    "sampleCadenceFPS": 30,
+    "timestampCount": 3026
+  },
+  "videoTrackDurationSeconds": 100.9,
+  "width": 1920,
+  "captureAssessment": {
+    "status": "FAILED_INTENDED_LIVE_MERGE_FLOW_NOT_FINAL_DEMO",
+    "reportedOBSLog": "2026-11-02 11-48-45.txt",
+    "reportedOBSPerformance": {
+      "encodingFramesSkipped": 33,
+      "encodingFramesTotal": 3037,
+      "encodingLagPercent": 1.1,
+      "renderingLag": "not reported for this recording"
+    },
+    "mediaContainerSamplesNotOBSFrames": "3026 encoded video samples are retained;3037 is the OBS log frame accounting denominator. These are different measurements and are not equated.",
+    "audioAssessment": "One AAC track is present, but complete numeric decode is exact digital silence; track presence alone is not an audio-content leak. No listening or transcription.",
+    "gameAssessment": "Accepted wall proposal and ballot; merge returned VERIFICATION_INCOMPLETE with no new patch merged. No successful recorded merge claim.",
+    "sourceFilePolicy": "Original Movies capture remains private; raw copy only under work/recordings/obs-nov2-failed.mov. No upload or raw media in release source."
+  }
+}
