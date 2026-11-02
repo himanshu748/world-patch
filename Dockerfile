@@ -1,5 +1,7 @@
 FROM node:26.13.0-bookworm-slim AS build
 WORKDIR /app
+# Native SQLite must remain buildable when a matching prebuilt binary is unavailable.
+RUN apt-get update && apt-get install -y --no-install-recommends python3 make g++ ca-certificates && rm -rf /var/lib/apt/lists/*
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY tsconfig*.json vite.config.ts index.html ./

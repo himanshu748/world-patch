@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-02T10:00:48.291823+00:00",
+  "status": "FAIL_PRESERVED",
+  "scope": "First actual Linux image build, before deployment",
+  "runUrl": "https://github.com/himanshu748/world-patch/actions/runs/41424836977",
+  "sourceSha": "2cd5de700fc902d0915484282975a175527dd8d6",
+  "failure": "better-sqlite3 attempted native compilation; slim build stage lacked Python/compiler toolchain",
+  "repair": "Install Python3/make/g++/CA certificates in build stage only; rerun actual Linux image build and smoke",
+  "hostImpact": "No app deployed; existing apps remain running"
+}
