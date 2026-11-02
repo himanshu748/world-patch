@@ -2,7 +2,7 @@
 
 [Public source](https://github.com/himanshu748/world-patch) · [96-second real Twitch + Codex demo](https://youtu.be/5pPTyIQZ7RY)
 
-[Play the complete hosted application](https://worldpatch.13.204.212.172.sslip.io). The real hosted Twitch proposal/vote/merge, player escape, witness and persistent recovery passed. Repository access and unlisted-video metadata are verified; complete public video playback passed. Personal eligibility confirmations were received privately; final rules/terms approval and actual submission remain pending. Fresh-profile cookie isolation is unverified and is not claimed. The browser-only sandbox is separate from the required hosted Twitch experience.
+[Play the complete hosted application](https://worldpatch.13.204.212.172.sslip.io). The real hosted Twitch proposal/vote/merge, player escape, witness and persistent recovery passed. Repository access and unlisted-video metadata are verified; complete public video playback passed. Personal eligibility and full rules/terms were approved privately by the user. The [actual Devpost entry](https://devpost.com/software/world-patch) is submitted and independently verified. Fresh-profile cookie isolation is unverified and is not claimed. The browser-only sandbox is separate from the required hosted Twitch experience.
 
 ## Name and tagline
 
@@ -56,6 +56,7 @@ Perform a human readability/playtest and explore more authored chambers and comm
 | Hosted application | https://worldpatch.13.204.212.172.sslip.io — complete hosted app verified, including actual Twitch/game/replay and persistent recovery. |
 | Submitter type/country | Entrant must provide; do not infer residence or team status |
 | Learning/Codex survey answers | Entrant must choose personally |
-| Personal eligibility and final terms | Eligibility confirmations received privately; final full rules/terms and submission approval remain pending. No private answer values are published. |
+| Personal eligibility and final terms | User-confirmed and explicitly approved before the verified submission. No private answer values are published. |
+| Actual submission | https://devpost.com/software/world-patch — Submitted 2 November 2026 at 11:51:25.910 UTC; separate readback and public browser verification passed. |
 
-Official event: https://twitchcon-codex.devpost.com . Deadline: 2 November 2026 14:00 Pacific / 22:00 UTC / 3 November 03:30 India. Fresh rules, requirements and announcements are preserved in evidence/official-hackathon-nov2.json. The organizer’s website field is optional; the agreed project delivery requires the complete hosted application. The full hosted app, repository and video are published; complete public privacy-domain video playback also passed. Final full rules/terms approval and actual submission remain unfinished. Saving a draft is not submission.
+Official event: https://twitchcon-codex.devpost.com . Deadline: 2 November 2026 14:00 Pacific / 22:00 UTC / 3 November 03:30 India. Fresh rules, requirements and announcements are preserved in evidence/official-hackathon-nov2.json. The organizer’s website field is optional; the agreed project delivery requires the complete hosted application. The full hosted app, repository and video are published; complete public privacy-domain video playback also passed. Full rules/terms and final submission were explicitly approved, and actual submission is verified in evidence/devpost-submission-verification.json. The approved published project story is preserved unchanged.

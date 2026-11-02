@@ -10,7 +10,7 @@ All phases update CHECKLIST.md and evidence/phase-log.md. Status means executed 
 | 3 — Twitch | OAuth, validation/refresh, EventSub, dedupe/reconnect/gaps, source isolation; depends on 2 | Fixture failures/recovery plus actual one-account OAuth/chat evidence | PASS recorded and actual hosted Twitch/game/replay; earlier controlled local cold reconnect remains distinct |
 | 4 — Broadcast product | React/Phaser, all host/overlay states, receipts/replay, motion/a11y; depends on 1–3 interfaces | Browser journey + keyboard/mobile/reduced motion/overlay screenshots | PASS local — 22 normal browser journeys; evidence/static-demo-verification.json; recorded game gate retained |
 | 5 — Hardening | Independent security/QA review, regression repairs, dependency scan, cold install/build/start, recovery | Required suite passes; significant findings resolved or accurately blocked | PASS local — 127 tests/types/lint/build, including exact proxy trust; prior browser/captured game gates retained |
-| 6 — Delivery | README, local/deploy/live demo guides, verification report, Devpost copy, source archive, evidence | Judge journey tested; actual deployment/video/repository/eligibility proof | Full hosted application, repository and unlisted video published/verified within recorded scopes; final package/rules-and-terms/submission gates pending |
+| 6 — Delivery | README, local/deploy/live demo guides, verification report, Devpost copy, source archive, evidence | Judge journey tested; actual deployment/video/repository/eligibility proof | PASS — full hosted app/repository/video, user-approved eligibility/terms and independently verified Devpost submission; post-receipt package refresh is local housekeeping |
 
 ## Current delivery work
 
@@ -18,7 +18,7 @@ The full application is live at `https://worldpatch.13.204.212.172.sslip.io` on 
 
 The scoped deployment preserved the six existing containers and five checked HTTPS routes. Exact Caddy proxy trust and existing-app preservation are distinct from CI and game proof. The earlier compiler and ephemeral-port CI failures remain historical evidence. No hosted reconnect, provider outage or uptime/load guarantee is claimed.
 
-Next: refresh the reviewed source package and privacy audit, obtain final rules/terms and submission approval, then capture the Devpost receipt. Personal eligibility confirmations were received privately. Complete public privacy-domain video playback passed; fresh-profile cookie isolation remains unverified as a nonmandatory limitation. The app is operational, but final submission remains blocked.
+The user approved the full rules/terms and final submission. Devpost returned Submitted; a separate project readback confirmed publication and the target hackathon submission timestamp. The actual public entry is https://devpost.com/software/world-patch, submitted 2 November 2026 at 11:51:25.910 UTC. The selected witness thumbnail, video and live/source links are visible. Refresh the local archive and final documentation receipt evidence without changing the deployed runtime. Complete public privacy-domain video playback passed; fresh-profile cookie isolation, an actual public broadcast and hosted-provider outage behavior remain unverified, nonmandatory limits.
 
 Dated sections below preserve earlier decisions and failures; this current status supersedes their planned-deployment wording. Render remains an unused alternative.
 

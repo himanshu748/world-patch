@@ -1,0 +1,35 @@
+{
+  "status": "PASS_SUBMITTED_AND_READ_BACK",
+  "at": "2026-11-02T12:05:11.138Z",
+  "projectId": 1524044,
+  "projectSlug": "world-patch",
+  "url": "https://devpost.com/software/world-patch",
+  "projectState": "published",
+  "submissionId": 1278530,
+  "submissionStatus": "Submitted",
+  "submittedAt": "2026-11-02T06:51:25.910-05:00",
+  "hackathon": "Codex x TwitchCon Hackathon",
+  "hackathonSlug": "twitchcon-codex",
+  "website": "https://worldpatch.13.204.212.172.sslip.io/",
+  "videoUrl": "https://youtu.be/5pPTyIQZ7RY",
+  "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
+  "approval": "Explicit user confirmation to create/upload/submit and agree to official rules/Devpost terms; private personal declarations confirmed separately.",
+  "verification": [
+    "Submit tool returned Submitted",
+    "Separate get_project returned published and target submitted_at",
+    "Actual browser rendered published story, video,8built-with tags, live/source/overlay links and Submitted to this hackathon",
+    "Thumbnail uploadedHTTP200 and its public CDN image returned200"
+  ],
+  "publicAccessLimit": "Anonymous automated fetch of the Devpost page returned403; published state, separate provider readback and signed-in browser page were verified. Full app/source and public thumbnail were independently readable.",
+  "submissionDeadlineUtc": "2026-11-02T22:00:00Z",
+  "thumbnail": {
+    "at": "2026-11-02T12:03:39.798204+00:00",
+    "status": "PASS_UPLOADED_PUBLIC_THUMBNAIL",
+    "url": "https://d112y698adiu2z.cloudfront.net/photos/production/software_thumbnail_photos/005/774/987/datas/medium.png",
+    "httpStatus": 200,
+    "contentType": "image/jpeg",
+    "bytes": "11682",
+    "source": "evidence/screenshots/lightsail-twitch-witness.png"
+  },
+  "storyRevision": "Product narrative tightened at entrant request; long session ID and source-record/testing chronology removed from narrative. Required Codex form field preserved."
+}

@@ -20,7 +20,7 @@ The host can pause, cancel, remove candidates and moderate participants. An empt
 
 ## How I built it
 
-I used OpenAI Codex for architecture, implementation, tests, reviews and interface iteration. The main build session is `01a1807d-e70b-7572-bc0d-a4f29b37d1b8`; selected source-writing records are preserved with the project.
+I built WORLD//PATCH with OpenAI Codex, using it to develop the puzzle engine, connect Twitch chat, shape the interface and test the interactions.
 
 React and Phaser present the world. One pure TypeScript transition drives player movement, bounded breadth-first search and witness replay. Fastify owns the room and authenticated host controls. WebSockets distribute authoritative snapshots, and SQLite saves the checkpoint with an ordered event log.
 
@@ -30,11 +30,11 @@ Twitch OAuth and EventSub deliver real chat proposals and ballots. Chat is treat
 
 A proof becomes stale if the player moves while chat votes, so the world freezes throughout elections. A symmetric portal swap changes nothing, so Crosswire uses four endpoints with two distinct pairings. A missed-chat delivery gap cancels the election instead of guessing which votes were lost.
 
-Recording also exposed a useful failure: a valid winning law hit the room's short verification deadline under load. The game declined the merge. I gave room checks a larger bounded budget, added a clock-controlled regression, and repeated the actual Twitch journey while OBS recorded.
+The difficult balance was making verification quick enough for live play while staying honest about uncertainty. If a search cannot finish, the patch stays out and the chamber keeps its current laws.
 
 ## What I am proud of
 
-The recorded demonstration uses one real Twitch account in its own channel: an impossible gravity law is rejected, a wall law is admitted, a real ballot selects it, and the operator escapes the changed chamber. The replay then shows the checked route. The exported event log independently reconstructs the result.
+My favorite moment is when chat closes the direct crossing and leaves the streamer a longer way out. In the demo, the wall patch wins, the streamer finds the escape, and the reveal lets everyone see the route that made the patch fair.
 
 The audience can be adversarial without the host having to promise that every suggestion will work. The game earns that promise with an executable witness.
 

@@ -1,11 +1,10 @@
 {
-  "at": "2026-11-02T11:04:58.277629+00:00",
+  "at": "2026-11-02T12:03:06.191647+00:00",
   "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
-  "status": "PASS_FULL_HOSTED_APPLICATION_FINAL_SUBMISSION_GATES_BLOCKED",
-  "sourceDigest": "85291f389d06c1dc1a9a0d07b731df444b701859b9ae7c1454095483a76abe9e",
+  "status": "PASS_ACTUAL_DEVPOST_SUBMISSION_INDEPENDENTLY_VERIFIED",
+  "sourceDigest": "c61fab23a2320756396147c531ce65667138ffb756a193c0e5bfee437907cde4",
   "checks": {
-    "PASS": 153,
-    "BLOCKED": 2,
+    "PASS": 156,
     "FAIL": 4,
     "UNVERIFIED": 3
   },
@@ -79,11 +78,7 @@
     "newRoundResult": "Actual hosted round:3approvedposts,NO_ESCAPEgravity,wallAclosed candidate,1ballot,24/58receipt,24UIinputs escaped,reveal/overlay24/24,38-event independently verified replay",
     "hostedNov2": 3
   },
-  "remainingReleaseGates": [
-    "Freshsourcepackageprivacy/auditandpublishedreportrefresh",
-    "Finalfullrules/terms and explicitfinalDevpostsubmissionapproval",
-    "ActualDevpostsubmissionreceipt"
-  ],
+  "remainingReleaseGates": [],
   "landingCraft": {
     "status": "PASS_LOCAL",
     "verification": "evidence/craft-verification.json",
@@ -133,7 +128,7 @@
     },
     "finalAudio": "PASS_DIGITAL_SILENCE_FULL_PCM_DECODE_ONE_AAC_TRACK"
   },
-  "sourceArchiveStatus": "PASS_CURRENT_HOSTED_RELEASE_CRC_ALL_BYTES_AND_PRIVATE_VALUE_SCAN",
+  "sourceArchiveStatus": "PASS_CURRENT_HOSTED_AND_SUBMITTED_RELEASE_CRC_PRIVACY_AUDIT",
   "generatedNarration": "None generated; Deepgram exclusively if commissioned",
   "inheritedEnvironmentSanitization": {
     "at": "2026-11-02T06:49:01.472348+00:00",
@@ -442,7 +437,7 @@
     "freshProfileCookieIsolation": "UNVERIFIED_NONMANDATORY_LIMITATION"
   },
   "priorReleaseSourceDigest": "33ac3f5e5ebf62d0f3094a63fc8f06f933951b366c0c3346782819bca71b3065",
-  "sourceManifestStatus": "PASS_CURRENT_SOURCE_DOCS_CONFIG_MANIFEST_RUNTIME_BOUND_TO49555058",
+  "sourceManifestStatus": "PASS_CURRENT_DOCS_AND_VERIFIED_RUNTIME_BOUND_TO49555058",
   "capturedGameGate": {
     "unitPassed": 114,
     "browserPassed": 22,
@@ -772,10 +767,10 @@
     "publicStoryIncluded": "docs/DEVPOST-PUBLIC.md"
   },
   "releasePreparation": {
-    "status": "PASS_CURRENT_HOSTED_RELEASE_PACKAGE_FINAL_SUBMISSION_APPROVAL_PENDING",
+    "status": "PASS_PUBLISHED_DELIVERY_AND_VERIFIED_SUBMISSION_POST_RECEIPT_ARCHIVE_REFRESH_PENDING",
     "currentLocalChecks": 127,
     "publishedCapturedRevision": "5468d89",
-    "sourceArchiveRefreshPending": false
+    "sourceArchiveRefreshPending": true
   },
   "documentationRefresh": {
     "at": "2026-11-02T11:04:58.277629+00:00",
@@ -837,6 +832,28 @@
       "personalAnswersRead": false,
       "finalTermsAndSubmissionApproval": "PENDING",
       "runtimeCodeReleaseProviderMutations": false
+    },
+    "finalSubmissionDelta": {
+      "at": "2026-11-02T12:06:42.597597+00:00",
+      "status": "FROZEN_RECEIPT_AND_DEADLINE_CROSSCHECK_PASS",
+      "files": [
+        "README.md",
+        "PLAN.md",
+        "CHECKLIST.md",
+        "VERIFICATION.md",
+        "docs/DEVPOST.md",
+        "PRD.md",
+        "docs/LIVE-DEMO.md",
+        "evidence/verification-summary.json"
+      ],
+      "relativeExistingLinksChecked": 20,
+      "receiptLinksAwaitingRootEvidenceFile": [],
+      "submissionFactsSource": "Parent actual submit+separate getProject+public browser observations; no external mutation by this reviewer",
+      "privatePersonalAnswersRead": false,
+      "approvedPublicProductStoryEdited": false,
+      "deploymentGuidesOrRuntimeChanged": false,
+      "receiptFieldsVerified": true,
+      "anonymousDevpostHttp200Claim": false
     }
   },
   "latest119UnitReport": "evidence/full-host-prep-unit.json",
@@ -851,15 +868,40 @@
     },
     "documentationHashScope": "Deployment docs changed after executed local report;root release manifest refresh pending"
   },
-  "submissionReady": false,
+  "submissionReady": true,
   "personalEligibility": {
     "status": "CONFIRMATIONS_RECEIVED_PRIVATELY",
     "privateAnswerValuesPublished": false,
-    "finalFullRulesAndTermsApproval": "PENDING",
-    "finalDevpostSubmissionApproval": "PENDING"
+    "finalFullRulesAndTermsApproval": "APPROVED_EXPLICITLY_BY_USER",
+    "finalDevpostSubmissionApproval": "APPROVED_EXPLICITLY_BY_USER"
   },
   "nonmandatoryLimitations": [
-    "Fresh-profilecookieisolationforpublicvideoplaybackUNVERIFIED;strictanonymousplaybacknotclaimed"
+    "Fresh-profilecookieisolationforpublicvideoplaybackUNVERIFIED;strictanonymousplaybacknotclaimed",
+    "Anonymous automated Devpost page fetch returned403; published state/provider readback and signed-in browser verified; app/source/thumbnail independently readable"
   ],
-  "packageVerification": "evidence/package-verification.json"
+  "packageVerification": "evidence/package-verification.json",
+  "submitted": true,
+  "submissionVerified": true,
+  "submission": {
+    "status": "SUBMITTED_AND_INDEPENDENTLY_VERIFIED",
+    "url": "https://devpost.com/software/world-patch",
+    "projectId": 1524044,
+    "submissionId": 1278530,
+    "submittedAt": "2026-11-02T06:51:25.910-05:00",
+    "submittedAtUTC": "2026-11-02T11:51:25.910Z",
+    "beforeOfficialDeadline": true,
+    "createSubmitApprovedByUser": true,
+    "selectedWitnessThumbnailUpload": "PASS_HTTP200",
+    "separateGetProject": "PASS_PUBLISHED_AND_HACKATHON_SUBMITTED_AT",
+    "publicBrowserReadback": "PASS_SIGNED_IN_PUBLISHED_PAGE_VIDEO_8TAGS_SOURCE_LIVE_OVERLAY_SUBMITTED_TO_EVENT",
+    "report": "evidence/devpost-submission-verification.json",
+    "publicProductStoryChangedAfterApproval": false,
+    "reportCrossCheck": "PASS_PUBLIC_SANITIZED_RECEIPT_FIELDS_AND_DEADLINE",
+    "anonymousAutomatedDevpostFetch": "403_WAF_NO_ANONYMOUS_HTTP200_CLAIM",
+    "thumbnailPublicCDN": "PASS_HTTP200",
+    "sourceWebsiteVideoAndCodexIdMatch": true
+  },
+  "postSubmissionHousekeeping": [
+    "Refreshfinalarchiveandpublishedreceipt/docswithoutdeployedruntimechanges"
+  ]
 }

@@ -2,7 +2,7 @@
 
 Updated: 2 November 2026; initial verification: 28 October 2026. Engine: `world-patch/1.0.0`. Main Codex session: `01a1807d-e70b-7572-bc0d-a4f29b37d1b8`.
 
-**Status: complete hosted application PASS; submission remains BLOCKED.** The full application is live at https://worldpatch.13.204.212.172.sslip.io . Actual HTTPS/WSS, protected controls, persistent restart recovery and hosted Twitch/game/replay passed. CI3 completed 39 Linux container checks; the public hosted API/security/recovery suite passed 78/78. The real hosted Twitch session’s38-event replay independently reconstructed one merge and the escaped final game. Complete public privacy-domain video playback passed. Personal eligibility confirmations were received privately; final rules/terms and actual Devpost submission approval remain pending. Fresh-profile cookie isolation is unverified and is a nonmandatory limitation. Historical sections retain their earlier scope and failures.
+**Status: submitted and independently verified.** The actual Devpost entry is https://devpost.com/software/world-patch . Submission completed on 2 November 2026 at 11:51:25.910 UTC after explicit user approval of final submission and full rules/terms. A separate project readback and actual signed-in browser inspection confirmed the published entry and hackathon submission. The full hosted app, real Twitch/game/replay, complete public video playback and source access are verified. Fresh-profile cookie isolation, an actual public broadcast and hosted-provider outage behavior remain unverified nonmandatory limits. Historical failures and earlier checkpoints remain below.
 
 ## Implemented product
 
@@ -86,10 +86,10 @@ The first loopback test was blocked by sandbox `EPERM`; its rerun with local-lis
 | Judge-accessible repository | PASS — public GitHub metadata and README anonymously read back at 5468d89; evidence/public-repository-verification.json |
 | Required full hosted application | PASS — actual HTTPS/WSS/auth/restart/replay and real hosted Twitch proposal/vote/merge/player escape/witness |
 | YouTube demo | PASS —96-second Unlisted source with English captions,anonymous oEmbed metadata and continuous public privacy-domain playback to Replay;video-public-player.json;strict fresh-profile isolation not claimed |
-| Eligibility/final terms | BLOCKED — personal eligibility confirmations received privately; final full rules/terms approval pending |
-| Devpost submission | BLOCKED — draft copy exists; no submission was made |
+| Eligibility/final terms | PASS — personal eligibility confirmed privately and full rules/terms explicitly approved by the user; no private answers published |
+| Devpost submission | PASS — Submitted receipt, separate published-project/hackathon readback and actual public browser inspection; devpost-submission-verification.json |
 
-The authorized public repository and unlisted YouTube demo are published. The full hosted deployment is verified; no hackathon submission is claimed. Fourteen specifically authorized test messages were posted in the user's own channel across the historical and two Nov2 rounds; the latest successful run is detailed below. The local preview and automated tests do not establish submission readiness. The formal deadline is 2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India; official source evidence is preserved in evidence/official-hackathon.json.
+The authorized public repository and unlisted YouTube demo are published. The full hosted deployment and actual Devpost submission are verified. Fourteen specifically authorized test messages were posted in the user's own channel across the historical and two Nov2 rounds; the latest successful run is detailed below. The local preview and automated tests do not establish submission readiness. The formal deadline is 2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India; official source evidence is preserved in evidence/official-hackathon.json.
 
 ## 29 October motion-design refinement
 
@@ -230,11 +230,20 @@ An independent read-only review validated HTTPS certificates and 200 responses f
 
 Root’s deployment verification observed the same IDs/start times/restart counts for six existing containers and 200 responses on five existing HTTPS routes before and after. Its post-round resource observation was a snapshot, not a reservation, load benchmark or availability guarantee. The application remains isolated and resource-limited; no new paid AWS resource was created. The sanitized root-observed aggregate is [lightsail-deployment.json](evidence/lightsail-deployment.json); it also records runtime isolation, observed 37.54 MiB usage, restored SSH rules and five existing routes remaining 200.
 
-Fourteen approved public messages have now been sent: eleven across the historical local rounds and three in the hosted round. No further posts are authorized. The public source and 96-second unlisted video are available, and complete public privacy-domain playback passed. Personal eligibility confirmations were received privately. Final full rules/terms approval, source-package refresh and actual Devpost submission remain unfinished. The website is operational, but the project is not claimed submission-ready.
+Fourteen approved public messages have now been sent: eleven across the historical local rounds and three in the hosted round. No further posts are authorized. The public source and 96-second unlisted video are available, and complete public privacy-domain playback passed. Personal eligibility confirmations were received privately. The user subsequently approved full rules/terms and final submission, and the actual Devpost receipt and public entry were verified. The final post-receipt archive refresh is local delivery housekeeping.
 
 
 ## Complete public video playback
 
 The actual privacy-enhanced embedded player completed continuous 96-second playback through 1:36/1:36 and Replay, with no sign-in prompt, credential entry or seek. The correct project title and actual Codex evidence captions were observed. Evidence: [video-public-player.json](evidence/video-public-player.json). This verifies complete public privacy-domain playback. The browser had existing YouTube account context on another origin, so a separate fresh-profile cookie-isolation check was not established and strict anonymous playback is not claimed. That remains a nonmandatory limitation.
 
-The user supplied the requested personal eligibility confirmations privately. Their values are not included in public source. Final full rules/terms approval and explicit final Devpost submission approval are still pending; no submission-ready claim or submission receipt follows from these confirmations.
+The user supplied the requested personal eligibility confirmations privately. Their values are not included in public source. The user subsequently provided explicit full rules/terms and final submission approval. That approval and the executed submission are recorded separately below; private answer values remain excluded.
+
+
+## Actual Devpost submission — 2 November 2026
+
+The user explicitly approved creating the entry, using the selected witness thumbnail, submitting and accepting the official rules/Devpost terms after the personal eligibility confirmations. The submitted product story is the approved copy; no new entry or replacement description was created afterward.
+
+The project create result identified project 1524044, slug world-patch. The selected witness thumbnail upload returned HTTP 200. Submit returned Submitted with submission 1278530 and timestamp `2026-11-02T06:51:25.910-05:00`, equivalent to `2026-11-02T11:51:25.910Z`, before the 22:00 UTC deadline. A separate getProject readback confirmed published state, the target hackathon’s submitted_at and the full hosted website URL. Actual signed-in browser inspection confirmed the video, eight tags, public source/live/overlay links and SubmittedToCodexTwitchCon status. The selected thumbnail upload is verified separately by its HTTP200 response.
+
+Public entry: https://devpost.com/software/world-patch . Sanitized proof: [devpost-submission-verification.json](evidence/devpost-submission-verification.json). No private eligibility/survey answers, credentials or authentication headers belong in this evidence. Submission receipt proves submission and publication; it does not imply a judging outcome or remove the documented operational limits. Anonymous automated fetching of the Devpost page returned403; separate provider readback and the signed-in published page were verified. No anonymous Devpost HTTP200 claim is made. The app, source and public thumbnail were independently readable.

@@ -122,8 +122,8 @@ Statuses: PASS = executed evidence; FAIL = observed failure; BLOCKED = dependenc
 | W084 | Required full hosted Fastify/WSS/Twitch/SQLite application verified | PASS | lightsail-deployment.json; actual TLS/WSS/auth/restart/replay, hosted Twitch election/merge/24-button escape/reveal; independent38-event replay |
 | W085 | Repository published and anonymous judge source access verified | PASS | public-repository-verification.json; public GitHub metadata and README anonymous readback at 5468d89; deployed source 49555058 is bound to public CI; current docs/evidence release refresh pending |
 | W086 | Under-three-minute Twitch/Codex video published and publicly played | PASS | youtube-publication-verification.json and video-public-player.json; 96 seconds,Unlisted,Englishcaptions,oEmbedPASS;complete privacy-domain playback PASS,strict fresh-profile isolation not claimed |
-| W087 | Entrant eligibility confirmations and final rules/terms approval received | BLOCKED | Personal eligibility confirmations received privately; final full rules/terms approval remains pending; no personal answer values published |
-| W088 | Actual Devpost submission receipt captured | BLOCKED | Requires live/video/judge-access/attestation gates and authorized submission. |
+| W087 | Entrant eligibility confirmations and final rules/terms approval received | PASS | User confirmed personal eligibility and explicitly approved full official rules/Devpost terms and final submission; private answer values excluded; devpost-submission-verification.json |
+| W088 | Actual Devpost submission receipt captured | PASS | devpost-submission-verification.json; project 1524044/submission 1278530,Submitted at 2026-11-02T11:51:25.910Z; separate published-project/hackathon readback and public browser proof |
 
 ## 29 October design continuation
 
@@ -269,3 +269,10 @@ Dated design failures remain historical failures. Current local tests, controlle
 | ID | Check | Status | Evidence / limit |
 | --- | --- | --- | --- |
 | R028 | Fresh-profile cookie isolation exercised for video playback | UNVERIFIED | Nonmandatory limitation: privacy-domain playback passed, but a separate fresh browser profile was not verified; strict anonymous playback is not claimed |
+
+
+## Verified final submission
+
+| ID | Check | Status | Evidence / limit |
+| --- | --- | --- | --- |
+| R029 | Submitted entry independently read back and published page rendered | PASS | devpost-submission-verification.json; separate getProject confirms published state and hackathon submitted_at; public story includes video, 8 tags,source/live/overlay links; selected thumbnail upload separately confirmedHTTP200 |
