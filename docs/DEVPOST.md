@@ -2,7 +2,7 @@
 
 [Public source](https://github.com/himanshu748/world-patch) · [96-second real Twitch + Codex demo](https://youtu.be/5pPTyIQZ7RY)
 
-The complete hosted application is awaiting provider provisioning and remote verification. Repository access and unlisted-video metadata are verified; complete anonymous YouTube playback, entrant attestations and actual submission remain pending. The browser-only sandbox is separate from the required hosted Twitch experience.
+[Play the complete hosted application](https://worldpatch.13.204.212.172.sslip.io). The real hosted Twitch proposal/vote/merge, player escape, witness and persistent recovery passed. Repository access and unlisted-video metadata are verified; complete public video playback passed. Personal eligibility confirmations were received privately; final rules/terms approval and actual submission remain pending. Fresh-profile cookie isolation is unverified and is not claimed. The browser-only sandbox is separate from the required hosted Twitch experience.
 
 ## Name and tagline
 
@@ -38,11 +38,11 @@ We froze movement during elections to prevent a proof from becoming stale before
 
 The real one-account demonstration rejected an impossible gravity patch, accepted a wall patch, counted a real ballot and merged the winner with a 24-input escape witness. The operator escaped through the browser controls, then revealed the route. Its 36-event export independently reconstructed the merge and escaped final state. The 96-second demo is published unlisted with English captions and preserved Codex development evidence.
 
-The latest local hosting-preparation gate passed 119 tests, typecheck/lint/build; the normal browser journey and static sandbox have separate executed evidence. Those results do not establish the remote application. Full hosting still needs HTTPS/WSS, protected host controls, persistent SQLite recovery and hosted Twitch/game/replay acceptance. Controlled local cold reconnect does not prove a provider outage or migration; no audience study or scale claim is made.
+The latest local hosting-preparation gate passed 127 tests, typecheck/lint/build; the normal browser journey and static sandbox have separate executed evidence. The full hosted application separately passed 78 HTTPS/WSS/security/recovery checks and an actual Twitch round: three approved messages, a 24-input witness, 24 actual UI moves to escape, then Reveal. Its 38-event export independently reconstructed the result. CI passed 39 Linux-image checks including native SQLite and restart/replay. Controlled local cold reconnect does not prove a provider outage or migration; no audience study or scale claim is made.
 
 ## What is next
 
-Complete and verify the full hosted Twitch experience, then perform a human readability/playtest and explore more authored chambers and community-authored patch sets without expanding into arbitrary executable rules. Keep the small deterministic model and inspectable evidence as the core of the experience.
+Perform a human readability/playtest and explore more authored chambers and community-authored patch sets without expanding into arbitrary executable rules. Keep the small deterministic model and inspectable evidence as the core of the experience.
 
 ## Required field mapping
 
@@ -52,10 +52,10 @@ Complete and verify the full hosted Twitch experience, then perform a human read
 | Codex session ID | `01a1807d-e70b-7572-bc0d-a4f29b37d1b8` |
 | Main technology requirement | Codex built/reviewed the implementation; actual Twitch OAuth + EventSub proposal/vote/merge/replay verified; retain reviewed real Twitch/Codex video before submitting |
 | How streamers/community use it | Streamer opens a round; viewers propose/vote on rules; verified winner transforms the chamber; streamer plays; audience sees a replayable solution afterward |
-| Demo video | https://youtu.be/5pPTyIQZ7RY — 96 seconds, Unlisted, English captions; anonymous metadata PASS, full anonymous watch pending |
-| Hosted application | Required by the user; awaiting provider provisioning and full remote acceptance. No hosted URL is claimed yet. |
+| Demo video | https://youtu.be/5pPTyIQZ7RY — 96 seconds, Unlisted, English captions; anonymous metadata PASS, complete public privacy-domain playback PASS; strict fresh-profile isolation not claimed |
+| Hosted application | https://worldpatch.13.204.212.172.sslip.io — complete hosted app verified, including actual Twitch/game/replay and persistent recovery. |
 | Submitter type/country | Entrant must provide; do not infer residence or team status |
 | Learning/Codex survey answers | Entrant must choose personally |
-| Age/jurisdiction/employment attestations | Entrant must review official rules and attest personally |
+| Personal eligibility and final terms | Eligibility confirmations received privately; final full rules/terms and submission approval remain pending. No private answer values are published. |
 
-Official event: https://twitchcon-codex.devpost.com . Deadline: 2 November 2026 14:00 Pacific / 22:00 UTC / 3 November 03:30 India. Fresh rules, requirements and announcements are preserved in evidence/official-hackathon-nov2.json. The organizer’s website field is optional; the agreed project delivery requires the complete hosted application. Repository and video are published, but hosting, personal attestations and submission remain unfinished. Saving a draft is not submission.
+Official event: https://twitchcon-codex.devpost.com . Deadline: 2 November 2026 14:00 Pacific / 22:00 UTC / 3 November 03:30 India. Fresh rules, requirements and announcements are preserved in evidence/official-hackathon-nov2.json. The organizer’s website field is optional; the agreed project delivery requires the complete hosted application. The full hosted app, repository and video are published; complete public privacy-domain video playback also passed. Final full rules/terms approval and actual submission remain unfinished. Saving a draft is not submission.

@@ -10,6 +10,16 @@
   "sourceSHA256": "8dddb680bf4b501854251c38cf973b21096560fbce423fb9dc304094061ee65d",
   "sourceSeconds": 96,
   "anonymousOEmbedMetadata": "PASS",
-  "publicBrowserPlayback": "PENDING",
+  "publicBrowserPlayback": {
+    "status": "PASS_COMPLETE_HOSTED_HD_PLAYBACK",
+    "context": "Signed-in watch page; anonymous metadata checked separately",
+    "recordedAt": "2026-11-02T09:21:54.519082+00:00",
+    "currentTime": 96.041,
+    "duration": 96.041,
+    "ended": true,
+    "error": null,
+    "width": 1920,
+    "height": 1080
+  },
   "submission": "Not submitted by this operation"
 }

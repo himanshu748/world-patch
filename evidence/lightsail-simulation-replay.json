@@ -1,0 +1,735 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "world-patch/1.0.0",
+  "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+  "origin": "simulation",
+  "events": [
+    {
+      "at": 1793614882397,
+      "kind": "session-start",
+      "payload": {
+        "chamber": {
+          "id": "vector-foundry",
+          "version": 1,
+          "name": "Vector Foundry",
+          "description": "Find the key. Learn the drift. Chat can close the direct crossing.",
+          "width": 11,
+          "height": 9,
+          "tiles": [
+            "###########",
+            "#S..#....K#",
+            "#.#~#.##..#",
+            "#.#.A.#...#",
+            "#.AAA.#.#.#",
+            "#...#...#.#",
+            "#.~~~.##..#",
+            "#....B...E#",
+            "###########"
+          ],
+          "start": {
+            "x": 1,
+            "y": 1
+          },
+          "exit": {
+            "x": 9,
+            "y": 7
+          },
+          "key": {
+            "x": 9,
+            "y": 1
+          },
+          "portals": [],
+          "wallGroups": {
+            "A": [
+              {
+                "x": 4,
+                "y": 3
+              },
+              {
+                "x": 2,
+                "y": 4
+              },
+              {
+                "x": 3,
+                "y": 4
+              },
+              {
+                "x": 4,
+                "y": 4
+              }
+            ],
+            "B": [
+              {
+                "x": 5,
+                "y": 7
+              }
+            ]
+          },
+          "initialRules": {
+            "gravity": "off",
+            "portals": "normal",
+            "ice": false,
+            "walls": {
+              "A": false,
+              "B": false
+            }
+          }
+        },
+        "origin": "simulation",
+        "receipt": {
+          "id": "ef5cb8f1-350a-4ac1-941e-076b5023e2f4",
+          "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+          "engineVersion": "world-patch/1.0.0",
+          "chamberVersion": 1,
+          "round": 0,
+          "revision": 0,
+          "origin": "simulation",
+          "patch": null,
+          "beforeDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+          "afterDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+          "explored": 62,
+          "pathLength": 18,
+          "witness": [
+            "right",
+            "right",
+            "down",
+            "down",
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down"
+          ],
+          "before": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": false,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "start": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": false,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "tally": [],
+          "tieBreak": "votes-descending-then-canonical-key-code-point-ascending",
+          "digest": "466ef6f51d5ecd48609673a83cc289c567f3b738460e6694f6c71f947c6514db"
+        }
+      },
+      "gameDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 1,
+      "previousHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "98b24e9bd1fd0e71acd11dc68dc661964c57929846f6c4736349008bd58a2f12"
+    },
+    {
+      "at": 1793614882476,
+      "kind": "round-open",
+      "payload": {
+        "round": 1,
+        "gameRevision": 0,
+        "deadline": 1793614907476
+      },
+      "gameDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 2,
+      "previousHash": "98b24e9bd1fd0e71acd11dc68dc661964c57929846f6c4736349008bd58a2f12",
+      "hash": "a41d96792bc0849b33c28b4b50b7e5c6c8178aa3008f0cfe9cd3149ff15e58ef"
+    },
+    {
+      "at": 1793614882542,
+      "kind": "rejection",
+      "payload": {
+        "code": "NO_ESCAPE",
+        "origin": "simulation",
+        "eventId": "sim:acc76710-6ad1-4bcf-9f63-7430e73f6fcb",
+        "messageId": "sim:acc76710-6ad1-4bcf-9f63-7430e73f6fcb",
+        "receivedAt": 1793614882542,
+        "sentAt": 1793614882542
+      },
+      "gameDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 3,
+      "previousHash": "a41d96792bc0849b33c28b4b50b7e5c6c8178aa3008f0cfe9cd3149ff15e58ef",
+      "hash": "f7c8269026b82e097f4cb2de46f0e477a437124e7e3b57abbdbb54e91c69d6d0"
+    },
+    {
+      "at": 1793614882616,
+      "kind": "proposal",
+      "payload": {
+        "candidateId": 1,
+        "key": "walls:A:closed",
+        "patch": {
+          "kind": "walls",
+          "group": "A",
+          "closed": true
+        },
+        "explored": 58,
+        "pathLength": 24,
+        "origin": "simulation",
+        "eventId": "sim:8ffabf45-fa33-410d-bc6e-34fbcd70213a",
+        "messageId": "sim:8ffabf45-fa33-410d-bc6e-34fbcd70213a",
+        "receivedAt": 1793614882616,
+        "sentAt": 1793614882616
+      },
+      "gameDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 4,
+      "previousHash": "f7c8269026b82e097f4cb2de46f0e477a437124e7e3b57abbdbb54e91c69d6d0",
+      "hash": "d1b49c845372721f34816cf35987a37786ec1596c8b95889d9d6ffb684d9683e"
+    },
+    {
+      "at": 1793614882676,
+      "kind": "voting-open",
+      "payload": {
+        "deadline": 1793614902676
+      },
+      "gameDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 5,
+      "previousHash": "d1b49c845372721f34816cf35987a37786ec1596c8b95889d9d6ffb684d9683e",
+      "hash": "8d03cf81e754d73fe8d1711a1acf7ce65e21649e4542e076549dfe9fc5f3ab6d"
+    },
+    {
+      "at": 1793614882816,
+      "kind": "vote",
+      "payload": {
+        "candidateId": 1,
+        "totals": [
+          {
+            "candidateId": 1,
+            "votes": 1
+          }
+        ],
+        "origin": "simulation",
+        "eventId": "sim:77fae6b3-01f7-4acd-9b71-0d5c4dc563b1",
+        "messageId": "sim:77fae6b3-01f7-4acd-9b71-0d5c4dc563b1",
+        "receivedAt": 1793614882816,
+        "sentAt": 1793614882816
+      },
+      "gameDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 6,
+      "previousHash": "8d03cf81e754d73fe8d1711a1acf7ce65e21649e4542e076549dfe9fc5f3ab6d",
+      "hash": "d58335d56504ebd313e0b246ac80ec273a299cd8731a6e644f261c5af6692139"
+    },
+    {
+      "at": 1793614882896,
+      "kind": "merge",
+      "payload": {
+        "receipt": {
+          "id": "1acad7b0-db6e-43f1-9c1d-c8ee633ac5c5",
+          "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+          "engineVersion": "world-patch/1.0.0",
+          "chamberVersion": 1,
+          "round": 1,
+          "revision": 1,
+          "origin": "simulation",
+          "patch": {
+            "kind": "walls",
+            "group": "A",
+            "closed": true
+          },
+          "beforeDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+          "afterDigest": "b1eea15f597a8cc9a23923e5cffefbc480ae9ee190c07bbbc902d7b61ae03088",
+          "explored": 58,
+          "pathLength": 24,
+          "witness": [
+            "down",
+            "down",
+            "down",
+            "down",
+            "right",
+            "right",
+            "down",
+            "right",
+            "right",
+            "up",
+            "up",
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down"
+          ],
+          "before": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": false,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "start": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": true,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "tally": [
+            {
+              "candidateId": 1,
+              "key": "walls:A:closed",
+              "votes": 1
+            }
+          ],
+          "tieBreak": "votes-descending-then-canonical-key-code-point-ascending",
+          "digest": "03f60f3b0f1cf2756011a80f7b10327c2f76efa58c5fe0693940b176efd309f2"
+        },
+        "tally": [
+          {
+            "candidateId": 1,
+            "key": "walls:A:closed",
+            "votes": 1
+          }
+        ],
+        "tieBreak": "votes-descending-then-canonical-key-code-point-ascending"
+      },
+      "gameDigest": "b1eea15f597a8cc9a23923e5cffefbc480ae9ee190c07bbbc902d7b61ae03088",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 7,
+      "previousHash": "d58335d56504ebd313e0b246ac80ec273a299cd8731a6e644f261c5af6692139",
+      "hash": "87b2643f9af9558e7af3590518068dd2c8cc5a031056174361d14a02d3375449"
+    },
+    {
+      "at": 1793614883036,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "5743a9049e9427b9a04b106a822f51e77f35281bd2a0a3c78fd55e77fb700acb",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 8,
+      "previousHash": "87b2643f9af9558e7af3590518068dd2c8cc5a031056174361d14a02d3375449",
+      "hash": "e96d8b4c5e019de8c9495829bbe4a53107743f39ecb6a18892f9f4709e80b2a3"
+    },
+    {
+      "at": 1793614883096,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "205e3ab8573aa04d1788ffb6e2d4d289d3a5a4c54e16db4b2b1fe6b2c43698e2",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 9,
+      "previousHash": "e96d8b4c5e019de8c9495829bbe4a53107743f39ecb6a18892f9f4709e80b2a3",
+      "hash": "f20b52d572a2017fdec5f0ab66287d6faa03de19caecec9f09667ffe28fccf66"
+    },
+    {
+      "at": 1793614883156,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "81785c74b6caac0f700663140db18d582acc7f3a335bbe8573106a358e9536cd",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 10,
+      "previousHash": "f20b52d572a2017fdec5f0ab66287d6faa03de19caecec9f09667ffe28fccf66",
+      "hash": "853e58336ca2756aadbf6007530cd0607ef22e6de2360bbca810714a9139062d"
+    },
+    {
+      "at": 1793614883236,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "c5cc01e77a1e7bb75334ee43cda6e8059c7535a1249de28646303ce7a3ff860f",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 11,
+      "previousHash": "853e58336ca2756aadbf6007530cd0607ef22e6de2360bbca810714a9139062d",
+      "hash": "8aef1b43f51ced89535017d4a8752bbaa459b1cf1a62a65bedb201cecd589c75"
+    },
+    {
+      "at": 1793614883296,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "91be1f070e10e860d8dec98dcf09f32c5d26bfec6a5780026099b17293e5125d",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 12,
+      "previousHash": "8aef1b43f51ced89535017d4a8752bbaa459b1cf1a62a65bedb201cecd589c75",
+      "hash": "d81744383d9aa51cc90cb3ffe60e7b5bd08c7292626ca458fa2a15825f2571eb"
+    },
+    {
+      "at": 1793614883366,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "04b045d2bbd314ebeb13eba3e1e5cdb1d1a510efe9d24caa6ec78688f5221f76",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 13,
+      "previousHash": "d81744383d9aa51cc90cb3ffe60e7b5bd08c7292626ca458fa2a15825f2571eb",
+      "hash": "4adf92f6730b82db698d92c25b942509676c67d939878a145cc3fee91ef0741c"
+    },
+    {
+      "at": 1793614883436,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "5ad556f1b4ab34b6e5b51a1bd690ce5de864de27d0e600ceac5555c96036e428",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 14,
+      "previousHash": "4adf92f6730b82db698d92c25b942509676c67d939878a145cc3fee91ef0741c",
+      "hash": "e27c45da4025a4b4607f1468c2b216412288a7346e73431e4b7154f557117709"
+    },
+    {
+      "at": 1793614883516,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "680ca81d29a75b4da7aa06707e9fdba444555feb823f3a16e1650c652519d9d2",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 15,
+      "previousHash": "e27c45da4025a4b4607f1468c2b216412288a7346e73431e4b7154f557117709",
+      "hash": "8f1663f24ac6c8656c5d036b39147b916721e22eb1c384e459e40a4582d372c9"
+    },
+    {
+      "at": 1793614883576,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "adf36a6b948ba02f79c47652e324b34bb9d68e383e1ee71380f86d398bf41a8c",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 16,
+      "previousHash": "8f1663f24ac6c8656c5d036b39147b916721e22eb1c384e459e40a4582d372c9",
+      "hash": "3ddfaef506a21d76369eeec9e2e1a10f46b44e4aedc8ad9d429217dafaade573"
+    },
+    {
+      "at": 1793614883646,
+      "kind": "move",
+      "payload": {
+        "direction": "up"
+      },
+      "gameDigest": "d8cd96647fcb02f79809def841098e1ac74c77b3715c3a45a13bcad70959119f",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 17,
+      "previousHash": "3ddfaef506a21d76369eeec9e2e1a10f46b44e4aedc8ad9d429217dafaade573",
+      "hash": "769742a410eed59905314e46b0f130ab7b961bfe96cb6cd1978cadbdd2e684c9"
+    },
+    {
+      "at": 1793614883716,
+      "kind": "move",
+      "payload": {
+        "direction": "up"
+      },
+      "gameDigest": "58229c36267acd0e95e315421d6be2e756ffd341cbb2100f3c9fa63f95dd9a04",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 18,
+      "previousHash": "769742a410eed59905314e46b0f130ab7b961bfe96cb6cd1978cadbdd2e684c9",
+      "hash": "5d257b24ccf8746c873bb3a2ba5aae8fe33b0b7aa166594d9a81b721bb9cc2ac"
+    },
+    {
+      "at": 1793614883776,
+      "kind": "move",
+      "payload": {
+        "direction": "up"
+      },
+      "gameDigest": "5891891fce18aaeecc161fe05214e13f6f70ad7cc00062ff8d2f73ec29dfeae5",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 19,
+      "previousHash": "5d257b24ccf8746c873bb3a2ba5aae8fe33b0b7aa166594d9a81b721bb9cc2ac",
+      "hash": "c841d112a8f085fbd8cd4f8cb512062f2563ee0883a1ed5ea882571e0fb7ecde"
+    },
+    {
+      "at": 1793614883836,
+      "kind": "move",
+      "payload": {
+        "direction": "up"
+      },
+      "gameDigest": "9d48a440552877c18795051474d6766e2d46400dba4df8cf95e5de830e86daa6",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 20,
+      "previousHash": "c841d112a8f085fbd8cd4f8cb512062f2563ee0883a1ed5ea882571e0fb7ecde",
+      "hash": "89540254bd9f5cc12ed64b572f80b55356d2e76d5fdcdd3273a59d5b245e497f"
+    },
+    {
+      "at": 1793614883895,
+      "kind": "move",
+      "payload": {
+        "direction": "up"
+      },
+      "gameDigest": "0da9bb364a954df963524a1dcde64b4412fd65b983ac08da116e22a4f29758e8",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 21,
+      "previousHash": "89540254bd9f5cc12ed64b572f80b55356d2e76d5fdcdd3273a59d5b245e497f",
+      "hash": "a79005bb9e204deacd90e7dca1451bd2e0f920da696dd65317f376f5b9d3487e"
+    },
+    {
+      "at": 1793614883976,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "419221f4ec2c8ddf68aa319cf6440b2a029f7531d797f90d2aa6cb3d558c300b",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 22,
+      "previousHash": "a79005bb9e204deacd90e7dca1451bd2e0f920da696dd65317f376f5b9d3487e",
+      "hash": "a3b279fbbf8d684c29c5f2f41411380f410a6fdbf85918f9a75059703e1a1824"
+    },
+    {
+      "at": 1793614884036,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "67e3c7f84307437b9c93ab7f40b752898fb6a16e6be0f5c0210d6d3ab184d814",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 23,
+      "previousHash": "a3b279fbbf8d684c29c5f2f41411380f410a6fdbf85918f9a75059703e1a1824",
+      "hash": "7b928dd3e868d360ecc87b6577c40c13b02d91c79166258ff86410b2750d3a68"
+    },
+    {
+      "at": 1793614884116,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "fc639e46b175c38e3385cb468d03183df02803cfd6fc4a41b10910717fd6b5a7",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 24,
+      "previousHash": "7b928dd3e868d360ecc87b6577c40c13b02d91c79166258ff86410b2750d3a68",
+      "hash": "fd15f1a6f96adfefae112497363005214b23b32d0b1fa0f71583c5e868d0d9fc"
+    },
+    {
+      "at": 1793614884195,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "b9045de4292b58c386b36e083498a1a7977494ee5279a5076ea2287a2ad9a471",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 25,
+      "previousHash": "fd15f1a6f96adfefae112497363005214b23b32d0b1fa0f71583c5e868d0d9fc",
+      "hash": "d68c2d6edb1176355bdfcf0476ee04cafcfa63e30c7d390c389948a37d1006a1"
+    },
+    {
+      "at": 1793614884271,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "73c79601dafad9f1ad738bad7f558e5dd97ec79c6c21d716cf50fad12f6f143d",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 26,
+      "previousHash": "d68c2d6edb1176355bdfcf0476ee04cafcfa63e30c7d390c389948a37d1006a1",
+      "hash": "8cf87979aba329fbfe9c4342761d8d2d3d240cd68e1a2ab445b77dc836ef5a66"
+    },
+    {
+      "at": 1793614884341,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "0b56ca84a32841fbb7c1aae3db637c24cc76a823a3074c6de1881b73ef37060a",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 27,
+      "previousHash": "8cf87979aba329fbfe9c4342761d8d2d3d240cd68e1a2ab445b77dc836ef5a66",
+      "hash": "829fccae8668ec107ce0bc970ee82bbdc0b28482c712c77e62064fce5de6c586"
+    },
+    {
+      "at": 1793614884416,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "f74480f0862b5763cafe2755435e3411aa0e638328cf1374b44fb5d3063d3fc4",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 28,
+      "previousHash": "829fccae8668ec107ce0bc970ee82bbdc0b28482c712c77e62064fce5de6c586",
+      "hash": "3b39ed90cf73bb7bbd258b317c7f878d551e711f83bba6d4f82cd81f2e46ec31"
+    },
+    {
+      "at": 1793614884476,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "7f2edf4d2939d49caf0a46176d03c05149fa8383ce7256524c03fe94cc85c956",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 29,
+      "previousHash": "3b39ed90cf73bb7bbd258b317c7f878d551e711f83bba6d4f82cd81f2e46ec31",
+      "hash": "a1c1dff5261ef5a3cf238a7976af4adf0830e1e08efb6e029177859172ee5b94"
+    },
+    {
+      "at": 1793614884536,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "fa5320fb14c4f8f44e768fb1d49d83acaf9d651d9865ae6e30ccfe70c9df6a64",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 30,
+      "previousHash": "a1c1dff5261ef5a3cf238a7976af4adf0830e1e08efb6e029177859172ee5b94",
+      "hash": "d0e2b00b6c8244783af5ed5e186dfe345a9aa12c0ee486cba4764d62af57b09d"
+    },
+    {
+      "at": 1793614884596,
+      "kind": "move",
+      "payload": {
+        "direction": "down"
+      },
+      "gameDigest": "16021dde27207f927e6017deb2e0ebf416a3e25c6d6e2fab9dfcbceb85f48f17",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 31,
+      "previousHash": "d0e2b00b6c8244783af5ed5e186dfe345a9aa12c0ee486cba4764d62af57b09d",
+      "hash": "06e0a84598661c6c91813fe1d2c37dce27a6acf82ce9ea2d1f7022419238fc87"
+    },
+    {
+      "at": 1793614884736,
+      "kind": "reveal",
+      "payload": {
+        "receipt": {
+          "id": "1acad7b0-db6e-43f1-9c1d-c8ee633ac5c5",
+          "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+          "engineVersion": "world-patch/1.0.0",
+          "chamberVersion": 1,
+          "round": 1,
+          "revision": 1,
+          "origin": "simulation",
+          "patch": {
+            "kind": "walls",
+            "group": "A",
+            "closed": true
+          },
+          "beforeDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+          "afterDigest": "b1eea15f597a8cc9a23923e5cffefbc480ae9ee190c07bbbc902d7b61ae03088",
+          "explored": 58,
+          "pathLength": 24,
+          "witness": [
+            "down",
+            "down",
+            "down",
+            "down",
+            "right",
+            "right",
+            "down",
+            "right",
+            "right",
+            "up",
+            "up",
+            "up",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down"
+          ],
+          "before": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": false,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "start": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": true,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "tally": [
+            {
+              "candidateId": 1,
+              "key": "walls:A:closed",
+              "votes": 1
+            }
+          ],
+          "tieBreak": "votes-descending-then-canonical-key-code-point-ascending",
+          "digest": "03f60f3b0f1cf2756011a80f7b10327c2f76efa58c5fe0693940b176efd309f2"
+        }
+      },
+      "gameDigest": "16021dde27207f927e6017deb2e0ebf416a3e25c6d6e2fab9dfcbceb85f48f17",
+      "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+      "seq": 32,
+      "previousHash": "06e0a84598661c6c91813fe1d2c37dce27a6acf82ce9ea2d1f7022419238fc87",
+      "hash": "3fb573324ee2bfaebae25d84a8a7c590f4d50b8dbbce98a41ad5fb31ec506ca4"
+    }
+  ]
+}

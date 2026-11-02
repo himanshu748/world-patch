@@ -103,7 +103,7 @@ Statuses: PASS = executed evidence; FAIL = observed failure; BLOCKED = dependenc
 | --- | --- | --- | --- |
 | W071 | Independent implementation security review adjudicated | PASS | evidence/security-review.md; scoped findings repaired and regression-tested |
 | W072 | Independent QA/code review adjudicated | PASS | evidence/qa-implementation-review.md and qa-ui-review.md; adjudicated with tests |
-| W073 | Current local typecheck/lint/unit/property/integration/runtime suite executed | PASS | 119 tests plus typecheck/lint/normalbuild PASS; render-deployment-verification.json; local Node 26.12.0, targetLinux not run |
+| W073 | Current local typecheck/lint/unit/property/integration/runtime suite executed | PASS | 127 tests plus types/lint/normal build; lightsail-preflight.json; macOS Node 26.12.0; Linux CI proof separate |
 | W074 | Normal and separately labeled static browser regressions executed | PASS | static-demo-verification.json;22 normal / 3 static journeys passed; predates startup-only hosting change; captured 114/22 gate retained |
 | W075 | Clean dependency install and production build/start executed | PASS | evidence/clean-install.json and clean-install-smoke.json; cold build/native SQLite/restart PASS |
 | W076 | Dependency/security and secret exposure checks executed | PASS | evidence/dependency-audit.json: 0 known vulnerabilities; source and package ignore rules inspected |
@@ -114,15 +114,15 @@ Statuses: PASS = executed evidence; FAIL = observed failure; BLOCKED = dependenc
 | ID | Independently verifiable check | Status | Evidence / next action |
 | --- | --- | --- | --- |
 | W078 | README and setup guide verified against executable commands | PASS | evidence/clean-install.json; production-smoke.json; replay-cli-output.txt |
-| W079 | Deployment recipe reproducible with persistent volume | UNVERIFIED | Local Node restart/persistence PASS; Docker image and remote persistent-volume recipe not executed. |
+| W079 | Complete selected deployment and persistent-volume recipe executed | PASS | lightsail-linux-container-smoke.json; 39 checks; lightsail-hosted-api.json; 78 checks including actual application-only restart and persistent replay |
 | W080 | Verification report separates local/fixture/live evidence | PASS | VERIFICATION.md inspected against machine-readable reports |
 | W081 | Live demo runbook includes one-account setup and recording | PASS | docs/LIVE-DEMO.md; one-account/OBS/recording steps and real-evidence limits inspected |
 | W082 | Devpost description and required fields prepared | PASS | docs/DEVPOST.md includes actual publicrepo/unlistedvideo; official websitefield optional, userfullhost required; personal fields/submission pending |
-| W083 | Current source archive contains code/assets/lockfile without secrets | PASS | Current package CRC and all-byte checks, exact actual private-value/encoding scans including production host secret; adjacent package summary. |
-| W084 | Required full hosted Fastify/WSS/Twitch/SQLite application verified | BLOCKED | Authorized provisioning pending; must exercise HTTPS host/overlay, WSS, real hosted OAuth/EventSub/game/replay and SQLite recovery after service restart; Pages cannot satisfy |
-| W085 | Repository published and anonymous judge source access verified | PASS | public-repository-verification.json; public GitHub metadata and README anonymous readback at 5468d89; new hosting revision release pending |
-| W086 | Under-three-minute Twitch/Codex video published with anonymous metadata | PASS | youtube-publication-verification.json; 96-second source, Unlisted, English captions, Studio No Issues, oEmbed PASS; full anonymous playback pending R016 |
-| W087 | Entrant eligibility/terms confirmed by user | BLOCKED | Entrant must personally review/confirm eligibility and terms. |
+| W083 | Current hosted-release source archive contains code/assets/lockfile without secrets | PASS | Current source package executed: ZIP CRC, complete entry-byte inventory, actual private-value/JSON/URL/base64 scans across files and staged blobs; package-verification.json and adjacent package summary. |
+| W084 | Required full hosted Fastify/WSS/Twitch/SQLite application verified | PASS | lightsail-deployment.json; actual TLS/WSS/auth/restart/replay, hosted Twitch election/merge/24-button escape/reveal; independent38-event replay |
+| W085 | Repository published and anonymous judge source access verified | PASS | public-repository-verification.json; public GitHub metadata and README anonymous readback at 5468d89; deployed source 49555058 is bound to public CI; current docs/evidence release refresh pending |
+| W086 | Under-three-minute Twitch/Codex video published and publicly played | PASS | youtube-publication-verification.json and video-public-player.json; 96 seconds,Unlisted,Englishcaptions,oEmbedPASS;complete privacy-domain playback PASS,strict fresh-profile isolation not claimed |
+| W087 | Entrant eligibility confirmations and final rules/terms approval received | BLOCKED | Personal eligibility confirmations received privately; final full rules/terms approval remains pending; no personal answer values published |
 | W088 | Actual Devpost submission receipt captured | BLOCKED | Requires live/video/judge-access/attestation gates and authorized submission. |
 
 ## 29 October design continuation
@@ -147,7 +147,7 @@ Source packaging status is recorded in evidence/package-verification.json after 
 | L001 | Hero CTA and two law actions visible in initial desktop view | PASS |1440×900 and1280×720; landing-refinement-final-tests.json |
 | L002 | Accepted/rejected sandbox laws preserve the verified checkpoint contract | PASS |Actual shared engine;24-move accepted wall route; rejected gravity retains state |
 | L003 | Witness reaches keyed exit, reset works and server room remains unchanged | PASS |Executed landing journey; exact room state/revision equality |
-| L004 | Mobile keyboard, law disclosure, touch targets and reduced motion work | PASS |390×844, Tab/Enter, 44px targets, no page overflow |
+| L004 | Mobile keyboard, law disclosure, touch targets and reduced motion work | PASS | 390×844, Tab/Enter, 44px targets, no page overflow |
 | L005 | Game/overlay entry and local OAuth-result routing remain functional | PASS |Full9-browser run and final3 landing run; provider grant not exercised |
 | L006 | Recovered landing stylesheet integrated and inspected in real browser | PASS |src/client/landing-refinement.css; screenshot marketing-landing-hero.png; provenance hashes |
 | L007 | Landing generation successful canonical terminal delivery | FAIL |Run ended canceled; recovered files do not change that outcome |
@@ -238,7 +238,34 @@ Dated design failures remain historical failures. Current local tests, controlle
 | ID | Check | Status | Evidence / limit |
 | --- | --- | --- | --- |
 | R013 | Real entry-point hosting configuration regressions pass locally | PASS | render-deployment-verification.json; 119 total, 5 new runtime tests, types/lint/normal build; synthetic configuration, no provider calls |
-| R014 | Target Linux runtime and native SQLite execute on selected host | UNVERIFIED | Node 26.13.0 pinned; local checks ran 26.12.0 macOS; remote build/start not executed |
-| R015 | Hosted state survives a real persistent-disk service restart | UNVERIFIED | Must save, restart, recover and independently replay at actual HTTPS origin |
-| R016 | Complete anonymous YouTube watch playback succeeds | UNVERIFIED | Published Unlisted and oEmbed metadata PASS; 96-second local playback PASS; complete remote watch result pending |
-| R017 | Hosted Twitch callback, grant and actual game/replay journey pass | UNVERIFIED | Existing local live proof cannot satisfy hosted origin; additional public posts require authorization |
+| R014 | Linux image runtime and native SQLite execute in isolated CI | PASS | lightsail-second-linux-smoke.json; Node 26.13.0/nativeSQL and 25 checks; complete restart smoke and selected-host execution remain separate |
+| R015 | Hosted state survives a real persistent-disk service restart | PASS | lightsail-hosted-api.json; proposing→play with saved game intact, old host cookie invalidated; recovery replay independently verified |
+| R016 | Complete public privacy-domain video playback succeeds | PASS | video-public-player.json;continuous 1:36/1:36 to Replay,no sign-in prompt or seek,actual Codex captions observed;fresh-profile cookie isolation not verified |
+| R017 | Hosted Twitch callback, grant and actual game/replay journey pass | PASS | lightsail-twitch-live.json;3approvedposts,realEventSub,merge24/58,24UIinputs escaped,reveal/overlay24/24;38event export independently verified |
+
+
+## Selected Lightsail release preparation
+
+| ID | Check | Status | Evidence / limit |
+| --- | --- | --- | --- |
+| R018 | Current local proxy/startup gate passes | PASS | lightsail-preflight.json; 127 tests,types/lint/build; exact trusted/untrusted/default/multihop proxy and entry-point behavior |
+| R019 | First Linux image build succeeds | FAIL | lightsail-first-linux-build.json; missing native compiler/Python tools; build-stage repair retained |
+| R020 | Second Linux image startup/security/native checks execute | PASS | lightsail-second-linux-smoke.json;25 isolated checks under 512 MiB / 0.5 CPU; whole run still failed restart harness |
+| R021 | Complete Linux pipeline provides verified release artifact | PASS | lightsail-linux-image.json; CI3run 41426371617 source 49555058,39checks, artifactSHA/layers verified; earlier failed runs retained |
+| R022 | Existing-host capacity reviewed before scoped rollout | PASS | Read-only snapshot summarized in verification-summary.json;46.4 GiB free,915 MiB available,3.17% CPU,6 existing containers; recheck before deployment |
+| R023 | Existing applications preserved after hosted change | PASS | lightsail-deployment.json;6container IDs/start/restart counts unchanged,5existingHTTPSroutes200before/after,proxyvalidated/reloaded,temporarySSHrulesrestored; no long-stream continuity claim |
+
+
+## Actual hosted proof
+
+| ID | Check | Status | Evidence / limit |
+| --- | --- | --- | --- |
+| R024 | Actual public-host API/security/simulation/recovery suite passes | PASS | lightsail-hosted-api.json; 78 checks at real HTTPS origin, no simulated provider claim |
+| R025 | Independent review recomputes hosted Twitch evidence | PASS | lightsail-independent-review.json;4certificate-validatedGETs200 and38-event CLI reconstruction,1merge/escaped9,7; no SSH performed by reviewer |
+| R026 | Actual Caddy rejects forwarded-header bucket spoofing | PASS | lightsail-proxy-spoof.json;401×6→429 across forgedXFF; aggregate confirms second real source validlogin200within same60s window |
+| R027 | Runtime isolation and post-round headroom are observed | PASS | lightsail-deployment.json;512MiB/.5CPU,nonroot/read-only/capsdropped,persistentvolume;37.54MiBusage snapshot, no load/uptime guarantee |
+
+
+| ID | Check | Status | Evidence / limit |
+| --- | --- | --- | --- |
+| R028 | Fresh-profile cookie isolation exercised for video playback | UNVERIFIED | Nonmandatory limitation: privacy-domain playback passed, but a separate fresh browser profile was not verified; strict anonymous playback is not claimed |

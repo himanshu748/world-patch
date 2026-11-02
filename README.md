@@ -6,13 +6,15 @@ A browser puzzle show where Twitch viewers propose bounded changes to gravity, p
 
 Built with OpenAI Codex during the Codex × TwitchCon Hackathon. Main session: **`01a1807d-e70b-7572-bc0d-a4f29b37d1b8`**.
 
-> [Public source](https://github.com/himanshu748/world-patch) · [96-second real Twitch + Codex demo](https://youtu.be/5pPTyIQZ7RY)
+> [Play WORLD//PATCH](https://worldpatch.13.204.212.172.sslip.io) · [OBS overlay](https://worldpatch.13.204.212.172.sslip.io/overlay) · [Public source](https://github.com/himanshu748/world-patch) · [96-second Twitch + Codex demo](https://youtu.be/5pPTyIQZ7RY)
 >
-> The full hosted application is **awaiting provider provisioning and remote verification**. Local hosting preparation passed 119 tests, typecheck, lint and the normal production build. The recorded game revision separately passed 114 tests and 22 production-browser journeys, then completed a real Twitch proposal/vote/merge, player escape and independently verified replay. The video is published unlisted; anonymous metadata is verified, while complete anonymous YouTube playback remains pending. [Verification and limits](VERIFICATION.md). **Not submission-ready.**
+> The complete hosted application is **live and verified**: HTTPS/WSS, protected controls, persistent recovery and a real Twitch proposal/vote/merge/escape/replay. Its 38-event Twitch export independently verified. Local 127-test and 39-check Linux-image gates passed; the public-host checks passed 78/78. Complete public 96-second video playback passed. Final rules/terms approval and Devpost submission remain pending; fresh-profile cookie isolation is an unverified, nonmandatory limitation. [Verification and limits](VERIFICATION.md). **Not submission-ready.**
+
+Open the hosted game and choose **Play the demo** for the playable introduction without signing in. The [host controller](https://worldpatch.13.204.212.172.sslip.io/play) requires private host access; the overlay is read-only.
 
 ## Run the game
 
-Requirements: Node.js ≥22.12, npm, a modern browser and a writable local data directory. Exact tested runtime and commands are in the verification report. Local play needs no paid service or API model. A Twitch account is needed only for live mode. The required hosted release uses one persistent server; its remote acceptance checks are still pending.
+Requirements: Node.js ≥22.12, npm, a modern browser and a writable local data directory. Exact tested runtime and commands are in the verification report. Local play needs no paid service or API model. A Twitch account is needed only for live mode. The hosted release uses one persistent server with its own verified live Twitch session.
 
 ```sh
 npm ci
@@ -24,7 +26,7 @@ npm start
 
 Open **http://localhost:3000** and choose **Play the demo** to try the local sandbox without signing in. Choose **Host a chamber**, or open **http://localhost:3000/play** directly, for host controls. Enter HOST_SECRET to use the controller. The read-only OBS/spectator view is **http://localhost:3000/overlay**. If Twitch configuration is absent, the app stays in clearly labeled simulation. It never invents a live connection.
 
-Detailed instructions: [local setup and one-account Twitch](docs/LOCAL-SETUP.md), [live demonstration](docs/LIVE-DEMO.md), [persistent deployment](docs/DEPLOYMENT.md).
+Detailed instructions: [local setup and one-account Twitch](docs/LOCAL-SETUP.md), [live demonstration](docs/LIVE-DEMO.md), [Lightsail deployment](docs/LIGHTSAIL-DEPLOYMENT.md).
 
 ## Try the homepage sandbox
 
@@ -100,6 +102,7 @@ Chat is untrusted. Commands have a strict typed grammar; raw JavaScript, arbitra
 | `HOST_SECRET` | Required host login secret, ≥24 random characters |
 | `PUBLIC_ORIGIN` | Exact browser origin; falls back to Render’s `RENDER_EXTERNAL_URL`, then `http://localhost:3000`; remote requires HTTPS |
 | `HOST`, `PORT` | Listen address/port; defaults 127.0.0.1 / 3000 |
+| `TRUSTED_PROXY_IP` | Optional exact Caddy address on the dedicated Docker network; unset disables proxy trust; CIDRs and blanket trust are rejected |
 | `DATA_DIR` | Persistent SQLite directory; default `./data` |
 | `TWITCH_CLIENT_ID`, `TWITCH_CLIENT_SECRET` | Own registered application credentials |
 | `TWITCH_REDIRECT_URI` | Exact registered OAuth callback; defaults to the selected origin plus `/auth/twitch/callback` |
@@ -120,4 +123,4 @@ Original source/assets were authored for this project. Third-party runtime libra
 
 The organizer requires a judge-accessible code repository, a YouTube video of at most three minutes with real Twitch functionality and Codex usage, a description and the main Codex session ID. The latest announcement permits unlisted YouTube videos; private videos do not qualify. A private GitHub/GitLab repository must be shared with the organizer's testing account. The competition website field is optional; this project’s agreed delivery nevertheless requires the complete hosted Fastify, WebSocket, Twitch and persistent SQLite application. GitHub Pages can expose a separately labeled browser-only sandbox, which does not meet that hosting requirement. The deadline is **2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India**. Exact official evidence is retained in evidence/official-hackathon-nov2.json.
 
-Eleven specifically authorized public Twitch test messages were posted: five on 30 October, three during the failed first 2 November recording and three during the corrected successful recording. The failed merge remains in its own replay. In the corrected run, gravity down was rejected, wall A closed won one real ballot, the verified law merged and the player escaped in 24 inputs before witness playback. No further messages are authorized. The source repository and unlisted demo are published. The hosted application and actual competition submission remain unverified.
+Fourteen specifically authorized public Twitch test messages were posted: five on 30 October, three during the failed first 2 November recording, three during the corrected recording and three in the successful hosted round. The failed merge remains in its own replay. In the corrected run, gravity down was rejected, wall A closed won one real ballot, the verified law merged and the player escaped in 24 inputs before witness playback. No further messages are authorized. The source repository and unlisted demo are published. The full hosted application is verified; actual competition submission remains pending.

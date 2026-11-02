@@ -1,0 +1,98 @@
+{
+  "status": "PASS_FULL_HOSTED_APPLICATION",
+  "at": "2026-11-02T10:35:49.177706+00:00",
+  "publicOrigin": "https://worldpatch.13.204.212.172.sslip.io",
+  "deployedSourceSha": "49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
+  "ciRun": "https://github.com/himanshu748/world-patch/actions/runs/41426371617",
+  "runtime": {
+    "node": "v26.13.0",
+    "platform": "Linux amd64",
+    "ciConfigDigest": "sha256:15ee36d9d74bc6dba8326441c552dc3e94757fa55e9bcdba656c71b170ed7665",
+    "ociManifestDigest": "sha256:e6fcbf413d43d8d67b83e2118c45739378bd9246fd8d67755513bd09cfbf54ab",
+    "artifactSha256": "a797c9df47c2626cdf67cbde923a6353f079fac175d4f43d2421071b2230aa3a",
+    "artifactAndAllFilesystemLayersVerified": true,
+    "uid": "1000",
+    "isolation": {
+      "memoryBytes": 536870912,
+      "memorySwapBytes": 536870912,
+      "nanoCpus": 500000000,
+      "pidsLimit": 128,
+      "readonlyRoot": true,
+      "capDrop": [
+        "ALL"
+      ],
+      "securityOpt": [
+        "no-new-privileges"
+      ],
+      "publishedPorts": {
+        "3000/tcp": null
+      }
+    }
+  },
+  "verification": {
+    "localTests": 127,
+    "linuxContainerChecks": 39,
+    "hostedHttpsWssSimulationRecoveryChecks": 78,
+    "hostedRealTwitchMessages": 3,
+    "hostedTwitchReplayEvents": 38,
+    "actualPlayerInputs": 24,
+    "escaped": true,
+    "spectatorWitnessReached": "24/24 EXIT at9,7 observed through actual CUA browser",
+    "witnessLength": 24,
+    "twitchStateAtFinalCheck": "ready",
+    "forwardedHeaderSpoofResistance": "PASS_ACTUAL_CADDY_SPOOF_RESISTANCE",
+    "separateActualClientLoginBucket": {
+      "status": "PASS_TWO_ACTUAL_SOURCES",
+      "firstSourceRejectedSeventhLoginAt": "2026-11-02T10:32:20.281Z",
+      "secondSourceAuthenticatedAt": "2026-11-02T10:32:53.478563+00:00",
+      "secondSourceStatus": 200,
+      "probeSessionLoggedOut": true,
+      "scope": "Second source login succeeded within the original source sixty-second rate window. Subsequent original-source401 after expiry is expected."
+    },
+    "exploredStates": 58
+  },
+  "coexistence": {
+    "existingContainersPreserved": 6,
+    "existingContainerIdentityStartTimeRestartCountsUnchanged": true,
+    "existingHttpsRoutesUnchangedAnd200": 5,
+    "newAwsInstancesOrPaidServicesCreated": 0,
+    "sharedProxyConfigValidatedBeforeGracefulReload": true,
+    "activeTlsConnectionsBeforeReload": [
+      0
+    ],
+    "temporarySshOriginalRulesRestored": true,
+    "firewallReceipts": 8
+  },
+  "observedHeadroom": {
+    "at": "2026-11-02T10:32:53.478563+00:00",
+    "hostAvailableMemoryBytes": 898514944,
+    "diskAvailableBytes": 48844193792,
+    "applicationUsage": "world-patch-live\t0.05%\t37.54MiB / 512MiB",
+    "scope": "Snapshot after actual hosted chat, merge, escape and replay; no arbitrary-audience load guarantee"
+  },
+  "secretStorage": {
+    "runtimeEnvMode": "0o600",
+    "dataDirectoryMode": "0o700",
+    "imageContainsNoRuntimeCredentials": "Runtime credentials injected only at run time; no provider secrets used by CI"
+  },
+  "evidence": [
+    "lightsail-linux-container-smoke.json",
+    "lightsail-hosted-api.json",
+    "lightsail-recovery-replay.json",
+    "lightsail-simulation-replay.json",
+    "lightsail-twitch-live.json",
+    "lightsail-twitch-replay.json",
+    "lightsail-proxy-spoof.json"
+  ],
+  "remaining": [
+    "Personal entrant attestations",
+    "Explicit final Devpost submission approval",
+    "Complete anonymous media playback remains a separate unverified check"
+  ],
+  "limits": [
+    "One room, one instance and32browserWebSocketconnections maximum",
+    "Twitch and host tokens are memory-only; app restart requires reauthentication",
+    "No actual Twitch livestream/broadcast was started",
+    "No new hosted real-provider cold-reconnect or outage claim; earlier controlled local proof remains separate"
+  ]
+}

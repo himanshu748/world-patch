@@ -1,0 +1,330 @@
+{
+  "status": "PASS_HOSTED_SIMULATION_AND_RECOVERY",
+  "at": "2026-11-02T10:21:24.924Z",
+  "publicOrigin": "https://worldpatch.13.204.212.172.sslip.io",
+  "scope": "Actual Lightsail HTTPS/WSS, private host authorization, labeled simulation, persistent restart and independently verified replay; not a Twitch provider claim",
+  "checks": [
+    {
+      "name": "HTTPS GET /api/health",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS service health",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted frontend /",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted frontend /play",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted frontend /overlay",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS GET /api/config",
+      "status": "PASS"
+    },
+    {
+      "name": "Exact HTTPS origin and server-side Twitch configuration",
+      "status": "PASS"
+    },
+    {
+      "name": "Anonymous host action rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Cross-origin host login rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual WSS rejects wrong browser Origin",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS host login",
+      "status": "PASS"
+    },
+    {
+      "name": "Secure HttpOnly SameSite host cookie",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action newSession",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual TLS WebSocket sends labeled room",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted HTTP movement changes state",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual WSS broadcasts committed movement",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action startRound",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Real hosted election active before app-only restart",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Real app-only restart preserves game and session history",
+      "status": "PASS"
+    },
+    {
+      "name": "Real app-only restart cancels interrupted election",
+      "status": "PASS"
+    },
+    {
+      "name": "Real restart invalidates prior host authority",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS host login",
+      "status": "PASS"
+    },
+    {
+      "name": "Secure HttpOnly SameSite host cookie",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action reveal",
+      "status": "PASS"
+    },
+    {
+      "name": "Authenticated hosted replay export",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent local verifier reconstructs actual hosted replay",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual recovery event appears in exported history",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action newSession",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action startRound",
+      "status": "PASS"
+    },
+    {
+      "name": "Authenticated labeled simulation entry point",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted solver rejects fully searched impossible gravity patch",
+      "status": "PASS"
+    },
+    {
+      "name": "Authenticated labeled simulation entry point",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted solver admits wall patch with witness",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action closeWindow",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted voting opens only on verified candidate",
+      "status": "PASS"
+    },
+    {
+      "name": "Authenticated labeled simulation entry point",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted labeled ballot counted",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action closeWindow",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted winning patch reverified and merged",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent shared-engine route exists for actual merged state",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action move",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Full actual HTTPS player escape after merged patch",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTPS action reveal",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Hosted solution witness revealed",
+      "status": "PASS"
+    },
+    {
+      "name": "Authenticated hosted replay export",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent local verifier reconstructs actual hosted replay",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual hosted simulation replay independently proves one merge and escape",
+      "status": "PASS"
+    }
+  ],
+  "recovery": {
+    "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+    "eventCount": 7
+  },
+  "simulation": {
+    "sessionId": "72459d23-2d9f-4249-9b3c-796cca056d10",
+    "eventCount": 32,
+    "mergeCount": 1,
+    "witnessLength": 24
+  }
+}

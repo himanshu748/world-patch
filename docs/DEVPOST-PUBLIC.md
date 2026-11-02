@@ -43,3 +43,10 @@ The audience can be adversarial without the host having to promise that every su
 The boundary between a found witness, an exhausted search and an incomplete search became a product decision as much as an algorithm decision. Connection indicators, vote states and replay controls need to make those distinctions understandable during a stream.
 
 Next I want to test the pacing with streaming communities, build more authored chambers, and explore community-created patch sets while preserving the small, deterministic rule language.
+
+
+## Try WORLD//PATCH
+
+[Public source](https://github.com/himanshu748/world-patch) · [Real Twitch + Codex demo](https://youtu.be/5pPTyIQZ7RY)
+
+[Play WORLD//PATCH](https://worldpatch.13.204.212.172.sslip.io). Try a chamber without signing in, or watch the read-only [OBS overlay](https://worldpatch.13.204.212.172.sslip.io/overlay). The complete hosted game has also completed a genuine Twitch patch round, player escape and witness replay. Private host access is required to run the shared room.

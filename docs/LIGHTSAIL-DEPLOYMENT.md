@@ -1,10 +1,12 @@
 # Full application on the existing Lightsail host
 
-Target: `https://worldpatch.13.204.212.172.sslip.io` on the existing Foley host in Mumbai. This procedure adds one isolated WORLD//PATCH container, persistent data volume, Docker network and Caddy site. It does not replace the Foley stack or change another application's data, image, ports or environment.
+Target: `https://worldpatch.13.204.212.172.sslip.io` on the existing Foley host in Mumbai. This procedure adds one isolated WORLD//PATCH container, persistent data directory, Docker network and Caddy site. It does not replace the Foley stack or change another application's data, image, ports or environment.
 
-At preparation, the host is x86_64 Ubuntu 24 with Docker 29.1.3, 2 GB RAM, approximately 915 MiB available, no swap and six existing containers. Those readings are a snapshot; repeat them before the actual rollout. This guide does not establish that the application has been deployed or that Twitch is connected. Record CI and remote verification separately.
+The pre-rollout inspection found x86_64 Ubuntu 24, Docker 29.1.3, 2 GB RAM, approximately 915 MiB available, no swap and six existing containers. Repeat capacity checks before any future upgrade. The current verified deployment is recorded below; its subsequent operating measurements and real Twitch proof remain separate from this initial snapshot.
 
-## Build on GitHub, not the shared host
+Current deployment: **verified live** on 2 November 2026, source `49555058b0e9ceb99060ce9dc3202d1ea4bd255c`. Container `world-patch-live` uses the private file `/opt/world-patch/runtime.env`, persistent data `/opt/world-patch/data`, and the separate network `world-patch-edge`. The exact tested image archive is retained privately at `/opt/world-patch/image-49555058b0e9ceb99060ce9dc3202d1ea4bd255c.tar.gz`; no new VM, paid Render service or additional AWS disk was created.
+
+## Build on GitHub
 
 The checked-in manual workflow is `.github/workflows/linux-image.yml`. It builds the existing Dockerfile on a GitHub-hosted Ubuntu 24.04 runner for `linux/amd64`, tags the image `world-patch:<source-commit>`, loads it on that runner and executes `scripts/container-host-smoke.mjs`. It has only `workflow_dispatch`, read-only repository permission and no registry publishing, remote SSH or production credentials. The application build runs in Linux; do not copy the Mac's native SQLite module to the host.
 
@@ -28,7 +30,7 @@ The success artifact contains `world-patch-image.tar.gz`, `metadata.json`, `cont
 
 Root performs the remote operations through the existing approved access path. Before mutation, record container names/states, existing network membership, free memory, disk space and the Caddy configuration mount. Keep existing applications running. Do not run a shared-stack `compose down`, Docker prune, unrelated container stop, daemon restart or unbounded build.
 
-Transfer only the verified image artifact and metadata through the approved SSH channel. On the host, verify the checksums in the artifact directory, load the image and compare its ID to `metadata.json`:
+Transfer only the verified image artifact and metadata through the approved SSH channel. On the host, verify the checksums in the artifact directory, load the image and verify its platform, source label and image identities against the checksum-verified archive and `metadata.json`:
 
 ```sh
 sha256sum --check SHA256SUMS
@@ -37,52 +39,53 @@ docker image inspect world-patch:SOURCE_COMMIT \
   --format '{{.Id}} {{.Os}} {{.Architecture}}'
 ```
 
-The expected platform is `linux amd64`. Do not build while loading the image, and do not start the application until import finishes. Image import is Docker-daemon work; limiting a client shell does not cap the daemon. Watch host memory and the existing applications during import, then recheck available memory before reserving the new runtime's 512 MiB limit. A configured limit is a ceiling, not proof that the host has enough current headroom.
+The expected platform is `linux amd64`. Docker image stores can report different identity types: CI reported the config digest `sha256:15ee36d9d74bc6dba8326441c552dc3e94757fa55e9bcdba656c71b170ed7665`, while Foley’s OCI store reported the manifest digest `sha256:e6fcbf413d43d8d67b83e2118c45739378bd9246fd8d67755513bd09cfbf54ab`. The verified archive links that manifest to that exact config and all nine uncompressed filesystem layers. Both fingerprints are recorded in `../evidence/lightsail-deployment.json`. For another build, verify this chain from its archive instead of waiving an unexplained mismatch. Do not build while loading the image, and do not start the application until import finishes. Image import is Docker-daemon work; limiting a client shell does not cap the daemon. Watch host memory and the existing applications during import, then recheck available memory before reserving the new runtime's 512 MiB limit. A configured limit is a ceiling, not proof that the host has enough current headroom.
 
 ## Separate network, storage and private configuration
 
-First ensure the proposed names are absent or already belong to this application. Inspect any existing name collision instead of reusing or replacing it blindly. Create only the WORLD//PATCH network and volume:
+First ensure the proposed names are absent or already belong to this application. Inspect any existing name collision instead of reusing or replacing it blindly. Create only the WORLD//PATCH network and storage. The inspected host allocated `172.22.0.0/16`; verify this subnet is unused before recreating it. If another network already occupies it, choose a free subnet and update the two pinned addresses and this app’s exact proxy setting together:
 
 ```sh
-docker network create --label app=world-patch world-patch-net
-docker volume create --label app=world-patch world-patch-data
-docker network connect --gw-priority -1 world-patch-net foley-caddy-1
+docker network create --subnet 172.22.0.0/16 --gateway 172.22.0.1 --label app=world-patch world-patch-edge
+sudo install -d -m 0700 -o 1000 -g 1000 /opt/world-patch/data
+docker network connect --ip 172.22.0.2 --gw-priority=-1 world-patch-edge foley-caddy-1
 docker inspect foley-caddy-1 \
-  --format '{{(index .NetworkSettings.Networks "world-patch-net").IPAddress}}'
+  --format '{{(index .NetworkSettings.Networks "world-patch-edge").IPAddress}}'
 ```
 
 The negative gateway priority keeps the new bridge from replacing Caddy's existing default gateway when existing networks have their normal priority. Verify actual network membership and routes after attachment. Do not detach any existing network. Docker selects the highest gateway priority. [Docker network connections](https://docs.docker.com/reference/cli/docker/network/connect/).
 
-Store the production environment file outside the checkout, for example `/opt/world-patch/production.env`, owned by root with mode `0600`. Root supplies new private production values for `HOST_SECRET`, `TWITCH_CLIENT_ID` and `TWITCH_CLIENT_SECRET`; do not print them or put them in shell arguments, logs, artifacts or documentation. Keep the file out of the image and repository. Configure these non-secret settings:
+Store the production environment file outside the checkout, for example `/opt/world-patch/runtime.env`, owned by root with mode `0600`. Root supplies new private production values for `HOST_SECRET`, `TWITCH_CLIENT_ID` and `TWITCH_CLIENT_SECRET`; do not print them or put them in shell arguments, logs, artifacts or documentation. Keep the file out of the image and repository. Configure these non-secret settings:
 
 ```text
 NODE_ENV=production
 HOST=0.0.0.0
 PORT=3000
 DATA_DIR=/data
+TRUSTED_PROXY_IP=172.22.0.2
+NODE_OPTIONS=--max-old-space-size=256
 PUBLIC_ORIGIN=https://worldpatch.13.204.212.172.sslip.io
 TWITCH_REDIRECT_URI=https://worldpatch.13.204.212.172.sslip.io/auth/twitch/callback
 ```
 
-Set `TRUSTED_PROXY_IP` to Caddy's exact address on `world-patch-net`, obtained above. Do not use a CIDR, `true`, the public host address or an untrusted forwarded header. The application remains fail-closed for invalid values and compares browser Origin to the exact public origin. Leave `VITE_STATIC_DEMO` unset.
+Set `TRUSTED_PROXY_IP` to Caddy's exact address on `world-patch-edge`, obtained above. Do not use a CIDR, `true`, the public host address or an untrusted forwarded header. The application remains fail-closed for invalid values and compares browser Origin to the exact public origin. Leave `VITE_STATIC_DEMO` unset.
 
-The named volume mounts at `/data`; a fresh volume inherits the image's writable directory ownership for the unprivileged `node` user. SQLite, including its WAL and shared-memory files, stays there. Do not mount another project's volume or private environment. Caddy's manual network attachment survives a container restart but must be re-established after its container is recreated; recheck the proxy IP then and update only this application's configuration if it changed.
+The owned host directory `/opt/world-patch/data` mounts at `/data` and is mode `0700`, owned by the verified runtime UID/GID `1000:1000`. SQLite, including its WAL and shared-memory files, stays there. Do not mount another project's volume or private environment. Caddy's manual network attachment survives a container restart but must be re-established after its container is recreated; recheck the proxy IP then and update only this application's configuration if it changed.
 
 ## Start one limited runtime
 
 The following is a first-deployment command after checking that the name is free. Use the exact verified image tag:
 
 ```sh
-docker run --detach --name world-patch \
+docker run --detach --name world-patch-live \
   --label app=world-patch \
   --restart unless-stopped \
-  --network world-patch-net \
+  --network world-patch-edge --ip 172.22.0.3 \
   --memory 512m --memory-swap 512m --cpus 0.5 \
   --pids-limit 128 --cap-drop ALL --security-opt no-new-privileges \
   --read-only --tmpfs /tmp:rw,noexec,nosuid,size=64m \
-  --log-driver local --log-opt max-size=5m --log-opt max-file=2 \
-  --mount type=volume,source=world-patch-data,target=/data \
-  --env-file /opt/world-patch/production.env \
+  --mount type=bind,source=/opt/world-patch/data,target=/data \
+  --env-file /opt/world-patch/runtime.env \
   world-patch:SOURCE_COMMIT
 ```
 
@@ -91,10 +94,10 @@ No host port is published. Caddy reaches port 3000 on the dedicated network. Kee
 Check the container's health, memory/CPU configuration, read-only root, volume, restart count and OOM state without dumping its environment. For example:
 
 ```sh
-docker inspect world-patch --format \
+docker inspect world-patch-live --format \
   '{{.State.Health.Status}} memory={{.HostConfig.Memory}} cpu={{.HostConfig.NanoCpus}} readonly={{.HostConfig.ReadonlyRootfs}} oom={{.State.OOMKilled}} restarts={{.RestartCount}}'
-docker stats --no-stream world-patch
-docker exec world-patch node -e \
+docker stats --no-stream world-patch-live
+docker exec world-patch-live node -e \
   "fetch('http://127.0.0.1:3000/api/health').then(async r=>{if(!r.ok)process.exit(1);console.log(await r.text())}).catch(()=>process.exit(1))"
 ```
 
@@ -106,7 +109,12 @@ The host source file is `/opt/foley/deploy/Caddyfile`; the existing Caddy contai
 
 ```caddyfile
 worldpatch.13.204.212.172.sslip.io {
-    reverse_proxy world-patch:3000
+    log_skip
+    encode zstd gzip
+    reverse_proxy world-patch-live:3000 {
+        header_up X-Forwarded-For {remote_host}
+        stream_close_delay 5m
+    }
 }
 ```
 
@@ -129,7 +137,7 @@ Before an active Twitch session, use controlled simulation data to verify move/r
 
 Register the exact HTTPS Twitch callback, then authorize the broadcaster through the hosted controller. Verify subscription readiness and actual separately authorized chat/game/replay behavior. Configuration, a connected browser socket, a simulated replay and CI success do not establish live Twitch delivery. Tokens and host sessions are memory-only, so application restarts require sign-in and Twitch reauthorization.
 
-Keep observed CI/Linux behavior, hosted HTTPS/WSS, durable-volume recovery, existing-app preservation and Twitch proof distinct. At this guide's preparation checkpoint, workflow/source checks are implemented; actual image execution and remote-host behavior remain pending the root task's recorded results.
+Keep observed CI/Linux behavior, hosted HTTPS/WSS, durable-volume recovery, existing-app preservation and Twitch proof distinct. The initial deployment completed all 39 Linux container checks, 78 actual hosted API/WSS/recovery checks and a real hosted Twitch round. Its 38-event replay independently reconstructs one merge, 24 player inputs, escape and reveal. See `../evidence/lightsail-deployment.json` and `../evidence/lightsail-twitch-live.json`; earlier failed CI attempts remain separate historical evidence.
 
 ## Updates and recovery
 

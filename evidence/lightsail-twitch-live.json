@@ -1,0 +1,96 @@
+{
+  "status": "PASS_HOSTED_REAL_TWITCH_END_TO_END",
+  "at": "2026-11-02T10:29:42.917Z",
+  "publicOrigin": "https://worldpatch.13.204.212.172.sslip.io",
+  "deployedSourceSha": "49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
+  "sessionId": "59e501c7-3559-4621-a234-81dc8b2b8e8d",
+  "channel": "himanshujh",
+  "scope": "Actual hosted OAuth/EventSub and three approved public Twitch posts; actual hosted player-control clicks, reveal and independent downloaded-replay reconstruction",
+  "steps": [
+    {
+      "event": "Hosted Twitch election prepared and paused",
+      "at": "2026-11-02T10:26:23.317Z"
+    },
+    {
+      "event": "Real Twitch gravity proposal rejected as NO_ESCAPE",
+      "at": "2026-11-02T10:26:43.558Z",
+      "received": 1
+    },
+    {
+      "event": "Real Twitch wall proposal admitted; voting prepared and paused",
+      "at": "2026-11-02T10:27:01.599Z",
+      "received": 2
+    },
+    {
+      "event": "Real Twitch ballot counted and patch merged",
+      "at": "2026-11-02T10:27:22.835Z",
+      "received": 3
+    }
+  ],
+  "connection": {
+    "state": "ready",
+    "received": 3,
+    "channel": "himanshujh",
+    "lastEventAt": 1793615235324
+  },
+  "commands": [
+    "!patch gravity down",
+    "!patch walls A closed",
+    "!vote 1"
+  ],
+  "messageCount": 3,
+  "outcomes": {
+    "gravity": "NO_ESCAPE",
+    "walls": "ADMITTED_WITH_WITNESS",
+    "ballots": 1,
+    "mergedPatches": 1,
+    "actualPlayerInputs": 24,
+    "escaped": true,
+    "revealed": true
+  },
+  "receipt": {
+    "pathLength": 24,
+    "explored": 58,
+    "digest": "0eea0d51076c4d7c09e3fdbbebd95c3078385bf7d4e592cba5842adf0cf9051c"
+  },
+  "verification": {
+    "ok": true,
+    "sessionId": "59e501c7-3559-4621-a234-81dc8b2b8e8d",
+    "eventCount": 38,
+    "mergeCount": 1,
+    "finalGame": {
+      "chamberId": "vector-foundry",
+      "x": 9,
+      "y": 7,
+      "hasKey": true,
+      "rules": {
+        "gravity": "off",
+        "portals": "normal",
+        "ice": false,
+        "walls": {
+          "A": true,
+          "B": false
+        }
+      },
+      "escaped": true
+    },
+    "checkpoint": {
+      "chamberId": "vector-foundry",
+      "x": 1,
+      "y": 1,
+      "hasKey": false,
+      "rules": {
+        "gravity": "off",
+        "portals": "normal",
+        "ice": false,
+        "walls": {
+          "A": true,
+          "B": false
+        }
+      },
+      "escaped": false
+    },
+    "digest": "16021dde27207f927e6017deb2e0ebf416a3e25c6d6e2fab9dfcbceb85f48f17"
+  },
+  "operatorTiming": "Host paused/resumed while staging each approved message; messages were posted only after their respective proposal/vote windows resumed. No simulated inputs used."
+}

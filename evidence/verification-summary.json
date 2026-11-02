@@ -1,19 +1,19 @@
 {
-  "at": "2026-11-02T09:02:32.235330+00:00",
+  "at": "2026-11-02T11:04:58.277629+00:00",
   "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
-  "status": "PUBLIC_REPOSITORY_AND_UNLISTED_VIDEO_AVAILABLE_REQUIRED_FULL_HOSTING_BLOCKED_PROVISIONING",
-  "sourceDigest": "98ec214df4cdf83e6d89efd436070463f7b8c686f70d0e083808d315b6ebd080",
+  "status": "PASS_FULL_HOSTED_APPLICATION_FINAL_SUBMISSION_GATES_BLOCKED",
+  "sourceDigest": "85291f389d06c1dc1a9a0d07b731df444b701859b9ae7c1454095483a76abe9e",
   "checks": {
-    "PASS": 137,
-    "UNVERIFIED": 8,
-    "BLOCKED": 3,
-    "FAIL": 3
+    "PASS": 153,
+    "BLOCKED": 2,
+    "FAIL": 4,
+    "UNVERIFIED": 3
   },
   "serverTests": {
-    "passed": 119,
+    "passed": 127,
     "failed": 0,
-    "report": "evidence/render-deployment-verification.json",
-    "scope": "Latest local whole-suite gate including5realentry-point synthetic runtime configuration tests;Node26.12.0macOS;no provider call or targetLinux run"
+    "report": "evidence/lightsail-preflight.json",
+    "scope": "Latest local macOS Node26.12 gate, including trusted-proxy and entry-point regressions; separate from Linux CI and hosted acceptance"
   },
   "browser": {
     "latestFullRun": {
@@ -44,7 +44,7 @@
       "report": "evidence/release-final-browser.json"
     }
   },
-  "liveTwitch": "PASS_CORRECTED_NOV2_CHAT_MERGE_ESCAPE_WITNESS_REPLAY_AND_CONTROLLED_COLD_RECONNECT",
+  "liveTwitch": "PASS_ACTUAL_HOSTED_OAUTH_EVENTSUB_PATCH_BALLOT_MERGE_PLAYER_ESCAPE_WITNESS_AND_REPLAY",
   "openDesign": {
     "mode": "Local Codex",
     "status": "SUCCEEDED_REQUESTED_FILES_RETRIEVED_AND_INTEGRATED",
@@ -55,9 +55,9 @@
     "earlierLandingProvenance": "evidence/open-design-landing/provenance.json",
     "chamberProvenance": "evidence/open-design-chamber-provenance.json"
   },
-  "deployed": false,
+  "deployed": true,
   "published": true,
-  "liveEvidence": "evidence/twitch-final-live-replay.json",
+  "liveEvidence": "evidence/lightsail-twitch-live.json",
   "landingPlay": {
     "status": "PASS_LOCAL",
     "verification": "evidence/landing-play-verification.json",
@@ -71,18 +71,18 @@
     "hostAuthenticationChanged": false
   },
   "publicTestMessages": {
-    "actuallyPosted": 11,
+    "actuallyPosted": 14,
     "historicalOct30": 5,
     "failedNov2": 3,
     "correctedNov2": 3,
     "additionalPostsAuthorized": false,
-    "newRoundResult": "Corrected real round merged58-state24-input witness; player escaped; reveal autoplay completed;36event replay verified"
+    "newRoundResult": "Actual hosted round:3approvedposts,NO_ESCAPEgravity,wallAclosed candidate,1ballot,24/58receipt,24UIinputs escaped,reveal/overlay24/24,38-event independently verified replay",
+    "hostedNov2": 3
   },
   "remainingReleaseGates": [
-    "Fullhostedproviderprovisioning and remoteacceptance",
-    "CompleteanonymousYouTubewatchplayback",
-    "Freshhosting-sourcearchive/audit/release",
-    "Entrantattestations and actualDevpostsubmission"
+    "Freshsourcepackageprivacy/auditandpublishedreportrefresh",
+    "Finalfullrules/terms and explicitfinalDevpostsubmissionapproval",
+    "ActualDevpostsubmissionreceipt"
   ],
   "landingCraft": {
     "status": "PASS_LOCAL",
@@ -133,7 +133,7 @@
     },
     "finalAudio": "PASS_DIGITAL_SILENCE_FULL_PCM_DECODE_ONE_AAC_TRACK"
   },
-  "sourceArchiveStatus": "Publishedcaptured-revision package audit retained;root refresh required for newhosting-source changes",
+  "sourceArchiveStatus": "PASS_CURRENT_HOSTED_RELEASE_CRC_ALL_BYTES_AND_PRIVATE_VALUE_SCAN",
   "generatedNarration": "None generated; Deepgram exclusively if commissioned",
   "inheritedEnvironmentSanitization": {
     "at": "2026-11-02T06:49:01.472348+00:00",
@@ -436,10 +436,13 @@
     "published": true,
     "mediaExcludedFromSource": true,
     "playbackReport": "evidence/final-demo-browser-playback.json",
-    "publicationURL": "https://youtu.be/5pPTyIQZ7RY"
+    "publicationURL": "https://youtu.be/5pPTyIQZ7RY",
+    "completePublicPlayback": "PASS_CONTINUOUS_PRIVACY_DOMAIN_96SECONDS",
+    "publicPlayerReport": "evidence/video-public-player.json",
+    "freshProfileCookieIsolation": "UNVERIFIED_NONMANDATORY_LIMITATION"
   },
   "priorReleaseSourceDigest": "33ac3f5e5ebf62d0f3094a63fc8f06f933951b366c0c3346782819bca71b3065",
-  "sourceManifestStatus": "Pending root refresh after current hosting-source/doc changes",
+  "sourceManifestStatus": "PASS_CURRENT_SOURCE_DOCS_CONFIG_MANIFEST_RUNTIME_BOUND_TO49555058",
   "capturedGameGate": {
     "unitPassed": 114,
     "browserPassed": 22,
@@ -519,50 +522,184 @@
     }
   },
   "currentSource": {
-    "report": "evidence/render-deployment-verification.json",
-    "runtimeSourceSha256": {
-      "src/server/index.ts": "0249d36a27c7ad8788d5ddf66d72073c7d4d25b37fc5521ae8a9ed1ba9e89c05",
-      "render.yaml": "afeb8df6a22d273e925795f266e14e56486c364006af17f904af0c69ac270ae1",
-      "Dockerfile": "301cebdf9d5533a924ecdade6199eb1da69684d051af8bfce56cad622b684a80",
-      "tests/runtime-config.test.ts": "437063ba84e85aac7179765a0fa0271fbfa8d9a6b16d94196d7f9894c74e8821"
+    "report": "evidence/lightsail-preflight.json",
+    "applicationSourceSha256": {
+      "src/server/app.ts": "02aa8b7b89c956656d33b8183c35ae2c26a33b4d1a9f3c1f32dabdc9de4b5118",
+      "src/server/index.ts": "0f6095276def0c0252ee7e9f885fe18c2dcab27c89a6b730b06d91f85016f8d0",
+      ".env.example": "e252f28ff97cb93ad64fd85fef19ac1bbe8b07749d42a43a6d653029a7d61f82",
+      "tests/trusted-proxy.test.ts": "937d079f67e5fdabff8f3368a19eb0b8512f2f498c5ac5d2bb9150342c216955",
+      "tests/runtime-config.test.ts": "060c63a3cb22a615c52b1293cb2fa320161f0f0c6ee17861fc8df026b97e5fd0"
     },
-    "documentationHashScope": "Deployment docs changed after executed local report;root release manifest refresh pending"
+    "laterImageAndHarnessChanges": "CI3 run 41426371617 at 49555058 passed 39 Linux container checks, including restart/replay; deployed artifact and layers verified."
   },
   "repositoryPublication": {
     "status": "PASS_PUBLIC_REPOSITORY_ANONYMOUS_METADATA_AND_README",
     "url": "https://github.com/himanshu748/world-patch",
     "commit": "5468d89d502264a4b607c167fc0ed4f44908aa09",
     "report": "evidence/public-repository-verification.json",
-    "hostingRevisionPublished": false
+    "hostingRevisionPublished": true,
+    "latestVerifiedPublicationScope": "Initialanonymousreadbackretained;laterCIrunssourcecommitsrecordedseparately"
   },
   "youtubePublication": {
-    "status": "PASS_UNLISTED_PUBLICATION_AND_ANONYMOUS_METADATA",
+    "status": "PASS_UNLISTED_PUBLICATION_METADATA_AND_COMPLETE_PUBLIC_PRIVACY_DOMAIN_PLAYBACK",
     "url": "https://youtu.be/5pPTyIQZ7RY",
     "sourceSeconds": 96,
     "captions": "English",
-    "fullAnonymousPlayback": "PENDING",
-    "report": "evidence/youtube-publication-verification.json"
+    "report": "evidence/youtube-publication-verification.json",
+    "completePublicPlayback": "PASS_CONTINUOUS_96SECONDS_TO_REPLAY",
+    "publicPlayerReport": "evidence/video-public-player.json",
+    "freshProfileCookieIsolation": "UNVERIFIED_NONMANDATORY_LIMITATION",
+    "strictAnonymousPlayback": "NOT_CLAIMED"
   },
   "hosting": {
     "requiredByUser": true,
-    "status": "BLOCKED_AWAITING_PROVIDER_PROVISIONING",
+    "status": "PASS_FULL_HOSTED_APPLICATION",
     "service": "FullFastify+browserWSS+TwitchOAuthEventSub+persistentSQLite",
+    "selectedProvider": "Existing AWS Lightsail host (Foley)",
+    "additionalPaidAWSResourcesAuthorized": false,
+    "plannedURL": "https://worldpatch.13.204.212.172.sslip.io",
+    "publicURLVerified": true,
+    "deployed": true,
     "staticSandboxSatisfiesRequirement": false,
-    "runtime": "26.13.0Linux",
-    "actualLocalRuntime": "26.12.0macOSarm64",
-    "localGate": "PASS119typeslintnormalbuild",
-    "remoteChecks": "UNVERIFIED",
-    "publicURL": null,
-    "configuration": "render.yaml",
-    "report": "evidence/render-deployment-verification.json",
-    "reportQualification": "Executed local report includes earlier capacity/authorization checkpoint;not current provider provisioning receipt",
+    "runtime": "Node26.13.0Linuxamd64Docker",
+    "actualLocalRuntime": "Node26.12.0macOSarm64",
+    "localGate": "PASS127typeslintnormalbuild",
+    "configuration": "docs/LIGHTSAIL-DEPLOYMENT.md",
+    "onHostBuildSelected": false,
+    "runtimeLimits": {
+      "memoryBytes": 536870912,
+      "cpu": 0.5,
+      "status": "Verified in CI and actual hosted runtime"
+    },
+    "proxyTrust": {
+      "setting": "TRUSTED_PROXY_IP",
+      "scope": "OptionalsingleexactCaddyaddressondedicatedDockernetwork",
+      "unset": "false",
+      "cidrOrBlanketTrust": "Rejected",
+      "actualHostedValueOrPath": "PASS_ACTUAL_CADDY_SPOOF_RESISTANCE_AND_TWO_CLIENT_BUCKETS",
+      "evidence": "evidence/lightsail-proxy-spoof.json",
+      "twoClientEvidence": "evidence/lightsail-deployment.json"
+    },
+    "CI": [
+      {
+        "run": "41424836977",
+        "status": "FAIL_PRESERVED",
+        "reason": "Missingnativecompiler/Pythontoolsinbuildstage",
+        "report": "evidence/lightsail-first-linux-build.json"
+      },
+      {
+        "run": "41425345922",
+        "sourceSha": "c7163c5ee0f07c0fcd219f049461d09f241b57bc",
+        "status": "FAIL_COMPLETE_RUN_WITH_PARTIAL_LINUX_PASS",
+        "imageBuild": "PASS",
+        "passedChecks": 25,
+        "limits": {
+          "memoryBytes": 536870912,
+          "cpu": 0.5
+        },
+        "restartRecovery": "NOT_VERIFIED_HARNESS_CACHED_DOCKER_PORT",
+        "report": "evidence/lightsail-second-linux-smoke.json"
+      },
+      {
+        "run": "41426371617",
+        "sourceShortSha": "4955505",
+        "status": "PASS",
+        "scope": "ActualLinuxNode26.13nativeSQLite512MiB/.5CPUisolationrestartandreplay",
+        "sourceSha": "49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
+        "containerChecks": 39,
+        "report": "evidence/lightsail-linux-container-smoke.json",
+        "imageReport": "evidence/lightsail-linux-image.json"
+      }
+    ],
+    "remoteChecks": "PASS_ACTUAL_TLS_WSS_SECURITY_SIMULATION_RESTART_REPLAY_AND_REAL_TWITCH",
     "requiredRemoteProof": [
-      "LinuxnativeSQLitebuild/start",
-      "HTTPSprotectedhostandreadonlyoverlay",
-      "BrowserWSSupdates",
-      "Persistentdiskrestartrecovery",
-      "ExactTwitchcallbackandactualhostedOAuthEventSubgame/replay"
-    ]
+      "TLSlandinghostoverlayassets",
+      "BrowserWSSthroughCaddyexactproxytrust",
+      "DurableSQLiteapplication-onlyrestartrecovery",
+      "ExacthostedTwitchcallbackandactualOAuthEventSubgame/replay",
+      "Preservedexistingapplicationsandjudgeentry"
+    ],
+    "publicURL": "https://worldpatch.13.204.212.172.sslip.io",
+    "deployedSourceSha": "49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
+    "deploymentEvidence": "evidence/lightsail-deployment.json",
+    "runtimeIsolation": {
+      "memoryBytes": 536870912,
+      "memorySwapBytes": 536870912,
+      "nanoCpus": 500000000,
+      "pidsLimit": 128,
+      "readonlyRoot": true,
+      "capDrop": [
+        "ALL"
+      ],
+      "securityOpt": [
+        "no-new-privileges"
+      ],
+      "publishedPorts": {
+        "3000/tcp": null
+      }
+    },
+    "predeploymentCapacitySnapshot": {
+      "scope": "Read-only predeployment review; not reserved capacity or a reliability guarantee",
+      "instancesObserved": 2,
+      "selectedHost": "Foley",
+      "freeDiskGiB": 46.4,
+      "availableMemoryMiB": 915,
+      "cpuPercent": 3.17,
+      "otherContainers": 6,
+      "recheckBeforeDeployment": true,
+      "afterDeploymentPreservation": "UNVERIFIED_DEPLOYMENT_NOT_EXECUTED"
+    },
+    "observedPostRoundHeadroom": {
+      "at": "2026-11-02T10:32:53.478563+00:00",
+      "hostAvailableMemoryBytes": 898514944,
+      "diskAvailableBytes": 48844193792,
+      "applicationUsage": "world-patch-live\t0.05%\t37.54MiB / 512MiB",
+      "scope": "Snapshot after actual hosted chat, merge, escape and replay; no arbitrary-audience load guarantee"
+    },
+    "existingAppPreservation": {
+      "status": "PASS_SCOPED_OBSERVED_CHECKS",
+      "existingContainers": 6,
+      "identityStartRestartUnchanged": true,
+      "existingHttpsRoutes200BeforeAfter": 5,
+      "temporarySshRulesRestored": true,
+      "newPaidAwsResources": 0,
+      "evidence": "evidence/lightsail-deployment.json",
+      "limits": "ObservedcontaineridentityandHTTPhealth;notlongstreamcontinuityoruptimeguarantee"
+    },
+    "artifact": {
+      "sha256": "a797c9df47c2626cdf67cbde923a6353f079fac175d4f43d2421071b2230aa3a",
+      "ciConfigDigest": "sha256:15ee36d9d74bc6dba8326441c552dc3e94757fa55e9bcdba656c71b170ed7665",
+      "ociManifestDigest": "sha256:e6fcbf413d43d8d67b83e2118c45739378bd9246fd8d67755513bd09cfbf54ab",
+      "artifactAndFilesystemLayersVerified": true
+    },
+    "hostedApiChecks": {
+      "passed": 78,
+      "failed": 0,
+      "report": "evidence/lightsail-hosted-api.json",
+      "scope": "ActualHTTPSWSSauthsecuritysimulationpersistentapplication-onlyrestartandreplay;notTwitchproviderfixture"
+    },
+    "hostedTwitch": {
+      "status": "PASS_ACTUAL_PROVIDER_AND_UI_JOURNEY",
+      "sessionId": "59e501c7-3559-4621-a234-81dc8b2b8e8d",
+      "receivedMessages": 3,
+      "ballots": 1,
+      "merges": 1,
+      "pathLength": 24,
+      "explored": 58,
+      "actualPlayerInputs": 24,
+      "escaped": true,
+      "witnessOverlay": "24/24EXIT",
+      "replayEvents": 38,
+      "replayVerified": true,
+      "report": "evidence/lightsail-twitch-live.json",
+      "replay": "evidence/lightsail-twitch-replay.json",
+      "connectionQualification": "Continuouslyreadyforround;nohostedreconnect/outageclaim"
+    },
+    "independentReview": {
+      "status": "PASS_READONLY_PUBLIC_GET_AND_REPLAY_RECOMPUTATION",
+      "report": "evidence/lightsail-independent-review.json",
+      "scope": "Reviewerperformed4certificate-validatedGETsandCLIreplay;noSSHorremotecontainerinspection"
+    }
   },
   "historicalLocalReleasePreparation": {
     "status": "FROZEN_LOCAL_CANDIDATE_AWAITING_MAIN_FINAL_AUDIT_AND_PUBLICATION_APPROVAL",
@@ -635,34 +772,94 @@
     "publicStoryIncluded": "docs/DEVPOST-PUBLIC.md"
   },
   "releasePreparation": {
-    "status": "LOCAL_HOSTING_SOURCE_VERIFIED_AWAITING_PROVIDER_AND_NEW_RELEASE_PACKAGE",
-    "currentLocalChecks": 119,
+    "status": "PASS_CURRENT_HOSTED_RELEASE_PACKAGE_FINAL_SUBMISSION_APPROVAL_PENDING",
+    "currentLocalChecks": 127,
     "publishedCapturedRevision": "5468d89",
-    "sourceArchiveRefreshPending": true
+    "sourceArchiveRefreshPending": false
   },
   "documentationRefresh": {
-    "at": "2026-11-02T09:05:07.133917+00:00",
-    "scope": "Current full-hosting requirement, published repository/video, honest local/remote evidence scopes",
+    "at": "2026-11-02T11:04:58.277629+00:00",
+    "status": "FROZEN_PUBLIC_PLAYER_PASS_FINAL_TERMS_SUBMISSION_APPROVAL_PENDING",
+    "scope": "Current actual full-hosted proof, published links and honest remaining submission gates",
     "files": [
       "README.md",
       "PLAN.md",
+      "ARCHITECTURE.md",
       "CHECKLIST.md",
       "VERIFICATION.md",
-      "PRD.md",
-      "ARCHITECTURE.md",
+      "docs/DEVPOST-PUBLIC.md",
+      "docs/DEVPOST.md",
+      "docs/LIVE-DEMO.md",
       "docs/DEPLOYMENT.md",
       "docs/RENDER-DEPLOYMENT.md",
-      "docs/DEVPOST.md",
+      "PRD.md",
       "evidence/verification-summary.json",
-      "evidence/render-deployment-verification.json"
+      "evidence/lightsail-independent-review.json"
     ],
-    "relativeLinksChecked": 17,
+    "relativeLinksChecked": 22,
     "relativeLinksMissing": 0,
-    "runtimeSourceHashesMatched": 4,
-    "promotedRenderReportMatchesExecutedOriginal": true,
+    "latestLocalApplicationSourceHashesMatched": [
+      "src/server/app.ts",
+      "src/server/index.ts",
+      ".env.example",
+      "tests/trusted-proxy.test.ts",
+      "tests/runtime-config.test.ts"
+    ],
+    "proofCrossChecks": {
+      "localTests": 127,
+      "linuxContainerChecks": 39,
+      "actualHostedApiChecks": 78,
+      "hostedTwitchReplayEvents": 38,
+      "approvedPublicMessages": 14,
+      "rootAggregate": "PASS_FULL_HOSTED_APPLICATION"
+    },
+    "independentExecutedReview": "4certificate-validatedGETs200andactual38-eventreplayCLIexit0;noSSH/containerinspection",
     "codeOrDeploymentActionsPerformed": false,
-    "providerPrivateAccountOrFinancialStateExported": false
+    "releaseCheckoutModified": false,
+    "privateEnvironmentRead": false,
+    "privatePersonalAnswersRead": false,
+    "finalDelta": {
+      "at": "2026-11-02T11:05:33.074654+00:00",
+      "files": [
+        "README.md",
+        "PLAN.md",
+        "ARCHITECTURE.md",
+        "CHECKLIST.md",
+        "VERIFICATION.md",
+        "docs/DEVPOST.md",
+        "PRD.md",
+        "docs/LIVE-DEMO.md",
+        "evidence/verification-summary.json"
+      ],
+      "relativeLinksChecked": 19,
+      "publicPrivacyDomainPlayback": "PASS",
+      "freshProfileIsolation": "UNVERIFIED_NONMANDATORY",
+      "personalAnswersRead": false,
+      "finalTermsAndSubmissionApproval": "PENDING",
+      "runtimeCodeReleaseProviderMutations": false
+    }
   },
   "latest119UnitReport": "evidence/full-host-prep-unit.json",
-  "latest22DefaultBrowserReport": "evidence/full-host-prep-default-browser.json"
+  "latest22DefaultBrowserReport": "evidence/full-host-prep-default-browser.json",
+  "historicalRenderPreparationSource": {
+    "report": "evidence/render-deployment-verification.json",
+    "runtimeSourceSha256": {
+      "src/server/index.ts": "0249d36a27c7ad8788d5ddf66d72073c7d4d25b37fc5521ae8a9ed1ba9e89c05",
+      "render.yaml": "afeb8df6a22d273e925795f266e14e56486c364006af17f904af0c69ac270ae1",
+      "Dockerfile": "301cebdf9d5533a924ecdade6199eb1da69684d051af8bfce56cad622b684a80",
+      "tests/runtime-config.test.ts": "437063ba84e85aac7179765a0fa0271fbfa8d9a6b16d94196d7f9894c74e8821"
+    },
+    "documentationHashScope": "Deployment docs changed after executed local report;root release manifest refresh pending"
+  },
+  "submissionReady": false,
+  "personalEligibility": {
+    "status": "CONFIRMATIONS_RECEIVED_PRIVATELY",
+    "privateAnswerValuesPublished": false,
+    "finalFullRulesAndTermsApproval": "PENDING",
+    "finalDevpostSubmissionApproval": "PENDING"
+  },
+  "nonmandatoryLimitations": [
+    "Fresh-profilecookieisolationforpublicvideoplaybackUNVERIFIED;strictanonymousplaybacknotclaimed"
+  ],
+  "packageVerification": "evidence/package-verification.json"
 }

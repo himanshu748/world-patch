@@ -1,0 +1,14 @@
+{
+  "status": "PASS_ACTUAL_CADDY_SPOOF_RESISTANCE",
+  "at": "2026-11-02T10:32:20.281Z",
+  "scope": "Actual HTTPS requests through production Caddy, changing untrusted X-Forwarded-For does not reset the login bucket",
+  "statuses": [
+    401,
+    401,
+    401,
+    401,
+    401,
+    401,
+    429
+  ]
+}

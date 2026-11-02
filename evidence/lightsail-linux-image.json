@@ -1,0 +1,15 @@
+{
+  "sourceSha": "49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
+  "image": "world-patch:49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
+  "imageId": "sha256:15ee36d9d74bc6dba8326441c552dc3e94757fa55e9bcdba656c71b170ed7665",
+  "os": "linux",
+  "architecture": "amd64",
+  "createdAt": "2026-11-02T10:10:30.603Z",
+  "smokeStatus": "PASS",
+  "buildScope": "GitHub-hosted Ubuntu runner; no registry or remote-host access",
+  "artifactSha256": "a797c9df47c2626cdf67cbde923a6353f079fac175d4f43d2421071b2230aa3a",
+  "artifactBytes": 157425214,
+  "runUrl": "https://github.com/himanshu748/world-patch/actions/runs/41426371617",
+  "artifactChecksumVerification": "PASS",
+  "containerChecks": 39
+}

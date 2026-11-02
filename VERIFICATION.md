@@ -2,7 +2,7 @@
 
 Updated: 2 November 2026; initial verification: 28 October 2026. Engine: `world-patch/1.0.0`. Main Codex session: `01a1807d-e70b-7572-bc0d-a4f29b37d1b8`.
 
-**Status: local application, recorded real Twitch round, public repository and published unlisted demo verified within the scopes below; full hosting and submission remain BLOCKED.** The required hosted Fastify/WSS/Twitch/SQLite application is awaiting provider provisioning and remote acceptance. A browser-only GitHub Pages sandbox cannot satisfy that requirement. The 96-second video passed local complete playback and YouTube anonymous metadata readback; complete anonymous YouTube playback is pending. Entrant attestations and Devpost submission are pending. Dated sections preserve historical checkpoints; this current summary supersedes older publication and hosting statuses.
+**Status: complete hosted application PASS; submission remains BLOCKED.** The full application is live at https://worldpatch.13.204.212.172.sslip.io . Actual HTTPS/WSS, protected controls, persistent restart recovery and hosted Twitch/game/replay passed. CI3 completed 39 Linux container checks; the public hosted API/security/recovery suite passed 78/78. The real hosted Twitch session’s38-event replay independently reconstructed one merge and the escaped final game. Complete public privacy-domain video playback passed. Personal eligibility confirmations were received privately; final rules/terms and actual Devpost submission approval remain pending. Fresh-profile cookie isolation is unverified and is a nonmandatory limitation. Historical sections retain their earlier scope and failures.
 
 ## Implemented product
 
@@ -12,21 +12,22 @@ The solver proves the existence of a replayed route from the recorded checkpoint
 
 ## Executed checks
 
-The latest local hosting-preparation gate passed 119 tests, including five real-entry-point runtime regressions, plus typecheck/lint and the normal build. It ran on Node 26.12.0 macOS, using synthetic configuration and no Twitch provider call. The captured game revision’s 114-test/22-browser gate is retained separately. The normal client is unchanged by the Render startup/configuration work; no new full UI suite was run for that change. The separate static-sandbox variant also has its own 114-test/22-normal-browser/3-static-browser proof; Render uses the normal build.
+The latest local gate passed 127 tests, typecheck/lint and the normal production build on Node 26.12.0 macOS. It includes exact trusted-proxy configuration and real-entry-point regressions. The captured 114-test/22-browser revision and later 22-normal/3-static browser checks remain separate, dated evidence; no full browser rerun is claimed for the subsequent backend proxy change. CI3 subsequently completed 39 Linux checks, including restart/replay; the separate actual public-host and Twitch proofs are recorded below.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Latest unit/property/server/provider-fixture/runtime tests | 119 passed, 0 failed; five new startup/configuration regressions | evidence/render-deployment-verification.json |
+| Latest local unit/property/integration/runtime tests | 127 passed; includes exact trusted-proxy configuration | evidence/lightsail-preflight.json |
 | Recorded game revision gate | 114 passed; prior captured revision | evidence/release-final-unit.json |
 | Engine coverage | 42 tests including 600 seeded property trials | tests/engine.test.ts; evidence/kernel-tests.json |
 | HTTP/WebSocket boundaries | 10 tests; includes real loopback origin/read-only/32-socket limits | tests/http.test.ts |
 | Room rules | 21 tests, including bounded live-room clock regression | tests/room.test.ts |
 | SQLite/replay | 7 tests, including the real 20,000-event terminal reserve | tests/storage.test.ts |
 | Candidate/session capacity | 2 tests | tests/limits.test.ts |
-| Runtime configuration | 5 real-entry-point child-process tests with synthetic configuration | tests/runtime-config.test.ts; evidence/render-deployment-verification.json |
+| Runtime configuration | 7 real-entry-point child-process tests with synthetic configuration | tests/runtime-config.test.ts; evidence/lightsail-preflight.json |
+| Exact trusted proxy | 6 tests covering IPv4/IPv6, untrusted/default/multihop and invalid settings | tests/trusted-proxy.test.ts; evidence/lightsail-preflight.json |
 | Twitch lifecycle | 32 injected-provider tests; actual traffic verified separately below | tests/twitch.test.ts |
-| Latest TypeScript / ESLint | Passed | evidence/render-deployment-verification.json |
-| Latest normal production build | Passed; VITE_STATIC_DEMO unset | evidence/render-deployment-verification.json |
+| Latest TypeScript / ESLint | Passed | evidence/lightsail-preflight.json |
+| Latest normal production build | Passed; VITE_STATIC_DEMO unset | evidence/lightsail-preflight.json |
 | Fresh dependency install | Passed in a separate empty dependency directory | evidence/clean-install.json |
 | Native SQLite after fresh install | In-memory query passed | evidence/clean-install.json |
 | Production process recovery | 7 checks passed in both original and fresh installations | evidence/production-smoke.json; evidence/clean-install-smoke.json |
@@ -34,7 +35,12 @@ The latest local hosting-preparation gate passed 119 tests, including five real-
 | Latest normal browser journeys | 22 passed, 0 failed/skipped/flaky; before startup-only hosting change | evidence/static-demo-verification.json |
 | Separate static browser journeys | 3 passed; browser-only sandbox, no hosted room backend | evidence/static-demo-verification.json |
 | Recorded-revision browser journeys | 22 passed, 0 failed/skipped/flaky | evidence/release-final-browser.json |
-| Hosting-preparation source | Executed report hashes identify index/Blueprint/Docker/runtime tests at the local gate; deployment docs subsequently updated | evidence/render-deployment-verification.json |
+| Hosting-preparation source | Local preflight records application/proxy-test hashes; later image/harness repairs are separately bound to CI commits | evidence/lightsail-preflight.json |
+| Linux image checks | 39 passed, including Node 26.13.0/native SQLite, limits, non-root/read-only runtime and restart/replay | evidence/lightsail-linux-container-smoke.json; lightsail-linux-image.json |
+| Actual public hosted checks | 78 passed: HTTPS/WSS, auth/Origin, simulation, restart and independent replay | evidence/lightsail-hosted-api.json |
+| Actual hosted Twitch round |3 approved provider messages;24 UI moves; escaped; Reveal/overlay witness completed | evidence/lightsail-twitch-live.json |
+| Independent hosted review |4 certificate-validated public GETs;38-event Twitch replay recomputed | evidence/lightsail-independent-review.json |
+| Actual Caddy forwarding-spoof resistance |Changing untrusted X-Forwarded-For did not reset the login bucket | evidence/lightsail-proxy-spoof.json |
 | Captured revision consistency | Prior source/config/test fingerprint retained; subsequent startup changes are covered separately | evidence/release-final-checks.json; prior release-nov2-checks.json |
 | Actual cold reconnect | keepalive_timeout → reconnecting → ready; same session/game/receipt after controlled local stall | evidence/twitch-live-recovery.json |
 | Original OBS 60fps smoke | FAIL quality; 8.5% rendering / 2% encoding lag reported; retained audio is non-silent | evidence/obs-smoke-media.json; obs-media-qa.md |
@@ -43,7 +49,7 @@ The latest local hosting-preparation gate passed 119 tests, including five real-
 | Exported real Twitch replay | 36 events, one merge, escaped final state independently recomputed | evidence/twitch-live-replay-verification.json |
 | Exported simulation replay | Recomputed successfully | evidence/sample-simulation-replay.json; evidence/sample-replay-verification.json |
 
-Runtime actually tested: Node **26.12.0**, npm **11.20.0**, macOS arm64. Chromium **156.0.8078.4**, Playwright **1.64.1**. Package minimum Node 22.12 follows dependency requirements; this run did not independently test Node 22, Linux, Firefox or Safari. Docker image execution and remote proxy/TLS behavior remain UNVERIFIED.
+Runtime actually tested: Node **26.12.0**, npm **11.20.0**, macOS arm64. Chromium **156.0.8078.4**, Playwright **1.64.1**. Package minimum Node 22.12 follows dependency requirements; the local run did not independently test Node22, Firefox or Safari. CI3 subsequently executed Node 26.13.0 Linux/amd64, native SQLite and all 39 container checks, including restart/replay. The actual Lightsail service then passed public TLS/WSS and durable recovery checks. Firefox, Safari, audience-scale load and long-term availability were not established.
 
 ## Browser evidence and scope
 
@@ -76,14 +82,14 @@ The first loopback test was blocked by sandbox `EPERM`; its rerun with local-lis
 | Genuine OAuth + same-account chat | PASS — actual same-account commands changed the game; replay recomputed |
 | Actual provider reconnect | PASS for controlled cold recovery only; requested migration and live active-election cancellation remain unobserved |
 | Actual OBS game/chat capture | PASS — corrected real round, 1080p30, decoded frames and silent audio inspected; this is recording proof, not public broadcast or final Twitch/Codex video |
-| Docker image | UNVERIFIED — pinned Node 26.13.0 image supplied; image execution not tested |
+| Linux Docker pipeline | PASS — CI3 run 41426371617, 39 checks including restart/replay; source and verified artifact/layers bound |
 | Judge-accessible repository | PASS — public GitHub metadata and README anonymously read back at 5468d89; evidence/public-repository-verification.json |
-| Required full hosted application | BLOCKED — authorized provider provisioning pending; remote Linux/native SQLite, HTTPS/WSS, host/overlay, persistent restart and hosted Twitch acceptance not run |
-| YouTube demo | Qualified PASS —96-second source published unlisted with English captions; anonymous oEmbed metadata PASS; complete anonymous watch playback pending; evidence/youtube-publication-verification.json |
-| Eligibility/attestations | BLOCKED — entrant must personally review and confirm |
+| Required full hosted application | PASS — actual HTTPS/WSS/auth/restart/replay and real hosted Twitch proposal/vote/merge/player escape/witness |
+| YouTube demo | PASS —96-second Unlisted source with English captions,anonymous oEmbed metadata and continuous public privacy-domain playback to Replay;video-public-player.json;strict fresh-profile isolation not claimed |
+| Eligibility/final terms | BLOCKED — personal eligibility confirmations received privately; final full rules/terms approval pending |
 | Devpost submission | BLOCKED — draft copy exists; no submission was made |
 
-The authorized public repository and unlisted YouTube demo are published. No full hosted deployment or hackathon submission is claimed. Eleven specifically authorized test messages were posted in the user's own channel across the historical and two Nov2 rounds; the latest successful run is detailed below. The local preview and automated tests do not establish submission readiness. The formal deadline is 2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India; official source evidence is preserved in evidence/official-hackathon.json.
+The authorized public repository and unlisted YouTube demo are published. The full hosted deployment is verified; no hackathon submission is claimed. Fourteen specifically authorized test messages were posted in the user's own channel across the historical and two Nov2 rounds; the latest successful run is detailed below. The local preview and automated tests do not establish submission readiness. The formal deadline is 2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India; official source evidence is preserved in evidence/official-hackathon.json.
 
 ## 29 October motion-design refinement
 
@@ -117,7 +123,7 @@ Live Twitch account/OAuth/chat/reconnect and actual OBS/livestream proof remain 
 
 The recovered landing-refinement.css is now imported by the real landing. Typecheck, ESLint and production build passed. The full production-browser suite passed9/9 (57.4s), including real controller/overlay and shared-engine landing journeys. A final direction-word correction was followed by another production build and all3 landing journeys passing (9.6s); the machine report is evidence/landing-refinement-final-tests.json. Executed-command results and exact scope are in evidence/landing-refinement-verification.json. Protected shared/server source hashes match the prior verified package; the110-test report remains evidence/design-unit-tests.json.
 
-Desktop actions fit1440×900 and1280×720. Mobile390×844, keyboard reachability, reduced motion, 44px targets, accepted24-move gate route, rejected lockout preservation, complete step/reset, sandbox/room isolation, controller entry, read-only overlay and local OAuth-result routing all passed. Actual Twitch authorization is not established by these local URL checks.
+Desktop actions fit1440×900 and1280×720. Mobile390×844, keyboard reachability, reduced motion, 44px targets, accepted 24-move gate route, rejected lockout preservation, complete step/reset, sandbox/room isolation, controller entry, read-only overlay and local OAuth-result routing all passed. Actual Twitch authorization is not established by these local URL checks.
 
 The attributed landing generation ended canceled. A bounded artifact bundle recovered landing.html and its portable stylesheet; provenance and SHA-256 hashes are saved in evidence/open-design-landing/provenance.json. The preview HTML is illustrative and excluded from the runtime. Successful canonical design delivery is not claimed. Live Twitch, OBS/livestream, hosted judge access, public repository/video and actual submission retain their existing blocked/unverified status.
 
@@ -212,12 +218,23 @@ The completed local edit is 96.000 seconds, 1920×1080, H.264 at nominal30fps, w
 Evidence: `evidence/final-demo-video-verification.json`, `evidence/final-demo-capture-manifest.json` and `evidence/final-demo-frame-review.json`. The local MP4 is intentionally excluded from the source repository; its SHA-256 is `8dddb680bf4b501854251c38cf973b21096560fbce423fb9dc304094061ee65d`. Caption sidecars are included under `docs/DEMO-captions.srt` and `.vtt`. This local media PASS does not establish YouTube visibility, judge access or submission.
 
 
-## Current hosting and published delivery
+## Current Lightsail hosting and published delivery
 
-The complete hosted application is now a required project deliverable, even though the organizer’s website field is optional. The Render configuration runs the normal Fastify build with browser WebSockets, outbound Twitch EventSub and one persistent SQLite disk. The separately labeled static sandbox has no hosted room backend and cannot meet this acceptance condition.
+The full service is live at https://worldpatch.13.204.212.172.sslip.io on the existing Foley Lightsail host. Deployed source: `49555058b0e9ceb99060ce9dc3202d1ea4bd255c`. [CI3 run 41426371617](https://github.com/himanshu748/world-patch/actions/runs/41426371617) passed 39 actual Linux container checks, including Node 26.13.0, native SQLite, 512 MiB / 0.5 CPU limits, non-root/read-only runtime, application restart and replay. Artifact SHA-256: `a797c9df47c2626cdf67cbde923a6353f079fac175d4f43d2421071b2230aa3a`. The earlier missing-compiler and stale-port failures remain in lightsail-first-linux-build.json and lightsail-second-linux-smoke.json.
 
-The local startup gate passed 119 tests, including five injected-configuration child-process tests of the real server entry point, plus typecheck/lint/build. Origin precedence is PUBLIC_ORIGIN, then RENDER_EXTERNAL_URL, then the existing loopback default; derived and explicit OAuth callbacks, secure cookies/CSRF and malformed-origin refusal were exercised. These tests ran on Node 26.12.0 macOS. The pinned Node 26.13.0 Linux runtime, native SQLite installation and actual remote behavior remain unverified. The promoted Render report retains its earlier capacity/authorization checkpoint as history; it is not the current provisioning receipt. Deployment is authorized and awaiting provider provisioning.
+The actual HTTPS service passed 78 checks covering pages/assets, host authorization, wrong-Origin rejection, WSS, labeled simulation, persistent application-only restart and independently reconstructed replays. A restart from proposing recovered play with the saved game intact; OAuth/host sessions remain memory-only by design. Evidence: lightsail-hosted-api.json, lightsail-recovery-replay.json and lightsail-simulation-replay.json. These simulation/recovery checks precede and remain distinct from actual provider proof.
 
-Public source: https://github.com/himanshu748/world-patch . Anonymous repository metadata and README readback passed at commit 5468d89; local Render preparation is a subsequent change awaiting the next reviewed release. Video: https://youtu.be/5pPTyIQZ7RY . YouTube Studio reported published / unlisted with English captions and no issues; anonymous oEmbed metadata passed. The 96-second source has full local browser playback proof. Complete anonymous YouTube playback remains a separate pending check. Neither publication establishes a hosted application or a Devpost submission.
+Hosted OAuth and EventSub reached ready for the same broadcaster account. Three separately approved public posts rejected gravity down, admitted wallAclosed and selected it with one real ballot. The patch merged with a 24-input witness after 58 explored states. The operator used 24 actual hosted UI movement buttons to collect the key and escape at (9,7), then Reveal and overlay autoplay reached 24/24 EXIT. The downloaded38-event Twitch replay independently reconstructed one merge and the escaped final state. Host pause/resume controls staged the commands; no simulated inputs were used. Evidence: lightsail-twitch-live.json and lightsail-twitch-replay.json. This was one account, not a crowd or audience study; the hosted connection remained ready and no hosted reconnect/outage claim is made.
 
-Remote acceptance requires the deployed URL and commit, fresh Linux build/start, HTTPS and WSS updates, protected controller/read-only overlay, actual SQLite recovery after restart, exact Twitch callback and actual hosted OAuth/EventSub/game/replay evidence. Existing chat-message authorization does not permit additional public posts. Entrant attestations and submission remain separate unfinished gates.
+An independent read-only review validated HTTPS certificates and 200 responses for `/`, `/play`, `/overlay` and `/api/health`, and reran the replay CLI successfully over all 38 events. It did not perform remote SSH or container inspection. Evidence: lightsail-independent-review.json. Actual Caddy requests also held one login bucket across forged forwarded addresses; lightsail-proxy-spoof.json records six 401 responses followed by 429. Separate root verification observed an independently sourced valid login succeed within that bucket’s window.
+
+Root’s deployment verification observed the same IDs/start times/restart counts for six existing containers and 200 responses on five existing HTTPS routes before and after. Its post-round resource observation was a snapshot, not a reservation, load benchmark or availability guarantee. The application remains isolated and resource-limited; no new paid AWS resource was created. The sanitized root-observed aggregate is [lightsail-deployment.json](evidence/lightsail-deployment.json); it also records runtime isolation, observed 37.54 MiB usage, restored SSH rules and five existing routes remaining 200.
+
+Fourteen approved public messages have now been sent: eleven across the historical local rounds and three in the hosted round. No further posts are authorized. The public source and 96-second unlisted video are available, and complete public privacy-domain playback passed. Personal eligibility confirmations were received privately. Final full rules/terms approval, source-package refresh and actual Devpost submission remain unfinished. The website is operational, but the project is not claimed submission-ready.
+
+
+## Complete public video playback
+
+The actual privacy-enhanced embedded player completed continuous 96-second playback through 1:36/1:36 and Replay, with no sign-in prompt, credential entry or seek. The correct project title and actual Codex evidence captions were observed. Evidence: [video-public-player.json](evidence/video-public-player.json). This verifies complete public privacy-domain playback. The browser had existing YouTube account context on another origin, so a separate fresh-profile cookie-isolation check was not established and strict anonymous playback is not claimed. That remains a nonmandatory limitation.
+
+The user supplied the requested personal eligibility confirmations privately. Their values are not included in public source. Final full rules/terms approval and explicit final Devpost submission approval are still pending; no submission-ready claim or submission receipt follows from these confirmations.

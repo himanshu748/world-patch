@@ -1,10 +1,10 @@
 # Full application on Render
 
-`render.yaml` proposes one Node web service for the existing Fastify application, its React/Phaser interface, browser WebSockets, outbound Twitch EventSub connection and SQLite storage. The owner has authorized the full deployment. Provider provisioning and all remote acceptance checks remain pending; this file is not a deployment receipt.
+Render is an unused alternative retained for portability. The selected release instead reuses the existing Foley Lightsail host; see [the active deployment guide](LIGHTSAIL-DEPLOYMENT.md). No Render application service was provisioned. The settings and 119-test preparation below are historical proposal evidence, not an active deployment or a hosting PASS.
 
 The hosted entry is the service's HTTPS origin: `/` opens the playable introduction, `/play` opens the protected controller and `/overlay` is the read-only broadcast view. `/api/*` and `/ws` run on the same service. This is the normal application build; leave `VITE_STATIC_DEMO` unset and do not deploy `dist/judge-demo` for this service.
 
-## Selected service configuration
+## Unused alternative configuration
 
 | Setting | Proposal |
 | --- | --- |
@@ -54,11 +54,11 @@ npm test
 npm run build
 ```
 
-The initial authenticated CLI validation returned `valid:false` because the existing workspace had reached its 25-service/database limit, despite a zero command exit code. That is historical evidence in `evidence/render-deployment-verification.json`. A separate empty workspace resolves that capacity constraint without modifying existing projects. Deployment is authorized and awaiting provider provisioning. Check the validator’s JSON result and the actual service state; neither an exit code nor a prepared Blueprint proves deployment.
+The initial authenticated CLI validation returned `valid:false` because the existing workspace had reached its 25-service/database limit, despite a zero command exit code. That is historical evidence in `evidence/render-deployment-verification.json`. A separate empty workspace resolves that capacity constraint without modifying existing projects. The release now selects Lightsail; this Render proposal is unused. Check the validator’s JSON result and the actual service state; neither an exit code nor a prepared Blueprint proves deployment.
 
-The local gate passed strict type checking, lint, all 119 tests and the normal production build. Five new tests launch the actual source entry point from fresh temporary directories with synthetic configuration and no inherited credentials. They exercise Render fallback, explicit origin precedence, the local default, secure cookies and CSRF behavior, derived/overridden OAuth callbacks and rejection of a malformed Render origin. They create authorization URLs only; they do not contact Twitch or establish a live provider session. These tests ran on the local Node `26.12.0`; the pinned `26.13.0` Linux runtime still needs its own build/start check. No browser rerun was needed for this server configuration change; the preceding default 22-browser result remains separate evidence for the unchanged client.
+The local gate passed strict type checking, lint, all 119 tests and the normal production build. Five new tests launch the actual source entry point from fresh temporary directories with synthetic configuration and no inherited credentials. They exercise Render fallback, explicit origin precedence, the local default, secure cookies and CSRF behavior, derived/overridden OAuth callbacks and rejection of a malformed Render origin. They create authorization URLs only; they do not contact Twitch or establish a live provider session. These tests ran on the local Node `26.12.0`; the actual Render runtime remains unverified. Separate later Docker CI built Node 26.13.0 Linux and passed 25 startup/security/native-SQLite checks but did not finish its restart smoke. No browser rerun was needed for this server configuration change; the preceding default 22-browser result remains separate evidence for the unchanged client.
 
-Deploy the reviewed hosting revision to only the selected service and disk, supply private variables through the provider configuration, and record the exact deployed commit. Public source publication is already verified for the earlier captured-game revision; the hosting preparation requires its own reviewed update. `autoDeployTrigger: "off"` prevents later pushes from automatically changing the hosted build; it does not prevent the initial deployment or deliberate manual deployments. Record the deployed commit and keep it fixed during judging unless a separately approved repair is needed.
+If this alternative is selected in the future, review its resource scope before creating a service or disk, supply private variables through the provider configuration, and record the exact deployed commit. Public source publication is already verified for the earlier captured-game revision; the hosting preparation requires its own reviewed update. `autoDeployTrigger: "off"` prevents later pushes from automatically changing the hosted build; it does not prevent the initial deployment or deliberate manual deployments. Record the deployed commit and keep it fixed during judging unless a separately approved repair is needed.
 
 Before calling the hosted product verified, exercise:
 

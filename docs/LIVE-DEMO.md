@@ -1,16 +1,20 @@
 # The genuine Twitch demonstration
 
-Current evidence: the real account/app, OAuth, own-channel proposal/rejection/vote/merge, operator-controlled escape and exported replay passed on 30 October 2026. See evidence/twitch-live-validation.json. Actual OBS/livestream footage is still required. No simulation screenshot, provider fixture or fake message counts as that capture.
+The [published 96-second demo](https://youtu.be/5pPTyIQZ7RY) shows the genuine one-account Twitch proposal/rejection/vote/merge, player escape and witness, followed by preserved Codex evidence. Its corrected Nov2 session has an independently verified 36-event replay. Actual OBS recording, complete local playback and continuous public privacy-domain playback are verified; strict fresh-profile cookie isolation and a public livestream are not claimed. See [public player evidence](../evidence/video-public-player.json).
+
+The [complete hosted game](https://worldpatch.13.204.212.172.sslip.io) is live. Actual TLS/WSS, persistent recovery and the hosted OAuth/EventSub proposal/vote/merge/player escape/witness passed. The hosted 38-event replay independently verified. This adds a separately verified hosted session; it does not turn the earlier recording or simulation into hosted evidence. See [Lightsail deployment](LIGHTSAIL-DEPLOYMENT.md).
 
 ## One-account preflight
 
 Use your own Twitch account as broadcaster and reader. Install OBS from its official site if needed, sign in through OBS's own Twitch workflow and complete any account/streaming requirements yourself. Do not put stream keys in this project. Add a Browser Source pointing to `/overlay` on the running game server, 1920×1080. Open the controller separately. Unlock the controls, choose **Start a new chamber**, then press **Start**; selection alone does not replace the current session. Reveal/export first if that attempt must be retained. Use window/browser capture for Twitch chat and Codex evidence in the recording; hide secrets and personal notifications.
 
-Verify Twitch is subscribed, then send a harmless real chat message and check that “last real event” updates. Connection alone is insufficient. Start a fresh **Twitch** session; no simulation controls should be usable. If the provider disconnects during an election, wait for subscription readiness and open a new round. The canceled round must not be cut into the demo as a successful vote.
+Verify the exact hosted callback and Twitch subscription. Only under separate public-message approval, send a real chat message and check that “last real event” updates. Connection alone is insufficient. Start a fresh **Twitch** session; no simulation controls should be usable. If the provider disconnects during an election, wait for subscription readiness and open a new round. The canceled round must not be cut into the demo as a successful vote.
 
 Reveal starts the witness automatically in the OBS overlay unless reduced motion is enabled. Play/Pause/Step, the Witness step slider and replay speed are local to each view: use OBS's Browser Source **Interact** control to pause or step that overlay. The controller's later playback buttons do not synchronize the overlay's timeline. Seeking pauses that view without changing the saved attempt. With reduced motion, use Step or the slider in the overlay's Interact window; autoplay and speed are disabled.
 
-## Under-three-minute shot plan
+## Optional new capture shot plan
+
+The existing video is already published. This plan is for a separately authorized new capture; it does not authorize more chat posts.
 
 | Time | On screen | Say / demonstrate |
 | --- | --- | --- |
@@ -29,4 +33,4 @@ The strongest capture is continuous for chat → candidate → ballot → merge 
 
 Record actual provider notification/message IDs from the revealed replay export, observed timestamps, account/channel pseudonym, session origin, round/receipt IDs and replay verifier output. Record where the Twitch chat and OBS browser source are visible. Keep the original capture local; redact tokens/client secret/host secret/stream key before sharing. Export after Reveal, then run `npm run replay -- path/to/export.json`.
 
-Before publishing, confirm the video is publicly viewable on YouTube and the repository is judge-accessible. Official wording and all required fields are captured in evidence/official-hackathon.json; recheck the organizer site before submission. Upload, deployment and submission require the user's authorization. No actual livestream, upload or submission is claimed by this guide.
+Before publishing, confirm the video is publicly viewable on YouTube and the repository is judge-accessible. Official wording and all required fields are captured in evidence/official-hackathon.json; recheck the organizer site before submission. The source repository and unlisted video are published. The scoped existing-host deployment is executed and verified. Three separately approved hosted test messages brought the total to 14; no further public posts are authorized. Additional public messages and actual submission retain their separate approval boundaries. No actual public livestream or Devpost submission is claimed.

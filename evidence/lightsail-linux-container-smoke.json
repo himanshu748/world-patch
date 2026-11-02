@@ -1,0 +1,179 @@
+{
+  "status": "PASS",
+  "at": "2026-11-02T10:10:27.086Z",
+  "image": "world-patch:49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
+  "sourceSha": "49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
+  "scope": "Actual Linux Docker image and synthetic isolated container; no Caddy TLS, remote Lightsail access or Twitch provider connection",
+  "limits": {
+    "memoryBytes": 536870912,
+    "cpu": 0.5
+  },
+  "checks": [
+    {
+      "name": "Image is native Linux amd64",
+      "status": "PASS"
+    },
+    {
+      "name": "Container is capped at 512 MiB and 0.5 CPU",
+      "status": "PASS"
+    },
+    {
+      "name": "Container has no additional swap allowance",
+      "status": "PASS"
+    },
+    {
+      "name": "Container root filesystem is read-only with a separate writable data volume",
+      "status": "PASS"
+    },
+    {
+      "name": "Container runs as the unprivileged image user",
+      "status": "PASS"
+    },
+    {
+      "name": "Container drops all capabilities and prevents privilege escalation",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/health",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual container health is ready",
+      "status": "PASS"
+    },
+    {
+      "name": "Container runs pinned Node 26.13.0",
+      "status": "PASS"
+    },
+    {
+      "name": "Native better-sqlite3 loads and executes SQL in the production image",
+      "status": "PASS"
+    },
+    {
+      "name": "Built frontend / is served",
+      "status": "PASS"
+    },
+    {
+      "name": "Normal build uses root asset paths",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual built JavaScript asset is served",
+      "status": "PASS"
+    },
+    {
+      "name": "Built frontend /play is served",
+      "status": "PASS"
+    },
+    {
+      "name": "Built frontend /overlay is served",
+      "status": "PASS"
+    },
+    {
+      "name": "Anonymous host mutation is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Wrong-origin login is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "WebSocket upgrade sends actual room snapshot for configured Origin",
+      "status": "PASS"
+    },
+    {
+      "name": "WebSocket upgrade rejects wrong Origin",
+      "status": "PASS"
+    },
+    {
+      "name": "Host login succeeds with synthetic secret",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS configuration sets Secure HttpOnly SameSite cookie",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Host action move returns 200",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTP movement updates the game",
+      "status": "PASS"
+    },
+    {
+      "name": "Host action startRound returns 200",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Election is active before controlled restart",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Persistent volume restores committed game across container restart",
+      "status": "PASS"
+    },
+    {
+      "name": "Restart cancels the interrupted election",
+      "status": "PASS"
+    },
+    {
+      "name": "Host action reset returns 401",
+      "status": "PASS"
+    },
+    {
+      "name": "Host login succeeds with synthetic secret",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS configuration sets Secure HttpOnly SameSite cookie",
+      "status": "PASS"
+    },
+    {
+      "name": "Host action reveal returns 200",
+      "status": "PASS"
+    },
+    {
+      "name": "Revealed replay can be fetched after reauthentication",
+      "status": "PASS"
+    },
+    {
+      "name": "Replay retains simulation provenance and persisted movement/recovery",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent verifier reconstructs the fetched persisted replay",
+      "status": "PASS"
+    },
+    {
+      "name": "Completed container is not marked OOM killed",
+      "status": "PASS"
+    }
+  ],
+  "publishedAddresses": [
+    {
+      "phase": "initial",
+      "base": "http://127.0.0.1:32768"
+    },
+    {
+      "phase": "restart",
+      "base": "http://127.0.0.1:32769"
+    }
+  ]
+}

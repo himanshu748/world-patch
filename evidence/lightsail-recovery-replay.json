@@ -1,0 +1,298 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "world-patch/1.0.0",
+  "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+  "origin": "simulation",
+  "events": [
+    {
+      "at": 1793614783657,
+      "kind": "session-start",
+      "payload": {
+        "chamber": {
+          "id": "vector-foundry",
+          "version": 1,
+          "name": "Vector Foundry",
+          "description": "Find the key. Learn the drift. Chat can close the direct crossing.",
+          "width": 11,
+          "height": 9,
+          "tiles": [
+            "###########",
+            "#S..#....K#",
+            "#.#~#.##..#",
+            "#.#.A.#...#",
+            "#.AAA.#.#.#",
+            "#...#...#.#",
+            "#.~~~.##..#",
+            "#....B...E#",
+            "###########"
+          ],
+          "start": {
+            "x": 1,
+            "y": 1
+          },
+          "exit": {
+            "x": 9,
+            "y": 7
+          },
+          "key": {
+            "x": 9,
+            "y": 1
+          },
+          "portals": [],
+          "wallGroups": {
+            "A": [
+              {
+                "x": 4,
+                "y": 3
+              },
+              {
+                "x": 2,
+                "y": 4
+              },
+              {
+                "x": 3,
+                "y": 4
+              },
+              {
+                "x": 4,
+                "y": 4
+              }
+            ],
+            "B": [
+              {
+                "x": 5,
+                "y": 7
+              }
+            ]
+          },
+          "initialRules": {
+            "gravity": "off",
+            "portals": "normal",
+            "ice": false,
+            "walls": {
+              "A": false,
+              "B": false
+            }
+          }
+        },
+        "origin": "simulation",
+        "receipt": {
+          "id": "3e7c4e64-4039-45cd-b372-e6b8929b1b23",
+          "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+          "engineVersion": "world-patch/1.0.0",
+          "chamberVersion": 1,
+          "round": 0,
+          "revision": 0,
+          "origin": "simulation",
+          "patch": null,
+          "beforeDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+          "afterDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+          "explored": 62,
+          "pathLength": 18,
+          "witness": [
+            "right",
+            "right",
+            "down",
+            "down",
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down"
+          ],
+          "before": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": false,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "start": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": false,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "tally": [],
+          "tieBreak": "votes-descending-then-canonical-key-code-point-ascending",
+          "digest": "a53e291113174ceae8e2f88574b3089bbc51dcd790c61404723c5a326a1c606f"
+        }
+      },
+      "gameDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+      "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+      "seq": 1,
+      "previousHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "89355edb80c68f5402e1e7ce934802ba5e8c50f57f4a416ddbe4f88c4009d38a"
+    },
+    {
+      "at": 1793614783915,
+      "kind": "move",
+      "payload": {
+        "direction": "right"
+      },
+      "gameDigest": "bb346c00757fd31b1c2d5c6a21dc2de22deddd40330bb106357106c45e947472",
+      "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+      "seq": 2,
+      "previousHash": "89355edb80c68f5402e1e7ce934802ba5e8c50f57f4a416ddbe4f88c4009d38a",
+      "hash": "257a24ce1755215ada5dd5226fc8934bea294fe0726b45fcf835261e89850a3d"
+    },
+    {
+      "at": 1793614784075,
+      "kind": "round-open",
+      "payload": {
+        "round": 1,
+        "gameRevision": 1,
+        "deadline": 1793614809075
+      },
+      "gameDigest": "bb346c00757fd31b1c2d5c6a21dc2de22deddd40330bb106357106c45e947472",
+      "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+      "seq": 3,
+      "previousHash": "257a24ce1755215ada5dd5226fc8934bea294fe0726b45fcf835261e89850a3d",
+      "hash": "7ccbdd7e9aeccc84a3c412a86d0b2009b655fc9539333420f1a0618a3fdf837b"
+    },
+    {
+      "at": 1793614809248,
+      "kind": "cancel",
+      "payload": {
+        "reason": "empty-audience"
+      },
+      "gameDigest": "bb346c00757fd31b1c2d5c6a21dc2de22deddd40330bb106357106c45e947472",
+      "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+      "seq": 4,
+      "previousHash": "7ccbdd7e9aeccc84a3c412a86d0b2009b655fc9539333420f1a0618a3fdf837b",
+      "hash": "72780136b55c9d36875c0db0e758c32a72845a4320171bae5e9a4cee59210ddf"
+    },
+    {
+      "at": 1793614855357,
+      "kind": "round-open",
+      "payload": {
+        "round": 2,
+        "gameRevision": 1,
+        "deadline": 1793614880357
+      },
+      "gameDigest": "bb346c00757fd31b1c2d5c6a21dc2de22deddd40330bb106357106c45e947472",
+      "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+      "seq": 5,
+      "previousHash": "72780136b55c9d36875c0db0e758c32a72845a4320171bae5e9a4cee59210ddf",
+      "hash": "c6387f86c2dddbb5b4bc5378685eb960347944cfa7f5b0b04a42d189e4bffb69"
+    },
+    {
+      "at": 1793614856672,
+      "kind": "recovered",
+      "payload": {},
+      "gameDigest": "bb346c00757fd31b1c2d5c6a21dc2de22deddd40330bb106357106c45e947472",
+      "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+      "seq": 6,
+      "previousHash": "c6387f86c2dddbb5b4bc5378685eb960347944cfa7f5b0b04a42d189e4bffb69",
+      "hash": "1ca7f6e3b88cb49e08619990479f68ddd61bd1dcbae0534515f5ab5e79f01420"
+    },
+    {
+      "at": 1793614882247,
+      "kind": "reveal",
+      "payload": {
+        "receipt": {
+          "id": "3e7c4e64-4039-45cd-b372-e6b8929b1b23",
+          "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+          "engineVersion": "world-patch/1.0.0",
+          "chamberVersion": 1,
+          "round": 0,
+          "revision": 0,
+          "origin": "simulation",
+          "patch": null,
+          "beforeDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+          "afterDigest": "3a878b0d26befe2657164683e50e6b6e5afe8aa808b26225156ae51b1f2fbab1",
+          "explored": 62,
+          "pathLength": 18,
+          "witness": [
+            "right",
+            "right",
+            "down",
+            "down",
+            "right",
+            "right",
+            "up",
+            "up",
+            "right",
+            "right",
+            "right",
+            "right",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down",
+            "down"
+          ],
+          "before": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": false,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "start": {
+            "chamberId": "vector-foundry",
+            "x": 1,
+            "y": 1,
+            "hasKey": false,
+            "rules": {
+              "gravity": "off",
+              "portals": "normal",
+              "ice": false,
+              "walls": {
+                "A": false,
+                "B": false
+              }
+            },
+            "escaped": false
+          },
+          "tally": [],
+          "tieBreak": "votes-descending-then-canonical-key-code-point-ascending",
+          "digest": "a53e291113174ceae8e2f88574b3089bbc51dcd790c61404723c5a326a1c606f"
+        }
+      },
+      "gameDigest": "bb346c00757fd31b1c2d5c6a21dc2de22deddd40330bb106357106c45e947472",
+      "sessionId": "bca1fe86-f33b-44d4-b8d0-60090deb7e72",
+      "seq": 7,
+      "previousHash": "1ca7f6e3b88cb49e08619990479f68ddd61bd1dcbae0534515f5ab5e79f01420",
+      "hash": "87e02aa06563632db9c96f91409f8a1fbc2ece705e692afb515c252a44666110"
+    }
+  ]
+}

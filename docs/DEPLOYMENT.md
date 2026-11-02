@@ -1,62 +1,43 @@
 # Deploy the complete WORLD//PATCH application
 
-The required hosted release is one Fastify service serving the React/Phaser interface, protected host actions, browser WebSockets, Twitch OAuth/EventSub and persistent SQLite. Deployment is authorized and awaiting provider provisioning; remote acceptance has not passed. A GitHub Pages sandbox serves browser-only play and does not meet this requirement.
+The selected release reuses the existing Foley Lightsail host at `https://worldpatch.13.204.212.172.sslip.io`. It runs the complete Fastify application: React/Phaser, protected host/API routes, browser WebSockets, Twitch OAuth/EventSub and persistent SQLite. Deployment is executed and verified. Public TLS/WSS, saved-state recovery and the actual hosted Twitch election/player escape/replay passed; see [deployment evidence](../evidence/lightsail-deployment.json). A GitHub Pages sandbox cannot meet this requirement.
 
-The [Render configuration and rollout](RENDER-DEPLOYMENT.md) describe the selected path. `render.yaml` uses one Node 26.13.0 service, one 1 GB disk mounted at `/var/data`, `DATA_DIR=/var/data/world-patch`, normal `npm run build`, `npm start`, `/api/health` and disabled automatic deployments. Keep `VITE_STATIC_DEMO` unset. The latest local startup/configuration gate passed 119 tests, typecheck, lint and build on Node 26.12.0 macOS; Node 26.13.0 Linux/native SQLite execution remains a remote check.
+Use the [Lightsail deployment guide](LIGHTSAIL-DEPLOYMENT.md) for the exact approved commands, resource boundaries and rollback. The Render guide remains an unused alternative; no Render application service is part of this release.
 
-## Configure one persistent process
+## Build and transfer a verified artifact
 
-Use an always-on Node process, outbound HTTPS/WSS to Twitch, HTTPS with browser WebSocket upgrades and a writable persistent filesystem. Do not run a cluster, multiple workers or replicas against the room’s SQLite database. Static-only and ephemeral serverless hosting cannot provide this server architecture.
+The manual GitHub workflow builds Linux/amd64 off-host with pinned Node 26.13.0 and executes the isolated container smoke. It has no automatic production deployment, remote SSH or production credentials. Do not compile the application on the shared Foley host. Install native SQLite inside the Linux image; do not copy the Mac’s `node_modules`. Keep VITE_STATIC_DEMO unset so the image contains the normal server build.
 
-```sh
-npm ci --include=dev
-npm run build
-# Configure secrets through the host’s private environment manager.
-NODE_ENV=production HOST=0.0.0.0 npm start
-```
+The deployed artifact came from CI3 run 41426371617 at source 49555058b0e9ceb99060ce9dc3202d1ea4bd255c, which passed 39 Linux container checks including restart/replay. CI1’s native-build and CI2’s stale-port harness failures remain historical. For any future update, require another completely successful build and restart/replay smoke. Bind the successful run’s source commit, image tag/ID, artifact metadata and checksums before transfer. The detailed guide describes the artifact import checks.
 
-Install dependencies on the target Linux builder; do not copy macOS `node_modules` or its native SQLite binary. The normal build writes `dist/public` and `dist/server`; `dist/judge-demo` belongs to the separate browser-only variant.
+## Isolate the runtime and proxy
 
-Set `HOST_SECRET` to at least 24 cryptographically random characters, `DATA_DIR` to the persistent mount, and the Twitch application’s `TWITCH_CLIENT_ID`/`TWITCH_CLIENT_SECRET` privately. The public origin is selected from explicit `PUBLIC_ORIGIN`, then Render’s `RENDER_EXTERNAL_URL`, then the loopback default. Production requires an exact HTTPS origin without a trailing slash, path, query, credentials or fragment.
+Use one WORLD//PATCH container with 512 MiB RAM and 0.5 CPU limits, one dedicated Docker network and a named volume at `/data`. Run one Node process. Do not add replicas, share another application’s volume or publish a host port. Caddy reaches port 3000 on the dedicated network. Preserve the six existing containers, sites, networks and environment settings; record before/after health.
 
-`TWITCH_REDIRECT_URI` defaults to `<selected-origin>/auth/twitch/callback`; an explicit configured callback takes precedence. Once the service origin is assigned, register that exact HTTPS callback in Twitch. Enter the host secret through `/play`, use Connect Twitch and authorize the broadcaster. Configuration alone does not prove OAuth or chat delivery. Never put secrets in URLs, source, browser storage, screenshots or the overlay.
+Configure private host/Twitch values outside the checkout, image and logs. Set PUBLIC_ORIGIN to the exact HTTPS hostname and TWITCH_REDIRECT_URI to `https://worldpatch.13.204.212.172.sslip.io/auth/twitch/callback`. Register that exact callback with Twitch. Never expose secrets in a URL, overlay, screenshot or source repository.
 
-## Alternate Docker path
+Set TRUSTED_PROXY_IP to Caddy’s exact address on the dedicated application network. Unset disables proxy trust. CIDRs, blanket true and malformed values are rejected. Do not trust the public host address or a supplied forwarded header. Recheck Caddy’s address after its container is recreated; preserve every existing network and gateway. Exact browser Origin checks remain enforced independently.
 
-Both Dockerfile stages pin Node 26.13.0. The runtime removes development packages, runs as an unprivileged user and mounts `/data`. This image recipe has not been executed in the hosting preparation.
+Add only this hostname’s Caddy reverse-proxy block, validate it and reload the existing Caddy process. Do not restart the shared proxy or replace another site. The [detailed guide](LIGHTSAIL-DEPLOYMENT.md) covers bind-mounted configuration handling and scoped rollback.
 
-```sh
-docker build -t world-patch:local .
-docker volume create world-patch-data
-docker run --name world-patch --env-file .env \
-  -p 127.0.0.1:3000:3000 \
-  -v world-patch-data:/data world-patch:local
-```
+## Verify the public journey
 
-Put an HTTPS reverse proxy in front of port 3000. Forward `Upgrade` and `Connection` for `/ws`, preserve Origin and keep the proxy read timeout above 60 seconds. Secure cookies and mutation checks use the selected public origin. Do not enable permissive CORS. Application rate limits use the direct peer address because arbitrary forwarding headers are not trusted.
+Record the deployed source commit, workflow run, image ID/checksum, URL and runtime limits. The initial rollout exercised these acceptance checks. For each future runtime change, retain new results for:
 
-## Judge entry and remote acceptance
+1. Actual HTTPS landing, three playable chambers, `/play`, read-only `/overlay`, assets and `/api/health`.
+2. Host login, Secure/HttpOnly cookies, unauthorized mutation rejection and exact Origin enforcement.
+3. Browser WSS snapshots through the real Caddy path, including the exact trusted-proxy setting.
+4. A saved move, revealed/exported replay and controlled application-only restart with correct SQLite recovery and invalidated old host session.
+5. Exact Twitch callback, hosted authorization, real EventSub readiness and an actual hosted chat/game/replay journey under separately authorized public-message scope.
+6. Preserved existing-app health, keyboard/mobile/reduced-motion behavior and the judge’s real hosted entry.
 
-Record the actual HTTPS URL and deployed commit. `/` is the interactive introduction, `/play` is the protected controller and `/overlay` is read-only. Share host control privately when needed, alongside the public source and recorded demo. A spectator link alone does not establish an interactive judge journey.
-
-Before marking full hosting PASS, execute and retain evidence for:
-
-1. Fresh Linux install/build/start with native SQLite and `/api/health`.
-2. The actual HTTPS landing, controller and overlay with correct assets.
-3. Host login, Secure/HttpOnly cookie behavior and rejection of unauthorized or cross-origin mutations.
-4. Browser `wss://<service-origin>/ws` snapshot updates.
-5. A saved move and revealed/exported replay, followed by a controlled real service restart and intact recovery from the mounted disk.
-6. Exact Twitch callback registration, hosted OAuth, actual EventSub readiness and an actual hosted chat/game/replay journey under separately authorized public-message scope.
-7. Read-only overlay, keyboard/mobile/reduced-motion use and judge access from the real origin.
-
-`/api/health` does not prove WSS, Twitch delivery or persistent recovery. Local 119-test proof, the recorded local Twitch round and the published video each remain separate from these hosted checks. Report individual failures in [VERIFICATION.md](../VERIFICATION.md); do not promote provider configuration to a working deployment.
+HTTP health, CI checks and a published recording do not prove this hosted journey. The 127-test local gate,39-check Linux CI,78-check hosted suite and actual hosted Twitch replay remain separate evidence in [VERIFICATION.md](../VERIFICATION.md).
 
 ## Operations and recovery
 
-- Check HTTP health, browser WebSocket state and Twitch subscription state separately.
-- OAuth tokens and host sessions are memory-only. After restart, sign in and reconnect Twitch; persisted game/log recovery cancels an interrupted election. Do not resume an electorate after a delivery gap.
-- SQLite uses WAL and atomic event/checkpoint transactions. Stop the service before copying the complete data directory, or use SQLite’s online backup mechanism. Copying only the main database while WAL is active can lose committed data.
-- Retention is bounded at 20 sessions and 20,000 events per session. Export revealed attempts and archive the entire stopped data directory before starting a fresh one. No automatic evidence deletion occurs.
-- Host sessions expire after 12 hours. Rotate the private host secret and restart to invalidate sessions; this also changes participant pseudonyms for future events.
-- Keep databases private. Do not store raw chat history or OAuth tokens in SQLite. Review exported game actions and revealed witnesses before sharing.
-- Upgrade against a backed-up database copy and verify engine/schema compatibility. Restore source and data together for rollback. Never edit historical receipts to fit a changed engine.
+- Check HTTP health, browser WSS and Twitch subscription state separately.
+- OAuth and host sessions are memory-only. After an application restart, sign in and reconnect Twitch. Persisted recovery cancels an interrupted election.
+- SQLite uses WAL. Stop only WORLD//PATCH before a simple whole-volume backup, or use SQLite’s online backup mechanism. Copying only the main database while WAL is active can lose committed data.
+- Export revealed attempts and archive the complete stopped data directory before resetting capacity. There is no automatic evidence deletion. Keep databases and production environment files private.
+- Retain the previous image and compatible data backup before upgrades. Never run two versions against the same volume. Rollback only WORLD//PATCH and its own Caddy block; restoring an old complete shared proxy file could erase later changes by others.
+- Do not run global Docker prune, unrelated container stops, daemon restarts, unbounded host builds or shared-stack shutdowns.

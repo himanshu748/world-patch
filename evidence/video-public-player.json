@@ -1,0 +1,16 @@
+{
+  "status": "PASS_COMPLETE_PUBLIC_PRIVACY_DOMAIN_PLAYBACK",
+  "at": "2026-11-02T10:53:33.168686+00:00",
+  "videoUrl": "https://youtu.be/5pPTyIQZ7RY",
+  "playerUrl": "https://www.youtube-nocookie.com/embed/5pPTyIQZ7RY?rel=0",
+  "scope": "Actual continuous browser playback in the privacy-enhanced embedded player; no sign-in prompt, credentials entry or seek operation used",
+  "observations": [
+    "Player loaded the correct WORLD PATCH title",
+    "Play was invoked once",
+    "Actual Codex evidence captions observed during playback",
+    "Player showed1:27/1:36 with Pause video",
+    "Player reached1:36/1:36, seek100 and Replay video"
+  ],
+  "freshProfileCookieIsolation": "UNVERIFIED: IAB had an existing YouTube account on another origin. No claim that a separate fresh anonymous browser profile was exercised.",
+  "visibility": "Provider-confirmed Unlisted, public metadata and complete privacy-domain media playback are separately recorded."
+}

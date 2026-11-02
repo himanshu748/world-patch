@@ -4,10 +4,13 @@
   "visibility": "public",
   "private": false,
   "defaultBranch": "main",
-  "commit": "5468d89d502264a4b607c167fc0ed4f44908aa09",
+  "commit": "205b46c195dbca3932adb8a1f336d05b8c6e2c54",
   "anonymousMetadata": true,
   "anonymousREADMEBytesMatch": true,
   "readmeSHA256": "c4522d69c16e095aafc62b219e0f2bbb752a8268314f2b31bbd44b4188ad85f2",
   "authorization": "User approved public repository creation, commit, push and release-link updates",
-  "status": "PASS_PUBLIC_REPOSITORY_READBACK"
+  "status": "PASS_PUBLIC_REPOSITORY_READBACK",
+  "initialCommit": "5468d89d502264a4b607c167fc0ed4f44908aa09",
+  "latestRenderBlueprintAnonymousBytesMatch": true,
+  "latestReadbackAt": "2026-11-02T09:23:24.506687+00:00"
 }

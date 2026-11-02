@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-02T10:36:48.153916+00:00",
+  "status": "PASS_INDEPENDENT_PUBLIC_GET_AND_REPLAY_RECOMPUTATION",
+  "publicOrigin": "https://worldpatch.13.204.212.172.sslip.io",
+  "scope": "Read-only independent public HTTPS checks and local reconstruction of the actual downloaded hosted Twitch replay. This reviewer performed no SSH, container inspection, deployment, login, chat posting or runtime mutation.",
+  "publicGET": {
+    "command": "Python urllib.request.urlopen with default certificate validation and20second timeout, GET each listed public path",
+    "checks": [
+      {
+        "path": "/",
+        "status": 200,
+        "tlsCertificateValidated": true
+      },
+      {
+        "path": "/play",
+        "status": 200,
+        "tlsCertificateValidated": true
+      },
+      {
+        "path": "/overlay",
+        "status": 200,
+        "tlsCertificateValidated": true
+      },
+      {
+        "path": "/api/health",
+        "status": 200,
+        "tlsCertificateValidated": true
+      }
+    ],
+    "result": "PASS"
+  },
+  "replay": {
+    "command": "node --import tsx scripts/verify-replay.ts evidence/lightsail-twitch-replay.json",
+    "exitCode": 0,
+    "fileSHA256": "57fc7f637621c89ae3fd097136209d4fa49bbf51b22850deaac3fb164d2b8b14",
+    "origin": "twitch",
+    "sessionId": "59e501c7-3559-4621-a234-81dc8b2b8e8d",
+    "events": 38,
+    "merges": 1,
+    "finalGame": {
+      "x": 9,
+      "y": 7,
+      "hasKey": true,
+      "escaped": true
+    },
+    "verificationDigest": "16021dde27207f927e6017deb2e0ebf416a3e25c6d6e2fab9dfcbceb85f48f17",
+    "result": "PASS"
+  },
+  "reviewedRootEvidence": [
+    "evidence/lightsail-linux-image.json",
+    "evidence/lightsail-linux-container-smoke.json",
+    "evidence/lightsail-hosted-api.json",
+    "evidence/lightsail-twitch-live.json",
+    "evidence/lightsail-proxy-spoof.json"
+  ],
+  "limitations": [
+    "GET status does not independently exercise the browser UI or hosted login",
+    "Replay reconstruction verifies recorded game history and witnesses, not administrator-proof signatures",
+    "Root owns actual remote/container/headroom/existing-app/firewall observations",
+    "No hosted reconnect/outage or audience-scale claim"
+  ]
+}
