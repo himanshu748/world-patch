@@ -17,6 +17,6 @@ Installed direct runtime dependency license metadata was inspected from each pac
 | ws | 8.22.0 | MIT |
 | zod | 4.6.7 | MIT |
 
-Development tools include TypeScript, Vite, Vitest, fast-check, Playwright and ESLint; their upstream package licenses/notices remain with the installed dependencies. No project-wide source license has been selected on the owner's behalf.
+Development tools include TypeScript, Vite, Vitest, fast-check, Playwright and ESLint; their upstream package licenses/notices remain with the installed dependencies. WORLD//PATCH's original source and assets are distributed under the [MIT License](LICENSE); this does not replace upstream licenses or notices.
 
 Design research compared Baba Is You, Ultimate Chicken Horse, Twitch integrations and Crowd Control by mechanism; none of their branding or assets were copied. Sources and differentiation limits are in evidence/game-novelty.md. OpenAI, Codex, Twitch and TwitchCon are referenced descriptively; no endorsement is asserted.

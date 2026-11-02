@@ -119,7 +119,9 @@ The [offline Codex development evidence viewer](docs/codex-evidence/index.html) 
 
 The six first-action documents are [PRD](PRD.md), [design](DESIGN.md), [architecture](ARCHITECTURE.md), [plan](PLAN.md), [checklist](CHECKLIST.md) and [coding contract](AGENTS.md). [Devpost copy](docs/DEVPOST.md) and [phase evidence](evidence/phase-log.md) preserve scope and provenance.
 
-Original source/assets were authored for this project. Third-party runtime libraries retain their MIT licenses; see [THIRD_PARTY.md](THIRD_PARTY.md). No third-party game art, music or branding is bundled. No project-wide open-source license has been selected by the owner.
+## License
+
+WORLD//PATCH is available under the [MIT License](LICENSE), copyright © 2026 Himanshu Kumar. Original source/assets were authored for this project. Third-party libraries retain their own licenses and notices; see [THIRD_PARTY.md](THIRD_PARTY.md). No third-party game art, music or branding is bundled.
 
 ## Submission boundary — checked 2 November 2026
 

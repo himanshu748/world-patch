@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "description": "Chat changes the rules. You find the exit.",
+  "license": "MIT",
   "engines": {
     "node": ">=22.12.0"
   },

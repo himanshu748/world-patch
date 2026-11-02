@@ -1,6 +1,6 @@
 {
-  "at": "2026-11-02T12:20:39.801483+00:00",
-  "sourceDigest": "abd668177577b350d3a2d0e0d332e0d26049fa63ade82e50e800468522565b1c",
+  "at": "2026-11-02T12:31:12.375192+00:00",
+  "sourceDigest": "e0f3d8cc9505b30f68c83248926ad4eb9bdd7f5540d3a0f53315c08214a34c2a",
   "digestAlgorithm": "SHA256 of newline-separated sorted path:sha256 records",
   "scope": "Current source/config/tests/docs; evidence/runtime/dependencies/builds excluded",
   "deployedRuntimeSourceSha": "49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
@@ -51,6 +51,11 @@
       "bytes": 964
     },
     {
+      "path": "LICENSE",
+      "sha256": "da28b98a803653c5d60a3849c23866b425e48a28f79a65e1eccbb93890eb836a",
+      "bytes": 1071
+    },
+    {
       "path": "PLAN.md",
       "sha256": "fa5ab1aeebf7f1ef90688ef4ccf314e71297052bd9aaba92fcf8d368ee96de53",
       "bytes": 18784
@@ -62,13 +67,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "86ef74339241afec4777a650b6a20afcd03e1155d40edbd254d11df0beb6f8d3",
-      "bytes": 14633
+      "sha256": "8f63e9e88a6fe9a8b31a21aeccec53348cff96c2875488ff71d1af839c04dd02",
+      "bytes": 14675
     },
     {
       "path": "THIRD_PARTY.md",
-      "sha256": "63fcad8037db7d1c14e15b6664b4da5b7ac25fa7cc208f82f9ed32c356817ea4",
-      "bytes": 1455
+      "sha256": "cdae5486e065af70aef76d241fb7980167783a613fce603a59c4d06d123419df",
+      "bytes": 1527
     },
     {
       "path": "VERIFICATION.md",
@@ -197,13 +202,13 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "34a7214d3faec12705facaf5b9db7aec18825e45f4211d64c6b0467258e471f6",
-      "bytes": 140983
+      "sha256": "93044d5e6202c7be7266aee5f9345c297db01489452ba754e5706419d471ee31",
+      "bytes": 141007
     },
     {
       "path": "package.json",
-      "sha256": "cf90dcf05acf54292a012b0f2455977d194732ffc40d1296f4b30064becfc4a4",
-      "bytes": 1530
+      "sha256": "5800b34a99859929557aac4c10bc67d9ca22763b0150de76652f358c1d6eb5ae",
+      "bytes": 1550
     },
     {
       "path": "playwright.config.ts",
