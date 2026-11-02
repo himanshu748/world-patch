@@ -1,0 +1,117 @@
+{
+  "status": "FAIL",
+  "at": "2026-11-02T10:03:17.564Z",
+  "image": "world-patch:c7163c5ee0f07c0fcd219f049461d09f241b57bc",
+  "sourceSha": "c7163c5ee0f07c0fcd219f049461d09f241b57bc",
+  "scope": "Actual Linux Docker image and synthetic isolated container; no Caddy TLS, remote Lightsail access or Twitch provider connection",
+  "limits": {
+    "memoryBytes": 536870912,
+    "cpu": 0.5
+  },
+  "checks": [
+    {
+      "name": "Image is native Linux amd64",
+      "status": "PASS"
+    },
+    {
+      "name": "Container is capped at 512 MiB and 0.5 CPU",
+      "status": "PASS"
+    },
+    {
+      "name": "Container root filesystem is read-only with a separate writable data volume",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/health",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual container health is ready",
+      "status": "PASS"
+    },
+    {
+      "name": "Container runs pinned Node 26.13.0",
+      "status": "PASS"
+    },
+    {
+      "name": "Native better-sqlite3 loads and executes SQL in the production image",
+      "status": "PASS"
+    },
+    {
+      "name": "Built frontend / is served",
+      "status": "PASS"
+    },
+    {
+      "name": "Normal build uses root asset paths",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual built JavaScript asset is served",
+      "status": "PASS"
+    },
+    {
+      "name": "Built frontend /play is served",
+      "status": "PASS"
+    },
+    {
+      "name": "Built frontend /overlay is served",
+      "status": "PASS"
+    },
+    {
+      "name": "Anonymous host mutation is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "Wrong-origin login is rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "WebSocket upgrade sends actual room snapshot for configured Origin",
+      "status": "PASS"
+    },
+    {
+      "name": "WebSocket upgrade rejects wrong Origin",
+      "status": "PASS"
+    },
+    {
+      "name": "Host login succeeds with synthetic secret",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTPS configuration sets Secure HttpOnly SameSite cookie",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Host action move returns 200",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual HTTP movement updates the game",
+      "status": "PASS"
+    },
+    {
+      "name": "Host action startRound returns 200",
+      "status": "PASS"
+    },
+    {
+      "name": "GET /api/state",
+      "status": "PASS"
+    },
+    {
+      "name": "Election is active before controlled restart",
+      "status": "PASS"
+    }
+  ],
+  "failure": "Owned smoke container did not become healthy.",
+  "runUrl": "https://github.com/himanshu748/world-patch/actions/runs/41425345922",
+  "buildStatus": "PASS_LINUX_IMAGE",
+  "repair": "Rediscover Docker ephemeral published port during every readiness poll, including after restart. Moby documents that allocated ports can change. Actual recovery remains pending next CI."
+}
