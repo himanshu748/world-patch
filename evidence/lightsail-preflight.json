@@ -1,0 +1,23 @@
+{
+  "status": "PASS_LOCAL_PREFLIGHT",
+  "at": "2026-11-02T09:55:57.670189+00:00",
+  "scope": "macOS Node26.12 source tests; no hosted acceptance",
+  "checks": {
+    "unitPropertyIntegration": 127,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "productionBuild": "PASS"
+  },
+  "sourceFiles": {
+    "src/server/app.ts": "02aa8b7b89c956656d33b8183c35ae2c26a33b4d1a9f3c1f32dabdc9de4b5118",
+    "src/server/index.ts": "0f6095276def0c0252ee7e9f885fe18c2dcab27c89a6b730b06d91f85016f8d0",
+    ".env.example": "e252f28ff97cb93ad64fd85fef19ac1bbe8b07749d42a43a6d653029a7d61f82",
+    "tests/trusted-proxy.test.ts": "937d079f67e5fdabff8f3368a19eb0b8512f2f498c5ac5d2bb9150342c216955",
+    "tests/runtime-config.test.ts": "060c63a3cb22a615c52b1293cb2fa320161f0f0c6ee17861fc8df026b97e5fd0",
+    ".github/workflows/linux-image.yml": "f2000bf57a5dc22504bf8663f98ca0b5194a7dcf2f6a3aed1389b7976214ac35",
+    "scripts/container-host-smoke.mjs": "7f102c100eb09251edf2e76f4870957225c78a34362d72935fb479bfdfbe4220"
+  },
+  "remoteLinuxImage": "PENDING_GITHUB_BUILD",
+  "hostedTwitch": "PENDING",
+  "runtimeProxyTrust": "Optional exact configured IP only; absent retains false. Trusted/untrusted/default/multihop and actual-entrypoint regressions executed."
+}

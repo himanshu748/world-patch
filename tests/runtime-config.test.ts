@@ -82,4 +82,18 @@ describe('actual runtime origin configuration',()=>{
     const [code]=await once(server.child,'exit');
     expect(code).not.toBe(0);expect(server.output()).toContain('PUBLIC_ORIGIN must be an exact origin without path or credentials.');
   });
+
+  it('passes the exact trusted proxy IP from the real process environment to request rate limits',async()=>{
+    const server=await start({TRUSTED_PROXY_IP:'127.0.0.1'});await server.ready();
+    const attempt=(client:string)=>fetch(`${server.base}/api/login`,{method:'POST',headers:{Origin:'http://localhost:3000','Content-Type':'application/json','X-Forwarded-For':client},body:JSON.stringify({secret:'incorrect-runtime-fixture-password'})});
+    for(let index=0;index<6;index++)expect((await attempt('198.51.100.10')).status).toBe(401);
+    expect((await attempt('198.51.100.10')).status).toBe(429);
+    expect((await attempt('198.51.100.11')).status).toBe(401);
+  });
+
+  it('refuses a broad trusted proxy environment setting at the actual process entry point',async()=>{
+    const server=await start({TRUSTED_PROXY_IP:'0.0.0.0/0'});
+    const [code]=await once(server.child,'exit');
+    expect(code).not.toBe(0);expect(server.output()).toContain('TRUSTED_PROXY_IP must be one exact IP address.');
+  });
 });

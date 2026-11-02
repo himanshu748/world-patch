@@ -6,6 +6,7 @@ import rateLimit from '@fastify/rate-limit';
 import { createHash, createHmac, randomBytes, randomUUID, timingSafeEqual } from 'node:crypto';
 import { mkdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { isIP } from 'node:net';
 import { z } from 'zod';
 import type { WebSocket } from 'ws';
 import { Room, RoomError } from './room.js';
@@ -21,6 +22,7 @@ export interface AppConfig {
   serveStatic?: boolean;
   databasePath?: string;
   now?: () => number;
+  trustedProxyIp?: string;
 }
 
 const ActionSchema = z.discriminatedUnion('type', [
@@ -38,12 +40,13 @@ const AUTH_TTL=12*60*60*1000;
 
 export async function buildServer(config:AppConfig) {
   if(config.hostSecret.length<24 || config.hostSecret.includes('replace-with')) throw new Error('Set HOST_SECRET to at least 24 random characters.');
+  if(config.trustedProxyIp!==undefined && isIP(config.trustedProxyIp)===0) throw new Error('TRUSTED_PROXY_IP must be one exact IP address.');
   const publicUrl=new URL(config.publicOrigin);
   if(publicUrl.origin!==config.publicOrigin || publicUrl.username || publicUrl.password) throw new Error('PUBLIC_ORIGIN must be an exact origin without path or credentials.');
   if(publicUrl.protocol!=='https:' && !(publicUrl.protocol==='http:' && ['localhost','127.0.0.1','[::1]'].includes(publicUrl.hostname))) throw new Error('Remote PUBLIC_ORIGIN requires HTTPS.');
   const now=config.now??Date.now;
   mkdirSync(config.dataDir,{recursive:true,mode:0o700});
-  const app=Fastify({logger:false,bodyLimit:16384,requestTimeout:10000,connectionTimeout:10000,trustProxy:false});
+  const app=Fastify({logger:false,bodyLimit:16384,requestTimeout:10000,connectionTimeout:10000,trustProxy:config.trustedProxyIp===undefined?false:[config.trustedProxyIp]});
   await app.register(cookie);
   await app.register(rateLimit,{max:600,timeWindow:'1 minute'});
   await app.register(websocket,{options:{maxPayload:1024}});
