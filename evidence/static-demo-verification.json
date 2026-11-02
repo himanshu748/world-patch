@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "verifiedAt": "2026-11-02T08:11:28.158Z",
+  "scope": "Local production static build and normal application regression verification",
+  "canonicalPath": "/world-patch/",
+  "build": {
+    "command": "VITE_STATIC_DEMO=true npx vite build --base=/world-patch/ --outDir=dist/judge-demo",
+    "outDir": "dist/judge-demo",
+    "fileCount": 7,
+    "sha256": {
+      "dist/judge-demo/assets/Board-BJBPHrvm.js": "675a77ff12f7a34f083b736f2018da2bbea8375af8217e1307daa978e8b06fe5",
+      "dist/judge-demo/assets/Landing-CVCFPRw0.js": "08d9f20de77ca174422b3106b4231a01b3e9212cfb1c1aab23a8c43264d2b174",
+      "dist/judge-demo/assets/Landing-XZVCcLj6.css": "59b269e0e536e4624c78803613f7da40d6492cd8669508c2e823f52aa876c39a",
+      "dist/judge-demo/assets/engine-CosOr0w1.js": "1911c978d6a5c48d67ad0154d62fabd0f9ed501952369ed89c4720b85b016162",
+      "dist/judge-demo/assets/index-DjOiaLbZ.css": "7c4a907890c2b9824392141d949c4d1540ca520a19d174541bb795d11bb23ff4",
+      "dist/judge-demo/assets/index-XKXj_bpZ.js": "ddceae538bcfa1862aad444eb73a4cdb5286a2f9db9767c5692aa2348e093b73",
+      "dist/judge-demo/index.html": "9a5c088792ae69fe28fe948d9d2eb4332cdb31099f6dee8ca26b2a034fe3e4f6"
+    }
+  },
+  "sourceSha256": {
+    "src/client/main.tsx": "972ee51262bd9cb6d02d304b742dee94e896498b0235fecb69c5199c35de4dbc",
+    "src/client/Landing.tsx": "a128f8bf80bfecebdb75df9398345a8bd7f92872112d58eda3643885db8000d8",
+    "playwright.static.config.ts": "e5720ecd9d0302f5376c24672db1dd962f39f8826437078594b18f407acdb71f",
+    "tests/static-demo/journey.spec.ts": "f73925156e04fdc49e300804d9efa2b67d3cc115a73a6eb80c7e7c5db427bb4d"
+  },
+  "checks": {
+    "typecheck": {
+      "status": "PASS",
+      "command": "npm run typecheck"
+    },
+    "lint": {
+      "status": "PASS",
+      "command": "npm run lint"
+    },
+    "unit": {
+      "status": "PASS",
+      "tests": 114,
+      "note": "Executed after static routing and CTA changes; shared engine/server unchanged. Final favicon and harness changes subsequently passed typecheck, lint and both browser suites."
+    },
+    "staticBrowser": {
+      "status": "PASS",
+      "command": "npx playwright test --config=playwright.static.config.ts",
+      "stats": {
+        "startTime": "2026-11-02T08:09:04.704Z",
+        "duration": 10249.292,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "evidence/static-demo-browser.json"
+    },
+    "defaultBuild": {
+      "status": "PASS",
+      "command": "npm run build",
+      "outDir": "dist/public",
+      "staticDemoFlag": "unset"
+    },
+    "defaultBrowser": {
+      "status": "PASS",
+      "command": "PLAYWRIGHT_PORT=3198 PLAYWRIGHT_REPORT_PATH=work/static-demo-default-browser.json npx playwright test",
+      "stats": {
+        "startTime": "2026-11-02T08:06:13.239Z",
+        "duration": 83341.021,
+        "expected": 22,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "note": "22 default browser journeys against the freshly rebuilt normal bundle, including host, OAuth result, overlay, chamber changes, replay and connection recovery."
+    },
+    "actualEngineJourneys": {
+      "status": "PASS",
+      "acceptance": "Wall A closure accepted; gravity-down lockout rejected without mutating accepted laws; all 24 witness steps reach exit; patched escape played to completion in Vector Foundry, Crosswire and Thin Ice; rendered canvas pawn pixels checked at each real exit."
+    },
+    "accessibility": {
+      "status": "PASS",
+      "viewports": [
+        {
+          "width": 1440,
+          "height": 900
+        },
+        {
+          "width": 390,
+          "height": 844
+        },
+        {
+          "width": 320,
+          "height": 844
+        }
+      ],
+      "acceptance": "Keyboard skip/focus/law/movement, touch movement, minimum 44px controls, no horizontal overflow, reduced-motion animation disabled."
+    },
+    "staticLinks": {
+      "status": "PASS",
+      "acceptance": "All host links including completion point to LOCAL-SETUP.md; source link points to repository; brand links use /world-patch/; remaining links are page anchors."
+    },
+    "network": {
+      "status": "PASS",
+      "journeys": [
+        {
+          "journey": "canonical static entry and local-preview fallback open the browser demo with safe links and no backend",
+          "requests": 28,
+          "backendRequests": [],
+          "consoleOrPageErrors": [],
+          "failedResources": [],
+          "assetPaths": [
+            "/world-patch/assets/index-XKXj_bpZ.js",
+            "/world-patch/assets/index-DjOiaLbZ.css",
+            "/world-patch/assets/Landing-CVCFPRw0.js",
+            "/world-patch/assets/engine-CosOr0w1.js",
+            "/world-patch/assets/Landing-XZVCcLj6.css",
+            "/world-patch/assets/Board-BJBPHrvm.js"
+          ],
+          "requestLedger": [
+            "GET /world-patch/",
+            "GET /world-patch/assets/index-XKXj_bpZ.js",
+            "GET /world-patch/assets/index-DjOiaLbZ.css",
+            "GET /world-patch/assets/Landing-CVCFPRw0.js",
+            "GET /world-patch/assets/engine-CosOr0w1.js",
+            "GET /world-patch/assets/Landing-XZVCcLj6.css",
+            "GET /world-patch/assets/Board-BJBPHrvm.js",
+            "GET /world-patch/play",
+            "GET /world-patch/assets/index-XKXj_bpZ.js",
+            "GET /world-patch/assets/index-DjOiaLbZ.css",
+            "GET /world-patch/assets/Landing-CVCFPRw0.js",
+            "GET /world-patch/assets/engine-CosOr0w1.js",
+            "GET /world-patch/assets/Landing-XZVCcLj6.css",
+            "GET /world-patch/assets/Board-BJBPHrvm.js",
+            "GET /world-patch/overlay",
+            "GET /world-patch/assets/index-XKXj_bpZ.js",
+            "GET /world-patch/assets/index-DjOiaLbZ.css",
+            "GET /world-patch/assets/Landing-CVCFPRw0.js",
+            "GET /world-patch/assets/engine-CosOr0w1.js",
+            "GET /world-patch/assets/Landing-XZVCcLj6.css",
+            "GET /world-patch/assets/Board-BJBPHrvm.js",
+            "GET /world-patch/",
+            "GET /world-patch/assets/index-XKXj_bpZ.js",
+            "GET /world-patch/assets/index-DjOiaLbZ.css",
+            "GET /world-patch/assets/Landing-CVCFPRw0.js",
+            "GET /world-patch/assets/engine-CosOr0w1.js",
+            "GET /world-patch/assets/Landing-XZVCcLj6.css",
+            "GET /world-patch/assets/Board-BJBPHrvm.js"
+          ]
+        },
+        {
+          "journey": "real law acceptance, lockout rejection, complete witness and all three playable escapes work without a server",
+          "requests": 7,
+          "backendRequests": [],
+          "consoleOrPageErrors": [],
+          "failedResources": [],
+          "assetPaths": [
+            "/world-patch/assets/index-XKXj_bpZ.js",
+            "/world-patch/assets/index-DjOiaLbZ.css",
+            "/world-patch/assets/Landing-CVCFPRw0.js",
+            "/world-patch/assets/engine-CosOr0w1.js",
+            "/world-patch/assets/Landing-XZVCcLj6.css",
+            "/world-patch/assets/Board-BJBPHrvm.js"
+          ],
+          "requestLedger": [
+            "GET /world-patch/",
+            "GET /world-patch/assets/index-XKXj_bpZ.js",
+            "GET /world-patch/assets/index-DjOiaLbZ.css",
+            "GET /world-patch/assets/Landing-CVCFPRw0.js",
+            "GET /world-patch/assets/engine-CosOr0w1.js",
+            "GET /world-patch/assets/Landing-XZVCcLj6.css",
+            "GET /world-patch/assets/Board-BJBPHrvm.js"
+          ]
+        },
+        {
+          "journey": "keyboard, touch, 320px layout and reduced motion remain usable in the static build",
+          "requests": 7,
+          "backendRequests": [],
+          "consoleOrPageErrors": [],
+          "failedResources": [],
+          "assetPaths": [
+            "/world-patch/assets/index-XKXj_bpZ.js",
+            "/world-patch/assets/index-DjOiaLbZ.css",
+            "/world-patch/assets/Landing-CVCFPRw0.js",
+            "/world-patch/assets/engine-CosOr0w1.js",
+            "/world-patch/assets/Landing-XZVCcLj6.css",
+            "/world-patch/assets/Board-BJBPHrvm.js"
+          ],
+          "requestLedger": [
+            "GET /world-patch/",
+            "GET /world-patch/assets/index-XKXj_bpZ.js",
+            "GET /world-patch/assets/index-DjOiaLbZ.css",
+            "GET /world-patch/assets/Landing-CVCFPRw0.js",
+            "GET /world-patch/assets/engine-CosOr0w1.js",
+            "GET /world-patch/assets/Landing-XZVCcLj6.css",
+            "GET /world-patch/assets/Board-BJBPHrvm.js"
+          ]
+        }
+      ]
+    },
+    "renderedInspection": {
+      "status": "PASS",
+      "note": "Desktop and mobile screenshots visually inspected; original layout, real board, disclosure and controls render without clipping."
+    }
+  },
+  "environment": {
+    "browser": "Chromium",
+    "browserPlugin": "not available; repository Playwright workflow used",
+    "subprocessEnvironment": "allowlist: PATH, HOME, TMPDIR only; VITE_STATIC_DEMO=true added only for static build; PLAYWRIGHT_PORT and report path added for default browser suite",
+    "secretsRead": false
+  },
+  "screenshots": [
+    "test-results/static-demo/screenshots/desktop.png",
+    "test-results/static-demo/screenshots/mobile.png",
+    "test-results/static-demo/screenshots/witness.png",
+    "test-results/static-demo/screenshots/escaped-vector-foundry.png",
+    "test-results/static-demo/screenshots/escaped-crosswire.png",
+    "test-results/static-demo/screenshots/escaped-thin-ice.png"
+  ],
+  "limitations": [
+    "Not published or deployed. Canonical /world-patch/ must be verified on the real host after explicit deployment approval.",
+    "Vite preview provides a local SPA fallback for direct /play and /overlay subpaths. GitHub Pages direct subpath support is not claimed; no 404 fallback is included.",
+    "External source/setup href targets were checked in the browser; publication and target-document availability remain part of the separate release workflow.",
+    "The static browser sandbox runs the real engine without chat, votes, session connections or live Twitch. Live hosting requires local/server setup.",
+    "The default browser suite uses the existing local simulated host fixture. It does not constitute a new live Twitch authorization or provider test."
+  ],
+  "preliminaryIssuesResolved": [
+    "Private harness first used config-relative server cwd, then corrected to the app root.",
+    "Static Chromium implicit /favicon.ico returned 404; static-only inline SVG favicon eliminated the request and console error.",
+    "Keyboard harness originally sent its first key before lazy landing mounted; explicit canvas readiness wait now precedes input."
+  ]
+}

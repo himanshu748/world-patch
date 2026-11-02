@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-02T07:51:23.520099+00:00",
+  "at": "2026-11-02T09:13:47.883555+00:00",
   "status": "PASS_SOURCE_AUDIT",
   "archive": "../WORLD-PATCH-source.zip",
   "scope": "Sanitized source, tests, docs and selected development evidence; excludes credentials, private answers, raw sessions, SQLite, dependencies, builds, working files and recordings.",
@@ -8,10 +8,11 @@
   "archiveVerification": "Final ZIP CRC, complete byte inventory and private-value checks are executed by the packager. Hash and results are recorded in adjacent WORLD-PATCH-package-summary.json.",
   "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
   "verified": {
-    "automated": 114,
+    "automated": 119,
     "browserJourneys": 22,
-    "actualTwitch": "Corrected single-account proposal/vote/merge/escape/replay",
-    "video": "96 seconds, 1080p30 H264, no audio; complete local browser playback"
+    "additionalStaticBrowserJourneys": 3,
+    "actualTwitch": "Recorded local single-account proposal/vote/merge/escape/replay; hosted Twitch still pending",
+    "video": "Published Unlisted; 96 second source, 1080p30 H264, no audio; complete local browser playback"
   },
   "externalPublication": "Not performed by this packaging step."
 }

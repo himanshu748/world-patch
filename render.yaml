@@ -1,0 +1,33 @@
+# Proposed paid deployment. Validate freely; do not apply without billing approval.
+services:
+  - type: web
+    name: world-patch-live
+    runtime: node
+    repo: https://github.com/himanshu748/world-patch
+    branch: main
+    region: oregon
+    plan: 0.5c-512mb
+    numInstances: 1
+    autoDeployTrigger: "off"
+    healthCheckPath: /api/health
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    disk:
+      name: world-patch-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 26.13.0
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: DATA_DIR
+        value: /var/data/world-patch
+      - key: HOST_SECRET
+        sync: false
+      - key: TWITCH_CLIENT_ID
+        sync: false
+      - key: TWITCH_CLIENT_SECRET
+        sync: false

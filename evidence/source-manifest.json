@@ -1,7 +1,8 @@
 {
-  "at": "2026-11-02T07:49:37.598452+00:00",
-  "sourceDigest": "33ac3f5e5ebf62d0f3094a63fc8f06f933951b366c0c3346782819bca71b3065",
-  "scope": "Final isolated staged release source/config/tests/docs. Evidence excluded from digest. No commit or publication.",
+  "at": "2026-11-02T09:13:47.691869+00:00",
+  "sourceDigest": "98ec214df4cdf83e6d89efd436070463f7b8c686f70d0e083808d315b6ebd080",
+  "digestAlgorithm": "SHA256 of newline-separated sorted path:sha256 records",
+  "scope": "Current source/config/tests/docs; evidence/runtime/dependencies/builds excluded",
   "files": [
     {
       "path": ".dockerignore",
@@ -25,13 +26,13 @@
     },
     {
       "path": "ARCHITECTURE.md",
-      "sha256": "2439899fce176c60238d064d703318068450dd53e478f581c932574c6652ede3",
-      "bytes": 14811
+      "sha256": "e11c647c42e0e628678749365b5c36fa2670775f4fc5689f226f3d89a9d33f0e",
+      "bytes": 16564
     },
     {
       "path": "CHECKLIST.md",
-      "sha256": "4f66c9e63130ae06a7c42ec715dd1e4a849e1a0bb066db9a534579d57624d6f0",
-      "bytes": 27296
+      "sha256": "56806d61143b463a9eec1882afb3aaec985ecd1e4dec6b475ea5419af61165f8",
+      "bytes": 28725
     },
     {
       "path": "DESIGN.md",
@@ -40,23 +41,23 @@
     },
     {
       "path": "Dockerfile",
-      "sha256": "b0c9bdb3a5aa14fbf9f492363f5cc298528894398f61f831420ba3e06ee1407e",
+      "sha256": "301cebdf9d5533a924ecdade6199eb1da69684d051af8bfce56cad622b684a80",
       "bytes": 749
     },
     {
       "path": "PLAN.md",
-      "sha256": "29acbdf7e3f9ef44f285f8919d2fb193f73180b0ae1e45f2b3392f0e979c3b22",
-      "bytes": 16820
+      "sha256": "30fb22aa6027491563bc47107e8715a534434659e913f3859dbadde52cfb1dc3",
+      "bytes": 18097
     },
     {
       "path": "PRD.md",
-      "sha256": "18e0e411052c37cb815978746acd7aa9b8587f3ee9eb469327df24500338e4b0",
-      "bytes": 9887
+      "sha256": "e27c4ad258db27969d6b512df81d6849dc4a43ea1668f9ada9cc6b32d36eeaf8",
+      "bytes": 10419
     },
     {
       "path": "README.md",
-      "sha256": "c4522d69c16e095aafc62b219e0f2bbb752a8268314f2b31bbd44b4188ad85f2",
-      "bytes": 13259
+      "sha256": "0a87dfa9fdeebf75ca40a1e2288e6519c9bd32f3f6f8a32d7dc78e147d216f16",
+      "bytes": 13871
     },
     {
       "path": "THIRD_PARTY.md",
@@ -65,8 +66,8 @@
     },
     {
       "path": "VERIFICATION.md",
-      "sha256": "e90927ec47b76bc184be53b4761436c79d6588f778a9b57d2f6d99a2acb84f92",
-      "bytes": 36583
+      "sha256": "e98b7d84fa34a2956e3c8b5ce39d1bc6e176e0b3d35b286445abc094d9dd65f0",
+      "bytes": 40231
     },
     {
       "path": "docs/DEMO-captions.srt",
@@ -80,8 +81,8 @@
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "sha256": "fc08f8a11443f99bf3b07fe501848a84552e9cefc9d1efa109a85757a42ca045",
-      "bytes": 5098
+      "sha256": "d71f2e40264f773eb40c98c9b5332d72b183a065068c5c8e37ea5ceadbba2109",
+      "bytes": 6050
     },
     {
       "path": "docs/DEVPOST-PUBLIC.md",
@@ -90,8 +91,8 @@
     },
     {
       "path": "docs/DEVPOST.md",
-      "sha256": "ba8c07a2e7ea836ca5d0dd14677f08466ac3b3d9370a3dc28be5c9a986f777e1",
-      "bytes": 6443
+      "sha256": "7f4376d2575e88e9c1f0caa67dcd03583d9c8286476395f3bd66806ab9a8c688",
+      "bytes": 6359
     },
     {
       "path": "docs/LIVE-DEMO.md",
@@ -102,6 +103,11 @@
       "path": "docs/LOCAL-SETUP.md",
       "sha256": "c453b0515b33371b06f2d0c95145fef497f378d37e2b006c03b7af339c1d1ddb",
       "bytes": 4117
+    },
+    {
+      "path": "docs/RENDER-DEPLOYMENT.md",
+      "sha256": "eee2ded404304eaacfc59b2a3c14de5a50595377bd46b76b2ad8da4bc6ad05d3",
+      "bytes": 8672
     },
     {
       "path": "docs/codex-evidence/README.md",
@@ -194,6 +200,16 @@
       "bytes": 1162
     },
     {
+      "path": "playwright.static.config.ts",
+      "sha256": "e5720ecd9d0302f5376c24672db1dd962f39f8826437078594b18f407acdb71f",
+      "bytes": 850
+    },
+    {
+      "path": "render.yaml",
+      "sha256": "afeb8df6a22d273e925795f266e14e56486c364006af17f904af0c69ac270ae1",
+      "bytes": 870
+    },
+    {
       "path": "scripts/production-smoke.mjs",
       "sha256": "9339a369d245f2d73e7c89cd7e4cfec863325c9743c6d9682db5d97ee74990f7",
       "bytes": 3678
@@ -215,8 +231,8 @@
     },
     {
       "path": "src/client/Landing.tsx",
-      "sha256": "81c67b55664b2eeafc4d493b5df82ed1b169b7ecf14f100b0656e960b9da9137",
-      "bytes": 22635
+      "sha256": "a128f8bf80bfecebdb75df9398345a8bd7f92872112d58eda3643885db8000d8",
+      "bytes": 23412
     },
     {
       "path": "src/client/ReplayTransport.tsx",
@@ -250,8 +266,8 @@
     },
     {
       "path": "src/client/main.tsx",
-      "sha256": "cecc53cd899b7dfac5deea9df4391c77f9978bf2fe1a35ee37ceb42e41247284",
-      "bytes": 777
+      "sha256": "972ee51262bd9cb6d02d304b742dee94e896498b0235fecb69c5199c35de4dbc",
+      "bytes": 1345
     },
     {
       "path": "src/client/motion.css",
@@ -285,8 +301,8 @@
     },
     {
       "path": "src/server/index.ts",
-      "sha256": "a0c76b58395d276ef5a50d68eb2ea0160f65a56da2ef1f279b9c196ce4e96131",
-      "bytes": 1045
+      "sha256": "0249d36a27c7ad8788d5ddf66d72073c7d4d25b37fc5521ae8a9ed1ba9e89c05",
+      "bytes": 1070
     },
     {
       "path": "src/server/replay.ts",
@@ -372,6 +388,16 @@
       "path": "tests/room.test.ts",
       "sha256": "64d163f247d4219f6500d5e92d8ad7d311fb361d7079e64df642d99bf6ae4fd8",
       "bytes": 19211
+    },
+    {
+      "path": "tests/runtime-config.test.ts",
+      "sha256": "437063ba84e85aac7179765a0fa0271fbfa8d9a6b16d94196d7f9894c74e8821",
+      "bytes": 5563
+    },
+    {
+      "path": "tests/static-demo/journey.spec.ts",
+      "sha256": "f73925156e04fdc49e300804d9efa2b67d3cc115a73a6eb80c7e7c5db427bb4d",
+      "bytes": 11114
     },
     {
       "path": "tests/storage.test.ts",

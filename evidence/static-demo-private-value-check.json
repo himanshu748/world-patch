@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-11-02T08:08:31.457785+00:00",
+  "status": "PASS",
+  "scope": "Every static judge-demo artifact byte; actual private environment values and JSON/URL/base64 encodings. No values or names retained. Does not certify every unknown secret.",
+  "fileCount": 7,
+  "matchedPaths": [],
+  "files": [
+    {
+      "path": "assets/Board-BJBPHrvm.js",
+      "bytes": 1199854,
+      "sha256": "675a77ff12f7a34f083b736f2018da2bbea8375af8217e1307daa978e8b06fe5"
+    },
+    {
+      "path": "assets/Landing-CVCFPRw0.js",
+      "bytes": 21605,
+      "sha256": "08d9f20de77ca174422b3106b4231a01b3e9212cfb1c1aab23a8c43264d2b174"
+    },
+    {
+      "path": "assets/Landing-XZVCcLj6.css",
+      "bytes": 39498,
+      "sha256": "59b269e0e536e4624c78803613f7da40d6492cd8669508c2e823f52aa876c39a"
+    },
+    {
+      "path": "assets/engine-CosOr0w1.js",
+      "bytes": 4991,
+      "sha256": "1911c978d6a5c48d67ad0154d62fabd0f9ed501952369ed89c4720b85b016162"
+    },
+    {
+      "path": "assets/index-DjOiaLbZ.css",
+      "bytes": 62151,
+      "sha256": "7c4a907890c2b9824392141d949c4d1540ca520a19d174541bb795d11bb23ff4"
+    },
+    {
+      "path": "assets/index-XKXj_bpZ.js",
+      "bytes": 314240,
+      "sha256": "ddceae538bcfa1862aad444eb73a4cdb5286a2f9db9767c5692aa2348e093b73"
+    },
+    {
+      "path": "index.html",
+      "bytes": 640,
+      "sha256": "9a5c088792ae69fe28fe948d9d2eb4332cdb31099f6dee8ca26b2a034fe3e4f6"
+    }
+  ],
+  "deployment": "Not deployed by this check"
+}

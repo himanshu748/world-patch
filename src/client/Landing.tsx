@@ -7,6 +7,9 @@ import './landing-final.css';
 import './landing-play.css';
 
 const Board = lazy(() => import('./Board.js'));
+const staticDemo = import.meta.env.VITE_STATIC_DEMO === 'true';
+const hostHref = staticDemo ? 'https://github.com/himanshu748/world-patch/blob/main/docs/LOCAL-SETUP.md' : '/play';
+const hostLabel = staticDemo ? 'Host setup' : 'Host a chamber';
 type Verdict = { kind: 'ready' | 'accepted' | 'rejected' | 'incomplete'; title: string; detail: string };
 type SandboxMode = 'witness' | 'play';
 interface SandboxState { checkpoint: GameState; displayed: GameState; witness: Direction[]; explored: number; step: number; verdict: Verdict; mode: SandboxMode; moves: number; moveMessage: string; lastMove?: PublicState['lastMove'] }
@@ -111,8 +114,8 @@ export default function Landing(): React.JSX.Element {
   return <div className="landing-page">
     <a className="lp-skip" href="#sandbox">Skip to the interactive sandbox</a>
     <header className="lp-header">
-      <a className="lp-wordmark" href="/" aria-label="World Patch home">WORLD<span>//</span>PATCH<span className="lp-wordmark-corner" aria-hidden="true" /></a>
-      <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#chambers">The chambers</a><a className="lp-nav-cta" href="/play">Enter the chamber <Arrow diagonal /></a></nav>
+      <a className="lp-wordmark" href={import.meta.env.BASE_URL} aria-label="World Patch home">WORLD<span>//</span>PATCH<span className="lp-wordmark-corner" aria-hidden="true" /></a>
+      <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#chambers">The chambers</a><a className="lp-nav-cta" href={hostHref}>{staticDemo ? 'Host setup' : 'Enter the chamber'} <Arrow diagonal /></a></nav>
     </header>
 
     <main>
@@ -121,13 +124,13 @@ export default function Landing(): React.JSX.Element {
           <p className="lp-kicker"><span /> A PUZZLE WORLD FOR YOUR TWITCH CHAT</p>
           <h1 id="lp-title">Chat changes<br />the rules.<br /><em>You find<br />the exit.</em></h1>
           <p className="lp-introduction">Let your Twitch chat reshape the chamber. Collect the key, find the exit, and outplay the world they made.</p>
-          <div className="lp-hero-actions"><button type="button" className="lp-button lp-button-primary" onClick={beginDemo} aria-controls="lp-demo-board">Play the demo <Arrow /></button><a className="lp-text-action" href="/play">Host a chamber <span aria-hidden="true">↗</span></a></div>
-          <p className="lp-availability">No sign-in for the demo. Host controls and live Twitch require setup.</p>
+          <div className="lp-hero-actions"><button type="button" className="lp-button lp-button-primary" onClick={beginDemo} aria-controls="lp-demo-board">Play the demo <Arrow /></button><a className="lp-text-action" href={hostHref}>{hostLabel} <span aria-hidden="true">↗</span></a></div>
+          <p className="lp-availability">{staticDemo ? 'Public browser demo. Real engine, no sign-in. Live Twitch hosting requires setup.' : 'No sign-in for the demo. Host controls and live Twitch require setup.'}</p>
           <div className="lp-hero-footnote"><span className="lp-edit-seam" aria-hidden="true">//</span><p>Make it difficult.<br /><strong>Leave a way out.</strong></p><span className="lp-footnote-line" /></div>
         </div>
 
         <section className="lp-sandbox" id="sandbox" aria-labelledby="sandbox-title" tabIndex={-1}>
-          <div className="lp-sandbox-top"><span className="lp-sandbox-label"><i /> LOCAL SANDBOX</span><span className="lp-sandbox-index">EXP. {String(chamberIndex + 1).padStart(3, '0')}</span></div>
+          <div className="lp-sandbox-top"><span className="lp-sandbox-label"><i /> {staticDemo ? 'BROWSER SANDBOX' : 'LOCAL SANDBOX'}</span><span className="lp-sandbox-index">EXP. {String(chamberIndex + 1).padStart(3, '0')}</span></div>
           <div className="lp-sandbox-heading"><div><p className="lp-kicker">CHANGE A LAW. TEST THE CONSEQUENCE.</p><h2 id="sandbox-title">Try to break the world.</h2></div><span className="lp-target-mark" aria-hidden="true">+</span></div>
           <div className="lp-law-choices" aria-label="Try a world law">
             {[chamberLaws[chamber.id]!, gravityLaw].map(law => <button key={law.command} className="lp-law-choice" disabled={lawIsApplied(sandbox.checkpoint, law.patch)} onClick={() => tryLaw(law)}><span><i className={law.icon} aria-hidden="true">{law.symbol}</i>{law.label}</span><code>{law.command}</code><Arrow /></button>)}
@@ -143,11 +146,11 @@ export default function Landing(): React.JSX.Element {
           {sandbox.mode === 'play' && <div className="lp-play-panel">
             <div className="lp-play-controls"><div><p id="lp-play-help">Focus the board. Use arrows or WASD, or the buttons.</p><p>Collect K, then reach OUT. New laws restart the attempt.</p></div><div className="lp-play-dpad" role="group" aria-label="Sandbox movement">{(['up', 'left', 'down', 'right'] as Direction[]).map(direction => <button className={`lp-move-${direction}`} key={direction} aria-label={`Sandbox move ${direction}`} onClick={() => move(direction)} disabled={sandbox.displayed.escaped}>{directionArrows[direction]}</button>)}</div></div>
             <p className={sandbox.displayed.escaped ? 'sr-only' : 'lp-attempt-feedback'} role="status" aria-label="Escape attempt">{sandbox.moveMessage}</p>
-            {sandbox.displayed.escaped && <section className="lp-completion" aria-labelledby="lp-completion-title"><p className="lp-kicker">KEY COLLECTED · EXIT REACHED</p><h3 id="lp-completion-title">You found a way through.</h3><p>{chamber.name}, escaped in {sandbox.moves} {sandbox.moves === 1 ? 'move' : 'moves'}. Ready for a different kind of trouble?</p><div><button onClick={() => selectChamber(nextChamber)}>Next: {nextChamber.name} <Arrow /></button><a href="/play">Host a chamber <Arrow diagonal /></a></div></section>}
+            {sandbox.displayed.escaped && <section className="lp-completion" aria-labelledby="lp-completion-title"><p className="lp-kicker">KEY COLLECTED · EXIT REACHED</p><h3 id="lp-completion-title">You found a way through.</h3><p>{chamber.name}, escaped in {sandbox.moves} {sandbox.moves === 1 ? 'move' : 'moves'}. Ready for a different kind of trouble?</p><div><button onClick={() => selectChamber(nextChamber)}>Next: {nextChamber.name} <Arrow /></button><a href={hostHref}>{hostLabel} <Arrow diagonal /></a></div></section>}
             <details className="lp-text-map"><summary>Text map &amp; legend</summary><p>@ = you, K = key, E = exit, # = wall, ~ = ice. A is {sandbox.displayed.rules.walls.A ? 'closed' : 'open'}; B is {sandbox.displayed.rules.walls.B ? 'closed' : 'open'}.{chamber.portals.length > 0 && ` Portals: ${sandbox.displayed.rules.portals === 'crossed' ? '0↔3 / 1↔2' : '0↔1 / 2↔3'}.`}</p><pre aria-label="Sandbox text map">{chamber.tiles.map((row, y) => [...row].map((cell, x) => x === sandbox.displayed.x && y === sandbox.displayed.y ? '@' : (cell === 'K' && sandbox.displayed.hasKey) || cell === 'S' ? '.' : cell).join(' ')).join('\n')}</pre></details>
           </div>}
           <div className="lp-witness-row"><div><span className="lp-witness-label">{sandbox.mode === 'play' ? 'YOUR ATTEMPT' : 'CHECKED ESCAPE'}</span><strong className="lp-sandbox-counter">{sandbox.mode === 'play' ? sandbox.moves : sandbox.step} <span>{sandbox.mode === 'play' ? sandbox.moves === 1 ? 'move' : 'moves' : `/ ${sandbox.witness.length} moves`}</span></strong></div><div className="lp-witness-actions">{sandbox.mode === 'play' ? <button onClick={restartAttempt}>Restart attempt <span aria-hidden="true">↺</span></button> : <button onClick={stepWitness} disabled={sandbox.step >= sandbox.witness.length || !sandbox.witness.length}>Step through escape <span aria-hidden="true">→</span></button>}<button className="lp-reset" onClick={() => setSandbox(freshSandbox(chamber))} aria-label="Reset sandbox">↺</button></div></div>
-          <p className="lp-sandbox-disclosure">A real engine check in your browser. Separate from the room; no chat, votes, or session changes.</p>
+          <p className="lp-sandbox-disclosure">{staticDemo ? 'This public browser sandbox runs the real engine. Live Twitch hosting requires setup; no chat, votes, or session connection runs here.' : 'A real engine check in your browser. Separate from the room; no chat, votes, or session changes.'}</p>
           <p className="sr-only" aria-live="polite">Sandbox player at column {sandbox.displayed.x}, row {sandbox.displayed.y}. Key {sandbox.displayed.hasKey ? 'acquired' : 'not yet collected'}. {sandbox.displayed.escaped ? 'Exit reached.' : ''} {sandbox.mode === 'play' ? `${sandbox.moves} attempt moves.` : `${sandbox.step} of ${sandbox.witness.length} checked moves.`}</p>
         </section>
       </section>
@@ -173,8 +176,8 @@ export default function Landing(): React.JSX.Element {
         <details><summary><span><b className="lp-law-symbol" aria-hidden="true">▥</b>Walls</span><i aria-hidden="true">+</i></summary><p>Open or close authored wall groups A and B. A wall can never close on the player.</p><code>!patch walls A|B open|closed</code></details>
       </div></section>
 
-      <section className="lp-final-cta" aria-labelledby="lp-cta-title"><div className="lp-final-coordinate" aria-hidden="true">END OF BRIEF / START OF ATTEMPT</div><p className="lp-kicker">THE WORLD IS WAITING</p><h2 id="lp-cta-title">Hand chat the laws.<br /><em>Keep your nerve.</em></h2><button type="button" className="lp-button lp-button-primary" onClick={beginDemo} aria-controls="lp-demo-board">Play the demo <Arrow /></button><p>No sign-in for the demo.<br />Host controls and live Twitch require setup.</p><a className="lp-host-link" href="/play">Host a chamber <Arrow diagonal /></a><a className="lp-spectator-link" href="/overlay">Open the read-only broadcast view <Arrow diagonal /></a></section>
+      <section className="lp-final-cta" aria-labelledby="lp-cta-title"><div className="lp-final-coordinate" aria-hidden="true">END OF BRIEF / START OF ATTEMPT</div><p className="lp-kicker">THE WORLD IS WAITING</p><h2 id="lp-cta-title">Hand chat the laws.<br /><em>Keep your nerve.</em></h2><button type="button" className="lp-button lp-button-primary" onClick={beginDemo} aria-controls="lp-demo-board">Play the demo <Arrow /></button><p>No sign-in for the demo.<br />{staticDemo ? 'Live Twitch hosting requires setup.' : 'Host controls and live Twitch require setup.'}</p><a className="lp-host-link" href={hostHref}>{hostLabel} <Arrow diagonal /></a><a className="lp-spectator-link" href={staticDemo ? 'https://github.com/himanshu748/world-patch' : '/overlay'}>{staticDemo ? 'View the source' : 'Open the read-only broadcast view'} <Arrow diagonal /></a></section>
     </main>
-    <footer className="lp-footer"><a className="lp-wordmark" href="/">WORLD<span>//</span>PATCH</a><span>CHAT WRITES THE LAWS. YOU FIND THE EXIT.</span><span>BUILT WITH CODEX</span></footer>
+    <footer className="lp-footer"><a className="lp-wordmark" href={import.meta.env.BASE_URL}>WORLD<span>//</span>PATCH</a><span>CHAT WRITES THE LAWS. YOU FIND THE EXIT.</span><span>BUILT WITH CODEX</span></footer>
   </div>;
 }

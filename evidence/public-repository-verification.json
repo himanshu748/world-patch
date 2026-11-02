@@ -1,0 +1,13 @@
+{
+  "recordedAt": "2026-11-02T07:55:18.481480+00:00",
+  "repository": "https://github.com/himanshu748/world-patch",
+  "visibility": "public",
+  "private": false,
+  "defaultBranch": "main",
+  "commit": "5468d89d502264a4b607c167fc0ed4f44908aa09",
+  "anonymousMetadata": true,
+  "anonymousREADMEBytesMatch": true,
+  "readmeSHA256": "c4522d69c16e095aafc62b219e0f2bbb752a8268314f2b31bbd44b4188ad85f2",
+  "authorization": "User approved public repository creation, commit, push and release-link updates",
+  "status": "PASS_PUBLIC_REPOSITORY_READBACK"
+}

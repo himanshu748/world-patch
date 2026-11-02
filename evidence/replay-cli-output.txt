@@ -1,0 +1,44 @@
+
+> world-patch@0.1.0 replay
+> tsx scripts/verify-replay.ts evidence/sample-simulation-replay.json
+
+{
+  "ok": true,
+  "sessionId": "deb46247-f8bd-4839-96c4-556644985398",
+  "eventCount": 75,
+  "mergeCount": 1,
+  "finalGame": {
+    "chamberId": "vector-foundry",
+    "x": 1,
+    "y": 1,
+    "hasKey": false,
+    "rules": {
+      "gravity": "off",
+      "portals": "normal",
+      "ice": false,
+      "walls": {
+        "A": true,
+        "B": false
+      }
+    },
+    "escaped": false
+  },
+  "checkpoint": {
+    "chamberId": "vector-foundry",
+    "x": 1,
+    "y": 1,
+    "hasKey": false,
+    "rules": {
+      "gravity": "off",
+      "portals": "normal",
+      "ice": false,
+      "walls": {
+        "A": true,
+        "B": false
+      }
+    },
+    "escaped": false
+  },
+  "digest": "b1eea15f597a8cc9a23923e5cffefbc480ae9ee190c07bbbc902d7b61ae03088",
+  "note": "Game state and each escape witness recomputed with the recorded engine. Hashes are not administrator-proof signatures."
+}

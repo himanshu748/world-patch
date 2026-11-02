@@ -103,8 +103,8 @@ Statuses: PASS = executed evidence; FAIL = observed failure; BLOCKED = dependenc
 | --- | --- | --- | --- |
 | W071 | Independent implementation security review adjudicated | PASS | evidence/security-review.md; scoped findings repaired and regression-tested |
 | W072 | Independent QA/code review adjudicated | PASS | evidence/qa-implementation-review.md and qa-ui-review.md; adjudicated with tests |
-| W073 | Typecheck/lint/unit/property/integration suite executed | PASS | 114 tests PASS; typecheck/lint/build PASS; evidence/release-final-checks.json |
-| W074 | Browser regression suite executed | PASS | evidence/release-final-browser.json; 22 passed, 0 failed/skipped/flaky |
+| W073 | Current local typecheck/lint/unit/property/integration/runtime suite executed | PASS | 119 tests plus typecheck/lint/normalbuild PASS; render-deployment-verification.json; local Node 26.12.0, targetLinux not run |
+| W074 | Normal and separately labeled static browser regressions executed | PASS | static-demo-verification.json;22 normal / 3 static journeys passed; predates startup-only hosting change; captured 114/22 gate retained |
 | W075 | Clean dependency install and production build/start executed | PASS | evidence/clean-install.json and clean-install-smoke.json; cold build/native SQLite/restart PASS |
 | W076 | Dependency/security and secret exposure checks executed | PASS | evidence/dependency-audit.json: 0 known vulnerabilities; source and package ignore rules inspected |
 | W077 | Provider outage/storage failure recovery verified | PASS | Injected-provider outage and actual SQLite failure/recovery regressions PASS; no live-provider claim |
@@ -117,11 +117,11 @@ Statuses: PASS = executed evidence; FAIL = observed failure; BLOCKED = dependenc
 | W079 | Deployment recipe reproducible with persistent volume | UNVERIFIED | Local Node restart/persistence PASS; Docker image and remote persistent-volume recipe not executed. |
 | W080 | Verification report separates local/fixture/live evidence | PASS | VERIFICATION.md inspected against machine-readable reports |
 | W081 | Live demo runbook includes one-account setup and recording | PASS | docs/LIVE-DEMO.md; one-account/OBS/recording steps and real-evidence limits inspected |
-| W082 | Devpost description and required fields prepared | PASS | docs/DEVPOST.md mapped to official-hackathon-nov2.json; repository/video mandatory, website optional; personal fields pending |
-| W083 | Current source archive contains code/assets/lockfile without secrets | UNVERIFIED | Historical package-verification.json retained; main will rebuild and audit current archive from final staged candidate. |
-| W084 | Optional judge-accessible hosted website verified | UNVERIFIED | Website optional under fresh rules; no hosting authorized/executed. Mandatory repository/judge access remains W085. |
-| W085 | Repository published and judge access verified | BLOCKED | No commit/push/publication authorized or performed. |
-| W086 | Under-three-minute Twitch/Codex video publicly viewable | BLOCKED | Local96second edit passed scoped media checks; authorized YouTube publication and logged-out visibility remain pending. |
+| W082 | Devpost description and required fields prepared | PASS | docs/DEVPOST.md includes actual publicrepo/unlistedvideo; official websitefield optional, userfullhost required; personal fields/submission pending |
+| W083 | Current source archive contains code/assets/lockfile without secrets | PASS | Current package CRC and all-byte checks, exact actual private-value/encoding scans including production host secret; adjacent package summary. |
+| W084 | Required full hosted Fastify/WSS/Twitch/SQLite application verified | BLOCKED | Authorized provisioning pending; must exercise HTTPS host/overlay, WSS, real hosted OAuth/EventSub/game/replay and SQLite recovery after service restart; Pages cannot satisfy |
+| W085 | Repository published and anonymous judge source access verified | PASS | public-repository-verification.json; public GitHub metadata and README anonymous readback at 5468d89; new hosting revision release pending |
+| W086 | Under-three-minute Twitch/Codex video published with anonymous metadata | PASS | youtube-publication-verification.json; 96-second source, Unlisted, English captions, Studio No Issues, oEmbed PASS; full anonymous playback pending R016 |
 | W087 | Entrant eligibility/terms confirmed by user | BLOCKED | Entrant must personally review/confirm eligibility and terms. |
 | W088 | Actual Devpost submission receipt captured | BLOCKED | Requires live/video/judge-access/attestation gates and authorized submission. |
 
@@ -219,7 +219,7 @@ Earlier design generation failures and fixture-only checks remain historical evi
 | R003 | Original 60fps OBS smoke meets recording quality and silence | FAIL | obs-smoke-media.json; known 8.5% render / 2% encode lag and nonzero decoded AAC; raw clip private |
 | R004 | Silent fallback retains the original encoded video | PASS | obs-smoke-silent-media.json; zero audio tracks, same 2,681 compressed samples/payload hash and sampled frame hashes; +0.333ms container end rounding |
 | R005 | Local final1080p30 real Twitch/chat/Codex edit inspected | PASS | final-demo-video-verification.json/capture-manifest/frame-review;96s,2880frames,zeroaudio; metadata/cadence and selected decoded-frame review; realtime playback/publication separate |
-| R006 | Isolated staged release source excludes private/runtime/media files | PASS | Local release inventory excludes private env/data/dependencies/work/rawmedia/logs; full staged scan findings and binary limitations recorded in release-preparation.json; no commit/push |
+| R006 | Captured-revision release source excludes private/runtime/media files | PASS | Historical prepared inventory and package-verification.json exclude private/runtime/media files; source was subsequently published; new hosting package refresh remains W083 |
 
 Dated design failures remain historical failures. Current local tests, controlled cold recovery and silent fallback do not satisfy public video/repository access, entrant attestations or actual submission.
 
@@ -227,7 +227,18 @@ Dated design failures remain historical failures. Current local tests, controlle
 | --- | --- | --- | --- |
 | R007 | Bounded room verification repair passes current full gate | PASS | release-final-checks.json; 114 checks and 22 browser journeys, explicit250ms baseline/proposal/merge budget and over-budget refusal |
 | R008 | New recorded clip audio content numerically inspected | PASS | obs-nov2-failed-media.json; full AAC decode is digital silence; merge failure and encoding lag remain separate |
-| R009 | Public-release secret audit covers staged text and binary evidence | BLOCKED | Inherited env sanitized; ten known-pattern findings are synthetic fixtures. Main actual-secret audit passed earlier230-file snapshot; refresh against final candidate and binary evidence before publication |
+| R009 | Published captured-revision source secret audit executed | PASS | package-verification.json; root actual-private-value/staged/binary checks and sensitive-image review; known-pattern/OCR/unknown-secret limitations retained; new hostingarchive refresh is W083 |
 | R010 | Corrected real Twitch round independently replayed | PASS | twitch-final-live-replay.json;36events,1merge,24-input escape and revealed witness; sourceTwitch,no injection |
 | R011 | Successful OBS game/chat clip numerically inspected | PASS | obs-final-live-media.json;169.266s,1920×1080,30fps,5077retained video samples,full AAC digital silence;2/5086encoding skips |
 | R012 | Complete final edit plays through in an actual browser | PASS | final-demo-browser-playback.json;currentTime96/duration96,endedtrue,errornull,readyState4;local playback only |
+
+
+## Full hosted delivery
+
+| ID | Check | Status | Evidence / limit |
+| --- | --- | --- | --- |
+| R013 | Real entry-point hosting configuration regressions pass locally | PASS | render-deployment-verification.json; 119 total, 5 new runtime tests, types/lint/normal build; synthetic configuration, no provider calls |
+| R014 | Target Linux runtime and native SQLite execute on selected host | UNVERIFIED | Node 26.13.0 pinned; local checks ran 26.12.0 macOS; remote build/start not executed |
+| R015 | Hosted state survives a real persistent-disk service restart | UNVERIFIED | Must save, restart, recover and independently replay at actual HTTPS origin |
+| R016 | Complete anonymous YouTube watch playback succeeds | UNVERIFIED | Published Unlisted and oEmbed metadata PASS; 96-second local playback PASS; complete remote watch result pending |
+| R017 | Hosted Twitch callback, grant and actual game/replay journey pass | UNVERIFIED | Existing local live proof cannot satisfy hosted origin; additional public posts require authorization |

@@ -2,7 +2,7 @@
 
 Updated: 2 November 2026; initial verification: 28 October 2026. Engine: `world-patch/1.0.0`. Main Codex session: `01a1807d-e70b-7572-bc0d-a4f29b37d1b8`.
 
-**Status: repaired source, corrected recorded real Twitch round and OBS game/chat capture verified; external delivery and submission BLOCKED.** The 96-second Twitch/Codex edit passed local metadata, cadence and selected-frame review. Judge repository access, YouTube publication, eligibility and Devpost submission still need evidence. A website is optional under the checked submission rules. Dated sections below preserve historical checkpoints; this current summary and the Nov2 section state the release result. No fixture or failed smoke recording satisfies a live/video gate.
+**Status: local application, recorded real Twitch round, public repository and published unlisted demo verified within the scopes below; full hosting and submission remain BLOCKED.** The required hosted Fastify/WSS/Twitch/SQLite application is awaiting provider provisioning and remote acceptance. A browser-only GitHub Pages sandbox cannot satisfy that requirement. The 96-second video passed local complete playback and YouTube anonymous metadata readback; complete anonymous YouTube playback is pending. Entrant attestations and Devpost submission are pending. Dated sections preserve historical checkpoints; this current summary supersedes older publication and hosting statuses.
 
 ## Implemented product
 
@@ -12,25 +12,30 @@ The solver proves the existence of a replayed route from the recorded checkpoint
 
 ## Executed checks
 
-The following headline table records the repaired source after its fresh full gate. Earlier dated 113/22 and other reports remain historical; they are not substituted for the changed-source checks.
+The latest local hosting-preparation gate passed 119 tests, including five real-entry-point runtime regressions, plus typecheck/lint and the normal build. It ran on Node 26.12.0 macOS, using synthetic configuration and no Twitch provider call. The captured game revision’s 114-test/22-browser gate is retained separately. The normal client is unchanged by the Render startup/configuration work; no new full UI suite was run for that change. The separate static-sandbox variant also has its own 114-test/22-normal-browser/3-static-browser proof; Render uses the normal build.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Unit/property/server/provider-fixture tests | 114 passed, 0 failed | evidence/release-final-unit.json |
+| Latest unit/property/server/provider-fixture/runtime tests | 119 passed, 0 failed; five new startup/configuration regressions | evidence/render-deployment-verification.json |
+| Recorded game revision gate | 114 passed; prior captured revision | evidence/release-final-unit.json |
 | Engine coverage | 42 tests including 600 seeded property trials | tests/engine.test.ts; evidence/kernel-tests.json |
 | HTTP/WebSocket boundaries | 10 tests; includes real loopback origin/read-only/32-socket limits | tests/http.test.ts |
 | Room rules | 21 tests, including bounded live-room clock regression | tests/room.test.ts |
 | SQLite/replay | 7 tests, including the real 20,000-event terminal reserve | tests/storage.test.ts |
 | Candidate/session capacity | 2 tests | tests/limits.test.ts |
+| Runtime configuration | 5 real-entry-point child-process tests with synthetic configuration | tests/runtime-config.test.ts; evidence/render-deployment-verification.json |
 | Twitch lifecycle | 32 injected-provider tests; actual traffic verified separately below | tests/twitch.test.ts |
-| TypeScript / ESLint | Passed | `npm run typecheck`; `npm run lint` |
-| Production build | Passed | `npm run build`; cold installation also built successfully |
+| Latest TypeScript / ESLint | Passed | evidence/render-deployment-verification.json |
+| Latest normal production build | Passed; VITE_STATIC_DEMO unset | evidence/render-deployment-verification.json |
 | Fresh dependency install | Passed in a separate empty dependency directory | evidence/clean-install.json |
 | Native SQLite after fresh install | In-memory query passed | evidence/clean-install.json |
 | Production process recovery | 7 checks passed in both original and fresh installations | evidence/production-smoke.json; evidence/clean-install-smoke.json |
 | Dependency audit | Historical report: 0 known vulnerabilities at that scan; not refreshed by the Nov2 test run | evidence/dependency-audit.json |
-| Browser journeys | 22 passed, 0 failed/skipped/flaky | evidence/release-final-browser.json |
-| Current source consistency | Current project source matches final gate hashes; retained Vitest config also matches the prior Nov2 snapshot | evidence/release-final-checks.json; prior release-nov2-checks.json |
+| Latest normal browser journeys | 22 passed, 0 failed/skipped/flaky; before startup-only hosting change | evidence/static-demo-verification.json |
+| Separate static browser journeys | 3 passed; browser-only sandbox, no hosted room backend | evidence/static-demo-verification.json |
+| Recorded-revision browser journeys | 22 passed, 0 failed/skipped/flaky | evidence/release-final-browser.json |
+| Hosting-preparation source | Executed report hashes identify index/Blueprint/Docker/runtime tests at the local gate; deployment docs subsequently updated | evidence/render-deployment-verification.json |
+| Captured revision consistency | Prior source/config/test fingerprint retained; subsequent startup changes are covered separately | evidence/release-final-checks.json; prior release-nov2-checks.json |
 | Actual cold reconnect | keepalive_timeout → reconnecting → ready; same session/game/receipt after controlled local stall | evidence/twitch-live-recovery.json |
 | Original OBS 60fps smoke | FAIL quality; 8.5% rendering / 2% encoding lag reported; retained audio is non-silent | evidence/obs-smoke-media.json; obs-media-qa.md |
 | Silent fallback game footage | Zero audio tracks; identical encoded video payload/frame count; container end normalized by 0.333ms | evidence/obs-smoke-silent-media.json |
@@ -71,14 +76,14 @@ The first loopback test was blocked by sandbox `EPERM`; its rerun with local-lis
 | Genuine OAuth + same-account chat | PASS — actual same-account commands changed the game; replay recomputed |
 | Actual provider reconnect | PASS for controlled cold recovery only; requested migration and live active-election cancellation remain unobserved |
 | Actual OBS game/chat capture | PASS — corrected real round, 1080p30, decoded frames and silent audio inspected; this is recording proof, not public broadcast or final Twitch/Codex video |
-| Docker/remote deployment | UNVERIFIED — recipe supplied; choose/authorize host and run deployment acceptance |
-| Judge-accessible repository | BLOCKED — isolated local source preparation is authorized; publication/judge access still need approval and verification |
-| Optional hosted website | UNVERIFIED — not required by the checked competition submission rules; deployment remains unauthorized |
-| YouTube demo | BLOCKED — at most three minutes of real running footage, Twitch and Codex; unlisted/public is allowed, private is not |
+| Docker image | UNVERIFIED — pinned Node 26.13.0 image supplied; image execution not tested |
+| Judge-accessible repository | PASS — public GitHub metadata and README anonymously read back at 5468d89; evidence/public-repository-verification.json |
+| Required full hosted application | BLOCKED — authorized provider provisioning pending; remote Linux/native SQLite, HTTPS/WSS, host/overlay, persistent restart and hosted Twitch acceptance not run |
+| YouTube demo | Qualified PASS —96-second source published unlisted with English captions; anonymous oEmbed metadata PASS; complete anonymous watch playback pending; evidence/youtube-publication-verification.json |
 | Eligibility/attestations | BLOCKED — entrant must personally review and confirm |
 | Devpost submission | BLOCKED — draft copy exists; no submission was made |
 
-No commit, push, deployment, artifact publication, payment or hackathon submission was performed. Eleven specifically authorized test messages were posted in the user's own channel across the historical and two Nov2 rounds; the latest successful run is detailed below. The local preview and automated tests do not establish submission readiness. The formal deadline is 2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India; official source evidence is preserved in evidence/official-hackathon.json.
+The authorized public repository and unlisted YouTube demo are published. No full hosted deployment or hackathon submission is claimed. Eleven specifically authorized test messages were posted in the user's own channel across the historical and two Nov2 rounds; the latest successful run is detailed below. The local preview and automated tests do not establish submission readiness. The formal deadline is 2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India; official source evidence is preserved in evidence/official-hackathon.json.
 
 ## 29 October motion-design refinement
 
@@ -205,3 +210,14 @@ Eleven approved public messages have now been posted in total: five on 30 Octobe
 The completed local edit is 96.000 seconds, 1920×1080, H.264 at nominal30fps, with 2,880 encoded frames and zero audio tracks. Every retained presentation interval is within1ms of the expected cadence. Chronological cuts remove waiting while retaining normal-speed real Twitch gameplay and an OBS recording of the selected Codex evidence viewer; captions identify that viewer as distinct from the native Codex interface. Metadata/cadence checks and selected decoded frame inspection passed. The separate actual-browser playback subsequently reached96/96seconds, ended=true, readyState4 and no media error: `evidence/final-demo-browser-playback.json`. The source capture's occasional encoding skips are not repaired or disproved by the output cadence. No narration was generated.
 
 Evidence: `evidence/final-demo-video-verification.json`, `evidence/final-demo-capture-manifest.json` and `evidence/final-demo-frame-review.json`. The local MP4 is intentionally excluded from the source repository; its SHA-256 is `8dddb680bf4b501854251c38cf973b21096560fbce423fb9dc304094061ee65d`. Caption sidecars are included under `docs/DEMO-captions.srt` and `.vtt`. This local media PASS does not establish YouTube visibility, judge access or submission.
+
+
+## Current hosting and published delivery
+
+The complete hosted application is now a required project deliverable, even though the organizer’s website field is optional. The Render configuration runs the normal Fastify build with browser WebSockets, outbound Twitch EventSub and one persistent SQLite disk. The separately labeled static sandbox has no hosted room backend and cannot meet this acceptance condition.
+
+The local startup gate passed 119 tests, including five injected-configuration child-process tests of the real server entry point, plus typecheck/lint/build. Origin precedence is PUBLIC_ORIGIN, then RENDER_EXTERNAL_URL, then the existing loopback default; derived and explicit OAuth callbacks, secure cookies/CSRF and malformed-origin refusal were exercised. These tests ran on Node 26.12.0 macOS. The pinned Node 26.13.0 Linux runtime, native SQLite installation and actual remote behavior remain unverified. The promoted Render report retains its earlier capacity/authorization checkpoint as history; it is not the current provisioning receipt. Deployment is authorized and awaiting provider provisioning.
+
+Public source: https://github.com/himanshu748/world-patch . Anonymous repository metadata and README readback passed at commit 5468d89; local Render preparation is a subsequent change awaiting the next reviewed release. Video: https://youtu.be/5pPTyIQZ7RY . YouTube Studio reported published / unlisted with English captions and no issues; anonymous oEmbed metadata passed. The 96-second source has full local browser playback proof. Complete anonymous YouTube playback remains a separate pending check. Neither publication establishes a hosted application or a Devpost submission.
+
+Remote acceptance requires the deployed URL and commit, fresh Linux build/start, HTTPS and WSS updates, protected controller/read-only overlay, actual SQLite recovery after restart, exact Twitch callback and actual hosted OAuth/EventSub/game/replay evidence. Existing chat-message authorization does not permit additional public posts. Entrant attestations and submission remain separate unfinished gates.

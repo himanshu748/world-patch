@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-11-02T08:41:19.915Z",
+  "status": "LOCAL_PASS_DEPLOYMENT_BLOCKED",
+  "scope": "Reviewable full Fastify/WebSocket/Twitch/SQLite hosting proposal; no remote resources created or changed",
+  "changes": {
+    "originPrecedence": [
+      "PUBLIC_ORIGIN",
+      "RENDER_EXTERNAL_URL",
+      "http://localhost:3000"
+    ],
+    "twitchRedirect": "Explicit TWITCH_REDIRECT_URI wins; otherwise selected origin plus /auth/twitch/callback",
+    "runtime": "26.13.0",
+    "service": "one Node web service",
+    "plan": "0.5c-512mb",
+    "instances": 1,
+    "persistentDisk": {
+      "sizeGB": 1,
+      "mountPath": "/var/data",
+      "dataDir": "/var/data/world-patch"
+    },
+    "automaticDeploys": "off",
+    "health": "/api/health"
+  },
+  "verification": {
+    "typecheck": {
+      "status": "PASS",
+      "command": "npm run typecheck"
+    },
+    "lint": {
+      "status": "PASS",
+      "command": "npm run lint"
+    },
+    "unit": {
+      "status": "PASS",
+      "command": "npm test",
+      "tests": 119,
+      "files": 7,
+      "durationMs": 6530,
+      "priorTests": 114,
+      "newRuntimeTests": 5
+    },
+    "build": {
+      "status": "PASS",
+      "command": "npm run build",
+      "output": "dist/public and dist/server",
+      "staticDemoFlag": "unset"
+    },
+    "runtimeRegression": {
+      "status": "PASS",
+      "entry": "src/server/index.ts via tsx in real child process",
+      "checks": [
+        "Render origin fallback drives real config/CSRF/Secure cookie/derived OAuth callback",
+        "Explicit PUBLIC_ORIGIN overrides Render URL",
+        "Existing localhost fallback and non-Secure local cookie preserved",
+        "Explicit Twitch redirect URI preserved",
+        "Malformed Render origin fails closed"
+      ],
+      "fixtures": "Fresh temporary working directories, synthetic credentials, explicit environment allowlist, authorization URL construction only; no Twitch provider call"
+    },
+    "renderBlueprint": {
+      "status": "BLOCKED",
+      "cli": "2.24.0",
+      "command": "render blueprints validate render.yaml --output json",
+      "exitCode": 0,
+      "response": {
+        "valid": false,
+        "errors": [
+          {
+            "path": "",
+            "line": 0,
+            "column": 0,
+            "error": "Additional services & databases will exceed limit of 25"
+          }
+        ]
+      },
+      "note": "Check the valid field, not only the CLI exit code. No service/disk was created. Resolve workspace capacity with owner before revalidation."
+    },
+    "nodeDistribution": {
+      "status": "PASS_METADATA",
+      "release": "26.13.0 LTS, 2026-10-28",
+      "shaSource": "https://nodejs.org/dist/v26.13.0/SHASUMS256.txt",
+      "linuxX64TarXzSha256": "d28a96af6c38596f6d9d97c0ee531c13d238d757742387d1928de822d959e997",
+      "dockerSource": "https://raw.githubusercontent.com/nodejs/docker-node/main/26/bookworm-slim/Dockerfile",
+      "note": "Fetched official checksum metadata and official Dockerfile with NODE_VERSION=26.13.0; did not download/run Linux binary or build Docker image."
+    }
+  },
+  "actualLocalRuntime": {
+    "node": "v26.12.0",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "sourceSha256": {
+    "src/server/index.ts": "0249d36a27c7ad8788d5ddf66d72073c7d4d25b37fc5521ae8a9ed1ba9e89c05",
+    "render.yaml": "afeb8df6a22d273e925795f266e14e56486c364006af17f904af0c69ac270ae1",
+    "Dockerfile": "301cebdf9d5533a924ecdade6199eb1da69684d051af8bfce56cad622b684a80",
+    "tests/runtime-config.test.ts": "437063ba84e85aac7179765a0fa0271fbfa8d9a6b16d94196d7f9894c74e8821",
+    "docs/RENDER-DEPLOYMENT.md": "80637ec1e65bd23fd1be95cb56b16b9b4039838fb46103e22058a2765584a6bb"
+  },
+  "sources": [
+    "https://render.com/docs/environment-variables",
+    "https://render.com/docs/blueprint-spec",
+    "https://render.com/docs/disks",
+    "https://render.com/docs/node-version",
+    "https://render.com/docs/websocket",
+    "https://nodejs.org/en/blog/release/v26.13.0",
+    "https://nodejs.org/dist/v26.13.0/SHASUMS256.txt",
+    "https://raw.githubusercontent.com/nodejs/docker-node/main/26/bookworm-slim/Dockerfile",
+    "https://github.com/WiseLibs/better-sqlite3/blob/master/docs/troubleshooting.md"
+  ],
+  "authorization": {
+    "productionResourceCreation": false,
+    "spending": false,
+    "commit": false,
+    "push": false,
+    "publication": false,
+    "existingResourcesModified": false,
+    "credentialValuesInspectedOrCopied": false
+  },
+  "pending": [
+    "Workspace capacity decision and successful provider validation",
+    "Explicit billing/deployment/publication authorization",
+    "Reviewed commit/source publication",
+    "Actual Render Node26.13.0 Linux dependency installation including better-sqlite3 and libatomic compatibility",
+    "Remote health/TLS/WSS/host/overlay/judge verification",
+    "Persistent SQLite recovery across real hosted restart",
+    "Exact Twitch callback registration and actual hosted OAuth/EventSub/gameplay proof"
+  ],
+  "note": "Normal client unchanged; no broad UI rerun was performed for this server startup/config change. The prior22-browser gate belongs to its separate unchanged-client verification."
+}

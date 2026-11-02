@@ -1,0 +1,44 @@
+
+> world-patch@0.1.0 replay
+> tsx scripts/verify-replay.ts evidence/twitch-live-replay.json
+
+{
+  "ok": true,
+  "sessionId": "6a73a222-9953-47c5-bdad-9aeea9faf01c",
+  "eventCount": 36,
+  "mergeCount": 1,
+  "finalGame": {
+    "chamberId": "vector-foundry",
+    "x": 9,
+    "y": 7,
+    "hasKey": true,
+    "rules": {
+      "gravity": "off",
+      "portals": "normal",
+      "ice": false,
+      "walls": {
+        "A": true,
+        "B": false
+      }
+    },
+    "escaped": true
+  },
+  "checkpoint": {
+    "chamberId": "vector-foundry",
+    "x": 1,
+    "y": 1,
+    "hasKey": false,
+    "rules": {
+      "gravity": "off",
+      "portals": "normal",
+      "ice": false,
+      "walls": {
+        "A": true,
+        "B": false
+      }
+    },
+    "escaped": false
+  },
+  "digest": "16021dde27207f927e6017deb2e0ebf416a3e25c6d6e2fab9dfcbceb85f48f17",
+  "note": "Game state and each escape witness recomputed with the recorded engine. Hashes are not administrator-proof signatures."
+}

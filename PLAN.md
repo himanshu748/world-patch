@@ -7,10 +7,18 @@ All phases update CHECKLIST.md and evidence/phase-log.md. Status means executed 
 | 0 — Contract | Official rules, six documents, session ID; independent architecture/security/game/novelty/QA challenge | Documents inspected; ≥55 traceable checks; decisions resolved | PASS — evidence/phase-log.md |
 | 1 — Puzzle kernel | Typed chamber/rules/parser, transition, BFS, witnesses, authored chambers; depends on 0 | Unit/property tests; all chambers solve; each family changes behavior; unknown distinct | PASS — evidence/kernel-tests.json |
 | 2 — Trusted round loop | Server, SQLite log, replay, auth, proposals/votes/moderation, snapshot stream; depends on 1 | HTTP/WS integration tests, deterministic ties/restart, unauthorized rejection | PASS local — evidence/server-tests.json |
-| 3 — Twitch | OAuth, validation/refresh, EventSub, dedupe/reconnect/gaps, source isolation; depends on 2 | Fixture failures/recovery plus actual one-account OAuth/chat evidence | PASS actual OAuth/chat/game/replay and controlled cold reconnect; final video/broadcast proof pending |
-| 4 — Broadcast product | React/Phaser, all host/overlay states, receipts/replay, motion/a11y; depends on 1–3 interfaces | Browser journey + keyboard/mobile/reduced motion/overlay screenshots | PASS local — 22 browser journeys; evidence/release-final-browser.json |
-| 5 — Hardening | Independent security/QA review, regression repairs, dependency scan, cold install/build/start, recovery | Required suite passes; significant findings resolved or accurately blocked | PASS local — 114 repaired-source checks, fresh build/types/lint + retained cold-install/recovery reviews |
-| 6 — Delivery | README, local/deploy/live demo guides, verification report, Devpost copy, source archive, evidence | Judge journey tested; actual deployment/video/repository/eligibility proof | Local delivery PASS; external release BLOCKED |
+| 3 — Twitch | OAuth, validation/refresh, EventSub, dedupe/reconnect/gaps, source isolation; depends on 2 | Fixture failures/recovery plus actual one-account OAuth/chat evidence | PASS recorded actual OAuth/chat/game/replay, controlled cold reconnect and published demo; hosted Twitch acceptance pending |
+| 4 — Broadcast product | React/Phaser, all host/overlay states, receipts/replay, motion/a11y; depends on 1–3 interfaces | Browser journey + keyboard/mobile/reduced motion/overlay screenshots | PASS local — 22 normal browser journeys; evidence/static-demo-verification.json; recorded game gate retained |
+| 5 — Hardening | Independent security/QA review, regression repairs, dependency scan, cold install/build/start, recovery | Required suite passes; significant findings resolved or accurately blocked | PASS local —119 hosting-preparation tests/types/lint/build; prior 114/22 captured game gate retained |
+| 6 — Delivery | README, local/deploy/live demo guides, verification report, Devpost copy, source archive, evidence | Judge journey tested; actual deployment/video/repository/eligibility proof | Repository and unlisted video published; full hosted application BLOCKED pending provisioning/remote acceptance; submission pending |
+
+## Current delivery work
+
+The required release is one hosted Fastify service with HTTPS, browser WSS, real Twitch OAuth/EventSub and persistent SQLite. Provider provisioning is pending. GitHub Pages is a browser-only sandbox and does not satisfy this exit criterion. The repository is publicly readable and the 96-second YouTube demo is published unlisted; anonymous full-video playback still needs its own result.
+
+Next: provision the authorized service and 1 GB disk; build the normal application on Node 26.13.0 Linux; verify landing/controller/overlay, host authorization, TLS/WSS and SQLite recovery after a real restart; register the exact HTTPS Twitch callback and exercise a hosted provider session under the existing message-approval boundary. Record deployed commit, URL and evidence, then refresh the source package and complete entrant/submission gates. All 119 local tests, typecheck/lint/build passed on Node 26.12.0 macOS; that does not establish the remote runtime.
+
+Dated sections below retain earlier decisions and failures. This current delivery work supersedes their older publication/provisioning statuses.
 
 ## Working order and decision gates
 
@@ -22,7 +30,7 @@ Before broadcast polish, prove a useful patch on a real discrete chamber and rep
 
 ## Release stop conditions
 
-Unverified official eligibility, missing genuine Twitch events, missing public demo/video/repo access, stale snapshot acceptance, solver/player divergence, public token exposure, broken restart/replay, or unreproducible build all prevent a submission-ready claim. The demo can be delivered locally while these remain explicitly blocked.
+Unverified eligibility, missing required full hosted functionality, missing judge/video/repository access, stale snapshot acceptance, solver/player divergence, public token exposure, broken restart/replay, or unreproducible build all prevent a submission-ready claim. The demo can be delivered locally while these remain explicitly blocked.
 
 ## 29 October design follow-up
 
@@ -100,4 +108,4 @@ Remaining: finish/review the combined Twitch/Codex video, refresh final staged-s
 
 ## 2 November — local video export verified
 
-The96-second1080p30 final edit passed metadata,2,880-frame cadence and selected decoded frame review, with zero audio tracks. It combines chronological normal-speed real Twitch footage and truthful selected Codex evidence-viewer footage; no generated narration or native-interface reconstruction. Reports and caption sidecars are included; MP4/rawmedia are excluded from the staged source. Remaining priority: final source secret/binary audit, concrete publication approval, judge/video access checks and entrant/submission gates. Actual browser playback also completed96/96seconds without a media error; evidence/final-demo-browser-playback.json. Public visibility remains unverified.
+The 96-second1080p30 final edit passed metadata,2,880-frame cadence and selected decoded frame review, with zero audio tracks. It combines chronological normal-speed real Twitch footage and truthful selected Codex evidence-viewer footage; no generated narration or native-interface reconstruction. Reports and caption sidecars are included; MP4/rawmedia are excluded from the staged source. Remaining priority: final source secret/binary audit, concrete publication approval, judge/video access checks and entrant/submission gates. Actual browser playback also completed96/96seconds without a media error; evidence/final-demo-browser-playback.json. Public visibility remains unverified.

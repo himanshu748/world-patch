@@ -6,11 +6,13 @@ A browser puzzle show where Twitch viewers propose bounded changes to gravity, p
 
 Built with OpenAI Codex during the Codex × TwitchCon Hackathon. Main session: **`01a1807d-e70b-7572-bc0d-a4f29b37d1b8`**.
 
-> Release status: **114 tests and 22 production-browser journeys passed on 2 November 2026**, plus typecheck, lint and build. The repaired source then completed a recorded real Twitch proposal/vote/merge, a 24-move player escape and the revealed witness. Its 36-event replay independently verified. OBS captured the actual game and chat at 1080p30. The 96-second Twitch/Codex edit passed local metadata, cadence and selected-frame review; judge repository access, video publication and submission remain pending. [Verification and limits](VERIFICATION.md). **Not submission-ready.**
+> [Public source](https://github.com/himanshu748/world-patch) · [96-second real Twitch + Codex demo](https://youtu.be/5pPTyIQZ7RY)
+>
+> The full hosted application is **awaiting provider provisioning and remote verification**. Local hosting preparation passed 119 tests, typecheck, lint and the normal production build. The recorded game revision separately passed 114 tests and 22 production-browser journeys, then completed a real Twitch proposal/vote/merge, player escape and independently verified replay. The video is published unlisted; anonymous metadata is verified, while complete anonymous YouTube playback remains pending. [Verification and limits](VERIFICATION.md). **Not submission-ready.**
 
 ## Run the game
 
-Requirements: Node.js ≥22.12, npm, a modern browser and a writable local data directory. Exact tested runtime and commands are in the verification report. No paid service or API model is required. A Twitch account is needed only for live mode.
+Requirements: Node.js ≥22.12, npm, a modern browser and a writable local data directory. Exact tested runtime and commands are in the verification report. Local play needs no paid service or API model. A Twitch account is needed only for live mode. The required hosted release uses one persistent server; its remote acceptance checks are still pending.
 
 ```sh
 npm ci
@@ -96,11 +98,11 @@ Chat is untrusted. Commands have a strict typed grammar; raw JavaScript, arbitra
 | Variable | Purpose |
 | --- | --- |
 | `HOST_SECRET` | Required host login secret, ≥24 random characters |
-| `PUBLIC_ORIGIN` | Exact browser origin; default `http://localhost:3000`; remote requires HTTPS |
+| `PUBLIC_ORIGIN` | Exact browser origin; falls back to Render’s `RENDER_EXTERNAL_URL`, then `http://localhost:3000`; remote requires HTTPS |
 | `HOST`, `PORT` | Listen address/port; defaults 127.0.0.1 / 3000 |
 | `DATA_DIR` | Persistent SQLite directory; default `./data` |
 | `TWITCH_CLIENT_ID`, `TWITCH_CLIENT_SECRET` | Own registered application credentials |
-| `TWITCH_REDIRECT_URI` | Exact registered OAuth callback |
+| `TWITCH_REDIRECT_URI` | Exact registered OAuth callback; defaults to the selected origin plus `/auth/twitch/callback` |
 
 Run a single process with persistent storage. Defaults: 8 candidate slots, 1,000 participants/round, 10,000 retained command identities/session, 20,000 events/session, 20 archived sessions and 32 spectator sockets. Ordinary actions stop at 19,997 events, retaining three slots within the 20,000-event hard cap for election progress/cancellation, startup recovery and Reveal. A capacity error preserves the last committed state: cancel any open election, Reveal, export, then start a new session. Cooldown/paused spam does not append evidence rows. Source mode is fixed per session; switching starts a new one. To clear capacity, export/review evidence, stop the app, and archive the entire data directory before using a new one. There is no automatic evidence deletion. This reservation prevents new ordinary-action saturation; it cannot add space to a legacy session already at the hard cap. Preserve/back up that original data directory and use a fresh DATA_DIR if a pre-fix session cannot Reveal. Do not edit its event history or raise the cap to manufacture evidence. See deployment guide for backups, proxy/TLS, rollback and limitations.
 
@@ -116,6 +118,6 @@ Original source/assets were authored for this project. Third-party runtime libra
 
 ## Submission boundary — checked 2 November 2026
 
-The organizer requires a judge-accessible code repository, a YouTube video of at most three minutes with real Twitch functionality and Codex usage, a description and the main Codex session ID. The latest announcement permits unlisted YouTube videos; private videos do not qualify. A private GitHub/GitLab repository must be shared with the organizer's testing account. A website is optional. The deadline is **2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India**. Exact official evidence is retained in evidence/official-hackathon-nov2.json.
+The organizer requires a judge-accessible code repository, a YouTube video of at most three minutes with real Twitch functionality and Codex usage, a description and the main Codex session ID. The latest announcement permits unlisted YouTube videos; private videos do not qualify. A private GitHub/GitLab repository must be shared with the organizer's testing account. The competition website field is optional; this project’s agreed delivery nevertheless requires the complete hosted Fastify, WebSocket, Twitch and persistent SQLite application. GitHub Pages can expose a separately labeled browser-only sandbox, which does not meet that hosting requirement. The deadline is **2 November 2026 at 14:00 Pacific / 22:00 UTC / 3 November 03:30 India**. Exact official evidence is retained in evidence/official-hackathon-nov2.json.
 
-Eleven specifically authorized public Twitch test messages were posted: five on 30 October, three during the failed first 2 November recording and three during the corrected successful recording. The failed merge remains in its own replay. In the corrected run, gravity down was rejected, wall A closed won one real ballot, the verified law merged and the player escaped in 24 inputs before witness playback. No further messages are authorized. A local staged release checkout is preparation only: no public repository, video upload or competition submission is claimed.
+Eleven specifically authorized public Twitch test messages were posted: five on 30 October, three during the failed first 2 November recording and three during the corrected successful recording. The failed merge remains in its own replay. In the corrected run, gravity down was rejected, wall A closed won one real ballot, the verified law merged and the player escaped in 24 inputs before witness playback. No further messages are authorized. The source repository and unlisted demo are published. The hosted application and actual competition submission remain unverified.

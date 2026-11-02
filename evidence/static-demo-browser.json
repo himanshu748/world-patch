@@ -1,0 +1,245 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/26.12.0/bin/node",
+      "<project>/node_modules/.bin/playwright",
+      "test",
+      "--config=playwright.static.config.ts"
+    ],
+    "configFile": "<project>/playwright.static.config.ts",
+    "rootDir": "<project>/tests/static-demo",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<project>/test-results/static-demo",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "<project>/tests/static-demo",
+        "testIgnore": [],
+        "testMatch": [
+          "journey.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "<project>/test-results/static-demo",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "<project>/tests/static-demo",
+        "snapshotDir": "<project>/tests/static-demo",
+        "testIgnore": [],
+        "testMatch": "journey.spec.ts",
+        "timeout": 45000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3196",
+          "browserName": "chromium",
+          "channel": "chromium",
+          "headless": true,
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "screenshot": "only-on-failure",
+          "trace": "off"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "<project>/evidence/static-demo-browser.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "npx vite preview --host 127.0.0.1 --port 3196 --strictPort --base=/world-patch/ --outDir=dist/judge-demo",
+      "cwd": "<project>",
+      "url": "http://127.0.0.1:3196/world-patch/",
+      "reuseExistingServer": false,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "journey.spec.ts",
+      "file": "journey.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "canonical static entry and local-preview fallback open the browser demo with safe links and no backend",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2292,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T08:09:07.127Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "static-demo-request-ledger",
+                      "contentType": "application/json",
+                      "body": "eyJlcnJvcnMiOltdLCJiYWNrZW5kIjpbXSwiYXNzZXRzIjpbIi93b3JsZC1wYXRjaC9hc3NldHMvaW5kZXgtWEtYal9icFouanMiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LURqT2lhTGJaLmNzcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvTGFuZGluZy1DVkNGUFJ3MC5qcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvZW5naW5lLUNvc09yMHcxLmpzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLVhaVkNjTGo2LmNzcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvQm9hcmQtQkpCUEhydm0uanMiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LVhLWGpfYnBaLmpzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9pbmRleC1Eak9pYUxiWi5jc3MiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL0xhbmRpbmctQ1ZDRlBSdzAuanMiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL2VuZ2luZS1Db3NPcjB3MS5qcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvTGFuZGluZy1YWlZDY0xqNi5jc3MiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL0JvYXJkLUJKQlBIcnZtLmpzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9pbmRleC1YS1hqX2JwWi5qcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvaW5kZXgtRGpPaWFMYlouY3NzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLUNWQ0ZQUncwLmpzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9lbmdpbmUtQ29zT3IwdzEuanMiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL0xhbmRpbmctWFpWQ2NMajYuY3NzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9Cb2FyZC1CSkJQSHJ2bS5qcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvaW5kZXgtWEtYal9icFouanMiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LURqT2lhTGJaLmNzcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvTGFuZGluZy1DVkNGUFJ3MC5qcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvZW5naW5lLUNvc09yMHcxLmpzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLVhaVkNjTGo2LmNzcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvQm9hcmQtQkpCUEhydm0uanMiXSwiZmFpbGVkIjpbXSwicmVxdWVzdHMiOlsiR0VUIC93b3JsZC1wYXRjaC8iLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9pbmRleC1YS1hqX2JwWi5qcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LURqT2lhTGJaLmNzcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL0xhbmRpbmctQ1ZDRlBSdzAuanMiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9lbmdpbmUtQ29zT3IwdzEuanMiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLVhaVkNjTGo2LmNzcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL0JvYXJkLUJKQlBIcnZtLmpzIiwiR0VUIC93b3JsZC1wYXRjaC9wbGF5IiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvaW5kZXgtWEtYal9icFouanMiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9pbmRleC1Eak9pYUxiWi5jc3MiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLUNWQ0ZQUncwLmpzIiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvZW5naW5lLUNvc09yMHcxLmpzIiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvTGFuZGluZy1YWlZDY0xqNi5jc3MiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9Cb2FyZC1CSkJQSHJ2bS5qcyIsIkdFVCAvd29ybGQtcGF0Y2gvb3ZlcmxheSIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LVhLWGpfYnBaLmpzIiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvaW5kZXgtRGpPaWFMYlouY3NzIiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvTGFuZGluZy1DVkNGUFJ3MC5qcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL2VuZ2luZS1Db3NPcjB3MS5qcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL0xhbmRpbmctWFpWQ2NMajYuY3NzIiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvQm9hcmQtQkpCUEhydm0uanMiLCJHRVQgL3dvcmxkLXBhdGNoLyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LVhLWGpfYnBaLmpzIiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvaW5kZXgtRGpPaWFMYlouY3NzIiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvTGFuZGluZy1DVkNGUFJ3MC5qcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL2VuZ2luZS1Db3NPcjB3MS5qcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL0xhbmRpbmctWFpWQ2NMajYuY3NzIiwiR0VUIC93b3JsZC1wYXRjaC9hc3NldHMvQm9hcmQtQkpCUEhydm0uanMiXX0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-8664b4088b1b759f91fc",
+          "file": "journey.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "real law acceptance, lockout rejection, complete witness and all three playable escapes work without a server",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3890,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T08:09:09.766Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "static-demo-request-ledger",
+                      "contentType": "application/json",
+                      "body": "eyJlcnJvcnMiOltdLCJiYWNrZW5kIjpbXSwiYXNzZXRzIjpbIi93b3JsZC1wYXRjaC9hc3NldHMvaW5kZXgtWEtYal9icFouanMiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LURqT2lhTGJaLmNzcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvTGFuZGluZy1DVkNGUFJ3MC5qcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvZW5naW5lLUNvc09yMHcxLmpzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLVhaVkNjTGo2LmNzcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvQm9hcmQtQkpCUEhydm0uanMiXSwiZmFpbGVkIjpbXSwicmVxdWVzdHMiOlsiR0VUIC93b3JsZC1wYXRjaC8iLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9pbmRleC1YS1hqX2JwWi5qcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LURqT2lhTGJaLmNzcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL0xhbmRpbmctQ1ZDRlBSdzAuanMiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9lbmdpbmUtQ29zT3IwdzEuanMiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLVhaVkNjTGo2LmNzcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL0JvYXJkLUJKQlBIcnZtLmpzIl19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-75c57c12468cadf76b81",
+          "file": "journey.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "keyboard, touch, 320px layout and reduced motion remain usable in the static build",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1148,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T08:09:13.677Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "static-demo-request-ledger",
+                      "contentType": "application/json",
+                      "body": "eyJlcnJvcnMiOltdLCJiYWNrZW5kIjpbXSwiYXNzZXRzIjpbIi93b3JsZC1wYXRjaC9hc3NldHMvaW5kZXgtWEtYal9icFouanMiLCIvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LURqT2lhTGJaLmNzcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvTGFuZGluZy1DVkNGUFJ3MC5qcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvZW5naW5lLUNvc09yMHcxLmpzIiwiL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLVhaVkNjTGo2LmNzcyIsIi93b3JsZC1wYXRjaC9hc3NldHMvQm9hcmQtQkpCUEhydm0uanMiXSwiZmFpbGVkIjpbXSwicmVxdWVzdHMiOlsiR0VUIC93b3JsZC1wYXRjaC8iLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9pbmRleC1YS1hqX2JwWi5qcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL2luZGV4LURqT2lhTGJaLmNzcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL0xhbmRpbmctQ1ZDRlBSdzAuanMiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9lbmdpbmUtQ29zT3IwdzEuanMiLCJHRVQgL3dvcmxkLXBhdGNoL2Fzc2V0cy9MYW5kaW5nLVhaVkNjTGo2LmNzcyIsIkdFVCAvd29ybGQtcGF0Y2gvYXNzZXRzL0JvYXJkLUJKQlBIcnZtLmpzIl19"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bf222bad70f76648f722-4ac782ef143875c905c1",
+          "file": "journey.spec.ts",
+          "line": 119,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T08:09:04.704Z",
+    "duration": 10249.292,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

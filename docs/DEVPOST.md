@@ -1,6 +1,8 @@
 # WORLD//PATCH — submission copy
 
-Draft prepared from implemented and verified features. **Do not submit as complete yet:** judge repository access, YouTube visibility and eligibility still need evidence. The96-second local Twitch/Codex edit passed scoped metadata/cadence and selected-frame review. The corrected Nov2 real Twitch round and actual OBS game/chat capture passed. Controlled cold reconnect is verified; provider-requested migration and live election cancellation remain unobserved. Do not invent URLs or personal survey answers.
+[Public source](https://github.com/himanshu748/world-patch) · [96-second real Twitch + Codex demo](https://youtu.be/5pPTyIQZ7RY)
+
+The complete hosted application is awaiting provider provisioning and remote verification. Repository access and unlisted-video metadata are verified; complete anonymous YouTube playback, entrant attestations and actual submission remain pending. The browser-only sandbox is separate from the required hosted Twitch experience.
 
 ## Name and tagline
 
@@ -34,23 +36,26 @@ We froze movement during elections to prevent a proof from becoming stale before
 
 ## Validation status
 
-The repaired source passed 114 unit/property/server/provider-fixture tests and 22 production-browser journeys, plus typecheck/lint/build. The corrected real one-account Twitch round rejected an unsolvable gravity patch, accepted a wall patch, counted one ballot and merged the winner with a 24-input witness. The operator escaped through the browser controls, then revealed the route. Its exported 36-event session independently reconstructed the merge and escaped final state. Actual OBS game/chat footage was captured at 1080p30 and numerically inspected. The first Nov2 attempt remains a recorded incomplete-verification failure, which prompted the bounded room-budget repair; it is not relabeled as success. Controlled actual cold reconnect also preserved the game and receipt after a local process stall; it does not establish a provider outage, requested migration or live election cancellation. The96-second local Twitch/Codex edit passed metadata/cadence and selected-frame review; external delivery remains pending. These checks do not establish audience enjoyment, scalability or submission readiness.
+The real one-account demonstration rejected an impossible gravity patch, accepted a wall patch, counted a real ballot and merged the winner with a 24-input escape witness. The operator escaped through the browser controls, then revealed the route. Its 36-event export independently reconstructed the merge and escaped final state. The 96-second demo is published unlisted with English captions and preserved Codex development evidence.
+
+The latest local hosting-preparation gate passed 119 tests, typecheck/lint/build; the normal browser journey and static sandbox have separate executed evidence. Those results do not establish the remote application. Full hosting still needs HTTPS/WSS, protected host controls, persistent SQLite recovery and hosted Twitch/game/replay acceptance. Controlled local cold reconnect does not prove a provider outage or migration; no audience study or scale claim is made.
 
 ## What is next
 
-Finish authorized repository/YouTube delivery, retain the continuous original, and perform a human readability/playtest, then explore more authored chambers and community-authored patch sets without expanding into arbitrary executable rules. Keep the small deterministic model and inspectable evidence as the core of the experience.
+Complete and verify the full hosted Twitch experience, then perform a human readability/playtest and explore more authored chambers and community-authored patch sets without expanding into arbitrary executable rules. Keep the small deterministic model and inspectable evidence as the core of the experience.
 
 ## Required field mapping
 
 | Field | Prepared answer / action |
 | --- | --- |
-| Repository URL | Not published; supply an authorized judge-accessible repository URL |
+| Repository URL | https://github.com/himanshu748/world-patch — public anonymous source access verified |
 | Codex session ID | `01a1807d-e70b-7572-bc0d-a4f29b37d1b8` |
 | Main technology requirement | Codex built/reviewed the implementation; actual Twitch OAuth + EventSub proposal/vote/merge/replay verified; retain reviewed real Twitch/Codex video before submitting |
 | How streamers/community use it | Streamer opens a round; viewers propose/vote on rules; verified winner transforms the chamber; streamer plays; audience sees a replayable solution afterward |
-| Demo video | At most three minutes of actual running Twitch functionality and Codex usage; YouTube unlisted/public is permitted by the latest announcement, private is not; upload only with authorization |
+| Demo video | https://youtu.be/5pPTyIQZ7RY — 96 seconds, Unlisted, English captions; anonymous metadata PASS, full anonymous watch pending |
+| Hosted application | Required by the user; awaiting provider provisioning and full remote acceptance. No hosted URL is claimed yet. |
 | Submitter type/country | Entrant must provide; do not infer residence or team status |
 | Learning/Codex survey answers | Entrant must choose personally |
 | Age/jurisdiction/employment attestations | Entrant must review official rules and attest personally |
 
-Official event: https://twitchcon-codex.devpost.com . Deadline: 2 November 2026 14:00 Pacific / 22:00 UTC / 3 November 03:30 India. Fresh rules, requirements and announcements are preserved in evidence/official-hackathon-nov2.json. A website is optional; repository and video are mandatory. No public URLs or personal attestations are invented. Saving a draft is not submission.
+Official event: https://twitchcon-codex.devpost.com . Deadline: 2 November 2026 14:00 Pacific / 22:00 UTC / 3 November 03:30 India. Fresh rules, requirements and announcements are preserved in evidence/official-hackathon-nov2.json. The organizer’s website field is optional; the agreed project delivery requires the complete hosted application. Repository and video are published, but hosting, personal attestations and submission remain unfinished. Saving a draft is not submission.

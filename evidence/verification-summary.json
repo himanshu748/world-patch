@@ -1,19 +1,19 @@
 {
-  "at": "2026-11-02T07:48:26.425156+00:00",
+  "at": "2026-11-02T09:02:32.235330+00:00",
   "mainCodexSessionId": "01a1807d-e70b-7572-bc0d-a4f29b37d1b8",
-  "status": "CURRENT_REPAIRED_SOURCE_AND_RECORDED_REAL_TWITCH_OBS_VERIFIED_EXTERNAL_DELIVERY_PENDING",
-  "sourceDigest": "33ac3f5e5ebf62d0f3094a63fc8f06f933951b366c0c3346782819bca71b3065",
+  "status": "PUBLIC_REPOSITORY_AND_UNLISTED_VIDEO_AVAILABLE_REQUIRED_FULL_HOSTING_BLOCKED_PROVISIONING",
+  "sourceDigest": "98ec214df4cdf83e6d89efd436070463f7b8c686f70d0e083808d315b6ebd080",
   "checks": {
-    "PASS": 133,
-    "UNVERIFIED": 5,
-    "BLOCKED": 5,
+    "PASS": 137,
+    "UNVERIFIED": 8,
+    "BLOCKED": 3,
     "FAIL": 3
   },
   "serverTests": {
-    "passed": 114,
+    "passed": 119,
     "failed": 0,
-    "report": "evidence/release-final-unit.json",
-    "scope": "Repaired source current local unit/property/server/provider-fixture gate; separate from live capture"
+    "report": "evidence/render-deployment-verification.json",
+    "scope": "Latest local whole-suite gate including5realentry-point synthetic runtime configuration tests;Node26.12.0macOS;no provider call or targetLinux run"
   },
   "browser": {
     "latestFullRun": {
@@ -21,8 +21,9 @@
       "failed": 0,
       "skipped": 0,
       "flaky": 0,
-      "durationSeconds": 78.673967,
-      "report": "evidence/release-final-browser.json"
+      "report": "evidence/static-demo-verification.json",
+      "durationSeconds": 83.341021,
+      "scope": "Normalapplication browser suite passed22 before subsequent startup-only hosting changes; separate from recorded114/22revision"
     },
     "focusRegression": "Delayed real action HTTP response with WebSocket phase update; next-action focus and user-chosen input focus both exercised.",
     "finalLandingRun": {
@@ -33,6 +34,14 @@
       "skipped": 0,
       "unexpected": 0,
       "flaky": 0
+    },
+    "capturedRevisionFullRun": {
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "durationSeconds": 78.673967,
+      "report": "evidence/release-final-browser.json"
     }
   },
   "liveTwitch": "PASS_CORRECTED_NOV2_CHAT_MERGE_ESCAPE_WITNESS_REPLAY_AND_CONTROLLED_COLD_RECONNECT",
@@ -47,7 +56,7 @@
     "chamberProvenance": "evidence/open-design-chamber-provenance.json"
   },
   "deployed": false,
-  "published": false,
+  "published": true,
   "liveEvidence": "evidence/twitch-final-live-replay.json",
   "landingPlay": {
     "status": "PASS_LOCAL",
@@ -70,69 +79,15 @@
     "newRoundResult": "Corrected real round merged58-state24-input witness; player escaped; reveal autoplay completed;36event replay verified"
   },
   "remainingReleaseGates": [
-    "Authorized repository/YouTube delivery and logged-out judge access",
-    "Authorized repository/judge access and YouTube publication",
-    "Entrant attestations and explicit submission approval"
+    "Fullhostedproviderprovisioning and remoteacceptance",
+    "CompleteanonymousYouTubewatchplayback",
+    "Freshhosting-sourcearchive/audit/release",
+    "Entrantattestations and actualDevpostsubmission"
   ],
   "landingCraft": {
     "status": "PASS_LOCAL",
     "verification": "evidence/craft-verification.json",
     "review": "evidence/craft-review.md"
-  },
-  "currentSource": {
-    "report": "evidence/release-final-checks.json",
-    "sourceFilesInFinalReport": 357,
-    "projectCoreFilesCompared": 46,
-    "projectCoreHashesMatchFinalReport": 45,
-    "unchangedVitestConfigMatchesPriorNov2Snapshot": true,
-    "hashes": {
-      "eslint.config.js": "9d2a0628dd6f576809c5d938b231c54b994d2f2a0275b021a6d7351dfe7999bf",
-      "package-lock.json": "34a7214d3faec12705facaf5b9db7aec18825e45f4211d64c6b0467258e471f6",
-      "package.json": "cf90dcf05acf54292a012b0f2455977d194732ffc40d1296f4b30064becfc4a4",
-      "playwright.config.ts": "5af22ee4535244123ed843866d26f508443ca4c1099d649419e7ce05e925edf2",
-      "scripts/production-smoke.mjs": "9339a369d245f2d73e7c89cd7e4cfec863325c9743c6d9682db5d97ee74990f7",
-      "scripts/verify-replay.ts": "df55cf71b0da2564407ff420a593ddd251b2e7c32a61749e0444084d18d605a0",
-      "src/client/App.tsx": "c52bb3bcafb1f5cc072f23ce190bd124672c724da6884bf7785e3287e98c0f3d",
-      "src/client/Board.tsx": "2f49af9f22fb737b70840e2508b2271de968fced409b78967cb3066cf9ecc5ce",
-      "src/client/Landing.tsx": "81c67b55664b2eeafc4d493b5df82ed1b169b7ecf14f100b0656e960b9da9137",
-      "src/client/ReplayTransport.tsx": "6bad8de3de8938cc630efb3ea59ed7e12e1bbec200b783d15609125901ea25ed",
-      "src/client/api.ts": "2d60ca6bc8ef632c17b44de96f9f116e210296e8de1a843c071e7695cee314cf",
-      "src/client/landing-final.css": "3d4d7cc9584651b9324f5ad805dfb4df0c41b38b0682331b469a81b85c1b9df6",
-      "src/client/landing-play.css": "e725d448bc1f72c442e100f4d19e5adbf0b40df328b4248017434ebcb2c9aeaf",
-      "src/client/landing-refinement.css": "0df5d49b6f82dbc16a2d426d7f79bb80538f4aa9f733438790ac2584b4a25f6a",
-      "src/client/landing.css": "42532855491cbf38acca7eb6d6c63444655e455cc6dc1a6c221d8b452df3e925",
-      "src/client/main.tsx": "cecc53cd899b7dfac5deea9df4391c77f9978bf2fe1a35ee37ceb42e41247284",
-      "src/client/motion.css": "03f67fd3907572ed1b926b08bd17f2066563600a9ad016cfe6ac9ba69d76075f",
-      "src/client/product.css": "4090d6803c70e25c40af4750bbae773fedd6c3f1025d24a0ce2feba7b350eb5f",
-      "src/client/refinement.css": "a5f2f34edccf8fdc2ee7c727c8d160e1d933a74d9e87cfd4b2efc1bc9fc25bb4",
-      "src/client/replay-transport.css": "d46b41d75f3d3333a155294be13d20530e1f1feb7b8a6a6c43d9f6ba8eab2271",
-      "src/client/styles.css": "69e7ffabc8e18fa40565c55ecc824856d2df6760b7ed18b49c10e774f80a823b",
-      "src/server/app.ts": "e4c058056ead5ee04a03661ee499f5a7de7c80d362b747fab7cd65e5beb2276b",
-      "src/server/index.ts": "a0c76b58395d276ef5a50d68eb2ea0160f65a56da2ef1f279b9c196ce4e96131",
-      "src/server/replay.ts": "2c7e881f6aafdb934a8e5660cb3e7b135b5591e6fd683f8441de109b4545fe69",
-      "src/server/room.ts": "c19d48c6fe86e448b4739b5a7a01a69c9e0338d0cd5a56a7624a8da2c08c36cb",
-      "src/server/storage.ts": "59a896539c28388ef88e6d0ea32e4525009140468e80412613d308f5c50bc77f",
-      "src/server/twitch.ts": "fbb71c44bb5036896dae12ef0d1054260cd3aebfbb301e184ad3ee3c943a3bd1",
-      "src/shared/chambers.ts": "441e24ecaec82dd21f82a5e4ace10a06dc0a07a29d328c83f621d30d13fd5634",
-      "src/shared/commands.ts": "5f7a584ecc2e78386a2ec67b8ffcc89faa621df3dafd8863a4b581a69440b00c",
-      "src/shared/engine.ts": "c246b954ff4b13f739f7fd0939ceff1bc6a61ee8fd49c9a5d6336f6905324a59",
-      "src/shared/protocol.ts": "aca9c8774864ca92a4e23f26d1c74edd1f9823f54097d2b91db405be7674d890",
-      "tests/browser/connectivity.spec.ts": "cc7b01be598279cce9b1fb912f17d12565844261856b39260d890a53bccb1448",
-      "tests/browser/fixtures.ts": "4333653a77328aa4f92cdc6c7ab49e5a6ddf0c367b8b67b353ffa1a21049cffd",
-      "tests/browser/journey.spec.ts": "1bc41355778f0635db2d637a902e13b88613b1f985a0a329e72b389cce3480d5",
-      "tests/browser/landing.spec.ts": "66cab46fd1584ae440b1ff5a0a66da738240af20e9e35399d8b19a93c6809626",
-      "tests/browser/product.spec.ts": "f0a9b34660fa68b42bd11f8ad535b80601f0336de36e11331e9c2aa73a51188a",
-      "tests/engine.test.ts": "0ca946ea40d7328eb2e46f7e30317347ad5eb26bdabbde8c5d92fae55a468e4d",
-      "tests/http.test.ts": "860f88e943d97b9599c85e6f48b87a12d71e38ce08018e1a398556de880be2c8",
-      "tests/limits.test.ts": "2ed5363094e8860b5a7a9d592e1a88ec7113c2fccf298ea9caf9a27f39cf83e5",
-      "tests/room.test.ts": "64d163f247d4219f6500d5e92d8ad7d311fb361d7079e64df642d99bf6ae4fd8",
-      "tests/storage.test.ts": "3c8ae289e5244c5f0bc6f3c805c35ce5a71f3c4e805e9ce5c40522b6b69a2d11",
-      "tests/twitch.test.ts": "01eb96fdf50814ebc15850ca225c9cfbe9d9f4bc2b477757596f4ccafdae8190",
-      "tsconfig.json": "a7399e6da21b0b03afca4c86f9570fd1aa256a8d95e2724ec865d92c1b06384a",
-      "tsconfig.server.json": "2a9db2e2c897d8ef8dcda705bf8b2cc38a4ab36da9fe0660b8eadeb2d40d8d06",
-      "vite.config.ts": "adc0383fdf680153d68fd33021c8b49bbf36e01337309800ce232d712b217a92",
-      "vitest.config.ts": "1312750ef2560f5c7ed5c335bfd79ba89398c855a6d4eee58ea48a30c0a1b711"
-    }
   },
   "liveRecovery": {
     "status": "PASS_CONTROLLED_ACTUAL_COLD_RECONNECT",
@@ -178,7 +133,7 @@
     },
     "finalAudio": "PASS_DIGITAL_SILENCE_FULL_PCM_DECODE_ONE_AAC_TRACK"
   },
-  "sourceArchiveStatus": "Historical sourceZIP not refreshed in this preparation; main will refresh after recording",
+  "sourceArchiveStatus": "Publishedcaptured-revision package audit retained;root refresh required for newhosting-source changes",
   "generatedNarration": "None generated; Deepgram exclusively if commissioned",
   "inheritedEnvironmentSanitization": {
     "at": "2026-11-02T06:49:01.472348+00:00",
@@ -463,7 +418,153 @@
     "filesCopied": 13,
     "scope": "Selected exact source-writing record and current excerpts, curated evidence viewer, no raw rollout or network assets"
   },
-  "releasePreparation": {
+  "finalEditedVideo": {
+    "status": "PASS_LOCAL_METADATA_CADENCE_AND_SELECTED_FRAME_REVIEW",
+    "durationSeconds": 96,
+    "width": 1920,
+    "height": 1080,
+    "nominalFPS": 30,
+    "encodedFrames": 2880,
+    "audioTracks": 0,
+    "sha256": "8dddb680bf4b501854251c38cf973b21096560fbce423fb9dc304094061ee65d",
+    "reports": [
+      "evidence/final-demo-video-verification.json",
+      "evidence/final-demo-capture-manifest.json",
+      "evidence/final-demo-frame-review.json"
+    ],
+    "fullRealtimePlayback": "PASS_ACTUAL_BROWSER_REACHED96_OF96_ENDED_NO_MEDIA_ERROR",
+    "published": true,
+    "mediaExcludedFromSource": true,
+    "playbackReport": "evidence/final-demo-browser-playback.json",
+    "publicationURL": "https://youtu.be/5pPTyIQZ7RY"
+  },
+  "priorReleaseSourceDigest": "33ac3f5e5ebf62d0f3094a63fc8f06f933951b366c0c3346782819bca71b3065",
+  "sourceManifestStatus": "Pending root refresh after current hosting-source/doc changes",
+  "capturedGameGate": {
+    "unitPassed": 114,
+    "browserPassed": 22,
+    "reports": [
+      "evidence/release-final-unit.json",
+      "evidence/release-final-browser.json"
+    ],
+    "scope": "Historical successful recorded realTwitch game revision"
+  },
+  "normalBrowserGate": {
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "report": "evidence/static-demo-verification.json",
+    "durationSeconds": 83.341021,
+    "scope": "Freshnormalbuild during separate staticvariant work;before startup-only Render changes"
+  },
+  "staticBrowserGate": {
+    "passed": 3,
+    "report": "evidence/static-demo-verification.json",
+    "scope": "Browser-only labeledsandbox;no hosted room/provider service"
+  },
+  "recordedRevisionSource": {
+    "report": "evidence/release-final-checks.json",
+    "sourceFilesInFinalReport": 357,
+    "projectCoreFilesCompared": 46,
+    "projectCoreHashesMatchFinalReport": 45,
+    "unchangedVitestConfigMatchesPriorNov2Snapshot": true,
+    "hashes": {
+      "eslint.config.js": "9d2a0628dd6f576809c5d938b231c54b994d2f2a0275b021a6d7351dfe7999bf",
+      "package-lock.json": "34a7214d3faec12705facaf5b9db7aec18825e45f4211d64c6b0467258e471f6",
+      "package.json": "cf90dcf05acf54292a012b0f2455977d194732ffc40d1296f4b30064becfc4a4",
+      "playwright.config.ts": "5af22ee4535244123ed843866d26f508443ca4c1099d649419e7ce05e925edf2",
+      "scripts/production-smoke.mjs": "9339a369d245f2d73e7c89cd7e4cfec863325c9743c6d9682db5d97ee74990f7",
+      "scripts/verify-replay.ts": "df55cf71b0da2564407ff420a593ddd251b2e7c32a61749e0444084d18d605a0",
+      "src/client/App.tsx": "c52bb3bcafb1f5cc072f23ce190bd124672c724da6884bf7785e3287e98c0f3d",
+      "src/client/Board.tsx": "2f49af9f22fb737b70840e2508b2271de968fced409b78967cb3066cf9ecc5ce",
+      "src/client/Landing.tsx": "81c67b55664b2eeafc4d493b5df82ed1b169b7ecf14f100b0656e960b9da9137",
+      "src/client/ReplayTransport.tsx": "6bad8de3de8938cc630efb3ea59ed7e12e1bbec200b783d15609125901ea25ed",
+      "src/client/api.ts": "2d60ca6bc8ef632c17b44de96f9f116e210296e8de1a843c071e7695cee314cf",
+      "src/client/landing-final.css": "3d4d7cc9584651b9324f5ad805dfb4df0c41b38b0682331b469a81b85c1b9df6",
+      "src/client/landing-play.css": "e725d448bc1f72c442e100f4d19e5adbf0b40df328b4248017434ebcb2c9aeaf",
+      "src/client/landing-refinement.css": "0df5d49b6f82dbc16a2d426d7f79bb80538f4aa9f733438790ac2584b4a25f6a",
+      "src/client/landing.css": "42532855491cbf38acca7eb6d6c63444655e455cc6dc1a6c221d8b452df3e925",
+      "src/client/main.tsx": "cecc53cd899b7dfac5deea9df4391c77f9978bf2fe1a35ee37ceb42e41247284",
+      "src/client/motion.css": "03f67fd3907572ed1b926b08bd17f2066563600a9ad016cfe6ac9ba69d76075f",
+      "src/client/product.css": "4090d6803c70e25c40af4750bbae773fedd6c3f1025d24a0ce2feba7b350eb5f",
+      "src/client/refinement.css": "a5f2f34edccf8fdc2ee7c727c8d160e1d933a74d9e87cfd4b2efc1bc9fc25bb4",
+      "src/client/replay-transport.css": "d46b41d75f3d3333a155294be13d20530e1f1feb7b8a6a6c43d9f6ba8eab2271",
+      "src/client/styles.css": "69e7ffabc8e18fa40565c55ecc824856d2df6760b7ed18b49c10e774f80a823b",
+      "src/server/app.ts": "e4c058056ead5ee04a03661ee499f5a7de7c80d362b747fab7cd65e5beb2276b",
+      "src/server/index.ts": "a0c76b58395d276ef5a50d68eb2ea0160f65a56da2ef1f279b9c196ce4e96131",
+      "src/server/replay.ts": "2c7e881f6aafdb934a8e5660cb3e7b135b5591e6fd683f8441de109b4545fe69",
+      "src/server/room.ts": "c19d48c6fe86e448b4739b5a7a01a69c9e0338d0cd5a56a7624a8da2c08c36cb",
+      "src/server/storage.ts": "59a896539c28388ef88e6d0ea32e4525009140468e80412613d308f5c50bc77f",
+      "src/server/twitch.ts": "fbb71c44bb5036896dae12ef0d1054260cd3aebfbb301e184ad3ee3c943a3bd1",
+      "src/shared/chambers.ts": "441e24ecaec82dd21f82a5e4ace10a06dc0a07a29d328c83f621d30d13fd5634",
+      "src/shared/commands.ts": "5f7a584ecc2e78386a2ec67b8ffcc89faa621df3dafd8863a4b581a69440b00c",
+      "src/shared/engine.ts": "c246b954ff4b13f739f7fd0939ceff1bc6a61ee8fd49c9a5d6336f6905324a59",
+      "src/shared/protocol.ts": "aca9c8774864ca92a4e23f26d1c74edd1f9823f54097d2b91db405be7674d890",
+      "tests/browser/connectivity.spec.ts": "cc7b01be598279cce9b1fb912f17d12565844261856b39260d890a53bccb1448",
+      "tests/browser/fixtures.ts": "4333653a77328aa4f92cdc6c7ab49e5a6ddf0c367b8b67b353ffa1a21049cffd",
+      "tests/browser/journey.spec.ts": "1bc41355778f0635db2d637a902e13b88613b1f985a0a329e72b389cce3480d5",
+      "tests/browser/landing.spec.ts": "66cab46fd1584ae440b1ff5a0a66da738240af20e9e35399d8b19a93c6809626",
+      "tests/browser/product.spec.ts": "f0a9b34660fa68b42bd11f8ad535b80601f0336de36e11331e9c2aa73a51188a",
+      "tests/engine.test.ts": "0ca946ea40d7328eb2e46f7e30317347ad5eb26bdabbde8c5d92fae55a468e4d",
+      "tests/http.test.ts": "860f88e943d97b9599c85e6f48b87a12d71e38ce08018e1a398556de880be2c8",
+      "tests/limits.test.ts": "2ed5363094e8860b5a7a9d592e1a88ec7113c2fccf298ea9caf9a27f39cf83e5",
+      "tests/room.test.ts": "64d163f247d4219f6500d5e92d8ad7d311fb361d7079e64df642d99bf6ae4fd8",
+      "tests/storage.test.ts": "3c8ae289e5244c5f0bc6f3c805c35ce5a71f3c4e805e9ce5c40522b6b69a2d11",
+      "tests/twitch.test.ts": "01eb96fdf50814ebc15850ca225c9cfbe9d9f4bc2b477757596f4ccafdae8190",
+      "tsconfig.json": "a7399e6da21b0b03afca4c86f9570fd1aa256a8d95e2724ec865d92c1b06384a",
+      "tsconfig.server.json": "2a9db2e2c897d8ef8dcda705bf8b2cc38a4ab36da9fe0660b8eadeb2d40d8d06",
+      "vite.config.ts": "adc0383fdf680153d68fd33021c8b49bbf36e01337309800ce232d712b217a92",
+      "vitest.config.ts": "1312750ef2560f5c7ed5c335bfd79ba89398c855a6d4eee58ea48a30c0a1b711"
+    }
+  },
+  "currentSource": {
+    "report": "evidence/render-deployment-verification.json",
+    "runtimeSourceSha256": {
+      "src/server/index.ts": "0249d36a27c7ad8788d5ddf66d72073c7d4d25b37fc5521ae8a9ed1ba9e89c05",
+      "render.yaml": "afeb8df6a22d273e925795f266e14e56486c364006af17f904af0c69ac270ae1",
+      "Dockerfile": "301cebdf9d5533a924ecdade6199eb1da69684d051af8bfce56cad622b684a80",
+      "tests/runtime-config.test.ts": "437063ba84e85aac7179765a0fa0271fbfa8d9a6b16d94196d7f9894c74e8821"
+    },
+    "documentationHashScope": "Deployment docs changed after executed local report;root release manifest refresh pending"
+  },
+  "repositoryPublication": {
+    "status": "PASS_PUBLIC_REPOSITORY_ANONYMOUS_METADATA_AND_README",
+    "url": "https://github.com/himanshu748/world-patch",
+    "commit": "5468d89d502264a4b607c167fc0ed4f44908aa09",
+    "report": "evidence/public-repository-verification.json",
+    "hostingRevisionPublished": false
+  },
+  "youtubePublication": {
+    "status": "PASS_UNLISTED_PUBLICATION_AND_ANONYMOUS_METADATA",
+    "url": "https://youtu.be/5pPTyIQZ7RY",
+    "sourceSeconds": 96,
+    "captions": "English",
+    "fullAnonymousPlayback": "PENDING",
+    "report": "evidence/youtube-publication-verification.json"
+  },
+  "hosting": {
+    "requiredByUser": true,
+    "status": "BLOCKED_AWAITING_PROVIDER_PROVISIONING",
+    "service": "FullFastify+browserWSS+TwitchOAuthEventSub+persistentSQLite",
+    "staticSandboxSatisfiesRequirement": false,
+    "runtime": "26.13.0Linux",
+    "actualLocalRuntime": "26.12.0macOSarm64",
+    "localGate": "PASS119typeslintnormalbuild",
+    "remoteChecks": "UNVERIFIED",
+    "publicURL": null,
+    "configuration": "render.yaml",
+    "report": "evidence/render-deployment-verification.json",
+    "reportQualification": "Executed local report includes earlier capacity/authorization checkpoint;not current provider provisioning receipt",
+    "requiredRemoteProof": [
+      "LinuxnativeSQLitebuild/start",
+      "HTTPSprotectedhostandreadonlyoverlay",
+      "BrowserWSSupdates",
+      "Persistentdiskrestartrecovery",
+      "ExactTwitchcallbackandactualhostedOAuthEventSubgame/replay"
+    ]
+  },
+  "historicalLocalReleasePreparation": {
     "status": "FROZEN_LOCAL_CANDIDATE_AWAITING_MAIN_FINAL_AUDIT_AND_PUBLICATION_APPROVAL",
     "path": "outputs/release/world-patch",
     "sourceDigest": "33ac3f5e5ebf62d0f3094a63fc8f06f933951b366c0c3346782819bca71b3065",
@@ -533,23 +634,35 @@
     },
     "publicStoryIncluded": "docs/DEVPOST-PUBLIC.md"
   },
-  "finalEditedVideo": {
-    "status": "PASS_LOCAL_METADATA_CADENCE_AND_SELECTED_FRAME_REVIEW",
-    "durationSeconds": 96,
-    "width": 1920,
-    "height": 1080,
-    "nominalFPS": 30,
-    "encodedFrames": 2880,
-    "audioTracks": 0,
-    "sha256": "8dddb680bf4b501854251c38cf973b21096560fbce423fb9dc304094061ee65d",
-    "reports": [
-      "evidence/final-demo-video-verification.json",
-      "evidence/final-demo-capture-manifest.json",
-      "evidence/final-demo-frame-review.json"
+  "releasePreparation": {
+    "status": "LOCAL_HOSTING_SOURCE_VERIFIED_AWAITING_PROVIDER_AND_NEW_RELEASE_PACKAGE",
+    "currentLocalChecks": 119,
+    "publishedCapturedRevision": "5468d89",
+    "sourceArchiveRefreshPending": true
+  },
+  "documentationRefresh": {
+    "at": "2026-11-02T09:05:07.133917+00:00",
+    "scope": "Current full-hosting requirement, published repository/video, honest local/remote evidence scopes",
+    "files": [
+      "README.md",
+      "PLAN.md",
+      "CHECKLIST.md",
+      "VERIFICATION.md",
+      "PRD.md",
+      "ARCHITECTURE.md",
+      "docs/DEPLOYMENT.md",
+      "docs/RENDER-DEPLOYMENT.md",
+      "docs/DEVPOST.md",
+      "evidence/verification-summary.json",
+      "evidence/render-deployment-verification.json"
     ],
-    "fullRealtimePlayback": "PASS_ACTUAL_BROWSER_REACHED96_OF96_ENDED_NO_MEDIA_ERROR",
-    "published": false,
-    "mediaExcludedFromSource": true,
-    "playbackReport": "evidence/final-demo-browser-playback.json"
-  }
+    "relativeLinksChecked": 17,
+    "relativeLinksMissing": 0,
+    "runtimeSourceHashesMatched": 4,
+    "promotedRenderReportMatchesExecutedOriginal": true,
+    "codeOrDeploymentActionsPerformed": false,
+    "providerPrivateAccountOrFinancialStateExported": false
+  },
+  "latest119UnitReport": "evidence/full-host-prep-unit.json",
+  "latest22DefaultBrowserReport": "evidence/full-host-prep-default-browser.json"
 }
