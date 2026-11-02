@@ -2,13 +2,11 @@
 
 **Chat changes the rules. You find the exit.**
 
-A browser puzzle show where Twitch viewers propose bounded changes to gravity, portal pairing, ice and wall groups. The streamer plays the transformed chamber. A deterministic verifier accepts a patch only after finding and replaying an escape witness from the exact frozen world snapshot. End the attempt to reveal the route and inspect its receipt.
+Twitch chat rewrites a puzzle's laws. Flip gravity, reroute portals, make the floor slippery or close a wall—and challenge the streamer to escape. Every patch has to leave a way out: the game finds and replays an escape route before the patch can reach the ballot. Reveal the route after the attempt to see what made the challenge fair.
 
-Built with OpenAI Codex during the Codex × TwitchCon Hackathon. Main session: **`01a1807d-e70b-7572-bc0d-a4f29b37d1b8`**.
+Built with OpenAI Codex for the Codex × TwitchCon Hackathon.
 
 > [Play WORLD//PATCH](https://worldpatch.13.204.212.172.sslip.io) · [OBS overlay](https://worldpatch.13.204.212.172.sslip.io/overlay) · [Public source](https://github.com/himanshu748/world-patch) · [96-second Twitch + Codex demo](https://youtu.be/5pPTyIQZ7RY) · [Submitted Devpost entry](https://devpost.com/software/world-patch)
->
-> The complete hosted application is **live and verified**: HTTPS/WSS, protected controls, persistent recovery and a real Twitch proposal/vote/merge/escape/replay. Its 38-event Twitch export independently verified. Local 127-test and 39-check Linux-image gates passed; the public-host checks passed 78/78. Complete public 96-second video playback passed. **Submitted and independently verified on Devpost on 2 November 2026 at 11:51UTC.** Fresh-profile cookie isolation remains an unverified, nonmandatory limitation. [Verification and limits](VERIFICATION.md).
 
 Open the hosted game and choose **Play the demo** for the playable introduction without signing in. The [host controller](https://worldpatch.13.204.212.172.sslip.io/play) requires private host access; the overlay is read-only.
 
@@ -71,6 +69,10 @@ It shows an executable route from a named checkpoint, under a named engine/chamb
 It does not prove every later player move is safe, that a puzzle is fun, or that the server administrator cannot forge history. Reset recovers the committed solvable checkpoint. SHA-256 digests detect changed evidence under the verifier; they are not external signatures. Ballot uniqueness relies on trusted Twitch identities and the server, not a public cryptographic voting system.
 
 ## Verify and inspect evidence
+
+Submitted to [Codex × TwitchCon on Devpost](https://devpost.com/software/world-patch) on 2 November 2026 at 11:51 UTC. The hosted app completed a real Twitch proposal, vote, merge, player escape and solution replay; its 38-event export independently verified. Local automated tests passed 127/127, Linux container checks passed 39/39, and public-host checks passed 78/78. Complete public 96-second video playback passed; separate fresh-profile cookie isolation remains unverified. See [VERIFICATION.md](VERIFICATION.md) for evidence and limits.
+
+Main Codex session: **`01a1807d-e70b-7572-bc0d-a4f29b37d1b8`**. Selected development evidence is included below.
 
 ```sh
 npm run typecheck

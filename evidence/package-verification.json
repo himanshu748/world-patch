@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-02T12:12:08.994954+00:00",
+  "at": "2026-11-02T12:21:08.787118+00:00",
   "status": "PASS_SOURCE_AUDIT",
   "archive": "../WORLD-PATCH-source.zip",
   "scope": "Sanitized source, tests, docs and selected development evidence; excludes credentials, private answers, raw sessions, SQLite, dependencies, builds, working files and recordings.",

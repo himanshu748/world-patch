@@ -1,6 +1,6 @@
 {
-  "at": "2026-11-02T12:12:08.939572+00:00",
-  "sourceDigest": "c61fab23a2320756396147c531ce65667138ffb756a193c0e5bfee437907cde4",
+  "at": "2026-11-02T12:20:39.801483+00:00",
+  "sourceDigest": "abd668177577b350d3a2d0e0d332e0d26049fa63ade82e50e800468522565b1c",
   "digestAlgorithm": "SHA256 of newline-separated sorted path:sha256 records",
   "scope": "Current source/config/tests/docs; evidence/runtime/dependencies/builds excluded",
   "deployedRuntimeSourceSha": "49555058b0e9ceb99060ce9dc3202d1ea4bd255c",
@@ -62,8 +62,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "de88d9ba51a3500c2b2201cbe17fe037d34f1cf34bc3fc54b4ec1418f508af0b",
-      "bytes": 14609
+      "sha256": "86ef74339241afec4777a650b6a20afcd03e1155d40edbd254d11df0beb6f8d3",
+      "bytes": 14633
     },
     {
       "path": "THIRD_PARTY.md",
